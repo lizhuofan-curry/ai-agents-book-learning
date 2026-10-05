@@ -17,6 +17,7 @@
 | Moonshot API Key配置 | 02脚本的真实模型请求已通过鉴权 |
 | 认识一次真实Kimi请求 | 用户已运行：finish_reason=stop，回答已保存 |
 | 获取官方工具定义，观察模型提出调用 | 用户已运行：tool_calls；模型提出3个web_search调用 |
+| 执行真实搜索 | 04脚本已准备，待讲解与运行 |
 | 真实联网问答 | 尚未运行 |
 | 检查web_search调用、工具成功状态与结果回传 | 尚未完成 |
 | 对照搜索来源与最终答案，理解真实循环 | 尚未完成 |
@@ -59,6 +60,14 @@ SEARCH_TIMEOUT=180
 用户已运行03脚本。官方定义中query为必填字符串，classes为可选的搜索领域列表；本轮模型返回3个web_search调用，分别使用中文一般查询、限定platform.moonshot.cn的查询、英文查询，classes均为["all"]。3个调用ID不同，用于匹配各自的结果。参数从str解析为dict，保存时保留原始字符串；search_executed仍为False。
 
 下一步继续同一实验：执行这3个搜索请求、把结果作为匹配ID的tool消息放回messages，再次请求Kimi，构建完整循环并分析来源。
+
+## 现在的操作：执行真实搜索
+
+打开[04_执行真实搜索.py](我的代码/04_执行真实搜索.py)。这一步对应官方_execute_formula，读取03生成的kimi_tool_request.json，逐个执行其中的工具调用，不重新生成搜索参数。
+
+与获取定义时的GET /tools相比，执行使用POST /fibers。requests.post的json=body提交工具名和原始arguments字符串；Authorization和timeout沿用前一步配置。Fiber是这次工具执行的返回记录，HTTP请求成功后还要检查status=succeeded，并确认有输出。
+
+官方搜索可能返回context.encrypted_output。脚本原样保存该内容，后续作为tool消息交回Kimi处理；不用在本地解密。普通output会显示短预览。每个成功结果都带有原来的tool_call_id，并立即保存到运行结果/kimi_search_results.json；all_searches_succeeded为True才表示本次所有调用均已成功。仍需下一步回传结果与再次请求模型，才能生成基于搜索的答案。
 
 ## 完成后的检查
 
