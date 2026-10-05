@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">AI Agents Book图标</title>
+  <desc id="desc">书本上方连接三个节点，代表阅读、工具调用与学习记录。</desc>
+  <rect width="128" height="128" rx="30" fill="#101E35"/>
+  <path d="M24 57C37 53 49 55 64 64C79 55 91 53 104 57V94C91 90 79 92 64 101C49 92 37 90 24 94V57Z" fill="#DCE9FC"/>
+  <path d="M64 64V101" stroke="#748DB1" stroke-width="3"/>
+  <path d="M34 69C41 68 48 70 54 73M34 80C41 79 48 81 54 84M74 73C80 70 87 68 94 69M74 84C80 81 87 79 94 80" stroke="#748DB1" stroke-width="3" stroke-linecap="round"/>
+  <path d="M41 38L64 27L87 38M64 27V49" stroke="#57D9BC" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="41" cy="38" r="7" fill="#57D9BC"/><circle cx="64" cy="27" r="8" fill="#57D9BC"/><circle cx="87" cy="38" r="7" fill="#F6C775"/>
+</svg>
