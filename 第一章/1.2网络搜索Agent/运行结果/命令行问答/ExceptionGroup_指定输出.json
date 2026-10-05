@@ -1,0 +1,155 @@
+{
+  "question": "请搜索Python3.11官方文档，用100字以内解释ExceptionGroup，给出1个官方链接。完成一次搜索后，根据已有结果回答；如果证据不足，请明确说明。",
+  "model": "kimi-k3",
+  "base_url": "https://api.moonshot.cn/v1",
+  "status": "interrupted",
+  "model_turns": 1,
+  "finish_reason": "tool_calls",
+  "answer_complete": false,
+  "answer": "",
+  "tools": [
+    {
+      "function": {
+        "name": "web_search",
+        "description": "用于信息检索的网络搜索",
+        "parameters": {
+          "properties": {
+            "classes": {
+              "description": "要关注的搜索领域。如果未指定，则默认为 'all'。",
+              "items": {
+                "enum": [
+                  "all",
+                  "academic",
+                  "social",
+                  "library",
+                  "finance",
+                  "code",
+                  "ecommerce",
+                  "medical"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "query": {
+              "description": "要搜索的内容",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "function"
+    }
+  ],
+  "conversation_history": [
+    {
+      "role": "system",
+      "content": "你是Kimi搜索助手。请使用web_search查询官方资料，再依据搜索结果回答并提供来源链接。"
+    },
+    {
+      "role": "user",
+      "content": "请搜索Python3.11官方文档，用100字以内解释ExceptionGroup，给出1个官方链接。完成一次搜索后，根据已有结果回答；如果证据不足，请明确说明。"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "web_search_0_9cb2c117",
+          "type": "function",
+          "function": {
+            "name": "web_search",
+            "arguments": "{\"query\":\"Python 3.11 official documentation ExceptionGroup docs.python.org\",\"classes\":[\"all\"]}"
+          }
+        }
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "iteration": 1,
+      "type": "action",
+      "tool_call_id": "web_search_0_9cb2c117",
+      "tool": "web_search",
+      "raw_arguments": "{\"query\":\"Python 3.11 official documentation ExceptionGroup docs.python.org\",\"classes\":[\"all\"]}"
+    }
+  ],
+  "api_turns": [
+    {
+      "kind": "formula_tools",
+      "http_status": 200,
+      "tools": [
+        {
+          "function": {
+            "name": "web_search",
+            "description": "用于信息检索的网络搜索",
+            "parameters": {
+              "properties": {
+                "classes": {
+                  "description": "要关注的搜索领域。如果未指定，则默认为 'all'。",
+                  "items": {
+                    "enum": [
+                      "all",
+                      "academic",
+                      "social",
+                      "library",
+                      "finance",
+                      "code",
+                      "ecommerce",
+                      "medical"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "query": {
+                  "description": "要搜索的内容",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "kind": "chat_completion",
+      "model": "kimi-k3",
+      "sent_messages": 2,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "completion_tokens": 154,
+        "prompt_tokens": 292,
+        "total_tokens": 446,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 75,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 256,
+          "cached_tokens": null
+        }
+      }
+    }
+  ],
+  "run_options": {
+    "max_steps": 5,
+    "quiet": true
+  },
+  "error": {
+    "type": "KeyboardInterrupt",
+    "message": "当前问答被用户中断。"
+  }
+}
