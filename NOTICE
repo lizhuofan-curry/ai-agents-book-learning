@@ -1,0 +1,10 @@
+AI Agents Book learning repository
+Copyright 2026 lizhuofan-curry
+
+Learning examples are based on bojieli/ai-agent-book.
+Copyright 2025 Bojie Li
+Source: https://github.com/bojieli/ai-agent-book
+
+Examples have been split into learning steps, annotated in Chinese,
+and adapted to the local project configuration and output directories.
+See THIRD_PARTY_NOTICES.md for the source and modification details.
