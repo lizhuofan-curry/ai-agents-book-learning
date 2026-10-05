@@ -17,8 +17,9 @@
 | Moonshot API Key配置 | 02脚本的真实模型请求已通过鉴权 |
 | 认识一次真实Kimi请求 | 用户已运行：finish_reason=stop，回答已保存 |
 | 获取官方工具定义，观察模型提出调用 | 用户已运行：tool_calls；模型提出3个web_search调用 |
-| 执行真实搜索 | 04脚本已准备，待讲解与运行 |
-| 真实联网问答 | 尚未运行 |
+| 执行真实搜索 | 用户已运行：3次HTTP200，status=succeeded，结果均为encrypted_output |
+| 回传工具结果，再请求Kimi | 05脚本已准备，待讲解与运行 |
+| 获得并检查基于搜索的回答 | 尚未完成 |
 | 检查web_search调用、工具成功状态与结果回传 | 尚未完成 |
 | 对照搜索来源与最终答案，理解真实循环 | 尚未完成 |
 | 阅读实现，逐项学习README中的用法与探索示例 | 随实验逐步进行 |
@@ -35,7 +36,7 @@ KIMI_BASE_URL=https://api.moonshot.cn/v1
 SEARCH_TIMEOUT=180
 ```
 
-第一项是身份凭据；第二项是请求发往的服务地址；第三项是单次请求的等待上限，单位是秒。这些名称和默认值来自官方实验配置。当前官方默认模型是`kimi-k3`，在Python配置中指定；填写.env本身不会调用API。
+第一项是身份凭据；第二项是请求发往的服务地址；第三项是请求超时配置，单位是秒。requests中的单个数值分别用于连接与读取等待，不是整个搜索任务的总时长上限。这些名称和默认值来自官方实验配置。当前官方默认模型是`kimi-k3`，在Python配置中指定；填写.env本身不会调用API。
 
 `.env`只保存在本地，根目录`.gitignore`已经忽略它。API Key不要贴到聊天中。之后的学习代码会明确读取根目录的.env；已有离线脚本不读取这个文件，也不会因填写密钥而变成真实搜索。
 
@@ -61,13 +62,25 @@ SEARCH_TIMEOUT=180
 
 下一步继续同一实验：执行这3个搜索请求、把结果作为匹配ID的tool消息放回messages，再次请求Kimi，构建完整循环并分析来源。
 
-## 现在的操作：执行真实搜索
+## 已运行：执行真实搜索
 
 打开[04_执行真实搜索.py](我的代码/04_执行真实搜索.py)。这一步对应官方_execute_formula，读取03生成的kimi_tool_request.json，逐个执行其中的工具调用，不重新生成搜索参数。
 
 与获取定义时的GET /tools相比，执行使用POST /fibers。requests.post的json=body提交工具名和原始arguments字符串；Authorization和timeout沿用前一步配置。Fiber是这次工具执行的返回记录，HTTP请求成功后还要检查status=succeeded，并确认有输出。
 
 官方搜索可能返回context.encrypted_output。脚本原样保存该内容，后续作为tool消息交回Kimi处理；不用在本地解密。普通output会显示短预览。每个成功结果都带有原来的tool_call_id，并立即保存到运行结果/kimi_search_results.json；all_searches_succeeded为True才表示本次所有调用均已成功。仍需下一步回传结果与再次请求模型，才能生成基于搜索的答案。
+
+用户已运行04，3次搜索均返回HTTP200、status=succeeded。encrypted_output长度分别为7206、7070、7678字符。已核对本地03与04记录的用户问题、调用列表一致，3个结果ID分别对应原调用。
+
+## 现在的操作：把搜索结果交回Kimi
+
+打开[05_把搜索结果交回Kimi.py](我的代码/05_把搜索结果交回Kimi.py)。这一步对应官方search_and_answer追加assistant/tool消息与再次调用_chat的部分，复用03和04保存的记录，不重新执行已经完成的搜索。
+
+先看第3、4部分：messages先保留system和user两条消息；append增加一条assistant消息，其中tool_calls保留Kimi之前提出的3个调用；随后每份搜索结果增加一条tool消息。tool_call_id取原调用ID，content取04保存的原始输出。当前共6条消息，一次模型请求发送完整列表，并继续提供官方tools定义。
+
+第2部分在发送前检查记录是否属于同一轮，防止重新运行03后误用旧的04结果。第6部分记录本轮结束原因：stop且回答非空表示得到了本轮回答；tool_calls表示需要继续执行新调用；length表示输出被截断。输出保存在运行结果/kimi_search_reply.json，包括本次发送的messages和加入回复后的conversation_history。
+
+本步先观察一次后续请求。理解后再连接成完整自动循环，并按官方README分析答案来源、练习其余用法。
 
 ## 完成后的检查
 
