@@ -1,0 +1,273 @@
+{
+  "experiment_id": "1-4",
+  "created_at": "2026-10-06T10:58:01",
+  "design": "same_image_model_original_vs_deepseek_rewrite",
+  "rewrite_model": "deepseek-flash",
+  "image_model": "wan2.2-t2i-flash",
+  "prompt_extend": false,
+  "image_count_planned": 4,
+  "credential_values_recorded": false,
+  "requirements": [
+    {
+      "id": "headphone-poster",
+      "category": "具体需求",
+      "text": "帮我做一张新款降噪耳机的产品海报，主打“深夜独处也清净”这句文案，风格简约高级",
+      "seed": 20261001,
+      "checkpoints": [
+        "降噪耳机",
+        "产品海报",
+        "深夜独处也清净",
+        "简约高级"
+      ],
+      "rewrite": {
+        "prompt": "高端降噪耳机产品海报，简约高级风格，主体：一款现代头戴式降噪耳机，置于画面中央偏右，深色哑光质感，金属细节，柔和轮廓光勾勒边缘，深蓝近黑的渐变背景，微弱星光与城市夜景虚化作底，静谧深夜氛围，大面留白，极简主义构图，视觉焦点集中于耳机，光影层次细腻，电影级布光，侧面45度微俯视角，中长焦镜头，浅景深，高级产品摄影质感，画面中清晰居中排列中文文案“深夜独处也清净”，字体纤细优雅，无衬线或现代宋体，文字与耳机保持平衡留白",
+        "negative_prompt": "杂乱背景，多余文字，错别字，变形耳机，低分辨率，廉价塑料感，过多装饰元素，鲜艳刺眼色彩，人物面部特写，噪点，模糊，水印，logo杂乱，拥挤构图",
+        "preserved_constraints": [
+          "新款降噪耳机为海报主体",
+          "主打文案“深夜独处也清净”必须原样呈现",
+          "风格简约高级"
+        ],
+        "added_details": [
+          "深蓝近黑的渐变背景与微弱星光营造深夜氛围",
+          "哑光质感与金属细节提升产品档次",
+          "柔和轮廓光与电影级布光增强立体感",
+          "45度微俯视角与浅景深突出耳机",
+          "纤细优雅中文字体与大面积留白呼应简约高级"
+        ]
+      },
+      "routes": [
+        {
+          "route": "original",
+          "route_name": "原始提示词",
+          "prompt_used": "帮我做一张新款降噪耳机的产品海报，主打“深夜独处也清净”这句文案，风格简约高级",
+          "negative_prompt_used": "",
+          "seed": 20261001,
+          "image_path": "images/headphone-poster_original.png",
+          "call": {
+            "provider": "dashscope",
+            "model": "wan2.2-t2i-flash",
+            "submit_request_id": "46e2be93-cd23-9738-af3c-828f6be233a1",
+            "poll_request_id": "96dd3583-b2e4-9f86-aa9e-df537b581b77",
+            "task_id": "91d0a4e0-94f0-4e48-bad6-935df31c2a68",
+            "task_status": "SUCCEEDED",
+            "latency_ms": 6797.0,
+            "usage": {
+              "image_count": 1
+            },
+            "actual_prompt": null,
+            "request": {
+              "prompt": "帮我做一张新款降噪耳机的产品海报，主打“深夜独处也清净”这句文案，风格简约高级",
+              "negative_prompt": "",
+              "size": "1024*1024",
+              "n": 1,
+              "seed": 20261001,
+              "prompt_extend": false,
+              "watermark": false
+            },
+            "image": {
+              "bytes": 735859,
+              "sha256": "d4ecfc9fd457a389920dcfaf7641c1a82003b457c5d993e714aa235cda7a389e",
+              "content_type": "image/png"
+            }
+          },
+          "error": null
+        },
+        {
+          "route": "rewritten",
+          "route_name": "DeepSeek改写",
+          "prompt_used": "高端降噪耳机产品海报，简约高级风格，主体：一款现代头戴式降噪耳机，置于画面中央偏右，深色哑光质感，金属细节，柔和轮廓光勾勒边缘，深蓝近黑的渐变背景，微弱星光与城市夜景虚化作底，静谧深夜氛围，大面留白，极简主义构图，视觉焦点集中于耳机，光影层次细腻，电影级布光，侧面45度微俯视角，中长焦镜头，浅景深，高级产品摄影质感，画面中清晰居中排列中文文案“深夜独处也清净”，字体纤细优雅，无衬线或现代宋体，文字与耳机保持平衡留白",
+          "negative_prompt_used": "杂乱背景，多余文字，错别字，变形耳机，低分辨率，廉价塑料感，过多装饰元素，鲜艳刺眼色彩，人物面部特写，噪点，模糊，水印，logo杂乱，拥挤构图",
+          "seed": 20261001,
+          "image_path": "images/headphone-poster_rewritten.png",
+          "call": {
+            "provider": "dashscope",
+            "model": "wan2.2-t2i-flash",
+            "submit_request_id": "92474358-6f25-9b12-8aee-258bc98492dc",
+            "poll_request_id": "f68b9525-da0c-9784-8a0b-ad22800c308b",
+            "task_id": "bed88089-f65c-469d-8454-2a2dacb35e10",
+            "task_status": "SUCCEEDED",
+            "latency_ms": 10000.0,
+            "usage": {
+              "image_count": 1
+            },
+            "actual_prompt": null,
+            "request": {
+              "prompt": "高端降噪耳机产品海报，简约高级风格，主体：一款现代头戴式降噪耳机，置于画面中央偏右，深色哑光质感，金属细节，柔和轮廓光勾勒边缘，深蓝近黑的渐变背景，微弱星光与城市夜景虚化作底，静谧深夜氛围，大面留白，极简主义构图，视觉焦点集中于耳机，光影层次细腻，电影级布光，侧面45度微俯视角，中长焦镜头，浅景深，高级产品摄影质感，画面中清晰居中排列中文文案“深夜独处也清净”，字体纤细优雅，无衬线或现代宋体，文字与耳机保持平衡留白",
+              "negative_prompt": "杂乱背景，多余文字，错别字，变形耳机，低分辨率，廉价塑料感，过多装饰元素，鲜艳刺眼色彩，人物面部特写，噪点，模糊，水印，logo杂乱，拥挤构图",
+              "size": "1024*1024",
+              "n": 1,
+              "seed": 20261001,
+              "prompt_extend": false,
+              "watermark": false
+            },
+            "image": {
+              "bytes": 803576,
+              "sha256": "02305534affd7a3f488f6db0aafd3923904ba390e52dc5914ec1617f676f367a",
+              "content_type": "image/png"
+            }
+          },
+          "error": null
+        }
+      ],
+      "rewrite_call": {
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "response_id": "9e5a7dc0-e474-4066-9415-58c8fc6e30b6",
+        "finish_reason": "stop",
+        "latency_ms": 3437.0,
+        "usage": {
+          "completion_tokens": 326,
+          "prompt_tokens": 246,
+          "total_tokens": 572,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 246
+        },
+        "reasoning_content_present": false,
+        "reasoning_content_length": 0,
+        "raw_output": "{\n  \"prompt\": \"高端降噪耳机产品海报，简约高级风格，主体：一款现代头戴式降噪耳机，置于画面中央偏右，深色哑光质感，金属细节，柔和轮廓光勾勒边缘，深蓝近黑的渐变背景，微弱星光与城市夜景虚化作底，静谧深夜氛围，大面留白，极简主义构图，视觉焦点集中于耳机，光影层次细腻，电影级布光，侧面45度微俯视角，中长焦镜头，浅景深，高级产品摄影质感，画面中清晰居中排列中文文案“深夜独处也清净”，字体纤细优雅，无衬线或现代宋体，文字与耳机保持平衡留白\",\n  \"negative_prompt\": \"杂乱背景，多余文字，错别字，变形耳机，低分辨率，廉价塑料感，过多装饰元素，鲜艳刺眼色彩，人物面部特写，噪点，模糊，水印，logo杂乱，拥挤构图\",\n  \"preserved_constraints\": [\n    \"新款降噪耳机为海报主体\",\n    \"主打文案“深夜独处也清净”必须原样呈现\",\n    \"风格简约高级\"\n  ],\n  \"added_details\": [\n    \"深蓝近黑的渐变背景与微弱星光营造深夜氛围\",\n    \"哑光质感与金属细节提升产品档次\",\n    \"柔和轮廓光与电影级布光增强立体感\",\n    \"45度微俯视角与浅景深突出耳机\",\n    \"纤细优雅中文字体与大面积留白呼应简约高级\"\n  ]\n}"
+      }
+    },
+    {
+      "id": "agi-programmer",
+      "category": "宽泛需求",
+      "text": "帮我画一个AGI实现以后程序员的工作场景",
+      "seed": 20261002,
+      "checkpoints": [
+        "AGI实现以后",
+        "程序员",
+        "工作场景",
+        "是否形成清楚的叙事"
+      ],
+      "rewrite": {
+        "prompt": "cinematic wide shot, future software office after AGI is achieved, diverse programmers working with a glowing holographic AGI assistant, floating translucent screens with code and architecture diagrams, relaxed supervising and discussing, coffee cups, ergonomic desks, glass walls, city skyline at dusk, soft blue and amber lighting, volumetric light, depth of field, 35mm lens, ultra detailed, photorealistic sci-fi concept art",
+        "negative_prompt": "low resolution, blurry, deformed hands, extra fingers, missing limbs, distorted faces, chaotic composition, cluttered, text, watermark, logo, signature, duplicate people, bad anatomy, oversaturated, cartoon, flat lighting",
+        "preserved_constraints": [
+          "AGI已实现后的未来工作场景",
+          "程序员的工作场景"
+        ],
+        "added_details": [
+          "电影感广角构图",
+          "全息AGI助手与悬浮半透明代码界面",
+          "蓝与琥珀色氛围光、体积光、景深、35mm镜头",
+          "写实科幻概念艺术风格",
+          "玻璃墙与黄昏城市天际线"
+        ]
+      },
+      "routes": [
+        {
+          "route": "original",
+          "route_name": "原始提示词",
+          "prompt_used": "帮我画一个AGI实现以后程序员的工作场景",
+          "negative_prompt_used": "",
+          "seed": 20261002,
+          "image_path": "images/agi-programmer_original.png",
+          "call": {
+            "provider": "dashscope",
+            "model": "wan2.2-t2i-flash",
+            "submit_request_id": "8417ad49-b47f-9e65-b5f2-0927afd21070",
+            "poll_request_id": "64f6a6f4-306a-9f42-b39e-77de066c34e9",
+            "task_id": "55ddbcd5-6b57-4e80-87c5-b52c950b797f",
+            "task_status": "SUCCEEDED",
+            "latency_ms": 6766.0,
+            "usage": {
+              "image_count": 1
+            },
+            "actual_prompt": null,
+            "request": {
+              "prompt": "帮我画一个AGI实现以后程序员的工作场景",
+              "negative_prompt": "",
+              "size": "1024*1024",
+              "n": 1,
+              "seed": 20261002,
+              "prompt_extend": false,
+              "watermark": false
+            },
+            "image": {
+              "bytes": 652511,
+              "sha256": "8abbcd70731a4efe185bd4446a74c050d10aeafca4436a92923355d86739d040",
+              "content_type": "image/png"
+            }
+          },
+          "error": null
+        },
+        {
+          "route": "rewritten",
+          "route_name": "DeepSeek改写",
+          "prompt_used": "cinematic wide shot, future software office after AGI is achieved, diverse programmers working with a glowing holographic AGI assistant, floating translucent screens with code and architecture diagrams, relaxed supervising and discussing, coffee cups, ergonomic desks, glass walls, city skyline at dusk, soft blue and amber lighting, volumetric light, depth of field, 35mm lens, ultra detailed, photorealistic sci-fi concept art",
+          "negative_prompt_used": "low resolution, blurry, deformed hands, extra fingers, missing limbs, distorted faces, chaotic composition, cluttered, text, watermark, logo, signature, duplicate people, bad anatomy, oversaturated, cartoon, flat lighting",
+          "seed": 20261002,
+          "image_path": "images/agi-programmer_rewritten.png",
+          "call": {
+            "provider": "dashscope",
+            "model": "wan2.2-t2i-flash",
+            "submit_request_id": "600f7985-96a8-9f06-b30e-f2b5b09b3dfd",
+            "poll_request_id": "f42b3421-e7b4-96b7-8213-f0699de61577",
+            "task_id": "aa0f139b-5152-464d-a93e-9d4599e48277",
+            "task_status": "SUCCEEDED",
+            "latency_ms": 7406.0,
+            "usage": {
+              "image_count": 1
+            },
+            "actual_prompt": null,
+            "request": {
+              "prompt": "cinematic wide shot, future software office after AGI is achieved, diverse programmers working with a glowing holographic AGI assistant, floating translucent screens with code and architecture diagrams, relaxed supervising and discussing, coffee cups, ergonomic desks, glass walls, city skyline at dusk, soft blue and amber lighting, volumetric light, depth of field, 35mm lens, ultra detailed, photorealistic sci-fi concept art",
+              "negative_prompt": "low resolution, blurry, deformed hands, extra fingers, missing limbs, distorted faces, chaotic composition, cluttered, text, watermark, logo, signature, duplicate people, bad anatomy, oversaturated, cartoon, flat lighting",
+              "size": "1024*1024",
+              "n": 1,
+              "seed": 20261002,
+              "prompt_extend": false,
+              "watermark": false
+            },
+            "image": {
+              "bytes": 1183546,
+              "sha256": "301d300d4dd0bf9493e2b05dd06f403a54de627991dd75a2deeec8adb2d3df3a",
+              "content_type": "image/png"
+            }
+          },
+          "error": null
+        }
+      ],
+      "rewrite_call": {
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "response_id": "188c9734-d056-4ae5-9cf0-0a6dc19b1e65",
+        "finish_reason": "stop",
+        "latency_ms": 6734.0,
+        "usage": {
+          "completion_tokens": 1385,
+          "prompt_tokens": 231,
+          "total_tokens": 1616,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1143,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 231
+        },
+        "reasoning_content_present": true,
+        "reasoning_content_length": 4895,
+        "raw_output": "{\n  \"prompt\": \"cinematic wide shot, future software office after AGI is achieved, diverse programmers working with a glowing holographic AGI assistant, floating translucent screens with code and architecture diagrams, relaxed supervising and discussing, coffee cups, ergonomic desks, glass walls, city skyline at dusk, soft blue and amber lighting, volumetric light, depth of field, 35mm lens, ultra detailed, photorealistic sci-fi concept art\",\n  \"negative_prompt\": \"low resolution, blurry, deformed hands, extra fingers, missing limbs, distorted faces, chaotic composition, cluttered, text, watermark, logo, signature, duplicate people, bad anatomy, oversaturated, cartoon, flat lighting\",\n  \"preserved_constraints\": [\n    \"AGI已实现后的未来工作场景\",\n    \"程序员的工作场景\"\n  ],\n  \"added_details\": [\n    \"电影感广角构图\",\n    \"全息AGI助手与悬浮半透明代码界面\",\n    \"蓝与琥珀色氛围光、体积光、景深、35mm镜头\",\n    \"写实科幻概念艺术风格\",\n    \"玻璃墙与黄昏城市天际线\"\n  ]\n}"
+      }
+    }
+  ],
+  "image_count_succeeded": 4,
+  "completed": true
+}
