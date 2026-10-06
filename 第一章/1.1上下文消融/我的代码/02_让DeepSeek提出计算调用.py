@@ -70,9 +70,9 @@ def main():
         model=model,
         messages=messages,
         tools=TOOLS,
-        tool_choice="auto",
-        temperature=1,
         max_tokens=2048,
+        reasoning_effort="high",
+        extra_body={"thinking": {"type": "enabled"}},
     )
 
     choice = response.choices[0]

@@ -5,20 +5,7 @@ https://github.com/bojieli/ai-agent-book/blob/main/chapter1/context/agent.py
 学习版暂不使用工具注册类，只支持数字、括号和加减乘除。
 """
 
-from calc_sandbox import safe_eval
-
-
-def calculate(expression):
-    """接收算式字符串，返回结果字典；出错时返回error字典。"""
-    try:
-        result = safe_eval(expression)
-        return {
-            "expression": expression,
-            "result": result,
-            "type": type(result).__name__,
-        }
-    except Exception as exc:
-        return {"error": str(exc)}
+from calculator_tool import calculate
 
 
 def main():

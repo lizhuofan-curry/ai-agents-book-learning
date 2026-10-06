@@ -14,4 +14,8 @@
 
 实验1.2已完成，现在开始实验1.1。用户已运行[01_认识计算器工具.py](我的代码/01_认识计算器工具.py)，观察字符串输入变为包含4000的结果字典；这一步没有调用模型API。[02_Kimi版](我的代码/02_让Kimi提出计算调用.py)也已真实运行，模型正确提出calculate调用，但因成本考虑，后续统一切换DeepSeek，原脚本与JSON保留作对照。
 
-在根目录`.env`中增加`DEEPSEEK_API_KEY`，配置格式见根目录[.env.example](../../.env.example)。接下来运行[02_让DeepSeek提出计算调用.py](我的代码/02_让DeepSeek提出计算调用.py)，默认使用`deepseek-flash`和`https://api.deepseek.com`。本步仍只观察调用请求，不执行计算器。
+在根目录`.env`中增加`DEEPSEEK_API_KEY`，配置格式见根目录[.env.example](../../.env.example)。用户已真实运行[02_让DeepSeek提出计算调用.py](我的代码/02_让DeepSeek提出计算调用.py)：deepseek-flash返回tool_calls，提出1个calculate调用，参数为`(125 + 375) * 8`，尚未执行工具。
+
+下一步阅读并运行[03_执行计算并交回DeepSeek.py](我的代码/03_执行计算并交回DeepSeek.py)。03读取02记录，按调用参数执行共用的[calculator_tool.py](我的代码/calculator_tool.py)，用相同调用ID组成tool消息，并把结果交回同一模型。本步仍不是任意轮数的完整Agent循环。
+
+用户希望加快学习节奏。03已真实运行并得到stop与最终答案4000；下一步直接运行[04_完整计算Agent循环.py](我的代码/04_完整计算Agent循环.py)，从一个新问题开始自动处理模型调用、工具执行、结果回传与最终回答。04跑通后进入五组上下文消融，不再增加细碎的过渡脚本。
