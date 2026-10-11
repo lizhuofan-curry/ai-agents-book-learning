@@ -1,0 +1,14 @@
+{
+  "name": "chapter2-official-pptx-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local dependencies for the pinned official PPTX Skill experiment",
+  "dependencies": {
+    "playwright": "1.64.0",
+    "pptxgenjs": "4.0.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-icons": "5.7.0",
+    "sharp": "0.35.5"
+  }
+}

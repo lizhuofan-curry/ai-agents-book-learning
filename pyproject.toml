@@ -18,6 +18,8 @@ chapter1 = [
     "tabulate>=0.9,<1",
 ]
 chapter2 = [
+    "defusedxml>=0.7,<1",
+    "python-pptx>=1.0,<2",
     "torch>=2.7,<3",
     "transformers>=4.51,<5",
 ]

@@ -1,0 +1,27 @@
+{
+  "prepared_at": "2026-10-11T22:15:40",
+  "python": "E:\\AI_Agents_Book\\.venv\\Scripts\\python.exe",
+  "programs": {
+    "uv": "E:\\Hermes\\bin\\uv.exe",
+    "node": "E:\\ai\\node.exe",
+    "pdftoppm": "C:\\Users\\Lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe",
+    "soffice": null
+  },
+  "environment": {
+    "UV_CACHE_DIR": "E:\\AI_Agents_Book\\.uv-cache",
+    "NPM_CONFIG_CACHE": "E:\\AI_Agents_Book\\.uv-cache\\npm",
+    "PLAYWRIGHT_BROWSERS_PATH": "E:\\AI_Agents_Book\\第二章\\2.6论文生成演示文稿\\工具\\ms-playwright",
+    "TEMP": "E:\\AI_Agents_Book\\第二章\\2.6论文生成演示文稿\\工具\\temp",
+    "TMP": "E:\\AI_Agents_Book\\第二章\\2.6论文生成演示文稿\\工具\\temp",
+    "TMPDIR": "E:\\AI_Agents_Book\\第二章\\2.6论文生成演示文稿\\工具\\temp",
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "steps_completed": [
+    "1/4：补齐根目录Python环境，并更新pyproject.toml与uv.lock。",
+    "2/4：安装本实验Node依赖，保存精确版本与package-lock.json。",
+    "3/4：下载用于预览渲染的Chromium无界面浏览器到E盘。"
+  ],
+  "failure": "工具链检查未全部通过，详见工具链检查.json；已完成安装步骤可复用。",
+  "toolchain_ready": false
+}

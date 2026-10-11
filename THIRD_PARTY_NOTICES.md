@@ -1,5 +1,7 @@
 # 来源与改动说明
 
+第二章实验2-6的材料准备脚本参考[官方实验协议](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/agent-skills-ppt/experiment_protocol.json)中的论文哈希和Skill固定版本，独立实现Windows/E盘路径、GitHub存档按目录提取及环境检查。由用户运行后下载的Anthropic PPTX Skill版本为`69c0b1a0674149f27b61b2635f935524b6add202`，其授权条款以原包`LICENSE.txt`为准，不将其视为本项目或Bojie Li仓库Apache许可证覆盖的代码。论文版权归原作者/出版方。
+
 第二章实验2-5参考Bojie Li的[prompt-injection实验说明](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/prompt-injection/README.md)中三类攻击、四层防御的设计，独立编写本机学习版：使用现有Ollama、内存模拟网页及写入/邮件工具、同一会话历史记忆、四个正常授权任务、逐轮原始轨迹、未知状态与调用/拦截/模拟执行分开统计。默认每组合1次，未复用官方示例结果。
 
 第二章实验2-2参考Bojie Li的[attention_cli.py](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/attention_visualization/attention_cli.py)的真实注意力提取与层/头比较流程，独立编写短句学习版：增加E盘缓存、共用环境CPU运行入口、中文token轴、首token统计排除第0行、数值检查和原始矩阵保存。仅实现输入阶段观察，未复制前端和完整Agent项目。原仓库许可证与版权声明见下文。
