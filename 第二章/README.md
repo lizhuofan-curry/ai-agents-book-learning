@@ -1,0 +1,23 @@
+# 第二章：上下文工程
+
+学习日期：2026-10-11。当前已阅读第二章开头至实验2-1之前，实验从2-1开始，按一次一个步骤推进。
+
+来源：[第二章正文](https://github.com/bojieli/ai-agent-book/blob/main/book/chapter2.md)。原书中的预期现象是待观察的目标，不作为自己的实验结果。
+
+## 当前入口
+
+[2.1本地模型部署与工具调用](2.1本地模型部署与工具调用/README.md) · [实验记录](2.1本地模型部署与工具调用/实验记录.md)
+
+Ollama安装、模型下载和一次Python普通对话验证已完成。当前阅读并运行[01普通对话代码](2.1本地模型部署与工具调用/我的代码/01_普通对话.py)，随后学习工具定义、模型提出调用请求、Python执行工具和结果回传。每一步讲清输入、处理和输出，结合实际输出继续下一步。
+
+后续继续正文中的注意力可视化、KV Cache、提示工程、提示注入、Skills、状态栏和上下文压缩。当前尚未运行后续实验；上周计划中的上下文压缩、KV Cache和提示注入需要单独保存对照结果。
+
+## 环境与记录
+
+- 现有学习环境：`E:\AI_Agents_Book\.venv\Scripts\python.exe`，Python3.11.16。
+- 本机显卡：NVIDIA GeForce RTX 5060 Laptop GPU，显存8151MiB。
+- 本次采用原生Windows的Ollama路线。官方完整项目当前要求Python3.12；后续若运行官方入口，另建匹配环境。分步学习代码是否可用，以实际运行结果为准。
+- Ollama0.40.3安装于`E:\Ollama`，模型目录为`E:\OllamaModels`；本机11434端口服务已验证。qwen3:0.6b已下载，模型列表显示约522MB。
+- 本周周报：`E:\BCI相关\周报\周报\李卓凡2026-10-05_2026-10-11_周报.md`。完成一项再补一项结果。
+
+官方实验说明：[local_llm_serving](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/local_llm_serving/README.md)。
