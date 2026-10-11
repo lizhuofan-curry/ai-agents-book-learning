@@ -20,7 +20,7 @@ Ollama是运行和提供模型服务的软件，qwen3:0.6b是准备运行的模�
 | --- | --- | --- |
 | 本地部署 | Ollama加载qwen3:0.6b，客户端能连接 | 已完成 |
 | 普通对话 | 发送messages，读取assistant回答 | 用户已运行成功 |
-| 完整工具调用循环（核心） | 提供工具定义→模型返回结构化tool_calls→Python执行→tool结果带调用ID回传→模型回答 | 待完成 |
+| 完整工具调用循环（核心） | 提供工具定义→模型返回结构化tool_calls→Python执行→tool结果带调用ID回传→模型回答 | 用户已生成调用请求；03待用户运行，结果回传尚未实现 |
 | 流式观察 | 区分逐块输出的思考、正文、工具调用和结果 | 待完成 |
 | 性能与缓存观察 | 记录首token延迟、生成速度；对照稳定前缀和改变前缀 | 待完成，按服务支持情况分析 |
 
@@ -59,7 +59,7 @@ ollama --version
 
 2026-10-11用户输出显示SHA256检查、manifest写入和`success`；随后模型列表确认`qwen3:0.6b`，ID为`7df6b6e09427`，约522MB。
 
-## 第三步：用Python普通对话（当前学习步骤）
+## 第三步：用Python普通对话（用户已运行）
 
 代码：[01_普通对话.py](我的代码/01_普通对话.py)。在PowerShell中运行：
 
@@ -81,12 +81,36 @@ ollama --version
 
 助手首次验证时，模型返回正文并以`stop`结束，但自我介绍使用了XXX占位模板。随后用户自行运行成功，返回正常的中文助手介绍，退出码为0。两次实际输出分别保留，详见[实验记录](实验记录.md)。接下来理解调用代码，再进入工具调用。
 
+## 第四步：让模型提出工具调用（用户已运行）
+
+代码：[02_让模型提出工具调用.py](我的代码/02_让模型提出工具调用.py)。新增`tools=tools`，保留官方工具名`get_current_temperature`及`location`、`unit`参数，使用中文说明；API层面的`tool_choice="auto"`不强制指定某个工具。
+
+用户实际运行结果：调用编号`call_724b1q4a`，工具名`get_current_temperature`，参数字符串为`{"location":"Beijing","unit":"celsius"}`，退出码0。此时只是模型提出请求，尚未由用户执行天气函数。
+
+工具定义是函数的使用说明；模型输出的`arguments`是JSON字符串，下一步要由Python解析后调用函数。依据：[官方工具实现](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/local_llm_serving/tools.py)、[Ollama兼容接口](https://docs.ollama.com/api/openai-compatibility)。
+
+## 第五步：Python执行天气工具（当前待用户运行）
+
+代码：[03_Python执行天气工具.py](我的代码/03_Python执行天气工具.py)。读取`运行结果`中最新的02调用记录，解析参数，再访问Open-Meteo。城市定位与天气查询分别使用[Geocoding API](https://open-meteo.com/en/docs/geocoding-api)和[Weather Forecast API](https://open-meteo.com/en/docs)。
+
+重点看两行：
+
+```python
+arguments = json.loads(call["function"]["arguments"])
+result = get_current_temperature(**arguments)
+```
+
+第一行把参数字符串变成字典。第二行等价于`get_current_temperature(location="Beijing", unit="celsius")`，参数来自模型保存的请求。
+
+程序输出城市、气温、数据时间和来源，并保存原始天气响应、调用编号及来源请求路径。本步骤执行一次工具查询，结果回传模型留到下一步。
+
+学习分工：助手生成代码和讲解，由用户执行并反馈结果，再据反馈更新进度。03在用户明确此分工前有一次助手验证记录；该记录与用户执行分开保存，当前仍待用户运行反馈。
+
 ## 后续逐步完成
 
-1. 读懂普通对话代码，认识base_url、model和messages。
-3. 提供一个工具定义，观察结构化tool_calls。
-4. Python执行函数，以tool消息回传结果，走完一次循环。
-5. 保存真实请求与结果，再观察流式响应和延迟。不能仅凭一次耗时差异判定缓存命中。
+1. 用户运行03，检查Python工具的真实返回值。
+2. 以tool消息回传结果，检查tool_call_id对应关系，再请求模型回答。
+3. 观察流式响应和延迟。不能仅凭一次耗时差异判定缓存命中。
 
 每次只进入一个步骤，尚未写出的代码和未发生的输出不记作完成。
 
