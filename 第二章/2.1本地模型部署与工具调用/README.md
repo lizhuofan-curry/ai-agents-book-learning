@@ -108,9 +108,25 @@ result = get_current_temperature(**arguments)
 
 ## 后续逐步完成
 
-1. 用户运行03，检查Python工具的真实返回值。
-2. 以tool消息回传结果，检查tool_call_id对应关系，再请求模型回答。
-3. 观察流式响应和延迟。不能仅凭一次耗时差异判定缓存命中。
+用户要求加快节奏：直接运行[04_完整天气Agent循环.py](我的代码/04_完整天气Agent循环.py)，一次完成天气查询、结果回传和模型回答。04复用02工具定义和03天气函数，无需先单独运行03；三份文件保持在同一目录。
+
+核心新增逻辑：
+
+```python
+messages.append({
+    "role": "tool",
+    "tool_call_id": call.id,
+    "content": json.dumps(result, ensure_ascii=False),
+})
+```
+
+在此之前先保留模型的assistant调用消息，然后追加tool结果，下一轮把整个messages再次发给模型。流程参照[Ollama工具调用说明](https://docs.ollama.com/capabilities/tool-calling)及[兼容接口](https://docs.ollama.com/api/openai-compatibility)。
+
+通常可观察到第1轮输入system、user，第2轮输入system、user、assistant、tool；最终回答后追加assistant。实际轮数以用户输出为准。脚本最多请求模型4轮、尝试执行天气工具3次，成功与失败均保存记录。
+
+成功标志为`CORE_LOOP_COMPLETE`，仅表示成功工具结果进入后续模型请求并生成正常结束的最终回答。用户仍需对照工具结果检查气温、单位与时间。该代码已生成，助手未执行，等待用户反馈。
+
+核心循环完成后再观察流式响应和延迟；不能仅凭一次耗时差异判定缓存命中。
 
 每次只进入一个步骤，尚未写出的代码和未发生的输出不记作完成。
 
