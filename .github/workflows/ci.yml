@@ -32,6 +32,6 @@ jobs:
           python-version: "3.11"
           enable-cache: true
       - name: Sync locked dependencies
-        run: uv sync --locked
+        run: uv sync --locked --no-group chapter2
       - name: Check learning repository
-        run: uv run --locked python .github/scripts/check_repo.py
+        run: uv run --locked --no-group chapter2 python .github/scripts/check_repo.py

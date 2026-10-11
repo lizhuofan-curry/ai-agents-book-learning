@@ -17,7 +17,19 @@ chapter1 = [
     "reportlab>=4,<5",
     "tabulate>=0.9,<1",
 ]
+chapter2 = [
+    "torch>=2.7,<3",
+    "transformers>=4.51,<5",
+]
 
 [tool.uv]
 package = false
-default-groups = ["chapter1"]
+default-groups = ["chapter1", "chapter2"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
