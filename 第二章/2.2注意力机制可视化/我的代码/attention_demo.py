@@ -61,23 +61,34 @@ def main():
     for index, token in enumerate(tokens):
         print(index, repr(token))
 
-    with torch.inference_mode():
+    # 输入是刚才那 33 个 token，输出里包含各层的注意力权重
+    with torch.inference_mode(): # 本次只做推理，不记录训练需要的梯度
+        # **inputs 把字典里的输入参数展开，传给模型
+        # output_attentions=True 要求模型返回注意力权重
+        # use_cache=False  本次完整计算输入，不返回后续生成使用的 KV 缓存
+        # return_dict=True 返回可以按字段读取的结果对象，例如 outputs.attentions
         outputs = model(**inputs, output_attentions=True, use_cache=False, return_dict=True)
     attentions = outputs.attentions
     if not attentions or any(value is None for value in attentions):
         raise RuntimeError('模型未返回注意力矩阵，请反馈完整报错与依赖版本。')
+    # 这里返回 28 层是因为 Qwen3-0.6B 的模型结构本身就有 28 个 Transformer 层，这是模型设计时确定的
     print('层数：', len(attentions), '每层形状[B,H,T,T]：', tuple(attentions[0].shape))
 
     # attentions[layer]: [batch, heads, query位置, key位置]
+    # 层数： 28 每层形状[B,H,T,T]： (1, 16, 33, 33)
     last = len(attentions) - 1
     selections = [(0, None), (len(attentions) // 2, None), (last, None), (last, 0)]
     matrices = []
     statistics = []
+    # 这样就得到四张 33×33 的数字表：前三张比较不同层，第四张帮助观察单个头与头平均的差别
     for layer, head in selections:
         heads = attentions[layer][0].float()  # [H,T,T]
         matrix = (heads.mean(dim=0) if head is None else heads[head]).cpu().numpy()
         matrices.append(matrix)
         # 排除第0行：它只能看自己，第一列权重必为1，不能据此认定sink。
+        # first_share：大家分配给第一个 token 的注意力有多少
+        # 本次输入中，中间层和最后一层的大量注意力集中到了序列开头，呈现出 attention sink 现象
+        # 不能因此把第一个 token 解释为最有语义价值的内容
         first_share = float(matrix[1:, 0].mean())
         row_error = float(np.abs(matrix.sum(axis=-1) - 1).max())
         future_max = float(np.triu(matrix, k=1).max())
@@ -97,7 +108,9 @@ def main():
             plt.rcParams['font.sans-serif'] = [candidate]
             break
     labels = [f'{i}: {token.replace(chr(10), "↵")}' for i, token in enumerate(tokens)]
+    # 先创建四个画图位置
     fig, axes = plt.subplots(2, 2, figsize=(20, 18), layout='constrained')
+    # 这里的 zip 把三个列表按顺序配对：一个画图位置、一张注意力表、一份统计结果
     for ax, matrix, stats in zip(axes.flat, matrices, statistics):
         # 四图采用同一色标0~1，便于比较。上三角为空白，表示不能读取未来。
         masked = np.ma.masked_where(np.triu(np.ones_like(matrix), k=1).astype(bool), matrix)
