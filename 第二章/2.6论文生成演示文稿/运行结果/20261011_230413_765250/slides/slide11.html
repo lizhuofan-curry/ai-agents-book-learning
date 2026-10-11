@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 10pt 30pt 0 30pt; display: flex; flex-direction: column; }
+  .fig { display: flex; flex-direction: column; align-items: center; }
+  .fig img { width: 600pt; box-shadow: 1px 1px 5px rgba(0,0,0,0.15); }
+  .fig p { font-size: 9pt; color: #6B7280; margin: 4pt 0 0 0; }
+  .strip { background: #FFFFFF; border-radius: 6pt; border-left: 5pt solid #2E75B6; padding: 7pt 14pt;
+           margin-top: 9pt; box-shadow: 1px 1px 4px rgba(0,0,0,0.08); }
+  .strip p { font-size: 10pt; color: #1C2833; margin: 0; line-height: 1.5; }
+  .warn { background: #FDF0E0; border-left: 5pt solid #E8862D; border-radius: 0 6pt 6pt 0;
+          padding: 6pt 14pt; margin-top: 8pt; }
+  .warn p { font-size: 9.5pt; color: #1C2833; margin: 0; line-height: 1.45; }
+  .tag2 { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #E8862D; border-radius: 3pt; padding: 1pt 5pt; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>关键结果:机器翻译全面领先</h1><p>§6.1 Machine Translation</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="fig">
+      <img src="../source_visuals/table2_bleu_results.png">
+      <p>原论文 Table 2(第 8 页):WMT 2014 英德/英法 newstest2014 上的 BLEU 与训练成本(FLOPs)</p>
+    </div>
+    <div class="strip"><p><b>要点【论文】:</b>big 模型英德 <b>28.4</b> BLEU,超此前最佳(含集成)2.0+;英法 <b>41.8</b> BLEU 创单模型纪录,训练成本不足此前 SOTA 的 <b>1/4</b>;base 模型(成本 3.3×10^18 FLOPs)已超越此前所有已发表模型与集成。</p></div>
+    <div class="warn"><p><span class="tag2">注意</span> 论文摘要与 Table 2 记英法 BLEU 为 <b>41.8</b>,而 §6.1 正文写作 <b>41.0</b>——原文两处不一致,此处如实标注。</p></div>
+  </div>
+  <div class="foot"><p>来源:论文第 8 页(§6.1,Table 2)</p><p>Attention Is All You Need · 11 / 13</p></div>
+</body>
+</html>

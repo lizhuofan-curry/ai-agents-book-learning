@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 12pt 30pt 0 30pt; display: flex; flex-direction: column; }
+  .top { display: flex; margin-bottom: 10pt; }
+  .card { background: #FFFFFF; border-radius: 6pt; padding: 9pt 14pt;
+          box-shadow: 1px 1px 4px rgba(0,0,0,0.08); border-top: 4pt solid #2E75B6; }
+  .card h3 { font-size: 12.5pt; color: #1F3864; margin: 0 0 5pt 0; }
+  .tag { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #2E75B6; border-radius: 3pt; padding: 1pt 5pt; }
+  .card ul { margin: 0; padding-left: 14pt; }
+  .card li { font-size: 10.5pt; color: #1C2833; line-height: 1.5; margin-bottom: 4pt; }
+  .c1 { width: 320pt; margin-right: 10pt; }
+  .c2 { flex: 1; }
+  .formula { background: #1F3864; border-radius: 6pt; margin-top: 6pt; padding: 8pt 6pt; }
+  .formula p { color: #FFFFFF; font-size: 11pt; text-align: center; margin: 0; font-family: Courier New, monospace; }
+  .uses { display: flex; }
+  .use { flex: 1; background: #FFFFFF; border-radius: 6pt; padding: 9pt 12pt;
+         box-shadow: 1px 1px 4px rgba(0,0,0,0.08); border-top: 4pt solid #E8862D; }
+  .use + .use { margin-left: 10pt; }
+  .use h4 { font-size: 11.5pt; color: #1F3864; margin: 0 0 4pt 0; }
+  .use p { font-size: 10pt; color: #1C2833; margin: 0; line-height: 1.45; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>多头注意力:多个角度同时看</h1><p>§3.2.2–3.2.3 Multi-Head Attention</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="top">
+      <div class="card c1">
+        <h3>做法与超参 <span class="tag">论文</span></h3>
+        <ul>
+          <li>把 Q/K/V 用 <b>h = 8</b> 组可学习线性投影分别降到 d_k = d_v = d_model/h = <b>64</b></li>
+          <li>8 个头并行做注意力,拼接后再投影;总计算量≈单头全维度</li>
+        </ul>
+        <div class="formula"><p>MultiHead = Concat(head_1..head_h) W^O<br>head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)</p></div>
+      </div>
+      <div class="card c2">
+        <h3>为什么用多头 <span class="tag">论文</span></h3>
+        <ul>
+          <li>让模型在<b>不同位置</b>联合关注来自<b>不同表示子空间</b>的信息</li>
+          <li>若只有一个注意力头,"平均化"会抑制这种能力</li>
+          <li>附录可视化显示:不同头确实学会了不同的任务(如长距离依赖、指代消解)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="uses">
+      <div class="use"><h4>① 编码器–解码器注意力</h4><p>Q 来自上一层解码器,K/V 来自编码器输出:解码器每个位置可关注<b>输入序列全部位置</b></p></div>
+      <div class="use"><h4>② 编码器自注意力</h4><p>Q/K/V 同来自上一层编码器:每个位置可关注前一层编码器的<b>所有位置</b></p></div>
+      <div class="use"><h4>③ 解码器掩码自注意力</h4><p>softmax 前把非法连接置 <b>−∞</b>:位置只能看到自身及之前的位置,保持自回归</p></div>
+    </div>
+  </div>
+  <div class="foot"><p>来源:论文第 4–5 页(§3.2.2–3.2.3)</p><p>Attention Is All You Need · 7 / 13</p></div>
+</body>
+</html>

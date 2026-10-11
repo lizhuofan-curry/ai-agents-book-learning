@@ -1,0 +1,32 @@
+{
+  "visuals": [
+    {
+      "file": "source_visuals/figure1_transformer_architecture.png",
+      "pdf_page": 3,
+      "label": "Figure 1",
+      "caption": "Transformer 模型整体架构图:左侧编码器堆叠、右侧解码器堆叠(论文第 3 页)",
+      "slide_numbers": [5]
+    },
+    {
+      "file": "source_visuals/figure2_attention_mechanisms.png",
+      "pdf_page": 4,
+      "label": "Figure 2",
+      "caption": "左:缩放点积注意力;右:多头注意力由多个并行注意力层构成(论文第 4 页)",
+      "slide_numbers": [6]
+    },
+    {
+      "file": "source_visuals/table1_complexity_comparison.png",
+      "pdf_page": 6,
+      "label": "Table 1",
+      "caption": "不同层类型的最大路径长度、每层复杂度与最少顺序操作数对比(论文第 6 页)",
+      "slide_numbers": [9]
+    },
+    {
+      "file": "source_visuals/table2_bleu_results.png",
+      "pdf_page": 8,
+      "label": "Table 2",
+      "caption": "WMT 2014 英德/英法 newstest2014 上 Transformer 与此前模型的 BLEU 及训练成本对比(论文第 8 页)",
+      "slide_numbers": [11]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 14pt 30pt 0 30pt; display: flex; flex-direction: column; }
+  .bignums { display: flex; margin-bottom: 12pt; }
+  .bn { flex: 1; background: #FFFFFF; border-radius: 6pt; padding: 10pt 12pt; text-align: center;
+        box-shadow: 1px 1px 4px rgba(0,0,0,0.08); border-bottom: 4pt solid #2E75B6; }
+  .bn + .bn { margin-left: 10pt; }
+  .bn h2 { font-size: 26pt; color: #1F3864; margin: 0; font-weight: bold; }
+  .bn .unit { font-size: 12pt; color: #2E75B6; font-weight: bold; margin: 0; }
+  .bn p { font-size: 9.5pt; color: #6B7280; margin: 5pt 0 0 0; line-height: 1.4; }
+  .card { background: #FFFFFF; border-radius: 6pt; padding: 10pt 14pt;
+          box-shadow: 1px 1px 4px rgba(0,0,0,0.08); border-top: 4pt solid #E8862D; }
+  .card h3 { font-size: 13pt; color: #1F3864; margin: 0 0 6pt 0; }
+  .tag { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #2E75B6; border-radius: 3pt; padding: 1pt 5pt; }
+  .card ul { margin: 0; padding-left: 14pt; }
+  .card li { font-size: 11pt; color: #1C2833; line-height: 1.55; margin-bottom: 4pt; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>核心思想:完全抛弃循环与卷积</h1><p>摘要 · §1–2</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="bignums">
+      <div class="bn"><h2>28.4</h2><p class="unit">BLEU · 英→德</p><p>WMT 2014 英德翻译(big 模型),比此前最佳结果(含集成)高出 2.0+ BLEU</p></div>
+      <div class="bn"><h2>41.8</h2><p class="unit">BLEU · 英→法</p><p>WMT 2014 英法翻译(big 模型),创造单模型新纪录(摘要与 Table 2)</p></div>
+      <div class="bn"><h2>12 小时</h2><p class="unit">8 × P100 GPU</p><p>论文称训练短至 12 小时即可达到新的 SOTA 翻译质量(base 规模)</p></div>
+    </div>
+    <div class="card">
+      <h3>论文的关键主张 <span class="tag">论文</span></h3>
+      <ul>
+        <li>Transformer 是<b>第一个完全基于自注意力</b>计算输入、输出表示的序列转导模型,不用 RNN,也不用卷积</li>
+        <li>任意两个位置之间只用<b>常数级操作</b>即可关联,因而可以大规模并行</li>
+        <li>训练成本只是此前最佳模型的一小部分:英法任务 8 张 GPU 训练 3.5 天</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><p>来源:论文第 1 页(摘要、§1)、第 2 页(§2)</p><p>Attention Is All You Need · 4 / 13</p></div>
+</body>
+</html>

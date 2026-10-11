@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 16pt 30pt 0 30pt; display: flex; flex-direction: column; }
+  .row { display: flex; align-items: center; background: #FFFFFF; border-radius: 6pt;
+         padding: 8pt 14pt; margin-bottom: 8pt; box-shadow: 1px 1px 4px rgba(0,0,0,0.08); }
+  .num { width: 26pt; height: 26pt; border-radius: 50%; background: #2E75B6; display: flex;
+         align-items: center; justify-content: center; margin-right: 14pt; }
+  .num p { color: #FFFFFF; font-size: 13pt; font-weight: bold; margin: 0; }
+  .txt { flex: 1; }
+  .txt h3 { font-size: 13pt; color: #1F3864; margin: 0; }
+  .txt p { font-size: 10pt; color: #6B7280; margin: 2pt 0 0 0; }
+  .pg { font-size: 10.5pt; color: #E8862D; font-weight: bold; margin: 0; }
+  .note { background: #FDF0E0; border-left: 5pt solid #E8862D; border-radius: 0 6pt 6pt 0;
+          padding: 8pt 14pt; margin-top: 2pt; }
+  .note p { font-size: 10pt; color: #1C2833; margin: 0; line-height: 1.5; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>汇报导览</h1><p>五部分结构 · 阅读约定</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="row"><div class="num"><p>1</p></div>
+      <div class="txt"><h3>论文与作者</h3><p>封面信息:NIPS 2017,Google 团队 8 位作者</p></div><p class="pg">第 1 页</p></div>
+    <div class="row"><div class="num"><p>2</p></div>
+      <div class="txt"><h3>问题背景</h3><p>RNN 主导的时代:顺序计算带来的三大瓶颈</p></div><p class="pg">第 3–4 页</p></div>
+    <div class="row"><div class="num"><p>3</p></div>
+      <div class="txt"><h3>方法与架构</h3><p>Transformer 拆解:注意力、多头、位置编码与理论优势</p></div><p class="pg">第 5–9 页</p></div>
+    <div class="row"><div class="num"><p>4</p></div>
+      <div class="txt"><h3>关键实验结果</h3><p>机器翻译 BLEU、消融实验、句法分析泛化</p></div><p class="pg">第 10–12 页</p></div>
+    <div class="row"><div class="num"><p>5</p></div>
+      <div class="txt"><h3>结论与解读</h3><p>论文贡献、个人解读与局限讨论</p></div><p class="pg">第 13 页</p></div>
+    <div class="note"><p><b>阅读约定:</b>蓝色<b>【论文】</b>标签 = 论文原始发现与数据;橙色<b>【解读】</b>标签 = 汇报人的理解与补充;每页页脚标注论文来源页码(从 1 起算)。</p></div>
+  </div>
+  <div class="foot"><p>来源:本大纲页,对应论文整体结构</p><p>Attention Is All You Need · 2 / 13</p></div>
+</body>
+</html>

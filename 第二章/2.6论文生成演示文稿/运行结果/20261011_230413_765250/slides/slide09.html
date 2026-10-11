@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 12pt 30pt 0 30pt; display: flex; flex-direction: column; }
+  .fig { display: flex; flex-direction: column; align-items: center; }
+  .fig img { width: 600pt; box-shadow: 1px 1px 5px rgba(0,0,0,0.15); }
+  .fig p { font-size: 9pt; color: #6B7280; margin: 4pt 0 0 0; }
+  .cards { display: flex; margin-top: 10pt; }
+  .mc { flex: 1; background: #FFFFFF; border-radius: 6pt; padding: 8pt 12pt;
+        box-shadow: 1px 1px 4px rgba(0,0,0,0.08); border-top: 4pt solid #2E75B6; }
+  .mc + .mc { margin-left: 10pt; }
+  .mc h4 { font-size: 11.5pt; color: #1F3864; margin: 0 0 4pt 0; }
+  .mc p { font-size: 10pt; color: #1C2833; margin: 0; line-height: 1.45; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>为什么用自注意力:三笔账</h1><p>§4 Why Self-Attention</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="fig">
+      <img src="../source_visuals/table1_complexity_comparison.png">
+      <p>原论文 Table 1(第 6 页):不同层类型的复杂度、顺序操作数与最大路径长度(n=序列长度,d=表示维度,k=卷积核,r=邻域)</p>
+    </div>
+    <div class="cards">
+      <div class="mc"><h4>① 每层计算复杂度</h4><p>序列长度 n &lt; 表示维度 d 时,自注意力 O(n²·d) 比循环层 O(n·d²) <b>更快</b>——翻译句表示大多如此</p></div>
+      <div class="mc"><h4>② 最少顺序操作数</h4><p>自注意力只需 <b>O(1)</b>,循环层要 O(n):并行度差距的本质来源</p></div>
+      <div class="mc"><h4>③ 最大路径长度</h4><p>自注意力 <b>O(1)</b> 直连任意两位置;循环 O(n)、卷积 O(log_k(n)):长程依赖更易学习</p></div>
+    </div>
+  </div>
+  <div class="foot"><p>来源:论文第 6 页(§4,Table 1)</p><p>Attention Is All You Need · 9 / 13</p></div>
+</body>
+</html>

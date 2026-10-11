@@ -1,0 +1,90 @@
+{
+  "source_pdf": "E:\\AI_Agents_Book\\第二章\\2.6论文生成演示文稿\\材料\\attention-is-all-you-need.pdf",
+  "dpi": 300,
+  "items": [
+    {
+      "file": "source_visuals/figure1_transformer_architecture.png",
+      "pdf_page": 3,
+      "label": "Figure 1",
+      "caption": "The Transformer - model architecture.",
+      "render_dpi": 300,
+      "page_image_size_px": [
+        2550,
+        3300
+      ],
+      "crop_box_px": [
+        740,
+        260,
+        1900,
+        1740
+      ],
+      "output_size_px": [
+        1160,
+        1480
+      ]
+    },
+    {
+      "file": "source_visuals/figure2_attention_mechanisms.png",
+      "pdf_page": 4,
+      "label": "Figure 2",
+      "caption": "(left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel.",
+      "render_dpi": 300,
+      "page_image_size_px": [
+        2550,
+        3300
+      ],
+      "crop_box_px": [
+        440,
+        250,
+        2180,
+        1235
+      ],
+      "output_size_px": [
+        1740,
+        985
+      ]
+    },
+    {
+      "file": "source_visuals/table1_complexity_comparison.png",
+      "pdf_page": 6,
+      "label": "Table 1",
+      "caption": "Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types.",
+      "render_dpi": 300,
+      "page_image_size_px": [
+        2550,
+        3300
+      ],
+      "crop_box_px": [
+        450,
+        265,
+        2300,
+        800
+      ],
+      "output_size_px": [
+        1850,
+        535
+      ]
+    },
+    {
+      "file": "source_visuals/table2_bleu_results.png",
+      "pdf_page": 8,
+      "label": "Table 2",
+      "caption": "The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French newstest2014 tests at a fraction of the training cost.",
+      "render_dpi": 300,
+      "page_image_size_px": [
+        2550,
+        3300
+      ],
+      "crop_box_px": [
+        450,
+        265,
+        2300,
+        1040
+      ],
+      "output_size_px": [
+        1850,
+        775
+      ]
+    }
+  ]
+}

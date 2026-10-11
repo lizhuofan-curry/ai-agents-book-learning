@@ -1,0 +1,52 @@
+850 paper.txt
+LICENSE.txt
+SKILL.md
+html2pptx.md
+ooxml
+ooxml.md
+scripts
+html2pptx.js
+inventory.py
+rearrange.py
+replace.py
+thumbnail.py
+Title:           
+Subject:         
+Keywords:        
+Author:          
+Creator:         LaTeX with hyperref
+Producer:        pdfTeX-1.40.25
+CreationDate:    Thu Apr 11 05:11:43 2024 �й���׼ʱ��
+ModDate:         Thu Apr 11 05:11:43 2024 �й���׼ʱ��
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           15
+Encrypted:       no
+Page size:       612 x 792 pts (letter)
+Page rot:        0
+File size:       0 bytes
+pypdf True
+PIL True
+fitz False
+pdfplumber False
+markitdown False
+defusedxml True
+page-03.png
+page-04.png
+page-05.png
+page-06.png
+page-07.png
+page-08.png
+Figure 1: figure1_transformer_architecture.png (1160, 1480)
+Figure 2: figure2_attention_mechanisms.png (1600, 950)
+Table 1: table1_complexity_comparison.png (1640, 520)
+Table 2: table2_bleu_results.png (1560, 760)
+Figure 1: figure1_transformer_architecture.png (1160, 1480)
+Figure 2: figure2_attention_mechanisms.png (1740, 985)
+Table 1: table1_complexity_comparison.png (1850, 535)
+Table 2: table2_bleu_results.png (1850, 775)

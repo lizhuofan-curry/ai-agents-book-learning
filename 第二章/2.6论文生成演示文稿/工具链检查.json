@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-11T22:17:14",
+  "checked_at": "2026-10-11T22:45:21",
   "python": "E:\\AI_Agents_Book\\.venv\\Scripts\\python.exe",
   "python_imports": {
     "pptx": {
@@ -36,12 +36,10 @@
     }
   },
   "programs": {
-    "soffice": null,
+    "soffice": "E:\\LibreOffice\\program\\soffice.exe",
     "pdftoppm": "C:\\Users\\Lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe"
   },
-  "issues": [
-    "未找到程序：soffice"
-  ],
-  "ready": false,
+  "issues": [],
+  "ready": true,
   "scope": "检查导入、JS加载、浏览器启动与工具路径；未验证论文PPT或Agent登录。"
 }

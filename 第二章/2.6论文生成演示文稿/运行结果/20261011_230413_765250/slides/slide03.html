@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 14pt 30pt 0 30pt; display: flex; flex-direction: column; }
+  .cols { display: flex; }
+  .card { flex: 1; background: #FFFFFF; border-radius: 6pt; padding: 10pt 14pt;
+          box-shadow: 1px 1px 4px rgba(0,0,0,0.08); }
+  .card.left { margin-right: 10pt; border-top: 4pt solid #2E75B6; }
+  .card.right { border-top: 4pt solid #E8862D; }
+  .card h3 { font-size: 13pt; color: #1F3864; margin: 0 0 6pt 0; }
+  .tag { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #2E75B6; border-radius: 3pt; padding: 1pt 5pt; }
+  .card ul { margin: 0; padding-left: 14pt; }
+  .card li { font-size: 11pt; color: #1C2833; line-height: 1.55; margin-bottom: 4pt; }
+  .strip { background: #FDF0E0; border-left: 5pt solid #E8862D; border-radius: 0 6pt 6pt 0;
+           padding: 8pt 14pt; margin-top: 12pt; }
+  .strip p { font-size: 10.5pt; color: #1C2833; margin: 0; line-height: 1.5; }
+  .tag2 { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #E8862D; border-radius: 3pt; padding: 1pt 5pt; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>问题背景:RNN 主导的时代遇到瓶颈</h1><p>§1 Introduction · §2 Background</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="cols">
+      <div class="card left">
+        <h3>2017 年前的主流做法 <span class="tag">论文</span></h3>
+        <ul>
+          <li>RNN(尤其是 <b>LSTM</b>、<b>GRU</b>)是序列建模与机器翻译的主流方法</li>
+          <li>普遍采用<b>编码器–解码器</b>结构,最佳模型还在两者之间加入注意力机制</li>
+          <li>注意力机制已很流行,但几乎都与循环网络<b>联合使用</b></li>
+        </ul>
+      </div>
+      <div class="card right">
+        <h3>顺序计算的三个瓶颈 <span class="tag">论文</span></h3>
+        <ul>
+          <li><b>无法并行</b>:位置 t 的隐藏态依赖 t−1,序列内只能逐位计算</li>
+          <li><b>长序列训练慢</b>:显存限制跨样本批处理,序列越长越吃力</li>
+          <li><b>长程依赖路径长</b>:ConvS2S 路径随距离线性增长,ByteNet 对数增长</li>
+        </ul>
+      </div>
+    </div>
+    <div class="strip"><p><span class="tag2">解读</span> <b>论文要同时解决"算不快"与"够不着"两个问题。</b>这正对应 Transformer 的两大设计目标:高度并行化,以及用常数级操作关联任意两个位置。</p></div>
+  </div>
+  <div class="foot"><p>来源:论文第 1–2 页(§1、§2)</p><p>Attention Is All You Need · 3 / 13</p></div>
+</body>
+</html>

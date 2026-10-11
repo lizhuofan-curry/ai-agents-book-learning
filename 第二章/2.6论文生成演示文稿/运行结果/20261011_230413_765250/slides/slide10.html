@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 12pt 30pt 0 30pt; display: flex; flex-direction: column; }
+  .grid { display: flex; flex: 1; }
+  .col { flex: 1; display: flex; flex-direction: column; }
+  .col + .col { margin-left: 10pt; }
+  .card { flex: 1; background: #FFFFFF; border-radius: 6pt; padding: 8pt 12pt;
+          box-shadow: 1px 1px 4px rgba(0,0,0,0.08); border-top: 4pt solid #2E75B6; }
+  .card + .card { margin-top: 10pt; }
+  .card h3 { font-size: 12pt; color: #1F3864; margin: 0 0 5pt 0; }
+  .tag { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #2E75B6; border-radius: 3pt; padding: 1pt 5pt; }
+  .card ul { margin: 0; padding-left: 13pt; }
+  .card li { font-size: 10pt; color: #1C2833; line-height: 1.45; margin-bottom: 3pt; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>训练设置:数据、硬件与超参</h1><p>§5 Training</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="grid">
+      <div class="col">
+        <div class="card">
+          <h3>数据与批处理 <span class="tag">论文</span></h3>
+          <ul>
+            <li>WMT14 英德:约 <b>450 万</b>句对,BPE 共享词表约 <b>3.7 万</b> token</li>
+            <li>WMT14 英法:约 <b>3600 万</b>句,3.2 万 word-piece 词表</li>
+            <li>按长度近似分批:每批约 <b>2.5 万</b>源 + 2.5 万目标 token</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>优化器 <span class="tag">论文</span></h3>
+          <ul>
+            <li>Adam:β1 = 0.9,β2 = 0.98,ε = 10^-9</li>
+            <li>学习率:前 <b>4000 步</b>线性 warmup,此后按步数<b>逆平方根</b>衰减</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <h3>硬件与训练时长 <span class="tag">论文</span></h3>
+          <ul>
+            <li>单机 <b>8 × NVIDIA P100</b> GPU</li>
+            <li>base:每步约 0.4 s,共 <b>10 万步 ≈ 12 小时</b></li>
+            <li>big:每步约 1.0 s,共 <b>30 万步 ≈ 3.5 天</b></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>正则化 <span class="tag">论文</span></h3>
+          <ul>
+            <li>残差 dropout:base 模型 P_drop = <b>0.1</b>(嵌入与位置编码之和同样施加)</li>
+            <li>标签平滑 ε_ls = <b>0.1</b>:损害困惑度,但提升准确率与 BLEU</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><p>来源:论文第 7–8 页(§5.1–5.4)</p><p>Attention Is All You Need · 10 / 13</p></div>
+</body>
+</html>

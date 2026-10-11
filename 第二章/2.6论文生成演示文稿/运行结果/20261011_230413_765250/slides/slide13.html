@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 12pt 30pt 0 30pt; display: flex; flex-direction: column; }
+  .cols { display: flex; flex: 1; }
+  .card { flex: 1; background: #FFFFFF; border-radius: 6pt; padding: 9pt 13pt;
+          box-shadow: 1px 1px 4px rgba(0,0,0,0.08); }
+  .card.left { margin-right: 10pt; border-top: 4pt solid #2E75B6; }
+  .card.right { border-top: 4pt solid #E8862D; }
+  .card h3 { font-size: 12.5pt; color: #1F3864; margin: 0 0 5pt 0; }
+  .tag { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #2E75B6; border-radius: 3pt; padding: 1pt 5pt; }
+  .tag2 { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #E8862D; border-radius: 3pt; padding: 1pt 5pt; }
+  .card ul { margin: 0; padding-left: 13pt; }
+  .card li { font-size: 10pt; color: #1C2833; line-height: 1.45; margin-bottom: 4pt; }
+  .thanks { background: #1F3864; border-radius: 6pt; margin-top: 10pt; padding: 8pt 14pt; }
+  .thanks p { color: #FFFFFF; font-size: 12pt; font-weight: bold; text-align: center; margin: 0; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>结论与我的解读</h1><p>§7 Conclusion</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="cols">
+      <div class="card left">
+        <h3>论文结论 <span class="tag">论文</span></h3>
+        <ul>
+          <li>Transformer:<b>第一个完全基于注意力</b>的序列转导模型,以多头自注意力取代循环层</li>
+          <li>WMT14 英德、英法<b>双双刷新 SOTA</b>;英德最佳模型超过所有此前报道的集成模型</li>
+          <li>训练速度显著快于基于循环或卷积的架构</li>
+          <li>代码开源:github.com/tensorflow/tensor2tensor</li>
+          <li>未来方向:拓展到文本以外模态、局部受限注意力、让生成更少顺序化</li>
+        </ul>
+      </div>
+      <div class="card right">
+        <h3>我的解读 <span class="tag2">解读</span></h3>
+        <ul>
+          <li>核心贡献是<b>"并行化 + 常数级依赖路径"的设计范式</b>,而非某个单点技巧</li>
+          <li>局限:自注意力每层 O(n²·d),超长序列成本高——论文也把受限注意力列为未来方向</li>
+          <li>后续影响(汇报人补充,非论文内容):该架构成为 BERT、GPT 等大模型的共同起点</li>
+        </ul>
+      </div>
+    </div>
+    <div class="thanks"><p>谢谢聆听 · 欢迎讨论</p></div>
+  </div>
+  <div class="foot"><p>来源:论文第 10 页(§7);右栏为汇报人解读</p><p>Attention Is All You Need · 13 / 13</p></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{"time": "2026-10-11T23:04:23", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:04:34", "wait_seconds": 8.922, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:04:47", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:04:51", "wait_seconds": 16.672, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:05:13", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:05:17", "wait_seconds": 15.516, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:05:37", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:05:39", "wait_seconds": 18.656, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:06:01", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:06:04", "wait_seconds": 19.032, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:06:27", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:07:14", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:07:32", "wait_seconds": 1.422, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:07:41", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:07:45", "wait_seconds": 14.235, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:08:05", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:08:23", "wait_seconds": 1.063, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:08:32", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:09:55", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:10:08", "wait_seconds": 5.344, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:10:19", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:10:22", "wait_seconds": 16.297, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:10:48", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:11:22", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:12:05", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:12:19", "wait_seconds": 4.594, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:12:31", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:12:34", "wait_seconds": 13.812, "reason": "保持API请求间隔"}
+{"time": "2026-10-11T23:12:58", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:16:09", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:18:17", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:20:51", "method": "POST", "status": 200, "attempt": 1}
+{"time": "2026-10-11T23:23:20", "method": "POST", "status": 429, "attempt": 1}
+{"time": "2026-10-11T23:23:20", "wait_seconds": 2220.0, "reason": "服务端429退避"}

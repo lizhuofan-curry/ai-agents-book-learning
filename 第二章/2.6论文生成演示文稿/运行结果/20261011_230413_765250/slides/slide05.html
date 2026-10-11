@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 12pt 30pt 0 30pt; display: flex; }
+  .card { width: 396pt; background: #FFFFFF; border-radius: 6pt; padding: 10pt 14pt;
+          box-shadow: 1px 1px 4px rgba(0,0,0,0.08); border-top: 4pt solid #2E75B6; margin-right: 12pt; }
+  .card h3 { font-size: 13pt; color: #1F3864; margin: 0 0 6pt 0; }
+  .tag { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #2E75B6; border-radius: 3pt; padding: 1pt 5pt; }
+  .card ul { margin: 0; padding-left: 14pt; }
+  .card li { font-size: 10.5pt; color: #1C2833; line-height: 1.5; margin-bottom: 5pt; }
+  .fig { flex: 1; display: flex; flex-direction: column; align-items: center; }
+  .fig img { height: 296pt; }
+  .fig p { font-size: 9pt; color: #6B7280; margin: 5pt 0 0 0; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>整体架构:编码器–解码器堆叠</h1><p>§3.1 Encoder and Decoder Stacks</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="card">
+      <h3>结构要点 <span class="tag">论文</span></h3>
+      <ul>
+        <li><b>编码器</b>:N = 6 个相同层堆叠;每层 2 个子层——<b>多头自注意力</b> + <b>位置逐点前馈网络</b></li>
+        <li>每个子层外包裹<b>残差连接 + 层归一化</b>:LayerNorm(x + Sublayer(x))</li>
+        <li>所有子层与嵌入层的输出维度 d_model = <b>512</b></li>
+        <li><b>解码器</b>:同为 N = 6 层,额外插入第 3 个子层——对<b>编码器输出</b>做多头注意力</li>
+        <li>解码器自注意力加<b>掩码</b>,且输出嵌入右移一位:位置 i 的预测只依赖小于 i 的已知输出(自回归)</li>
+      </ul>
+    </div>
+    <div class="fig">
+      <img src="../source_visuals/figure1_transformer_architecture.png">
+      <p>原论文 Figure 1(第 3 页):Transformer 模型架构</p>
+    </div>
+  </div>
+  <div class="foot"><p>来源:论文第 3 页(§3–3.1,Figure 1)</p><p>Attention Is All You Need · 5 / 13</p></div>
+</body>
+</html>

@@ -5,7 +5,7 @@
     "uv": "E:\\Hermes\\bin\\uv.exe",
     "node": "E:\\ai\\node.exe",
     "pdftoppm": "C:\\Users\\Lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe",
-    "soffice": null
+    "soffice": "E:\\LibreOffice\\program\\soffice.exe"
   },
   "environment": {
     "UV_CACHE_DIR": "E:\\AI_Agents_Book\\.uv-cache",
@@ -22,6 +22,6 @@
     "2/4：安装本实验Node依赖，保存精确版本与package-lock.json。",
     "3/4：下载用于预览渲染的Chromium无界面浏览器到E盘。"
   ],
-  "failure": "工具链检查未全部通过，详见工具链检查.json；已完成安装步骤可复用。",
-  "toolchain_ready": false
+  "failure": null,
+  "toolchain_ready": true
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 12pt 30pt 0 30pt; display: flex; }
+  .card { width: 300pt; background: #FFFFFF; border-radius: 6pt; padding: 10pt 14pt;
+          box-shadow: 1px 1px 4px rgba(0,0,0,0.08); border-top: 4pt solid #2E75B6; margin-right: 12pt; }
+  .card h3 { font-size: 13pt; color: #1F3864; margin: 0 0 6pt 0; }
+  .tag { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #2E75B6; border-radius: 3pt; padding: 1pt 5pt; }
+  .card ul { margin: 0; padding-left: 14pt; }
+  .card li { font-size: 10.5pt; color: #1C2833; line-height: 1.5; margin-bottom: 5pt; }
+  .formula { background: #1F3864; border-radius: 6pt; margin: 8pt 0 2pt 0; padding: 9pt 6pt; }
+  .formula p { color: #FFFFFF; font-size: 12pt; text-align: center; margin: 0; font-family: Courier New, monospace; }
+  .fig { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .fig img { width: 330pt; }
+  .fig p { font-size: 9pt; color: #6B7280; margin: 6pt 0 0 0; text-align: center; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>缩放点积注意力</h1><p>§3.2.1 Scaled Dot-Product Attention</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="card">
+      <h3>机制拆解 <span class="tag">论文</span></h3>
+      <ul>
+        <li>注意力 = 把 <b>query</b> 与一组 <b>key-value</b> 对映射为输出:输出是 value 的<b>加权和</b>,权重由 query 与 key 的兼容度决定</li>
+        <li>计算:Q·K 点积 → 除以 √d_k → softmax 得权重 → 加权求和 V</li>
+        <li><b>为什么缩放</b>:d_k 大时点积量级变大,softmax 进入梯度极小区域,故乘以 1/√d_k</li>
+        <li>Mask(opt.):解码器中把非法(未来)连接置 −∞</li>
+      </ul>
+      <div class="formula"><p>Attention(Q,K,V) = softmax(QK^T / √d_k) V</p></div>
+    </div>
+    <div class="fig">
+      <img src="../source_visuals/figure2_attention_mechanisms.png">
+      <p>原论文 Figure 2(第 4 页):左 = 缩放点积注意力;右 = 多头注意力(多个注意力层并行)</p>
+    </div>
+  </div>
+  <div class="foot"><p>来源:论文第 4 页(§3.2–3.2.1,Figure 2)</p><p>Attention Is All You Need · 6 / 13</p></div>
+</body>
+</html>

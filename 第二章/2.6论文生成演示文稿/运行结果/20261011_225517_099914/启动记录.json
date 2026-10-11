@@ -1,0 +1,30 @@
+{
+  "started_at": "2026-10-11T22:55:18",
+  "runtime": "Kimi Code CLI",
+  "runtime_version": "0.38.0",
+  "connection": "moonshot-api",
+  "model_requested": "kimi-k3",
+  "base_url": "https://api.moonshot.cn/v1",
+  "credential_source": "本地MOONSHOT_API_KEY；不记录值",
+  "runtime_data_directory": "E:\\AI_Agents_Book\\第二章\\2.6论文生成演示文稿\\工具\\kimi-moonshot-api",
+  "command": [
+    "C:\\Users\\Lenovo\\.kimi-code\\bin\\kimi.EXE",
+    "--skills-dir",
+    "E:\\AI_Agents_Book\\第二章\\2.6论文生成演示文稿\\skills",
+    "--output-format",
+    "stream-json",
+    "--prompt",
+    "<见任务提示词.md>"
+  ],
+  "working_directory": "E:\\AI_Agents_Book\\第二章\\2.6论文生成演示文稿\\运行结果\\20261011_225517_099914",
+  "paper_sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+  "official_skill_revision": "69c0b1a0674149f27b61b2635f935524b6add202",
+  "toolchain_checked_at": "2026-10-11T22:45:21",
+  "permission_mode": "Kimi --prompt的默认auto策略；不是文件系统沙箱",
+  "adapter": "E:\\AI_Agents_Book\\第二章\\2.6论文生成演示文稿\\我的代码\\html2pptx_windows.cjs",
+  "exit_code": 1,
+  "artifact_acceptance": "待检查产物及渐进式加载轨迹",
+  "finished_at": "2026-10-11T22:56:42",
+  "pptx_files": [],
+  "official_skill_changed_files": []
+}

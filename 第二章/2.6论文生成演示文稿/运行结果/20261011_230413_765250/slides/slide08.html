@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #FFFFFF; }
+  body { width: 720pt; height: 405pt; margin: 0; padding: 0;
+         background: #FFFFFF; font-family: Arial, sans-serif;
+         display: flex; flex-direction: column; }
+  .bar { background: #1F3864; height: 46pt; display: flex; align-items: center; justify-content: space-between; padding: 0 24pt; }
+  .bar h1 { color: #FFFFFF; font-size: 20pt; margin: 0; }
+  .bar p { color: #9DC3E6; font-size: 10pt; margin: 0; }
+  .accent { height: 3pt; background: #E8862D; }
+  .content { flex: 1; background: #F7F9FC; padding: 12pt 30pt 0 30pt; display: flex; flex-direction: column; }
+  .cols { display: flex; flex: 1; }
+  .card { flex: 1; background: #FFFFFF; border-radius: 6pt; padding: 9pt 12pt;
+          box-shadow: 1px 1px 4px rgba(0,0,0,0.08); border-top: 4pt solid #2E75B6; }
+  .card + .card { margin-left: 10pt; }
+  .card h3 { font-size: 12pt; color: #1F3864; margin: 0 0 5pt 0; }
+  .tag { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #2E75B6; border-radius: 3pt; padding: 1pt 5pt; }
+  .card ul { margin: 0; padding-left: 13pt; }
+  .card li { font-size: 10pt; color: #1C2833; line-height: 1.45; margin-bottom: 4pt; }
+  .formula { background: #1F3864; border-radius: 6pt; margin: 5pt 0; padding: 7pt 4pt; }
+  .formula p { color: #FFFFFF; font-size: 10pt; text-align: center; margin: 0; font-family: Courier New, monospace; }
+  .strip { background: #FDF0E0; border-left: 5pt solid #E8862D; border-radius: 0 6pt 6pt 0;
+           padding: 7pt 14pt; margin-top: 10pt; }
+  .strip p { font-size: 10pt; color: #1C2833; margin: 0; line-height: 1.45; }
+  .tag2 { font-size: 9pt; font-weight: bold; color: #FFFFFF; background: #E8862D; border-radius: 3pt; padding: 1pt 5pt; }
+  .foot { height: 18pt; display: flex; align-items: center; justify-content: space-between; padding: 0 30pt; background: #F7F9FC; }
+  .foot p { font-size: 8.5pt; color: #6B7280; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="bar"><h1>其余关键组件</h1><p>§3.3–3.5 FFN · Embeddings · Positional Encoding</p></div>
+  <div class="accent"></div>
+  <div class="content">
+    <div class="cols">
+      <div class="card">
+        <h3>位置逐点前馈网络 <span class="tag">论文</span></h3>
+        <ul>
+          <li>两层线性变换 + ReLU,对每个位置<b>独立且相同</b>地作用</li>
+          <li>输入/输出维度 d_model = 512,内层 d_ff = <b>2048</b>;等价于两个 1×1 卷积</li>
+        </ul>
+        <div class="formula"><p>FFN(x) = max(0, xW1 + b1) W2 + b2</p></div>
+      </div>
+      <div class="card">
+        <h3>嵌入与权重共享 <span class="tag">论文</span></h3>
+        <ul>
+          <li>可学习嵌入把 token 映射为 512 维向量</li>
+          <li>两个嵌入层与 softmax 前的线性层<b>共享同一权重矩阵</b></li>
+          <li>嵌入层权重乘以 √d_model</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>位置编码 <span class="tag">论文</span></h3>
+        <ul>
+          <li>无循环无卷积 → 必须<b>注入顺序信息</b>,与嵌入同维相加</li>
+          <li>采用不同频率的正弦/余弦函数;选它的原因:相对位置可线性表示,且可能<b>外推到更长序列</b></li>
+          <li>与可学习位置嵌入效果几乎相同(Table 3 行 E)</li>
+        </ul>
+        <div class="formula"><p>PE(pos,2i) = sin(pos / 10000^(2i/d_model))<br>PE(pos,2i+1) = cos(pos / 10000^(2i/d_model))</p></div>
+      </div>
+    </div>
+    <div class="strip"><p><span class="tag2">解读</span> 这三个组件各司其职:<b>FFN 提供非线性变换容量,位置编码补上"顺序感",权重共享压缩参数量</b>——注意力并不是孤军奋战。</p></div>
+  </div>
+  <div class="foot"><p>来源:论文第 5–6 页(§3.3–3.5)</p><p>Attention Is All You Need · 8 / 13</p></div>
+</body>
+</html>
