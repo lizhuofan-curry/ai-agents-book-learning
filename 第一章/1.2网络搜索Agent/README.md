@@ -135,7 +135,15 @@ SEARCH_TIMEOUT=180
 
 用户已添加--quiet真实运行。终端隐藏了模型轮数、调用ID、搜索参数与工具状态；保存的JSON中quiet=True、status=answered、answer_complete=True，仍有2轮模型请求、1次搜索、5条历史消息和4条接口记录，调用与工具结果已核对。
 
-用户已添加--output "命令行问答/ExceptionGroup_指定输出.json"真实运行。args.output解析为路径字符串，文件已写入本实验运行结果下的命令行问答目录；JSON确认2轮模型请求、1次成功搜索、stop、answer_complete=True。09常用参数已实际观察，官方其他配置选项的含义见阅读指南。
+2026-10-05用户已添加--output "命令行问答/ExceptionGroup_指定输出.json"真实运行，曾确认2轮模型请求、1次成功搜索、stop、answer_complete=True。2026-10-14再次运行同一指定路径时，该文件被本次429失败记录覆盖；当前失败已另存[20261014_工具定义429_原始记录.json](运行结果/命令行问答/20261014_工具定义429_原始记录.json)。不得再将指定路径的现存内容当成10月5日的成功证据。09常用参数已实际观察，官方其他配置选项的含义见阅读指南。
+
+## 2026-10-14：获取搜索工具定义返回429
+
+当前`WebSearchAgent`仍使用`kimi-k3`与Moonshot Formula搜索接口，并非DeepSeek。此次停在获取定义的GET：模型请求0轮、搜索0次，尚未调用模型回答。原记录只保存HTTPError，没有服务端错误类型及Retry-After，不能判断具体是请求频率、配额还是服务负载问题。[Kimi官方排错说明](https://www.kimi.ai/help/kimi-api/api-troubleshooting)要求区分这些原因。
+
+已补上GET定义接口的有限重试：最多3次尝试，总等待不超过60秒；优先遵循Retry-After（秒数或HTTP日期），缺失时等待20秒、40秒。服务端要求更长等待或提示余额/日额度问题时停止，不提前重试。quiet仍会显示限流等待提示；错误类型、信息、Retry-After与请求ID保存到api_turns，不保存密钥。`--max-steps`继续只限制模型轮数。
+
+只修改工具定义GET的重试，未自动重试搜索POST或增加模型请求。已通过模拟响应的离线检查，未调用真实API；服务端限额是否恢复仍需用户稍后运行确认。
 
 ## 已完成：官方引导式快速体验
 

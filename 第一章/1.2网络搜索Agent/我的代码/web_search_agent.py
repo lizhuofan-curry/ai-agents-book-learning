@@ -6,6 +6,9 @@
 """
 
 import json
+import time
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 
 import requests
 from openai import OpenAI
@@ -50,10 +53,45 @@ class WebSearchAgent:
         url = f"{self.base_url}/formulas/{self.formula_uri}/tools"
         if self.verbose:
             print("获取Moonshot官方搜索工具定义……", flush=True)
-        response = requests.get(
-            url, headers={"Authorization": f"Bearer {self.api_key}"}, timeout=self.timeout,
-        )
-        response.raise_for_status()
+        # 只对获取定义的GET处理429；总共最多3次，累计等待不超过60秒。
+        # max_iterations仍只限制模型轮数，不把重试算作新的模型回答。
+        waited = 0.0
+        for attempt in range(1, 4):
+            response = requests.get(
+                url, headers={"Authorization": f"Bearer {self.api_key}"}, timeout=self.timeout,
+            )
+            if response.status_code != 429:
+                if not response.ok:
+                    self.api_turns.append(self._http_error_record(response, attempt))
+                response.raise_for_status()
+                break
+            detail = self._http_error_record(response, attempt)
+            self.api_turns.append(detail)
+            error_text = f"{detail['error_type']} {detail['error_message']}".lower()
+            # 余额/配额或日额度问题不通过短间隔连续重试解决。
+            persistent = any(word in error_text for word in (
+                "exceeded_current_quota", "insufficient_quota", "insufficient_balance",
+                "insufficient balance", "tpd", "daily", "per day", "余额不足", "日额度",
+            ))
+            delay = self._retry_after_seconds(detail["retry_after"], fallback=20 * 2 ** (attempt - 1))
+            can_retry = not persistent and attempt < 3 and waited + delay <= 60
+            detail["retry_scheduled"] = can_retry
+            detail["retry_wait_seconds"] = delay if can_retry else None
+            if not can_retry:
+                detail["stop_reason"] = ("quota_or_daily_limit" if persistent else
+                    "attempt_limit" if attempt == 3 else "wait_budget_exceeded")
+                raise RuntimeError(
+                    "获取搜索工具定义被限流（HTTP 429）；尚未执行搜索。"
+                    f" error.type={detail['error_type'] or '未知'}；"
+                    f"Retry-After={detail['retry_after'] or '未提供'}；"
+                    f"服务端说明：{detail['error_message'] or '未提供'}。"
+                    "已保存响应诊断；稍后再试或按服务端说明检查额度。"
+                )
+            # 即使quiet=True，仍显示等待，避免用户误以为程序卡住。
+            print(f"工具定义接口返回429；等待{delay:g}秒后进行第{attempt + 1}/3次尝试。", flush=True)
+            response.close()
+            time.sleep(delay)
+            waited += delay
         tools = response.json().get("tools")
         if not isinstance(tools, list) or not tools:
             raise RuntimeError("官方接口没有返回有效工具定义。")
@@ -62,6 +100,42 @@ class WebSearchAgent:
         self.tools = tools
         self.api_turns.append({"kind": "formula_tools", "http_status": response.status_code, "tools": tools})
         return self.tools
+
+    def _http_error_record(self, response, attempt):
+        """只记录服务端错误及诊断头，不保存请求头中的密钥。"""
+        try:
+            body = response.json()
+            error = body.get("error", {}) if isinstance(body, dict) else {}
+        except ValueError:
+            error = {}
+        if not isinstance(error, dict):
+            error = {}
+        message = str(error.get("message") or response.text or "")
+        message = message.replace(self.api_key, "[REDACTED]")[:2000]
+        error_type = str(error.get("type") or error.get("code") or "")
+        return {"kind": "formula_tools_error", "attempt": attempt,
+                "http_status": response.status_code, "error_type": error_type,
+                "error_message": message, "retry_after": response.headers.get("Retry-After"),
+                "request_id": response.headers.get("X-Request-Id"),
+                "recorded_at": datetime.now(timezone.utc).isoformat()}
+
+    @staticmethod
+    def _retry_after_seconds(value, fallback):
+        """Retry-After支持秒数和HTTP日期；较长等待交给用户，不提前重试。"""
+        if value:
+            try:
+                seconds = float(value)
+                if seconds >= 0 and seconds < float("inf"):
+                    return max(1.0, seconds)
+            except (ValueError, TypeError):
+                try:
+                    when = parsedate_to_datetime(value)
+                    if when.tzinfo is None:
+                        when = when.replace(tzinfo=timezone.utc)
+                    return max(1.0, (when - datetime.now(timezone.utc)).total_seconds())
+                except (ValueError, TypeError, OverflowError):
+                    pass
+        return float(fallback)
 
     def _chat(self):
         """对应03、05、06的模型请求；返回本轮choice。"""
