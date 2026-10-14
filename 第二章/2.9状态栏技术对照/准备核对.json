@@ -1,0 +1,27 @@
+{
+  "checked_date": "2026-10-14",
+  "stage": "prepared_not_model_run",
+  "source_sha256": {
+    "01_五种状态栏任务对照.py": "a97f222a1d8baa22785647b67bf7d9057ce220b0b2c8db20c568384bb142f4cc",
+    "02_离线查看状态栏.py": "fe794d1fe3fa6a89e50c52332f7092f70418733a438255623c303aca0b6036ce",
+    "status_tools.py": "baf99ff9d83669a8101c3b7b71675835087a7d8b5e81ad940d08a540d32fd369"
+  },
+  "checks": [
+    "syntax",
+    "same_initial_world",
+    "15_fixed_reference_action_flows",
+    "read_limit",
+    "virtual_root_containment",
+    "false_todo_completion",
+    "grounded_read_before_submit",
+    "duplicate_write_scoring",
+    "tool_result_return_and_refreshed_hint",
+    "nonpersistent_status_hint",
+    "truncated_response",
+    "six_round_limit",
+    "submission_before_grounded_read_rejected"
+  ],
+  "formal_model_requests": 0,
+  "model_task_results": null,
+  "scope": "工具和评分器离线检查，含模拟模型客户端；不是15个真实模型任务通过。"
+}
