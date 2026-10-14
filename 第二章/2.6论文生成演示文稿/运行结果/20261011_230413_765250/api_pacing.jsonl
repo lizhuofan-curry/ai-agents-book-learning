@@ -32,3 +32,25 @@
 {"time": "2026-10-11T23:20:51", "method": "POST", "status": 200, "attempt": 1}
 {"time": "2026-10-11T23:23:20", "method": "POST", "status": 429, "attempt": 1}
 {"time": "2026-10-11T23:23:20", "wait_seconds": 2220.0, "reason": "服务端429退避"}
+{"time": "2026-10-12T00:00:33", "method": "POST", "status": 200, "attempt": 2}
+{"time": "2026-10-12T00:00:33", "error_type": "ConnectionAbortedError"}
+{"time": "2026-10-12T00:00:33", "wait_seconds": 11.875, "reason": "保持API请求间隔"}
+{"time": "2026-10-12T00:00:46", "method": "POST", "status": 429, "attempt": 1}
+{"time": "2026-10-12T00:00:46", "wait_seconds": 65, "reason": "服务端429退避"}
+{"time": "2026-10-12T00:01:53", "method": "POST", "status": 429, "attempt": 2}
+{"time": "2026-10-12T00:01:53", "wait_seconds": 130, "reason": "服务端429退避"}
+{"time": "2026-10-12T00:04:04", "method": "POST", "status": 429, "attempt": 3}
+{"time": "2026-10-12T00:04:04", "wait_seconds": 260, "reason": "服务端429退避"}
+{"time": "2026-10-12T00:08:26", "method": "POST", "status": 429, "attempt": 4}
+{"time": "2026-10-12T00:08:26", "error_type": "ConnectionAbortedError"}
+{"time": "2026-10-12T00:08:26", "wait_seconds": 23.563, "reason": "保持API请求间隔"}
+{"time": "2026-10-12T00:08:51", "method": "POST", "status": 429, "attempt": 1}
+{"time": "2026-10-12T00:08:51", "wait_seconds": 65, "reason": "服务端429退避"}
+{"time": "2026-10-12T00:09:57", "method": "POST", "status": 429, "attempt": 2}
+{"time": "2026-10-12T00:09:57", "wait_seconds": 130, "reason": "服务端429退避"}
+{"time": "2026-10-12T00:12:09", "method": "POST", "status": 429, "attempt": 3}
+{"time": "2026-10-12T00:12:09", "wait_seconds": 260, "reason": "服务端429退避"}
+{"time": "2026-10-12T00:16:30", "method": "POST", "status": 429, "attempt": 4}
+{"time": "2026-10-12T00:16:30", "error_type": "ConnectionAbortedError"}
+{"time": "2026-10-12T00:16:30", "wait_seconds": 23.594, "reason": "保持API请求间隔"}
+{"time": "2026-10-12T00:16:41", "reason": "客户端连接关闭或任务停止"}

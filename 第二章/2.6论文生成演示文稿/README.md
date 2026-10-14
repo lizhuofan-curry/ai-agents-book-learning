@@ -1,5 +1,11 @@
 # 实验2-6：使用Agent Skills从Transformer论文生成PPT
 
+## 最新入口：Codex重新生成（2026-10-12）
+
+[14页PPTX](运行结果/20261012_codex_from_scratch/presentation.pptx) · [PDF预览](运行结果/20261012_codex_from_scratch/preview/presentation.pdf) · [渐进式披露过程](运行结果/20261012_codex_from_scratch/渐进式披露过程记录.md) · [验收记录](运行结果/20261012_codex_from_scratch/review.md)
+
+已从原始论文重新生成，不复用昨日页面稿。五张论文原图、官方HTML转换、56个Skill文件哈希、LibreOffice渲染和全部14页视觉检查已核对。渐进式披露采用当前Codex显式分层读取，不声称已验证原生启动目录自动发现。下面保留昨日Kimi流程及历史状态。
+
 用户选择《Attention Is All You Need》作为输入。实验参考[第二章正文](https://github.com/bojieli/ai-agent-book/blob/main/book/chapter2.md)与[官方正式实验协议](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/agent-skills-ppt/experiment_protocol.json)。本实验关注Agent是否按需加载专业Skill，并检查产物，不以固定大纲的幻灯片生成演示替代真实论文任务。
 
 ## 第一步：用户准备材料（已完成）
@@ -54,6 +60,8 @@ Playwright浏览器下载路径通过PLAYWRIGHT_BROWSERS_PATH指定，使用[官
 提示词补充pdftotext -enc UTF-8与pypdf UTF-8后备提取，减少本次出现的编码读取错误。用户无需再安装包，重新运行04即可；控制台出现“请求节流”时正常等待，避免同时运行其他同账号API任务。已通过虚拟时钟和模拟HTTP响应的离线检查，尚未用户重跑验证真实节流效果。此版本会新建运行目录，旧失败目录保留。
 
 ## 后续验收
+
+截至2026-10-11本次检查：运行结果/20261011_230413_765250已保存13页HTML页面稿与4张原论文图表，可通过[页面稿预览](页面稿预览.html)查看。23:23:20再次收到429，服务端要求等待2220秒；未见最终PPTX及结束记录。当前为部分完成，导出和验收待续；用户指定先转入2-10，助手未停止或重启仍可能等待中的2-6进程。
 
 本机已发现Kimi Code和Claude Code命令入口，仅验证入口可用性，未验证登录或模型调用。后续使用支持SKILL.md的Agent运行时，启动时只暴露本实验官方PPTX Skill的元数据目录；选中后再读取完整SKILL.md、html2pptx.md及所需脚本，保存逐步加载轨迹。使用哪种运行时与模型，以生成阶段的实际配置和记录为准。
 

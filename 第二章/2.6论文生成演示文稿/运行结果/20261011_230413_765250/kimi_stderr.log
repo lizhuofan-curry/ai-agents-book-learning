@@ -50,3 +50,5 @@ Figure 1: figure1_transformer_architecture.png (1160, 1480)
 Figure 2: figure2_attention_mechanisms.png (1740, 985)
 Table 1: table1_complexity_comparison.png (1850, 535)
 Table 2: table2_bleu_results.png (1850, 775)
+error: failed to run prompt: provider.connection_error: Request timed out.
+See log: E:/AI_Agents_Book/第二章/2.6论文生成演示文稿/工具/kimi-moonshot-api/logs/kimi-code.log

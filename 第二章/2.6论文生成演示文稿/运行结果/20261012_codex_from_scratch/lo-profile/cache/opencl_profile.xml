@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile>
+ <version>LibreOffice v1</version>
+ <device>
+  <type>opencl</type>
+  <name>NVIDIA GeForce RTX 5060 Laptop GPU</name>
+  <driver>582.05</driver>
+  <time>18568</time>
+  <errors>false</errors>
+ </device>
+ <device>
+  <type>native</type>
+  <time>3674112</time>
+  <errors>false</errors>
+ </device>
+</profile>

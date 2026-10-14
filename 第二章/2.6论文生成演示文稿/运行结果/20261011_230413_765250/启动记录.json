@@ -22,7 +22,7 @@
   "toolchain_checked_at": "2026-10-11T22:45:21",
   "permission_mode": "Kimi --prompt的默认auto策略；不是文件系统沙箱",
   "adapter": "E:\\AI_Agents_Book\\第二章\\2.6论文生成演示文稿\\我的代码\\html2pptx_windows.cjs",
-  "exit_code": null,
+  "exit_code": 1,
   "artifact_acceptance": "待检查产物及渐进式加载轨迹",
   "request_pacing": {
     "minimum_interval_seconds": 25,
@@ -33,5 +33,8 @@
     ],
     "serial_forwarding": true,
     "note": "本机转发至原Moonshot官方端点，非第三方代理"
-  }
+  },
+  "finished_at": "2026-10-12T00:16:41",
+  "pptx_files": [],
+  "official_skill_changed_files": []
 }

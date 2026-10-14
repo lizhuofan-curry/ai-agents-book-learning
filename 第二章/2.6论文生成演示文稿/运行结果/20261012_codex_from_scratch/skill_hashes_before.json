@@ -1,0 +1,226 @@
+[
+  {
+    "path": "html2pptx.md",
+    "sha256": "F08ED7580969B796D9CD5ADE93E2CDEE981DCAF13CC5EB12E8D4A3700C2D6047"
+  },
+  {
+    "path": "LICENSE.txt",
+    "sha256": "79F6D8F5B427252FA3B1C11ECDBDB6BF610B944F7530B4DE78F770F38741CFAA"
+  },
+  {
+    "path": "ooxml.md",
+    "sha256": "09868E9F1786765421ECF3F0F49C77006738EFDA82A76DF43ED87F7A9BFE2467"
+  },
+  {
+    "path": "SKILL.md",
+    "sha256": "B6F25545BFB358739F1532F793458B5DBC87EE009933CB7C306B2D951AB6617F"
+  },
+  {
+    "path": "ooxml\\schemas\\ecma\\fouth-edition\\opc-contentTypes.xsd",
+    "sha256": "9E0B7209FC69AB11987900404540969976000C5EBE4D4F58C43DC3842886BF3A"
+  },
+  {
+    "path": "ooxml\\schemas\\ecma\\fouth-edition\\opc-coreProperties.xsd",
+    "sha256": "451958454E8588DFC7CD945981ADA142CA06FF3307937F5700DF059C2B307FA8"
+  },
+  {
+    "path": "ooxml\\schemas\\ecma\\fouth-edition\\opc-digSig.xsd",
+    "sha256": "6DE111E11403F7CD49027400755BAE0EA1CABEF2815F09BD40A24F0017613B24"
+  },
+  {
+    "path": "ooxml\\schemas\\ecma\\fouth-edition\\opc-relationships.xsd",
+    "sha256": "F565ADFEF5A502044ABC3A9153E157EDC25AF78304D335994AFB958874B15E26"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-chart.xsd",
+    "sha256": "41B93BD8857CC68B1E43BE2806A872D736A9BDD6566900062D8FDB57D7BBB354"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-chartDrawing.xsd",
+    "sha256": "3FD0586F2637B98BB9886F0E0B67D89E1CC987C2D158CC7DEB5F5B9890CED412"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-diagram.xsd",
+    "sha256": "29B254EE0D10414A8504B5A08149C7BAEC35A60D5FF607D6B3F492AA36815F40"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-lockedCanvas.xsd",
+    "sha256": "5CB76DABD8B97D1E9308A1700B90C20139BE4D50792D21A7F09789F5CCCD6026"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-main.xsd",
+    "sha256": "5375417F0F5394B8DD1A7035B9679151F19A6B65DF309DEC10CFB4A420CB00E9"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-picture.xsd",
+    "sha256": "5D389D42BEFBEBD91945D620242347CAECD3367F9A3A7CF8D97949507AE1F53C"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-spreadsheetDrawing.xsd",
+    "sha256": "B4532B6D258832953FBB3EE4C711F4FE25D3FAF46A10644B2505F17010D01E88"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-wordprocessingDrawing.xsd",
+    "sha256": "BDAD416B096B61D37B71603B2C949484F9070C830BDAEBA93BF35E15C8900614"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\pml.xsd",
+    "sha256": "D173C3E5D61E42E2E3A97226C632FD2AB7CC481FC4E492365B87024AB546DAFF"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-additionalCharacteristics.xsd",
+    "sha256": "3C6709101C6AAA82888DF5D8795C33F9E857196790EB320D9194E64BE2B6BDD8"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-bibliography.xsd",
+    "sha256": "0B364451DC36A48DD6DAE0F3B6ADA05FD9B71E5208211F8EE5537D7E51A587E2"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-commonSimpleTypes.xsd",
+    "sha256": "E2ABACBB9A55CE1365F8961BC1B1395BBC811E512B111000D8C333F98458DECE"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-customXmlDataProperties.xsd",
+    "sha256": "0EF4BB354FF44B923564C4DDBDDA5987919D220225129EC94614A618CEAFC281"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-customXmlSchemaProperties.xsd",
+    "sha256": "0D103B99A4A8652F8871552A69D42D2A3760AC6A5E3EF02D979C4273257FF6A4"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesCustom.xsd",
+    "sha256": "9C085407751B9061C1F996F6C39CE58451BE22A8D334F09175F0E89E42736285"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesExtended.xsd",
+    "sha256": "BC92E36CCD233722D4C5869BEC71DDC7B12E2DF56059942CCE5A39065CC9C368"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesVariantTypes.xsd",
+    "sha256": "7B5B7413E2C895B1E148E82E292A117D53C7EC65B0696C992EDCA57B61B4A74B"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-math.xsd",
+    "sha256": "3213EF1631606250F5010B42CAD7EF716F7C59426367798E33C374C0EC391D3A"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-relationshipReference.xsd",
+    "sha256": "12264F3C03D738311CD9237D212F1C07479E70F0CBE1AE725D29B36539AEF637"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\sml.xsd",
+    "sha256": "BEFFEED56945C22A77440122C8BDC426F3FCBE7F3B12EA0976C770D1F8D54578"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-main.xsd",
+    "sha256": "F5EE623B08B6A66935E5ACED2F5D8AD0FC71BF9E8E833CD490150C0FA94B8763"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-officeDrawing.xsd",
+    "sha256": "585BEDC1313B40888DCC544CB74CD939A105EE674F3B1D3AA1CC6D34F70FF155"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-presentationDrawing.xsd",
+    "sha256": "133C9F64A5C5D573B78D0A474122B22506D8EADB5E063F67CDBBB8FA2F161D0E"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-spreadsheetDrawing.xsd",
+    "sha256": "6BDEB169C3717EB01108853BD9FC5A3750FB1FA5B82ABBDD854D49855A40F519"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-wordprocessingDrawing.xsd",
+    "sha256": "475DCAE1E7D1EA46232DB6F8481040C15E53A52A3C256831D3DF204212B0E831"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\wml.xsd",
+    "sha256": "C2DD9F61F892DEAE6ACD8D20771EA79B12018AF25F3BF8D06639C8542D218CFD"
+  },
+  {
+    "path": "ooxml\\schemas\\ISO-IEC29500-4_2016\\xml.xsd",
+    "sha256": "A539AA2FB154FA50E0F5CC97E6AD7CBC66F8EC3E3746F61EC6A8B0D5D15ECDF2"
+  },
+  {
+    "path": "ooxml\\schemas\\mce\\mc.xsd",
+    "sha256": "3A37E461ECF5A8670FDEC34029703401F8728AB9C96EC1739A6AE58D55212413"
+  },
+  {
+    "path": "ooxml\\schemas\\microsoft\\wml-2010.xsd",
+    "sha256": "568B26EE156CB9549AA439CA2158965F77B7C1602B7E0316F40AC6CF586E35F2"
+  },
+  {
+    "path": "ooxml\\schemas\\microsoft\\wml-2012.xsd",
+    "sha256": "0FA75578A000439A7988BA0C59FDC69F774BBD416CBACC14D07125B3F686CB74"
+  },
+  {
+    "path": "ooxml\\schemas\\microsoft\\wml-2018.xsd",
+    "sha256": "BE0FF793A22DD31384650C3A4DA14C2FA8062751C2E97B0E5EE852BDA13C60AD"
+  },
+  {
+    "path": "ooxml\\schemas\\microsoft\\wml-cex-2018.xsd",
+    "sha256": "FDDC2B880CABB9005AEBBC7E783E53C19FEC1C03DF7D0E2F2076A33A0FDFD081"
+  },
+  {
+    "path": "ooxml\\schemas\\microsoft\\wml-cid-2016.xsd",
+    "sha256": "127CA209FA73D7CB708449CB355C871867948A96E4A74F7BF5811EF62D17991D"
+  },
+  {
+    "path": "ooxml\\schemas\\microsoft\\wml-sdtdatahash-2020.xsd",
+    "sha256": "842E7163409C8D74F4D7088A8BC99500D80BC75332681A0980055B08F374A604"
+  },
+  {
+    "path": "ooxml\\schemas\\microsoft\\wml-symex-2015.xsd",
+    "sha256": "16F6F8072249F431370723C2CD8974672E0D9C897E00E97DD918079DF934871B"
+  },
+  {
+    "path": "ooxml\\scripts\\pack.py",
+    "sha256": "6FE762F45AFF8C63FD95B9FCB1337B28921D6FA454E18A0E8158D4C8708D6D00"
+  },
+  {
+    "path": "ooxml\\scripts\\unpack.py",
+    "sha256": "0BD17F76A1A4C388ABA42C6D1D39015FA84E405C3E0692397FE12762BD632B58"
+  },
+  {
+    "path": "ooxml\\scripts\\validate.py",
+    "sha256": "1EC252DE8B14B07D16966C48906CCB1C45C68BCD23557AD31D8C50A27F5F8C0F"
+  },
+  {
+    "path": "ooxml\\scripts\\validation\\__init__.py",
+    "sha256": "83E0F035C5ABEA238D3F2C3968AFBD511ED022B527B7C9CB60A9434CC34FF987"
+  },
+  {
+    "path": "ooxml\\scripts\\validation\\base.py",
+    "sha256": "F2C70D481613456E32B43869D1604B05C236C8DA34B5B3967677A661CAC7BA63"
+  },
+  {
+    "path": "ooxml\\scripts\\validation\\docx.py",
+    "sha256": "E65D6CDA0525866A24CC847B2E883BD2416AE6F87B3F5B9E2784DFBB0EC13093"
+  },
+  {
+    "path": "ooxml\\scripts\\validation\\pptx.py",
+    "sha256": "00BF2623DA1177B3948143A4ADE2F1CDA7CB389DEE31960861913FA42EF1B00F"
+  },
+  {
+    "path": "ooxml\\scripts\\validation\\redlining.py",
+    "sha256": "97ABFDFF4F08F43F9A4BB5C8A2F8FD483398B5B339592724E8635153B5507967"
+  },
+  {
+    "path": "scripts\\html2pptx.js",
+    "sha256": "C675D09A54D6A002E8CA5917B9D24A6568AA8D455BB7ABEB212D4F564DD07A34"
+  },
+  {
+    "path": "scripts\\inventory.py",
+    "sha256": "ADEAD8FE6270E520C397CEC9FBEE4D606AB10BB80F749E018B42EC894C60D2E5"
+  },
+  {
+    "path": "scripts\\rearrange.py",
+    "sha256": "C04AC37916F398BA621B2D9E1E4C1A69225EAAD6D7FB0AD116C237DDEB1B2B68"
+  },
+  {
+    "path": "scripts\\replace.py",
+    "sha256": "8A590747551BE847A904E3296FB2F35AA4E7FEEB4970A61596C2375306462820"
+  },
+  {
+    "path": "scripts\\thumbnail.py",
+    "sha256": "C21FD950B6ADA7BD2F029885D3E56BC66B7FF061CC8404C492EB301664AA9E5D"
+  }
+]

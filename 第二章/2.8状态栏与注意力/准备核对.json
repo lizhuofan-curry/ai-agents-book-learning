@@ -1,0 +1,23 @@
+{
+  "checked_date": "2026-10-14",
+  "stage": "prepared_not_run",
+  "python": "E:\\AI_Agents_Book\\.venv\\Scripts\\python.exe",
+  "torch_version": "2.14.1+cpu",
+  "transformers_version": "4.57.6",
+  "model_revision_for_tokenizer": "c1899de289a04d12100db370d81485cdf75e47ca",
+  "syntax_checked": true,
+  "classification_fixture_count": 6,
+  "classification_fixtures_passed": true,
+  "same_base_messages_checked": true,
+  "fictional_completed_xfinity_calls": 3,
+  "input_tokens": {"A_without_status": 733, "B_with_status": 787},
+  "region_tokens": {"phone_history": 87, "search_history": 136, "B_status_bar": 49},
+  "tiny_random_network_attention_interface_checked": true,
+  "tiny_random_network_sequence_length": 6,
+  "tiny_random_network_prediction_query_rows": [3, 4],
+  "pretrained_experiment_weights_loaded": false,
+  "formal_generation_calls_completed": 0,
+  "formal_attention_replays_completed": 0,
+  "behavior_results": null,
+  "scope": "实际离线检查记录；不含正式实验结果，不读取密钥或执行工具。"
+}

@@ -63,3 +63,11 @@
 {"role":"tool","tool_call_id":"Write_42_2842b72c","content":"Wrote 3327 bytes to E:/AI_Agents_Book/第二章/2.6论文生成演示文稿/运行结果/20261011_230413_765250/slides/slide13.html"}
 {"role":"tool","tool_call_id":"Write_41_f4b5c085","content":"Wrote 3697 bytes to E:/AI_Agents_Book/第二章/2.6论文生成演示文稿/运行结果/20261011_230413_765250/slides/slide12.html"}
 {"role":"meta","type":"turn.step.retrying","failed_attempt":1,"next_attempt":2,"max_attempts":10,"delay_ms":595.4889871282784,"error_name":"APITimeoutError","error_message":"Request timed out."}
+{"role":"meta","type":"turn.step.retrying","failed_attempt":2,"next_attempt":3,"max_attempts":10,"delay_ms":1095.3717189400338,"error_name":"APITimeoutError","error_message":"Request timed out."}
+{"role":"meta","type":"turn.step.retrying","failed_attempt":3,"next_attempt":4,"max_attempts":10,"delay_ms":2494.565222984797,"error_name":"APITimeoutError","error_message":"Request timed out."}
+{"role":"meta","type":"turn.step.retrying","failed_attempt":4,"next_attempt":5,"max_attempts":10,"delay_ms":4359.577333973945,"error_name":"APITimeoutError","error_message":"Request timed out."}
+{"role":"meta","type":"turn.step.retrying","failed_attempt":5,"next_attempt":6,"max_attempts":10,"delay_ms":8104.810319889742,"error_name":"APITimeoutError","error_message":"Request timed out."}
+{"role":"meta","type":"turn.step.retrying","failed_attempt":6,"next_attempt":7,"max_attempts":10,"delay_ms":19027.2276598978,"error_name":"APITimeoutError","error_message":"Request timed out."}
+{"role":"meta","type":"turn.step.retrying","failed_attempt":7,"next_attempt":8,"max_attempts":10,"delay_ms":33930.83892970931,"error_name":"APITimeoutError","error_message":"Request timed out."}
+{"role":"meta","type":"turn.step.retrying","failed_attempt":8,"next_attempt":9,"max_attempts":10,"delay_ms":37849.50426145288,"error_name":"APITimeoutError","error_message":"Request timed out."}
+{"role":"meta","type":"turn.step.retrying","failed_attempt":9,"next_attempt":10,"max_attempts":10,"delay_ms":38734.23283715665,"error_name":"APITimeoutError","error_message":"Request timed out."}
