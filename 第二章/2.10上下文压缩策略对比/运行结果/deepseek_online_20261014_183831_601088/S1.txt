@@ -1,0 +1,123 @@
+Exception groups¶
+
+The following are used when it is necessary to raise multiple unrelated
+exceptions. They are part of the exception hierarchy so they can be
+handled with except like all other exceptions. In addition,
+they are recognised by except*, which matches
+their subgroups based on the types of the contained exceptions.
+
+exception ExceptionGroup(msg, excs)¶
+
+exception BaseExceptionGroup(msg, excs)¶
+
+Both of these exception types wrap the exceptions in the sequence excs.
+The msg parameter must be a string. The difference between the two
+classes is that BaseExceptionGroup extends BaseException and
+it can wrap any exception, while ExceptionGroup extends Exception
+and it can only wrap subclasses of Exception. This design is so that
+except Exception catches an ExceptionGroup but not
+BaseExceptionGroup.
+
+The BaseExceptionGroup constructor returns an ExceptionGroup
+rather than a BaseExceptionGroup if all contained exceptions are
+Exception instances, so it can be used to make the selection
+automatic. The ExceptionGroup constructor, on the other hand,
+raises a TypeError if any contained exception is not an
+Exception subclass.
+
+message¶
+
+The msg argument to the constructor. This is a read-only attribute.
+
+exceptions¶
+
+A tuple of the exceptions in the excs sequence given to the
+constructor. This is a read-only attribute.
+
+subgroup(condition)¶
+
+Returns an exception group that contains only the exceptions from the
+current group that match condition, or None if the result is empty.
+
+The condition can be either a function that accepts an exception and returns
+true for those that should be in the subgroup, or it can be an exception type
+or a tuple of exception types, which is used to check for a match using the
+same check that is used in an except clause.
+
+The nesting structure of the current exception is preserved in the result,
+as are the values of its message,
+__traceback__, __cause__,
+__context__ and
+__notes__ fields.
+Empty nested groups are omitted from the result.
+
+The condition is checked for all exceptions in the nested exception group,
+including the top-level and any nested exception groups. If the condition is
+true for such an exception group, it is included in the result in full.
+
+split(condition)¶
+
+Like subgroup(), but returns the pair (match, rest) where match
+is subgroup(condition) and rest is the remaining non-matching
+part.
+
+derive(excs)¶
+
+Returns an exception group with the same message, but which
+wraps the exceptions in excs.
+
+This method is used by subgroup() and split(). A
+subclass needs to override it in order to make subgroup()
+and split() return instances of the subclass rather
+than ExceptionGroup.
+
+subgroup() and split() copy the
+__traceback__,
+__cause__, __context__ and
+__notes__ fields from
+the original exception group to the one returned by derive(), so
+these fields do not need to be updated by derive().
+
+>>> class MyGroup(ExceptionGroup):
+... def derive(self, excs):
+... return MyGroup(self.message, excs)
+...
+>>> e = MyGroup("eg", [ValueError(1), TypeError(2)])
+>>> e.add_note("a note")
+>>> e.__context__ = Exception("context")
+>>> e.__cause__ = Exception("cause")
+>>> try:
+... raise e
+... except Exception as e:
+... exc = e
+...
+>>> match, rest = exc.split(ValueError)
+>>> exc, exc.__context__, exc.__cause__, exc.__notes__
+(MyGroup('eg', [ValueError(1), TypeError(2)]), Exception('context'), Exception('cause'), ['a note'])
+>>> match, match.__context__, match.__cause__, match.__notes__
+(MyGroup('eg', [ValueError(1)]), Exception('context'), Exception('cause'), ['a note'])
+>>> rest, rest.__context__, rest.__cause__, rest.__notes__
+(MyGroup('eg', [TypeError(2)]), Exception('context'), Exception('cause'), ['a note'])
+>>> exc.__traceback__ is match.__traceback__ is rest.__traceback__
+True
+
+Note that BaseExceptionGroup defines __new__(), so
+subclasses that need a different constructor signature need to
+override that rather than __init__(). For example, the following
+defines an exception group subclass which accepts an exit_code and
+and constructs the group’s message from it.
+
+class Errors(ExceptionGroup):
+def __new__(cls, errors, exit_code):
+self = super().__new__(Errors, f"exit code: {exit_code}", errors)
+self.exit_code = exit_code
+return self
+
+def derive(self, excs):
+return Errors(excs, self.exit_code)
+
+Like ExceptionGroup, any subclass of BaseExceptionGroup which
+is also a subclass of Exception can only wrap instances of
+Exception.
+
+New in version 3.11.

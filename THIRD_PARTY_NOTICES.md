@@ -1,5 +1,7 @@
 # 来源与改动说明
 
+第三章实验3-1第一步参考Bojie Li的[user-memory说明](https://github.com/bojieli/ai-agent-book/blob/main/chapter3/user-memory/README.md)及[对话读取记忆的实现](https://github.com/bojieli/ai-agent-book/blob/main/chapter3/user-memory/conversational_agent.py)，独立编写虚构对话的本机记忆提取代码与分步指南。使用Ollama现有接口、短事实文件、来源原话检查、完整原始响应及文件哈希；不复制官方Agent实现或评估用例，不将单次提取当作三层评估或四格式对照的完整复现。官方main链接于2026-10-14在线核对，未固定提交。
+
 第二章实验2-10在线扩展参考[官方ResearchAgent](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/context-compression/agent.py)和[Ollama工具协议](https://docs.ollama.com/capabilities/tool-calling)的搜索/读取/回传流程，独立实现本机模型、Serper优先/Tavily备用、次数与文档域保护、网页快照及逐轮记录；不复制官方端到端成绩，在线小任务不当作六策略完整复现。
 
 第二章实验2-9参考Bojie Li的[system-hint实验说明](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/system-hint/README.md)中五种状态提示、逐轮临时注入及轨迹保存的思路，独立编写本机学习版。使用现有Ollama、五类固定任务×三个配置、隔离的内存文件树、证据驱动的TODO、重复/越限动作评分与逐轮记录；不复制官方Agent代码、协议或历史性能数据，不将本地模拟工具测量称为官方云端完整复现。

@@ -1,0 +1,20 @@
+{
+  "review_type": "offline_recalculation",
+  "record_sha256": "bb22247bca98b7df2e547c8dcc760233dfdc0a4041618d57a1f0f969224dfb18",
+  "source_hashes_match": true,
+  "model_request_attempts": 1,
+  "prompt_tokens": 446,
+  "completion_tokens": 76,
+  "search_requests": 0,
+  "web_requests": 0,
+  "actual_tool_calls": 0,
+  "chain_completed": false,
+  "mechanical_checks_match": true,
+  "manual_review": {
+    "plain_json_contract_met": false,
+    "factual_issue": "The answer says exception types; the official concept wraps exception instances.",
+    "source_issue": "No URL was actually fetched; the supplied URL is /3/ rather than /3.11/."
+  },
+  "network_calls_during_review": 0,
+  "model_calls_during_review": 0
+}
