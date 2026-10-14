@@ -1,5 +1,7 @@
 # 实验2-10：上下文压缩策略对比
 
+2026-10-14在线扩展：[在线搜索准备](在线搜索准备.md)。用户已配置接口并运行02，Serper取得1条Python官方更新日志结果，1次搜索、0次模型请求。现准备03读取助手指定的官方定义页，保存HTML、目标章节正文与来源；尚未运行03、模型问答或六策略在线对照。此扩展不改变下方已有虚构材料实验的结果。
+
 来源：[第二章正文](https://github.com/bojieli/ai-agent-book/blob/main/book/chapter2.md)、[官方配套说明](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/context-compression/README.md)。用户指定先做2-10，2-7暂缓。助手只生成代码与解释，由用户运行并反馈。
 
 ## 本次比较什么
