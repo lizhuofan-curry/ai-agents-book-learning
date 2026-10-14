@@ -144,7 +144,8 @@ def main():
         if len(text) < 200 or 'ExceptionGroup' not in text or 'except*' not in text:
             raise ValueError('提取正文缺少预期主题；保留HTML，等待检查，不伪造材料。')
         text_path = directory / 'ExceptionGroup_官方正文.txt'
-        text_path.write_text(text, encoding='utf-8')
+        # 固定LF换行，保证未来快照的文件字节与文本哈希一致。
+        text_path.write_bytes(text.encode('utf-8'))
         source = {'id': 'S1', 'title': 'Python 3.11 — Exception groups',
                   'url': SOURCE_URL, 'retrieved_at': datetime.now().astimezone().isoformat(),
                   'origin': record['source_origin'], 'selected_section': SECTION_ID,

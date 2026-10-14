@@ -1,5 +1,7 @@
 # 来源与改动说明
 
+第二章实验2-10在线扩展参考[官方ResearchAgent](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/context-compression/agent.py)和[Ollama工具协议](https://docs.ollama.com/capabilities/tool-calling)的搜索/读取/回传流程，独立实现本机模型、Serper优先/Tavily备用、次数与文档域保护、网页快照及逐轮记录；不复制官方端到端成绩，在线小任务不当作六策略完整复现。
+
 第二章实验2-9参考Bojie Li的[system-hint实验说明](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/system-hint/README.md)中五种状态提示、逐轮临时注入及轨迹保存的思路，独立编写本机学习版。使用现有Ollama、五类固定任务×三个配置、隔离的内存文件树、证据驱动的TODO、重复/越限动作评分与逐轮记录；不复制官方Agent代码、协议或历史性能数据，不将本地模拟工具测量称为官方云端完整复现。
 
 第二章实验2-8参考Bojie Li的[原书实验场景](https://github.com/bojieli/ai-agent-book/blob/main/book/chapter2.md)与[run_status_bar_experiment.py](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/attention_visualization/run_status_bar_experiment.py)的有无状态栏比较思路，独立实现Windows本地学习入口。调整包括：复用E盘固定权重缓存、由配对工具记录统计状态、交替组序、逐次保存、只从正文解析工具请求、将截断与未知单列、用最后一层观察hook减少矩阵留存、按预测下一token的位置计算区域权重，以及同时报告区域总权重和每Key token均值。未使用官方结果或将本次代码准备标记为官方完整复现。
