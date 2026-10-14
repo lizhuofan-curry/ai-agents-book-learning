@@ -1,0 +1,15 @@
+{
+  "reviewed_date": "2026-10-14",
+  "scope": "Saved diagnostic action replay; no model calls",
+  "model_requests": 4,
+  "passed": 0,
+  "checked_cases": 3,
+  "all_replayed_states_match": true,
+  "original_record_sha256": "bab8ce72e5aeba9ce6bba303887638f6a8eaf5c4c90d5192200ddba73beb7574",
+  "confirmed_failures": [
+    "path missing leading slash",
+    "plain body JSON without structured call",
+    "dependent actions batched before tool data",
+    "object-valued placeholder content"
+  ]
+}
