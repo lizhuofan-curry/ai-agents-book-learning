@@ -4,7 +4,7 @@
 
 [14页PPTX](运行结果/20261012_codex_from_scratch/presentation.pptx) · [PDF预览](运行结果/20261012_codex_from_scratch/preview/presentation.pdf) · [渐进式披露过程](运行结果/20261012_codex_from_scratch/渐进式披露过程记录.md) · [验收记录](运行结果/20261012_codex_from_scratch/review.md)
 
-已从原始论文重新生成，不复用昨日页面稿。五张论文原图、官方HTML转换、56个Skill文件哈希、LibreOffice渲染和全部14页视觉检查已核对。渐进式披露采用当前Codex显式分层读取，不声称已验证原生启动目录自动发现。下面保留昨日Kimi流程及历史状态。
+已从原始论文重新生成，不复用昨日页面稿。五张论文原图、官方HTML转换、56个Skill文件哈希、LibreOffice渲染和全部14页视觉检查已核对。渐进式披露采用当前Codex显式分层读取，不声称已验证原生启动目录自动发现。以下Kimi操作及待验收表述为10月11日的历史流程，不是当前待办；本轮已收尾，不需再次启动Kimi。
 
 用户选择《Attention Is All You Need》作为输入。实验参考[第二章正文](https://github.com/bojieli/ai-agent-book/blob/main/book/chapter2.md)与[官方正式实验协议](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/agent-skills-ppt/experiment_protocol.json)。本实验关注Agent是否按需加载专业Skill，并检查产物，不以固定大纲的幻灯片生成演示替代真实论文任务。
 
@@ -39,7 +39,7 @@ Playwright浏览器下载路径通过PLAYWRIGHT_BROWSERS_PATH指定，使用[官
 
 用户于2026-10-11 22:26重跑03：Python依赖、Node模块、官方JS加载和Chromium启动均通过；LibreOffice位于`E:\LibreOffice\program\soffice.exe`，Poppler路径已记录，issues为空，得到PPT_TOOLCHAIN_READY，退出码0。安装包由助手按用户请求下载至`工具/安装包/`并核对官网哈希和有效数字签名；安装由用户完成。
 
-## 当前第三步：由用户启动Kimi生成
+## 历史第三步：10月11日Kimi生成尝试
 
 使用根目录共用解释器，在PyCharm运行[04_启动Kimi生成论文PPT.py](我的代码/04_启动Kimi生成论文PPT.py)。当前默认复用第一章根目录.env的MOONSHOT_API_KEY、KIMI_BASE_URL，模型默认kimi-k3（第一章实际响应使用的模型），可用KIMI_PPT_MODEL或`--model 模型ID`指定。使用Moonshot API余额按量计费，不使用Kimi Code订阅，不使用本地qwen3；API当前余额、权限和模型能力以用户实际运行为准，无需把密钥发给助手。
 
@@ -57,16 +57,16 @@ Playwright浏览器下载路径通过PLAYWRIGHT_BROWSERS_PATH指定，使用[官
 
 第三次用户运行04（22:55）已接通Moonshot API，调用pptx Skill、读取参考文档并开始提取PDF；随后被组织RPM=3限流阻断，未生成PPT。已为API路线加入moonshot_pacing.py：本机回环地址串行转发到同一官方端点，模型请求至少间隔25秒，429退避等待至少65/130/260秒后再试。临时本机令牌校验请求，真实API密钥只保留在父进程转发器中（不传给Kimi子进程）；api_pacing.jsonl仅记录状态、时间及等待，不记录正文或密钥。服务随用户启动04开始，Agent结束后关闭，不安装系统服务。它降低请求速率，不绕过服务端限额；同一组织其他调用及TPM/日额度仍可能导致429。
 
-提示词补充pdftotext -enc UTF-8与pypdf UTF-8后备提取，减少本次出现的编码读取错误。用户无需再安装包，重新运行04即可；控制台出现“请求节流”时正常等待，避免同时运行其他同账号API任务。已通过虚拟时钟和模拟HTTP响应的离线检查，尚未用户重跑验证真实节流效果。此版本会新建运行目录，旧失败目录保留。
+提示词补充pdftotext -enc UTF-8与pypdf UTF-8后备提取，减少本次出现的编码读取错误。用户无需再安装包，重新运行04即可；控制台出现“请求节流”时正常等待，避免同时运行其他同账号API任务。当时已通过虚拟时钟和模拟HTTP响应的离线检查；后续真实运行仍遇到429，节流不能保证服务端额度可用。此版本会新建运行目录，旧失败目录保留。
 
-## 后续验收
+## 历史验收要求与最新完成范围
 
-截至2026-10-11本次检查：运行结果/20261011_230413_765250已保存13页HTML页面稿与4张原论文图表，可通过[页面稿预览](页面稿预览.html)查看。23:23:20再次收到429，服务端要求等待2220秒；未见最终PPTX及结束记录。当前为部分完成，导出和验收待续；用户指定先转入2-10，助手未停止或重启仍可能等待中的2-6进程。
+截至2026-10-11本次检查：运行结果/20261011_230413_765250已保存13页HTML页面稿与4张原论文图表，可通过[页面稿预览](页面稿预览.html)查看。23:23:20再次收到429，服务端要求等待2220秒；未见最终PPTX及结束记录。当时为部分完成，用户先转入2-10，后于10月12日改由Codex从头生成并完成导出、渲染与逐页检查；早期Kimi状态不改写。
 
 本机已发现Kimi Code和Claude Code命令入口，仅验证入口可用性，未验证登录或模型调用。后续使用支持SKILL.md的Agent运行时，启动时只暴露本实验官方PPTX Skill的元数据目录；选中后再读取完整SKILL.md、html2pptx.md及所需脚本，保存逐步加载轨迹。使用哪种运行时与模型，以生成阶段的实际配置和记录为准。
 
 目标为10～15页中文演示文稿，覆盖标题、问题背景、Transformer方法、关键结果和结论；至少3张从论文提取的图表，逐一记录PDF页码、图表编号与说明，并与PPT内容一致。使用官方html2pptx流程和thumbnail.py预览，检查全部页面的排版，保存PPTX、源图清单、缩略图、运行轨迹及检查结论。
 
-依赖阶段现已通过；PPT真实转换、渲染质量、章节内容、图表对应关系和渐进式披露仍需本次Agent执行证据。不会把准备完成、模型退出或文件存在直接视为全部验收通过。
+10月12日Codex产物已保存真实转换、论文图表对应、LibreOffice渲染及逐页检查证据，详见顶部验收入口。未实施的原生自动Skill发现与Microsoft PowerPoint界面播放检查单列为范围边界，不是本轮新增待办。
 
 这是单个论文产物与加载轨迹的实验，并非六组消融或模型能力排行榜。

@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-15",
+  "scope": "Chapter 2 notes, saved results, syntax and local artifacts; offline only",
+  "checks": [
+    {
+      "item": "2-1核心循环",
+      "status": "passed",
+      "detail": "2 model requests, 1 weather tool execution"
+    },
+    {
+      "item": "2-1缓存统计",
+      "status": "passed",
+      "detail": "7 requests, group sizes/cache fractions/latency medians independently recomputed"
+    },
+    {
+      "item": "2-2真实注意力",
+      "status": "passed",
+      "detail": "Four saved matrices and first-token weights verified; no model inference"
+    },
+    {
+      "item": "2-3配对统计",
+      "status": "passed",
+      "detail": "18 pairs + warmup = 37; scores/cache fractions/latency medians match"
+    },
+    {
+      "item": "2-4决策统计",
+      "status": "passed",
+      "detail": "31 requests; all six groups tool/argument/combined decision sums match"
+    },
+    {
+      "item": "2-5注入案例",
+      "status": "passed",
+      "detail": "16 tasks/25 requests; 4 direct leaks, zero blocks, clean controls failed"
+    },
+    {
+      "item": "2-6产物与验收文件",
+      "status": "passed",
+      "detail": "Current PPTX hash matches saved 14-slide/14-page/five-image validation; no fresh rendering/visual acceptance"
+    },
+    {
+      "item": "2-7未做项目",
+      "status": "passed",
+      "detail": "Explicitly deferred, no completed personal writing experiment claimed"
+    },
+    {
+      "item": "2-8已存轨迹与图",
+      "status": "passed",
+      "detail": "6 generations/2 replays, per-arm 3 refusals; all artifact hashes match"
+    },
+    {
+      "item": "2-9最新对照",
+      "status": "passed",
+      "detail": "55 requests; scores 5/5,5/5,4/5; original hash matches prior complete offline replay"
+    },
+    {
+      "item": "2-10真实网页对照",
+      "status": "passed",
+      "detail": "14 requests, facts/quote scores/usage verified; original hash matches prior review"
+    },
+    {
+      "item": "2-10早期虚构材料",
+      "status": "passed",
+      "detail": "14 calls and original scores verified; character block not counted as real overflow"
+    },
+    {
+      "item": "额外离线示例",
+      "status": "passed",
+      "detail": "Isolated same-process replay and JSON checks pass; not a pass of the timed-out standard subprocess check"
+    }
+  ],
+  "saved_evidence_sha256": {
+    "2.1本地模型部署与工具调用/运行结果/04_完整循环_20261011_180545_821011.json": "0b3fc7539cdc3a3c185cdd32da41b14031f40f79854a29e852c298fd12762f8e",
+    "2.1本地模型部署与工具调用/运行结果/05_流式与缓存观察_20261011_181116_631200.json": "d12fb2d54082c6dce14534ed635cd63ff313de9dc9439ce2cc6de4f2d74623bf",
+    "2.2注意力机制可视化/运行结果/20261011_183037_396703/record.json": "fa987ad2cb0736bcaef3e36756c73b531c3de157a74137dbf051c227fab335f4",
+    "2.3上下文管理与KV缓存/运行结果/20261011_201342_943006/record.json": "7c9e42ef3f07534bc02d6c88cab3f300ad91d38af6fa79d1e31993a838e7b8b6",
+    "2.4提示工程消融/运行结果/20261011_212612_848730/record.json": "c92ac015d69a4a3b8884546148287d0e1bf3b6420f83c3bc0fcd3a2d837a93cf",
+    "2.5提示注入攻防/运行结果/20261011_214338_172961/record.json": "10f27757a713066c6d4eff47079622d143bd74f453f3c686567efda07026502e",
+    "2.6论文生成演示文稿/运行结果/20261012_codex_from_scratch/validation.json": "ec39c1389661c1c34bfcd316d97a8a08891015943c9f7e10982cee70ce6af5ee",
+    "2.8状态栏与注意力/运行结果/20261014_153921_870731/record.json": "0b3a7221f903f7d6e952b602ca6340e621c88c65851f731fd100cc5ac3396256",
+    "2.9状态栏技术对照/运行结果/deepseek_status_20261015_085314_659358/record.json": "68af36bd43959a95900616fdaee2dcb856ab3c275bf2998c33a67eeed0d05075",
+    "2.9状态栏技术对照/运行结果/deepseek_status_20261015_085314_659358/核对记录.json": "62346d1bb141895c58dd7e1b00c7e9a09edb742be97a7be883d907ed060c0b7e",
+    "2.10上下文压缩策略对比/运行结果/deepseek_real_six_20261015_083229_623202/record.json": "09de550e465c2fff9473da838177c3f1cdcd8ed6468062633585bbfbe4be1f21",
+    "2.10上下文压缩策略对比/运行结果/deepseek_real_six_20261015_083229_623202/核对记录.json": "3fc5e0d68da4e5345df3ed48a2b99424ab42002bd5249d939e6f343cec874749",
+    "2.10上下文压缩策略对比/运行结果/20261011_234056_908597/record.json": "90662591a7dbe058316cfd7b92a3481a6bf6b5b3b2273d6f786ed6f313aeb03c",
+    "2.10上下文压缩策略对比/运行结果/20261011_234056_908597/calls.json": "cff4eb918dd72956fbec50d955b84c50dc13ef90d2286a36e6f79a5561759687"
+  },
+  "all_saved_evidence_unchanged": true,
+  "new_real_model_requests": 0,
+  "new_experiment_search_requests": 0,
+  "new_experiment_web_requests": 0,
+  "fresh_full_inference_or_ppt_visual_acceptance": false,
+  "additional_repository_ci": {
+    "status": "subprocess_timeout",
+    "seconds": 30,
+    "stage": "isolated first-chapter offline demo child process",
+    "cause": "not determined",
+    "same_process_isolated_replay": "passed",
+    "standard_ci_full_pass_claimed": false
+  },
+  "documentation_validation": {
+    "documents_checked": 27,
+    "local_links_checked": 210,
+    "broken_local_links": [],
+    "table_column_mismatches": [],
+    "unclosed_code_fences": [],
+    "latest_status_rows": 10,
+    "python_scripts_syntax_checked": 33,
+    "syntax_errors": 0,
+    "external_urls_requested": 0,
+    "excludes": "vendored skills, node_modules, generated historical artifact documents"
+  },
+  "corrected_doc_sha256": {
+    "README.md": "3a47eb2922427684212988161001f7e8295d9f6e24d6308590529266b6ba48af",
+    "第二章\\2.10上下文压缩策略对比\\README.md": "80aed2516792b3eb33da677e61b7680a9cd28a6f1a6775506245379c60e2d409",
+    "第二章\\2.10上下文压缩策略对比\\在线搜索准备.md": "7e08e4583a955ac22da3afc03c7fa4630e8bbc00d023a40a71c50dbf4b1e75bc",
+    "第二章\\2.10上下文压缩策略对比\\实验记录.md": "a6ac9d52f035723e1a95c569a20d85d18bbce12744bde838fb9282f21baa18f4",
+    "第二章\\2.10上下文压缩策略对比\\真实多网页六策略说明.md": "07952db83ceb81e97a64b93fbd18c7adc2d757dc436fa1e15664350ed85b8d24",
+    "第二章\\2.10上下文压缩策略对比\\结果分析.md": "daedb5bdb8ac6a59cd2b6e7f349f48b6ff894bd799e00424b1afbe9a0a55906e",
+    "第二章\\2.1本地模型部署与工具调用\\README.md": "1e592c2117bc5d91df738b01091de7ec4401918f4a447372d3cedfceb6983b7a",
+    "第二章\\2.1本地模型部署与工具调用\\实验记录.md": "9feb1fc63c5e537a7a7a64abd24f5cd7ba38ae7ac3c450e361b2e0d86edca452",
+    "第二章\\2.2注意力机制可视化\\README.md": "d108f52837d8679205fc8e65a95d7629cbac6d94cd327a487d623423b8913105",
+    "第二章\\2.2注意力机制可视化\\实验记录.md": "3144a9a51ba4747da21c206fddb9a9c14fb10e3e09d6026ac4f5344efea1d390",
+    "第二章\\2.3上下文管理与KV缓存\\README.md": "09ab716f1d3e7d1e5f700435be8501f7e061fc54b5a1085e82623d9aad3ea7c1",
+    "第二章\\2.3上下文管理与KV缓存\\实验记录.md": "7b9bd8312e145da96d84e7a8cc9e77e77d88bc76baec6013cf83ec07c48d25c5",
+    "第二章\\2.4提示工程消融\\README.md": "b0761ddeeb9559a637824cc09040304707482458752173f36f0c0c885425bbf8",
+    "第二章\\2.4提示工程消融\\实验记录.md": "21a01469d318f59668518f9fc2af425b4edeca2ad3af7f3038e8ec73e1b24c5a",
+    "第二章\\2.5提示注入攻防\\README.md": "512326525e9a102cecbcf76d0bc46c1e3358a9da4416da9df906f300c239ff09",
+    "第二章\\2.5提示注入攻防\\实验记录.md": "1b04cd60f43cdb245956d4366711f5df1c10b13b5ff3b2e5565d83f3fff63967",
+    "第二章\\2.6论文生成演示文稿\\README.md": "a7ac22c5a8b3c9352e94964bd9a36746be51b1a61464b37a3f635a3bcd7eae11",
+    "第二章\\2.6论文生成演示文稿\\实验记录.md": "bc6d67a2532dea11e40326f33a4045022839e2c51b1b9066fc942a6e85d88cdd",
+    "第二章\\2.8状态栏与注意力\\README.md": "e6b91bafcdb5f6732f735af457da7f64ea86d4ba290afbb88b48308871edd925",
+    "第二章\\2.8状态栏与注意力\\实验记录.md": "54f2fd28768c81f2a4152719f0698dc3e1b8264b320ad79041c8de2a605600de",
+    "第二章\\2.8状态栏与注意力\\结果分析.md": "5a2945dc8025341a78c8c0e3b85d111776d5d7df1cc9a6bf923a001435c71994",
+    "第二章\\2.9状态栏技术对照\\README.md": "b197220477e1c3cdff68e3f586c36d8dc97c3342d87d52eb58ff963aead49037",
+    "第二章\\2.9状态栏技术对照\\实验记录.md": "4b31c258869b3b0521588a88956892693b241beb17a128a7df7c6ed52f5262ad",
+    "第二章\\2.9状态栏技术对照\\结果分析.md": "64199c359aecc8772ce40a0e91b2314a53665299eab1ccbf6511799f5f9383f9",
+    "第二章\\README.md": "67e50a8e55b44fcdbc5023c9923140987f588caddd3b751b0ee74523e247a7d6",
+    "第二章\\整体检查记录_20261015.md": "86ebb8ac2540f3c2aeec48e3921889c046609f89e62143436b242946471f87f0",
+    "第二章\\第二章_上下文工程学习笔记.md": "1a41c73db2ff0b0b7eda6c996ad163734a1207f3579ec8cad77e819821eef041"
+  }
+}

@@ -32,7 +32,7 @@ Set-Location 'E:\AI_Agents_Book'
 - 跨层对照保持输入、模型和头平均口径相同；最后一层头平均与第0头说明聚合会隐藏不同头的差异。
 - 头平均图不能代表每个头；注意力权重不直接等于对最终答案的因果贡献。当前仅观察输入阶段，不以短句推断长上下文位置偏好。
 
-保存带时间戳目录，包含`attention_comparison.png`、所选四张真实矩阵`attention_matrices.npz`、token与指标`record.json`。成功标志ATTENTION_COMPLETE；请反馈控制台结果和实际图像，再记录结论。思考/正文续写、工具轨迹和状态栏对照尚未实施。
+结果保存在带时间戳目录，包含`attention_comparison.png`、所选四张真实矩阵`attention_matrices.npz`、token与指标`record.json`，本次已运行并核对。2-2仅测输入阶段；后续[2-8状态栏与注意力](../2.8状态栏与注意力/README.md)已另做真实生成序列回放，不能把它写成尚未实施。完整Agent工具轨迹注意力未复现。
 
 ## 本次结果
 
