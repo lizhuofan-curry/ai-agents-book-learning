@@ -1,0 +1,54 @@
+8.4.2. except* clause¶
+
+The except* clause(s) are used for handling
+ExceptionGroups. The exception type for matching is interpreted as in
+the case of except, but in the case of exception groups we can have
+partial matches when the type matches some of the exceptions in the group.
+This means that multiple except* clauses can execute,
+each handling part of the exception group.
+Each clause executes at most once and handles an exception group
+of all matching exceptions. Each exception in the group is handled by at most
+one except* clause, the first that matches it.
+
+>>> try:
+... raise ExceptionGroup("eg",
+... [ValueError(1), TypeError(2), OSError(3), OSError(4)])
+... except* TypeError as e:
+... print(f'caught {type(e)} with nested {e.exceptions}')
+... except* OSError as e:
+... print(f'caught {type(e)} with nested {e.exceptions}')
+...
+caught <class 'ExceptionGroup'> with nested (TypeError(2),)
+caught <class 'ExceptionGroup'> with nested (OSError(3), OSError(4))
++ Exception Group Traceback (most recent call last):
+| File "<stdin>", line 2, in <module>
+| ExceptionGroup: eg
++-+---------------- 1 ----------------
+| ValueError: 1
++------------------------------------
+
+Any remaining exceptions that were not handled by any except*
+clause are re-raised at the end, combined into an exception group along with
+all exceptions that were raised from within except* clauses.
+
+From version 3.11.4, when the entire ExceptionGroup is handled and
+only one exception is raised from an except* clause, this
+exception is no longer wrapped to form a new ExceptionGroup.
+
+If the raised exception is not an exception group and its type matches
+one of the except* clauses, it is caught and wrapped by an
+exception group with an empty message string.
+
+>>> try:
+... raise BlockingIOError
+... except* BlockingIOError as e:
+... print(repr(e))
+...
+ExceptionGroup('', (BlockingIOError()))
+
+An except* clause must have a matching type,
+and this type cannot be a subclass of BaseExceptionGroup.
+It is not possible to mix except and except*
+in the same try.
+break, continue and return
+cannot appear in an except* clause.

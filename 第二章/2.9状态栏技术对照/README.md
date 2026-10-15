@@ -1,5 +1,7 @@
 # 实验2-9：五种Agent状态栏技术
 
+当前（2026-10-15）：用户要求恢复排查。离线确认正确参数下模拟工具可以完成五类目标；旧失败响应存在缺路径斜杠、正文JSON未形成tool_calls、未读先提交等问题。新增[05_DeepSeek基础工具链检查](我的代码/05_DeepSeek基础工具链检查.py)，复用03三个基础任务，使用已有DeepSeek配置，最多6次请求，无预热或自动重试。只做了离线模拟验证，真实链路是否恢复等待用户运行；详见[排查记录](结果分析.md)。
+
 准备与运行日期：2026-10-14。用户已完成15个任务、共25次本机请求；三种配置均0/5通过，原始轨迹及评分已离线核对一致。见[结果分析](结果分析.md)。测量完成不等于业务任务完成，不能据此建立状态栏效果排序。
 
 来源：[原书第二章](https://github.com/bojieli/ai-agent-book/blob/main/book/chapter2.md)、[官方system-hint说明](https://github.com/bojieli/ai-agent-book/blob/main/chapter2/system-hint/README.md)。本目录独立实现本机学习版，不复制官方完整协议、结果或云端收费基准。
