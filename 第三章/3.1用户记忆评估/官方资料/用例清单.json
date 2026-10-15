@@ -1,0 +1,625 @@
+{
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "checked_on": "2026-10-15",
+  "case_count": 60,
+  "layer_counts": {
+    "layer1": 20,
+    "layer2": 20,
+    "layer3": 20
+  },
+  "total_sessions": 140,
+  "one_mode_local_request_count": 200,
+  "one_mode_judge_request_count": 60,
+  "first_case": {
+    "test_id": "layer1_01_bank_account",
+    "category": "layer1",
+    "title": "Bank Account Setup - Personal Details Retrieval",
+    "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/01_bank_account_setup.yaml",
+    "sessions": 1,
+    "messages": 90,
+    "user_question": "What was my checking account number again? I need it to set up my direct deposit at work.",
+    "history_utf8_bytes": 10294
+  },
+  "cases": [
+    {
+      "test_id": "layer1_01_bank_account",
+      "category": "layer1",
+      "title": "Bank Account Setup - Personal Details Retrieval",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/01_bank_account_setup.yaml",
+      "sessions": 1,
+      "messages": 90,
+      "user_question": "What was my checking account number again? I need it to set up my direct deposit at work.",
+      "history_utf8_bytes": 10294
+    },
+    {
+      "test_id": "layer1_02_insurance_claim",
+      "category": "layer1",
+      "title": "Auto Insurance Claim - Policy and Incident Details",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/02_insurance_claim.yaml",
+      "sessions": 1,
+      "messages": 96,
+      "user_question": "I need to follow up on my accident claim. What was my claim number and when is the adjuster supposed to call me?",
+      "history_utf8_bytes": 12083
+    },
+    {
+      "test_id": "layer1_03_medical_appointment",
+      "category": "layer1",
+      "title": "Healthcare Provider - Medical History and Appointment Scheduling",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/03_medical_appointment.yaml",
+      "sessions": 1,
+      "messages": 124,
+      "user_question": "I need to confirm my upcoming doctor's appointment. What day and time was it scheduled for, and which doctor am I seeing?",
+      "history_utf8_bytes": 12076
+    },
+    {
+      "test_id": "layer1_04_airline_booking",
+      "category": "layer1",
+      "title": "Airline Reservation - Flight Details and Passenger Information",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/04_airline_booking.yaml",
+      "sessions": 1,
+      "messages": 112,
+      "user_question": "Can you remind me of my flight confirmation number and what seats I selected? I need to add it to my calendar.",
+      "history_utf8_bytes": 10935
+    },
+    {
+      "test_id": "layer1_05_internet_service",
+      "category": "layer1",
+      "title": "Internet and Cable Service Installation - Account Setup and Service Details",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/05_internet_service_setup.yaml",
+      "sessions": 1,
+      "messages": 92,
+      "user_question": "What's my Velocity account number? I need it to download the mobile app and set up my online account.",
+      "history_utf8_bytes": 11261
+    },
+    {
+      "test_id": "layer1_06_credit_card_app",
+      "category": "layer1",
+      "title": "Credit Card Application - Financial Information and Card Details",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/06_credit_card_application.yaml",
+      "sessions": 1,
+      "messages": 100,
+      "user_question": "What's my new credit card number? I want to add it to my password manager for when I start online shopping.",
+      "history_utf8_bytes": 10275
+    },
+    {
+      "test_id": "layer1_07_car_rental",
+      "category": "layer1",
+      "title": "Car Rental for Business Trip - Reservation Details",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/07_car_rental.yaml",
+      "sessions": 1,
+      "messages": 98,
+      "user_question": "What's my Enterprise confirmation number and what corporate discount code should I mention? I want to make sure I get the discount.",
+      "history_utf8_bytes": 9761
+    },
+    {
+      "test_id": "layer1_08_hotel_reservation",
+      "category": "layer1",
+      "title": "Hotel Booking for Anniversary - Reservation and Package Details",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/08_hotel_reservation.yaml",
+      "sessions": 1,
+      "messages": 86,
+      "user_question": "Can you remind me of my Hilton confirmation number and what room number we reserved? My wife is asking about our anniversary trip details.",
+      "history_utf8_bytes": 9174
+    },
+    {
+      "test_id": "layer1_09_home_security",
+      "category": "layer1",
+      "title": "Home Security System Installation - Service Agreement Details",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/09_home_security.yaml",
+      "sessions": 1,
+      "messages": 95,
+      "user_question": "What's my ADT account number and installation service code? The technician just arrived and is asking for them.",
+      "history_utf8_bytes": 10145
+    },
+    {
+      "test_id": "layer1_10_pharmacy_transfer",
+      "category": "layer1",
+      "title": "Pharmacy Prescription Transfer - Medication and Insurance Details",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/10_pharmacy_transfer.yaml",
+      "sessions": 1,
+      "messages": 98,
+      "user_question": "What's my Walgreens prescription account number? I need it to set up the mobile app.",
+      "history_utf8_bytes": 8845
+    },
+    {
+      "test_id": "layer1_11_mortgage_application",
+      "category": "layer1",
+      "title": "Mortgage Application - Financial Details Retrieval",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/11_mortgage_application.yaml",
+      "sessions": 1,
+      "messages": 140,
+      "user_question": "What was my total liquid assets amount that I mentioned for the mortgage application?",
+      "history_utf8_bytes": 12375
+    },
+    {
+      "test_id": "layer1_12_gym_membership",
+      "category": "layer1",
+      "title": "Gym Membership Cancellation - Contract Details Retrieval",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/12_gym_membership.yaml",
+      "sessions": 1,
+      "messages": 102,
+      "user_question": "What was the exact cost breakdown for my personal training package including how much I'd get back if I requested a refund?",
+      "history_utf8_bytes": 10839
+    },
+    {
+      "test_id": "layer1_13_tax_preparation",
+      "category": "layer1",
+      "title": "Tax Preparation Service - Deduction Details Retrieval",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/13_tax_preparation.yaml",
+      "sessions": 1,
+      "messages": 153,
+      "user_question": "What was my total self-employment income and what were all the business expense categories I mentioned with their amounts?",
+      "history_utf8_bytes": 12468
+    },
+    {
+      "test_id": "layer1_14_cellphone_upgrade",
+      "category": "layer1",
+      "title": "Cell Phone Plan Upgrade - Device and Plan Details Retrieval",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/14_cellphone_upgrade.yaml",
+      "sessions": 1,
+      "messages": 98,
+      "user_question": "What were the exact model, storage, and color of the phone I ordered, and what was my total monthly cost breakdown?",
+      "history_utf8_bytes": 9847
+    },
+    {
+      "test_id": "layer1_15_college_enrollment",
+      "category": "layer1",
+      "title": "College Enrollment Assistance - Course Registration Details",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/15_college_enrollment.yaml",
+      "sessions": 1,
+      "messages": 108,
+      "user_question": "What was my complete course schedule including days, times, and professors, and what was my total semester cost after financial aid?",
+      "history_utf8_bytes": 10492
+    },
+    {
+      "test_id": "layer1_16_home_renovation",
+      "category": "layer1",
+      "title": "Home Renovation Quote - Detailed Cost Breakdown Retrieval",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/16_home_renovation.yaml",
+      "sessions": 1,
+      "messages": 106,
+      "user_question": "What was the total renovation cost after adjustments, and what were the three payment installments?",
+      "history_utf8_bytes": 9827
+    },
+    {
+      "test_id": "layer1_17_veterinary_care",
+      "category": "layer1",
+      "title": "Veterinary Care Plan - Pet Medical History and Treatment Details",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/17_veterinary_care.yaml",
+      "sessions": 1,
+      "messages": 94,
+      "user_question": "What was Max's current weight versus ideal weight, and what was the complete cost breakdown for tomorrow's visit?",
+      "history_utf8_bytes": 9056
+    },
+    {
+      "test_id": "layer1_18_retirement_planning",
+      "category": "layer1",
+      "title": "Retirement Account Consultation - Investment Portfolio Details",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/18_retirement_planning.yaml",
+      "sessions": 1,
+      "messages": 92,
+      "user_question": "What were my three Fidelity account balances and their current investment allocations?",
+      "history_utf8_bytes": 9119
+    },
+    {
+      "test_id": "layer1_19_wedding_venue",
+      "category": "layer1",
+      "title": "Wedding Venue Booking - Event Package Details and Pricing",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/19_wedding_venue.yaml",
+      "sessions": 1,
+      "messages": 86,
+      "user_question": "What was the per-person cost breakdown and the three payment installments for my wedding?",
+      "history_utf8_bytes": 8634
+    },
+    {
+      "test_id": "layer1_20_daycare_enrollment",
+      "category": "layer1",
+      "title": "Daycare Enrollment Process - Childcare Schedule and Fee Structure",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer1/20_daycare_enrollment.yaml",
+      "sessions": 1,
+      "messages": 94,
+      "user_question": "What was the complete weekly tuition cost for both twins and what initial payments are required before they start?",
+      "history_utf8_bytes": 9372
+    },
+    {
+      "test_id": "layer2_01_multiple_vehicles",
+      "category": "layer2",
+      "title": "Multiple Vehicle Services - Disambiguation Required",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/01_multiple_vehicles.yaml",
+      "sessions": 2,
+      "messages": 194,
+      "user_question": "I need to schedule service for my car. Can you tell me what services I have scheduled?",
+      "history_utf8_bytes": 18581
+    },
+    {
+      "test_id": "layer2_02_multiple_properties",
+      "category": "layer2",
+      "title": "Multiple Properties - Home and Rental Property Disambiguation",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/02_multiple_properties.yaml",
+      "sessions": 2,
+      "messages": 202,
+      "user_question": "I need to file a claim for water damage at my property. Can you tell me what my coverage includes?",
+      "history_utf8_bytes": 18815
+    },
+    {
+      "test_id": "layer2_03_multiple_credit_cards",
+      "category": "layer2",
+      "title": "Multiple Credit Cards - Rewards and Benefits Disambiguation",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/03_multiple_credit_cards.yaml",
+      "sessions": 3,
+      "messages": 262,
+      "user_question": "I want to book a flight and wondering which of my cards I should use to get the best rewards?",
+      "history_utf8_bytes": 23211
+    },
+    {
+      "test_id": "layer2_04_multiple_subscriptions",
+      "category": "layer2",
+      "title": "Multiple Streaming Services - Subscription Management Disambiguation",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/04_multiple_subscriptions.yaml",
+      "sessions": 3,
+      "messages": 214,
+      "user_question": "I want to reduce my streaming costs. What are all my current subscriptions and their prices?",
+      "history_utf8_bytes": 21191
+    },
+    {
+      "test_id": "layer2_05_multiple_bank_accounts",
+      "category": "layer2",
+      "title": "Multiple Bank Accounts - Financial Overview Disambiguation",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/05_multiple_bank_accounts.yaml",
+      "sessions": 3,
+      "messages": 218,
+      "user_question": "I need to know my total net worth. What are all my account balances across all banks?",
+      "history_utf8_bytes": 20727
+    },
+    {
+      "test_id": "layer2_06_multiple_insurance_policies",
+      "category": "layer2",
+      "title": "Multiple Insurance Policies - Coverage Disambiguation",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/06_multiple_insurance_policies.yaml",
+      "sessions": 3,
+      "messages": 209,
+      "user_question": "I need to file a claim. What are my deductibles for all my insurance policies?",
+      "history_utf8_bytes": 19696
+    },
+    {
+      "test_id": "layer2_07_multiple_medications",
+      "category": "layer2",
+      "title": "Multiple Family Members' Medications - Prescription Management",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/07_multiple_medications.yaml",
+      "sessions": 3,
+      "messages": 238,
+      "user_question": "I need to know about the blood pressure medications. What are all the details?",
+      "history_utf8_bytes": 23919
+    },
+    {
+      "test_id": "layer2_08_multiple_rental_properties",
+      "category": "layer2",
+      "title": "Multiple Rental Properties - Property Management Disambiguation",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/08_multiple_rental_properties.yaml",
+      "sessions": 3,
+      "messages": 336,
+      "user_question": "I need to do some maintenance on my rental. What properties need work and what are the costs?",
+      "history_utf8_bytes": 29260
+    },
+    {
+      "test_id": "layer2_09_multiple_children_schools",
+      "category": "layer2",
+      "title": "Multiple Children's Education - School Information Disambiguation",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/09_multiple_children_schools.yaml",
+      "sessions": 3,
+      "messages": 236,
+      "user_question": "What time does school start and what extracurricular activities are available?",
+      "history_utf8_bytes": 20705
+    },
+    {
+      "test_id": "layer2_10_travel_rebooking_chain",
+      "category": "layer2",
+      "title": "Travel Plans with Multiple Changes - Complex Rebooking Chain",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/10_travel_rebooking_chain.yaml",
+      "sessions": 3,
+      "messages": 204,
+      "user_question": "What's my current flight itinerary and total cost for my Asia trip?",
+      "history_utf8_bytes": 19809
+    },
+    {
+      "test_id": "layer2_11_medical_treatment_evolution",
+      "category": "layer2",
+      "title": "Medical Treatment Plan Evolution - Diagnosis and Treatment Changes",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/11_medical_treatment_evolution.yaml",
+      "sessions": 3,
+      "messages": 222,
+      "user_question": "What's my current diagnosis and what medications am I currently supposed to be taking?",
+      "history_utf8_bytes": 20024
+    },
+    {
+      "test_id": "layer2_12_contradictory_financial_instructions",
+      "category": "layer2",
+      "title": "Financial Account Changes with Contradictory Instructions",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/12_contradictory_financial_instructions.yaml",
+      "sessions": 3,
+      "messages": 204,
+      "user_question": "What's the current status of the wire transfer for my daughter's house?",
+      "history_utf8_bytes": 18603
+    },
+    {
+      "test_id": "layer2_13_home_services_cascade",
+      "category": "layer2",
+      "title": "Home Services with Cascading Dependencies",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/13_home_services_cascade.yaml",
+      "sessions": 3,
+      "messages": 206,
+      "user_question": "When is my kitchen going to be fully functional again and what's the sequence of contractors?",
+      "history_utf8_bytes": 17994
+    },
+    {
+      "test_id": "layer2_14_product_order_modifications",
+      "category": "layer2",
+      "title": "Custom Furniture Order with Multiple Modifications",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/14_product_order_modifications.yaml",
+      "sessions": 3,
+      "messages": 208,
+      "user_question": "What's the current status of my dining set order including all modifications and the final specifications?",
+      "history_utf8_bytes": 17347
+    },
+    {
+      "test_id": "layer2_15_employment_negotiation",
+      "category": "layer2",
+      "title": "Job Offer Negotiation with Evolving Terms",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/15_employment_negotiation.yaml",
+      "sessions": 3,
+      "messages": 198,
+      "user_question": "What are the final terms of my TechVision job offer after all negotiations?",
+      "history_utf8_bytes": 17588
+    },
+    {
+      "test_id": "layer2_16_family_event_conflicting_input",
+      "category": "layer2",
+      "title": "Wedding Planning with Conflicting Family Requirements",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/16_family_event_conflicting_input.yaml",
+      "sessions": 3,
+      "messages": 224,
+      "user_question": "What are the final confirmed details for Emma's wedding after all the family discussions?",
+      "history_utf8_bytes": 18258
+    },
+    {
+      "test_id": "layer2_17_tech_support_cascade",
+      "category": "layer2",
+      "title": "IT System Failure with Cascading Technical Issues",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/17_tech_support_cascade.yaml",
+      "sessions": 3,
+      "messages": 195,
+      "user_question": "What exactly failed in our email system and what's the recovery plan?",
+      "history_utf8_bytes": 16785
+    },
+    {
+      "test_id": "layer2_18_education_prerequisite_chain",
+      "category": "layer2",
+      "title": "University Course Registration with Complex Prerequisites",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/18_education_prerequisite_chain.yaml",
+      "sessions": 3,
+      "messages": 190,
+      "user_question": "What's my current plan for completing my CS degree and what prerequisites are affecting my course sequence?",
+      "history_utf8_bytes": 16387
+    },
+    {
+      "test_id": "layer2_19_investment_market_response",
+      "category": "layer2",
+      "title": "Investment Portfolio Rebalancing Through Market Volatility",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/19_investment_market_response.yaml",
+      "sessions": 3,
+      "messages": 209,
+      "user_question": "What's my current investment portfolio value and how has my strategy changed through the recent market volatility?",
+      "history_utf8_bytes": 16240
+    },
+    {
+      "test_id": "layer2_20_healthcare_coverage_changes",
+      "category": "layer2",
+      "title": "Healthcare Insurance Changes Affecting Treatment Options",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer2/20_healthcare_coverage_changes.yaml",
+      "sessions": 3,
+      "messages": 197,
+      "user_question": "How is my healthcare coverage changing and what problems am I facing with the transition?",
+      "history_utf8_bytes": 17506
+    },
+    {
+      "test_id": "layer3_01_travel_coordination",
+      "category": "layer3",
+      "title": "International Travel - Proactive Document and Service Coordination",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/01_travel_coordination.yaml",
+      "sessions": 3,
+      "messages": 246,
+      "user_question": "I'm finalizing my trip to Tokyo in January. Is there anything I need to take care of before I go?",
+      "history_utf8_bytes": 23356
+    },
+    {
+      "test_id": "layer3_02_medical_insurance_coordination",
+      "category": "layer3",
+      "title": "Medical Procedure and Insurance Coverage - Proactive Cost Warning",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/02_medical_insurance_coordination.yaml",
+      "sessions": 3,
+      "messages": 268,
+      "user_question": "I'm getting ready for my knee surgery next month. Is there anything I should prepare or be concerned about?",
+      "history_utf8_bytes": 24222
+    },
+    {
+      "test_id": "layer3_03_home_purchase_coordination",
+      "category": "layer3",
+      "title": "Home Purchase Timeline - Loan, Insurance, and Moving Coordination",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/03_home_purchase_coordination.yaml",
+      "sessions": 3,
+      "messages": 298,
+      "user_question": "We're getting close to our house closing. Can you check if everything is on track for the move?",
+      "history_utf8_bytes": 25644
+    },
+    {
+      "test_id": "layer3_04_warranty_coordination",
+      "category": "layer3",
+      "title": "Product Warranty & Credit Card Protection Synthesis",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/04_warranty_coordination.yaml",
+      "sessions": 4,
+      "messages": 272,
+      "user_question": "My laptop screen just cracked. What are all my options for getting it repaired or replaced based on my coverage?",
+      "history_utf8_bytes": 23631
+    },
+    {
+      "test_id": "layer3_05_tax_preparation_synthesis",
+      "category": "layer3",
+      "title": "Tax Preparation - Multi-Source Financial Information Synthesis",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/05_tax_preparation_synthesis.yaml",
+      "sessions": 4,
+      "messages": 280,
+      "user_question": "I'm preparing my taxes. Can you help me identify all my deductions and important tax items from this year?",
+      "history_utf8_bytes": 24136
+    },
+    {
+      "test_id": "layer3_06_business_expansion_coordination",
+      "category": "layer3",
+      "title": "Business Expansion Coordination",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/06_business_expansion_coordination.yaml",
+      "sessions": 3,
+      "messages": 297,
+      "user_question": "I'm ready to move forward with my expansion. What's the earliest I can realistically open my new location, and what potential issues should I watch out for?",
+      "history_utf8_bytes": 28673
+    },
+    {
+      "test_id": "layer3_07_eldercare_coordination",
+      "category": "layer3",
+      "title": "Eldercare Coordination",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/07_eldercare_coordination.yaml",
+      "sessions": 3,
+      "messages": 348,
+      "user_question": "My mother is coming home from rehab next week. I want to make sure everything is properly set up for her safety. What am I missing, and will insurance cover what we need?",
+      "history_utf8_bytes": 31348
+    },
+    {
+      "test_id": "layer3_08_divorce_settlement_complexity",
+      "category": "layer3",
+      "title": "Divorce Settlement Complexity",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/08_divorce_settlement_complexity.yaml",
+      "sessions": 3,
+      "messages": 374,
+      "user_question": "The divorce papers are ready to sign but something feels off about the asset division. Can you help me understand if I'm getting a fair deal?",
+      "history_utf8_bytes": 32168
+    },
+    {
+      "test_id": "layer3_09_vehicle_accident_cascade",
+      "category": "layer3",
+      "title": "Vehicle Accident Cascade",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/09_vehicle_accident_cascade.yaml",
+      "sessions": 3,
+      "messages": 358,
+      "user_question": "I just got a settlement offer from the other driver's insurance for $45,000 for 'all damages and injuries.' Should I accept it? It seems like a lot but I want to make sure everything is covered.",
+      "history_utf8_bytes": 28600
+    },
+    {
+      "test_id": "layer3_10_education_financing_maze",
+      "category": "layer3",
+      "title": "Education Financing Maze",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/10_education_financing_maze.yaml",
+      "sessions": 3,
+      "messages": 364,
+      "user_question": "I just realized Emma's fall tuition is due August 1st and we're scrambling to figure out how to pay for it. Based on everything we've discussed, what's our actual financial situation and what are our options?",
+      "history_utf8_bytes": 28209
+    },
+    {
+      "test_id": "layer3_11_immigration_status_complexity",
+      "category": "layer3",
+      "title": "Immigration Status Complexity",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/11_immigration_status_complexity.yaml",
+      "sessions": 3,
+      "messages": 332,
+      "user_question": "My H1B expires in two months and I just got a termination notice from my employer citing 'restructuring.' What's my legal status and what are my options to stay in the country?",
+      "history_utf8_bytes": 23582
+    },
+    {
+      "test_id": "layer3_12_real_estate_investment_tangle",
+      "category": "layer3",
+      "title": "Real Estate Investment Tangle",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/12_real_estate_investment_tangle.yaml",
+      "sessions": 3,
+      "messages": 394,
+      "user_question": "I just received a lawsuit notice from my Maple Street tenant claiming uninhabitable conditions and demanding $50,000 in damages. What's my exposure here and will insurance cover this?",
+      "history_utf8_bytes": 26296
+    },
+    {
+      "test_id": "layer3_13_emergency_medical_cascade",
+      "category": "layer3",
+      "title": "Emergency Medical Crisis - Multi-System Coordination Response",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/13_emergency_medical_cascade.yaml",
+      "sessions": 3,
+      "messages": 214,
+      "user_question": "What critical things do I need to handle for my husband's heart surgery and recovery, and are there any coverage gaps I should worry about?",
+      "history_utf8_bytes": 16891
+    },
+    {
+      "test_id": "layer3_14_hidden_medical_insurance_web",
+      "category": "layer3",
+      "title": "Hidden Medical Insurance Web",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/14_hidden_medical_insurance_web.yaml",
+      "sessions": 3,
+      "messages": 358,
+      "user_question": "My health insurance company just denied coverage for my cardiac surgery scheduled next week, saying I have a gap in coverage. How is that possible when I've been paying premiums?",
+      "history_utf8_bytes": 23180
+    },
+    {
+      "test_id": "layer3_15_identity_theft_discovery",
+      "category": "layer3",
+      "title": "Identity Theft Discovery",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/15_identity_theft_discovery.yaml",
+      "sessions": 3,
+      "messages": 351,
+      "user_question": "I just got approved for a mortgage I never applied for, and the lender says I have excellent credit with multiple properties. What's happening and how bad is this situation?",
+      "history_utf8_bytes": 21719
+    },
+    {
+      "test_id": "layer3_16_cryptocurrency_inheritance_puzzle",
+      "category": "layer3",
+      "title": "Cryptocurrency Inheritance Puzzle",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/16_cryptocurrency_inheritance_puzzle.yaml",
+      "sessions": 3,
+      "messages": 338,
+      "user_question": "The IRS just sent me a notice about $2.8 million in unreported cryptocurrency gains, but I thought my husband only had a small Bitcoin investment. What's my actual exposure here?",
+      "history_utf8_bytes": 20629
+    },
+    {
+      "test_id": "layer3_17_environmental_contamination_cascade",
+      "category": "layer3",
+      "title": "Environmental Contamination Cascade",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/17_environmental_contamination_cascade.yaml",
+      "sessions": 3,
+      "messages": 376,
+      "user_question": "A neighbor just told me the previous owners' child was hospitalized for lead poisoning two years ago, and now the EPA is designating our property as a Superfund site. How did we end up buying this toxic house?",
+      "history_utf8_bytes": 21362
+    },
+    {
+      "test_id": "layer3_18_genetic_testing_revelation",
+      "category": "layer3",
+      "title": "Genetic Testing Revelation",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/18_genetic_testing_revelation.yaml",
+      "sessions": 3,
+      "messages": 378,
+      "user_question": "My half-brother I just discovered through DNA testing is contesting my father's will, claiming he's entitled to inheritance as the firstborn son. Can he actually do this when my dad never even knew he existed?",
+      "history_utf8_bytes": 21236
+    },
+    {
+      "test_id": "layer3_19_employment_fraud_network",
+      "category": "layer3",
+      "title": "Employment Fraud Network",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/19_employment_fraud_network.yaml",
+      "sessions": 3,
+      "messages": 380,
+      "user_question": "DataFlow Solutions just called saying 'I' haven't shown up for work in a week and they're terminating me. I've never worked there but apparently someone using my identity has been collecting a $120,000 salary for months. How deep does this fraud go?",
+      "history_utf8_bytes": 21205
+    },
+    {
+      "test_id": "layer3_20_medical_malpractice_pattern",
+      "category": "layer3",
+      "title": "Medical Malpractice Pattern",
+      "relative_path": "upstream/chapter3/user-memory-evaluation/test_cases/layer3/20_medical_malpractice_pattern.yaml",
+      "sessions": 3,
+      "messages": 386,
+      "user_question": "The FBI just arrested my mother's former home health aide and three medical office workers for a $2 million Medicare fraud ring. How much danger was my mother actually in, and what's our legal recourse?",
+      "history_utf8_bytes": 21651
+    }
+  ]
+}
