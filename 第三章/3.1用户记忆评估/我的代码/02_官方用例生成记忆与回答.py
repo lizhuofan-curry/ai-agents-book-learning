@@ -14,11 +14,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--case", default=helper.DEFAULT_CASE, help="官方用例ID，默认第一层第一题")
     parser.add_argument("--mode", default="notes", choices=("notes", "enhanced_notes", "json_cards", "advanced_json_cards"))
-    parser.add_argument("--memory-format", default="json", choices=("json", "schema"),
-                        help="json保留原路线；schema为单独标记的字符串笔记格式诊断")
+    parser.add_argument("--memory-format", default="json", choices=("json", "schema", "bounded-schema"),
+                        help="json原路线；schema格式诊断；bounded-schema为20条/120字符短记忆诊断")
+    parser.add_argument("--sampling-profile", default="legacy", choices=("legacy", "qwen-recommended"),
+                        help="legacy保留原temperature=0；qwen-recommended切换Qwen非思考推荐采样参数组")
     parser.add_argument("--preview", action="store_true", help="只查看用例、来源和预计请求数，零网络请求")
     args = parser.parse_args()
-    if args.memory_format == "schema" and args.mode not in ("notes", "enhanced_notes"):
+    if args.memory_format != "json" and args.mode not in ("notes", "enhanced_notes"):
         parser.error("schema诊断仅适用于notes或enhanced_notes，不改变卡片模式的结构")
     official, manifest = helper.load_official()
     case, source = helper.load_case(args.case, manifest)
@@ -29,7 +31,10 @@ def main():
     print("会话数：", len(case["conversation_histories"]), "；消息数：",
           sum(len(h["messages"]) for h in case["conversation_histories"]))
     print("最后的问题：", case["user_question"])
+    print("采样配置：", args.sampling_profile,
+          json.dumps(helper.sampling_options(args.sampling_profile), ensure_ascii=False))
     print("记忆输出约束：", args.memory_format,
+          "（短记忆诊断，改变提示与记忆预算，另行记录）" if args.memory_format == "bounded-schema" else
           "（格式约束诊断，另行记录）" if args.memory_format == "schema" else "（原JSON路线）")
     print(f"预计{expected_calls}次本机模型请求；另有1次模型列表查询，无自动重试。", flush=True)
     if args.preview:
@@ -44,13 +49,22 @@ def main():
               "case_source": source, "test_id": case["test_id"], "category": case["category"],
               "mode": args.mode, "model": helper.LOCAL_MODEL, "calls_expected": expected_calls,
               "memory_format": args.memory_format,
-              "generation_variant": "schema_format_diagnostic" if args.memory_format == "schema" else "official_prompt_json_baseline",
+              "sampling_profile": args.sampling_profile,
+              "sampling_options": helper.sampling_options(args.sampling_profile),
+              "sampling_scope": "同时用于记忆生成和最终答题；与legacy分开记录，仅比较整组采样设置，不归因于单个参数",
+              "sampling_reference": "https://huggingface.co/Qwen/Qwen3-0.6B#best-practices" if args.sampling_profile == "qwen-recommended" else None,
+              "generation_variant": {"json": "official_prompt_json_baseline", "schema": "schema_format_diagnostic",
+                                     "bounded-schema": "bounded_memory_prompt_diagnostic"}[args.memory_format],
               "question": case["user_question"], "memory_states": [], "calls": [],
               "judge_completed": False, "experiment_3_1_completed": False,
               "script_sha256": helper.sha(__file__),
               "helper_sha256": helper.sha(Path(helper.__file__)),
               "scope": "官方单题与原始提示词，本机Qwen适配；不是官方60题或四格式完整复现",
-              "format_diagnostic_note": "Schema只约束memory为字符串数组，不预填事实、不更改官方消息；与原JSON路线分开记录" if args.memory_format == "schema" else None}
+              "format_diagnostic_note": (
+                  "额外加入20条/每条120字符预算及简短提取规则，并提供对应Schema；改变了原记忆提示和容量，不与原协议成绩合并"
+                  if args.memory_format == "bounded-schema" else
+                  "Schema只约束memory为字符串数组，不预填事实、不更改官方消息；与原JSON路线分开记录"
+                  if args.memory_format == "schema" else None)}
 
     def save():
         helper.dump(record_path, record)

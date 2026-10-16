@@ -142,24 +142,52 @@ def validate_judge(text):
     return raw
 
 
-def notes_schema():
+def notes_schema(bounded=False):
     """只限定容器与元素类型，不提供字段答案或强迫非空。"""
-    return {"type": "object", "properties": {
+    schema = {"type": "object", "properties": {
         "memory": {"type": "array", "items": {"type": "string"}}},
         "required": ["memory"], "additionalProperties": False}
+    if bounded:
+        schema["properties"]["memory"].update(maxItems=20, items={"type": "string", "maxLength": 120})
+    return schema
 
 
-def local_payload(messages, output_limit, as_json, memory_format="json"):
-    if memory_format not in ("json", "schema"):
+def memory_messages(official, mode, memory, history, index, memory_format):
+    messages = official.memory_prompt(mode, memory, history, index)
+    if memory_format == "bounded-schema":
+        # 独立诊断：明确改变记忆预算和提示，不伪装成原始官方协议。
+        messages[0]["content"] += (
+            "\nDIAGNOSTIC MEMORY BUDGET: Store at most 20 concise factual notes, "
+            "each at most 120 characters. Select durable user or business facts; "
+            "do not copy dialogue turns, greetings, or self-evaluation commentary. "
+            "Preserve exact values and ownership for facts you select. "
+            "Omit duplicates. Output only the JSON object and end after its closing brace. "
+            "Required output schema: " + json.dumps(notes_schema(bounded=True))
+        )
+    return messages
+
+
+def sampling_options(profile):
+    if profile == "legacy":
+        return {"temperature": 0}
+    if profile == "qwen-recommended":
+        return {"temperature": 0.7, "top_p": 0.8, "top_k": 20, "min_p": 0}
+    raise ValueError(f"未知采样配置：{profile}")
+
+
+def local_payload(messages, output_limit, as_json, memory_format="json", sampling_profile="legacy"):
+    if memory_format not in ("json", "schema", "bounded-schema"):
         raise ValueError("未知的记忆输出约束")
     # UTF-8字节数作为保守的输入代理，另留模板及输出余量；不是实测token。
     bound = sum(len(m["content"].encode("utf-8")) for m in messages) + 2048 + output_limit
     if bound > NUM_CTX:
         raise ValueError(f"保守输入预算不足（代理值{bound} > {NUM_CTX}）；停止而不截断材料")
     payload = {"model": LOCAL_MODEL, "messages": deepcopy(messages), "stream": False, "think": False,
-               "options": {"temperature": 0, "seed": SEED, "num_ctx": NUM_CTX, "num_predict": output_limit}}
+               "options": {**sampling_options(sampling_profile), "seed": SEED,
+                           "num_ctx": NUM_CTX, "num_predict": output_limit}}
     if as_json:
-        payload["format"] = notes_schema() if memory_format == "schema" else "json"
+        payload["format"] = (notes_schema(bounded=memory_format == "bounded-schema")
+                             if memory_format != "json" else "json")
     return payload
 
 
@@ -168,7 +196,8 @@ class LocalRecorder:
         self.session, self.record, self.save = session, record, save
 
     def call(self, messages, purpose, output_limit, as_json=False):
-        payload = local_payload(messages, output_limit, as_json, self.record.get("memory_format", "json"))
+        payload = local_payload(messages, output_limit, as_json, self.record.get("memory_format", "json"),
+                                self.record.get("sampling_profile", "legacy"))
         call = {"purpose": purpose, "request": payload, "started_at": now().isoformat(), "ok": False}
         self.record["calls"].append(call)
         self.save()
@@ -184,11 +213,16 @@ class LocalRecorder:
             call["raw_response"] = raw
             message = raw.get("message") or {}
             content = message.get("content")
-            if (raw.get("done") is not True or raw.get("done_reason") != "stop"
-                    or not isinstance(content, str) or not content.strip() or message.get("tool_calls")):
-                raise ValueError("模型未正常结束、正文为空或返回意外工具调用；保留响应，停止本题")
             call.update(content=content, prompt_tokens=raw.get("prompt_eval_count"),
-                        completion_tokens=raw.get("eval_count"), ok=True)
+                        completion_tokens=raw.get("eval_count"), done_reason=raw.get("done_reason"))
+            if raw.get("done") is not True or raw.get("done_reason") != "stop":
+                raise ValueError(f"模型未正常结束：done_reason={raw.get('done_reason')}，"
+                                 f"输出{raw.get('eval_count')} token，上限{output_limit}；保留响应，不补齐JSON")
+            if not isinstance(content, str) or not content.strip():
+                raise ValueError("模型正文为空；保留响应，停止本题")
+            if message.get("tool_calls"):
+                raise ValueError("模型返回意外工具调用；本任务只需记忆或答题文本，停止本题")
+            call["ok"] = True
             return content
         except (Exception, KeyboardInterrupt) as error:
             call["error"] = {"type": type(error).__name__, "message": str(error)}
@@ -203,10 +237,13 @@ def generate_case(official, case, mode, recorder, record, save):
     memory = official.initial_memory(mode)
     for index, history in enumerate(case["conversation_histories"], 1):
         print(f"会话{index}/{len(case['conversation_histories'])}：整理记忆……", flush=True)
-        messages = official.memory_prompt(mode, memory, history, index)
+        memory_format = record.get("memory_format", "json")
+        messages = memory_messages(official, mode, memory, history, index, memory_format)
         content = recorder.call(messages, f"memory_session_{index}", MEMORY_MAX, as_json=True)
         try:
             memory = validate_memory(content, mode)
+            if memory_format == "bounded-schema" and (len(memory) > 20 or any(len(note) > 120 for note in memory)):
+                raise ValueError("短记忆诊断超出20条/每条120字符预算，不自动截短")
         except ValueError as error:
             record["calls"][-1]["memory_validation"] = {"passed": False, "error": str(error)}
             save()
@@ -233,19 +270,24 @@ def verify_writer_record(record, official, case, case_source):
         raise ValueError("调用数与会话数不一致")
     mode, memory = record["mode"], official.initial_memory(record["mode"])
     memory_format = record.get("memory_format", "json")
-    if memory_format == "schema" and mode not in ("notes", "enhanced_notes"):
+    sampling_profile = record.get("sampling_profile", "legacy")
+    if memory_format in ("schema", "bounded-schema") and mode not in ("notes", "enhanced_notes"):
         raise ValueError("该Schema诊断只适用于字符串笔记模式")
     for index, (history, state, call) in enumerate(zip(histories, states, calls), 1):
-        expected = local_payload(official.memory_prompt(mode, memory, history, index), MEMORY_MAX, True, memory_format)
+        expected = local_payload(memory_messages(official, mode, memory, history, index, memory_format),
+                                 MEMORY_MAX, True, memory_format, sampling_profile)
         if call["request"] != expected or call["purpose"] != f"memory_session_{index}":
             raise ValueError("记忆请求与官方提示词不一致，或含不应提供的材料")
         memory = validate_memory(verified_content(call), mode)
+        if memory_format == "bounded-schema" and (len(memory) > 20 or any(len(note) > 120 for note in memory)):
+            raise ValueError("诊断记忆超出声明预算")
         if (state["memory"] != memory or state["session_index"] != index
                 or state["conversation_id"] != history["conversation_id"]
                 or state["prior_raw_histories_supplied"] != 0):
             raise ValueError("记忆检查点与原始响应不一致")
     answer_call = calls[-1]
-    expected = local_payload(official.answer_prompt(mode, memory, case["user_question"]), ANSWER_MAX, False, memory_format)
+    expected = local_payload(official.answer_prompt(mode, memory, case["user_question"]),
+                             ANSWER_MAX, False, memory_format, sampling_profile)
     if answer_call["request"] != expected or answer_call["purpose"] != "answer":
         raise ValueError("回答请求与官方提示词不一致，或含旧对话/评分标准")
     if verified_content(answer_call) != record.get("answer"):

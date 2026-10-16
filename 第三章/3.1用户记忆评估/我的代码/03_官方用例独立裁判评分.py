@@ -1,9 +1,10 @@
-"""用户后续运行：核验02的真实输出，单次调用Kimi独立评分，可能计费。"""
+"""用户后续运行：核验02的真实输出，单次调用DeepSeek独立评分，可能计费。"""
 
 import argparse
 import json
 import os
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from dotenv import dotenv_values
 from openai import OpenAI
@@ -21,11 +22,33 @@ def redact(value, secret):
     return value
 
 
+def judge_config(settings, environment, model_override=None):
+    def setting(name, default=""):
+        return environment.get(name) or settings.get(name) or default
+    model = model_override or setting("DEEPSEEK_MODEL", "deepseek-flash")
+    endpoint = setting("DEEPSEEK_BASE_URL", "https://api.deepseek.com").rstrip("/")
+    parts = urlsplit(endpoint)
+    if (parts.scheme != "https" or parts.hostname != "api.deepseek.com" or parts.port not in (None, 443)
+            or parts.username or parts.password or parts.query or parts.fragment or parts.path not in ("", "/v1")):
+        raise ValueError("独立裁判只接受DeepSeek官方地址https://api.deepseek.com或其/v1路径")
+    timeout = float(setting("DEEPSEEK_TIMEOUT", "180"))
+    if not 0 < timeout <= 300:
+        raise ValueError("DEEPSEEK_TIMEOUT应大于0且不超过300秒")
+    return {"model": model, "endpoint": endpoint, "timeout": timeout,
+            "api_key": setting("DEEPSEEK_API_KEY")}
+
+
+def build_judge_request(official, case, answer, model):
+    return {"model": model, "messages": official.judge_prompt(case, answer), "temperature": 0,
+            "max_tokens": 4096, "response_format": {"type": "json_object"}, "stream": False,
+            "extra_body": {"thinking": {"type": "disabled"}}}
+
+
 def main():
     helper.configure_console()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--record", required=True, type=Path, help="02生成的record.json完整路径")
-    parser.add_argument("--model", default="kimi-k3", help="独立裁判模型")
+    parser.add_argument("--model", help="覆盖项目DEEPSEEK_MODEL；未配置时使用deepseek-flash")
     parser.add_argument("--preview", action="store_true", help="只核对输入并显示请求预算，零网络请求")
     args = parser.parse_args()
     official, manifest = helper.load_official()
@@ -41,31 +64,33 @@ def main():
     saved_memory = json.loads((input_path.parent / "memory.json").read_text(encoding="utf-8"))
     if saved_memory != {"mode": source_record["mode"], "memory": memory} or (input_path.parent / "answer.txt").read_text(encoding="utf-8") != answer:
         raise ValueError("02产物与原始响应不一致")
-    messages = official.judge_prompt(case, answer)
-    request = {"model": args.model, "messages": messages, "temperature": 1 if "kimi-k3" in args.model.lower() else 0,
-               "max_tokens": 4096, "response_format": {"type": "json_object"}, "stream": False}
-    print("评分对象：", case["test_id"], "；独立模型：", args.model)
+    settings = dotenv_values(helper.PROJECT / ".env")
+    config = judge_config(settings, os.environ, args.model)
+    request = build_judge_request(official, case, answer, config["model"])
+    print("评分对象：", case["test_id"], "；独立模型：", config["model"])
     print("原始对话、评分标准和预期行为只交给裁判；不再调用本机writer。")
-    print("最多1次Kimi API请求，无自动重试。", flush=True)
+    print("最多1次DeepSeek API请求，无自动重试。", flush=True)
     if args.preview:
         print("OFFICIAL_JUDGE_PREVIEW_ONLY：02来源、产物、消息隔离检查通过，未调用裁判。")
         return
-    settings = dotenv_values(helper.PROJECT / ".env")
-    api_key = os.getenv("MOONSHOT_API_KEY") or settings.get("MOONSHOT_API_KEY") or ""
+    api_key = config["api_key"]
     if not api_key:
-        raise ValueError("缺少项目已有的MOONSHOT_API_KEY；没有发起请求，不回退为自评")
+        raise ValueError("缺少项目已有的DEEPSEEK_API_KEY；没有发起请求，不回退为自评")
     directory = helper.EXPERIMENT / "运行结果" / ("official_judge_" + helper.now().strftime("%Y%m%d_%H%M%S_%f"))
     directory.mkdir(parents=True, exist_ok=False)
     record_path = directory / "record.json"
     record = {"stage": "official_case_independent_judge", "status": "prepared",
               "created_at": helper.now().isoformat(), "upstream_commit": helper.COMMIT,
               "test_id": case["test_id"], "category": case["category"], "mode": source_record["mode"],
-              "writer_model": source_record["model"], "judge_model": args.model,
+              "writer_model": source_record["model"], "judge_model": config["model"],
+              "judge_provider": "deepseek", "judge_endpoint": config["endpoint"],
               "writer_memory_format": source_record.get("memory_format", "json"),
+              "writer_sampling_profile": source_record.get("sampling_profile", "legacy"),
+              "writer_sampling_options": helper.sampling_options(source_record.get("sampling_profile", "legacy")),
               "writer_generation_variant": source_record.get("generation_variant", "official_prompt_json_baseline"),
               "writer_record": str(input_path), "writer_record_sha256": helper.sha(input_path),
               "request": request, "request_attempts": 0, "experiment_3_1_completed": False,
-              "adaptations": "官方judge提示词与judge_summary；Kimi K3采用temperature=1，裁判输出上限4096；无自动重试"}
+              "adaptations": "官方judge提示词与judge_summary；用户指定DeepSeek裁判，temperature=0、thinking禁用、输出上限4096；无自动重试"}
 
     def save():
         helper.dump(record_path, redact(record, api_key))
@@ -75,7 +100,7 @@ def main():
         record.update(status="requesting", request_attempts=1)
         save()
         # 固定官方地址，不将密钥发往任意配置的第三方代理。
-        with OpenAI(api_key=api_key, base_url="https://api.moonshot.cn/v1", timeout=180, max_retries=0) as client:
+        with OpenAI(api_key=api_key, base_url=config["endpoint"], timeout=config["timeout"], max_retries=0) as client:
             response = client.chat.completions.create(**request)
         record["raw_response"] = response.model_dump(mode="json")
         save()

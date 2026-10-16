@@ -1,0 +1,25 @@
+{
+  "mode": "notes",
+  "memory": [
+    "conversation_id=bank_setup_001",
+    "metadata={\"business\": \"First National Bank\", \"department\": \"New Accounts\", \"call_duration\": \"47 minutes\"}",
+    "timestamp=2024-11-15 10:30:00",
+    "USER: Hi, I'd like to open a new checking account please.",
+    "ASSISTANT: Good morning! I'd be happy to help you open a new checking account with First National Bank. My name is Sarah",
+    "USER: March 15th, 1985.",
+    "ASSISTANT: Perfect. Now I'll need your current residential address.",
+    "USER: I live at 1847 Maple Street, Apartment 3B, Portland, Oregon, 97205.",
+    "ASSISTANT: Thank you. How long have you been at this address?",
+    "USER: About two and a half years now.",
+    "ASSISTANT: That's wonderful. Could you please provide your date of birth?",
+    "USER: Sure, it's Michael James Robertson.",
+    "ASSISTANT: Thank you, Mr. Robertson. And could you please provide your date of birth?",
+    "USER: March 15th, 1985.",
+    "ASSISTANT: Perfect. Now I'll need your current residential address.",
+    "USER: I live at 1847 Maple Street, Apartment 3B, Portland, Oregon, 97205.",
+    "ASSISTANT: Thank you. Now I'll need your current employment status.",
+    "USER: I'm employed full-time as a software engineer at TechCorp Industries.",
+    "ASSISTANT: How long have you been with TechCorp Industries?",
+    "USER: Coming up on four years this December."
+  ]
+}
