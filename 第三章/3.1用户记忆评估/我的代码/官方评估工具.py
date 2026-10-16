@@ -19,6 +19,7 @@ UPSTREAM = SOURCES / "upstream"
 COMMIT = "dbc046eb896ac4e39aa19c7774c8bf49583b89a6"
 DEFAULT_CASE = "layer1_01_bank_account"
 LOCAL_MODEL = "qwen3:0.6b"
+LOCAL_MODELS = (LOCAL_MODEL, "qwen3:4b")
 LOCAL_URL = "http://127.0.0.1:11434"
 NUM_CTX = 32768
 MEMORY_MAX = 6000
@@ -175,14 +176,16 @@ def sampling_options(profile):
     raise ValueError(f"未知采样配置：{profile}")
 
 
-def local_payload(messages, output_limit, as_json, memory_format="json", sampling_profile="legacy"):
+def local_payload(messages, output_limit, as_json, memory_format="json", sampling_profile="legacy", model=LOCAL_MODEL):
+    if model not in LOCAL_MODELS:
+        raise ValueError(f"未支持的本机对照模型：{model}")
     if memory_format not in ("json", "schema", "bounded-schema"):
         raise ValueError("未知的记忆输出约束")
     # UTF-8字节数作为保守的输入代理，另留模板及输出余量；不是实测token。
     bound = sum(len(m["content"].encode("utf-8")) for m in messages) + 2048 + output_limit
     if bound > NUM_CTX:
         raise ValueError(f"保守输入预算不足（代理值{bound} > {NUM_CTX}）；停止而不截断材料")
-    payload = {"model": LOCAL_MODEL, "messages": deepcopy(messages), "stream": False, "think": False,
+    payload = {"model": model, "messages": deepcopy(messages), "stream": False, "think": False,
                "options": {**sampling_options(sampling_profile), "seed": SEED,
                            "num_ctx": NUM_CTX, "num_predict": output_limit}}
     if as_json:
@@ -197,7 +200,7 @@ class LocalRecorder:
 
     def call(self, messages, purpose, output_limit, as_json=False):
         payload = local_payload(messages, output_limit, as_json, self.record.get("memory_format", "json"),
-                                self.record.get("sampling_profile", "legacy"))
+                                self.record.get("sampling_profile", "legacy"), self.record["model"])
         call = {"purpose": purpose, "request": payload, "started_at": now().isoformat(), "ok": False}
         self.record["calls"].append(call)
         self.save()
@@ -275,7 +278,7 @@ def verify_writer_record(record, official, case, case_source):
         raise ValueError("该Schema诊断只适用于字符串笔记模式")
     for index, (history, state, call) in enumerate(zip(histories, states, calls), 1):
         expected = local_payload(memory_messages(official, mode, memory, history, index, memory_format),
-                                 MEMORY_MAX, True, memory_format, sampling_profile)
+                                 MEMORY_MAX, True, memory_format, sampling_profile, record["model"])
         if call["request"] != expected or call["purpose"] != f"memory_session_{index}":
             raise ValueError("记忆请求与官方提示词不一致，或含不应提供的材料")
         memory = validate_memory(verified_content(call), mode)
@@ -287,7 +290,7 @@ def verify_writer_record(record, official, case, case_source):
             raise ValueError("记忆检查点与原始响应不一致")
     answer_call = calls[-1]
     expected = local_payload(official.answer_prompt(mode, memory, case["user_question"]),
-                             ANSWER_MAX, False, memory_format, sampling_profile)
+                             ANSWER_MAX, False, memory_format, sampling_profile, record["model"])
     if answer_call["request"] != expected or answer_call["purpose"] != "answer":
         raise ValueError("回答请求与官方提示词不一致，或含旧对话/评分标准")
     if verified_content(answer_call) != record.get("answer"):

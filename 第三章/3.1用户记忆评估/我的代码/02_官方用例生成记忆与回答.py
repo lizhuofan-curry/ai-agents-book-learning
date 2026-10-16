@@ -13,6 +13,8 @@ def main():
     helper.configure_console()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--case", default=helper.DEFAULT_CASE, help="官方用例ID，默认第一层第一题")
+    parser.add_argument("--model", default=helper.LOCAL_MODEL, choices=helper.LOCAL_MODELS,
+                        help="记忆和答题使用同一本机模型；默认保留qwen3:0.6b，4B对照须显式指定")
     parser.add_argument("--mode", default="notes", choices=("notes", "enhanced_notes", "json_cards", "advanced_json_cards"))
     parser.add_argument("--memory-format", default="json", choices=("json", "schema", "bounded-schema"),
                         help="json原路线；schema格式诊断；bounded-schema为20条/120字符短记忆诊断")
@@ -26,6 +28,7 @@ def main():
     case, source = helper.load_case(args.case, manifest)
     expected_calls = len(case["conversation_histories"]) + 1
     print("官方提交：", helper.COMMIT)
+    print("本机模型：", args.model)
     print("用例：", case["test_id"], "；层次：", case["category"])
     print("标题：", case["title"])
     print("会话数：", len(case["conversation_histories"]), "；消息数：",
@@ -47,7 +50,7 @@ def main():
     record = {"stage": "official_case_local_memory_and_answer", "status": "prepared",
               "created_at": helper.now().isoformat(), "upstream_commit": helper.COMMIT,
               "case_source": source, "test_id": case["test_id"], "category": case["category"],
-              "mode": args.mode, "model": helper.LOCAL_MODEL, "calls_expected": expected_calls,
+              "mode": args.mode, "model": args.model, "calls_expected": expected_calls,
               "memory_format": args.memory_format,
               "sampling_profile": args.sampling_profile,
               "sampling_options": helper.sampling_options(args.sampling_profile),
@@ -83,9 +86,9 @@ def main():
             if response.status_code != 200:
                 raise RuntimeError(f"模型列表查询HTTP {response.status_code}")
             tags = response.json()
-            models = [m for m in tags.get("models", []) if m.get("name") == helper.LOCAL_MODEL]
+            models = [m for m in tags.get("models", []) if m.get("name") == args.model]
             if len(models) != 1:
-                raise ValueError("未找到既有qwen3:0.6b；不自动下载或更换模型")
+                raise ValueError(f"未找到已安装模型{args.model}；不自动下载或更换模型")
             record.update(model_metadata=models[0], status="running")
             save()
             recorder = helper.LocalRecorder(session, record, save)
