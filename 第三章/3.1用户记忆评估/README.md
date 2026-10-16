@@ -2,7 +2,7 @@
 
 来源：[正文实验3-1](https://github.com/bojieli/ai-agent-book/blob/main/book/chapter3.md)、[user-memory](https://github.com/bojieli/ai-agent-book/blob/main/chapter3/user-memory/README.md)、[user-memory-evaluation](https://github.com/bojieli/ai-agent-book/blob/main/chapter3/user-memory-evaluation/README.md)。
 
-当前（2026-10-16）：短记忆诊断已走通第一题的生成、答题与DeepSeek评分。四维均1/4，触发幻觉否决，reward=0、passed=false；原因是记忆漏掉账号、回答没有提供账号并加入无依据状态。原始记录、评分规则及证据引文已核对。当前完成的是一个修改配置下的用例评估，60题及四格式比较未完成。
+当前（2026-10-16）：旧短记忆组已评分为四维1/4、幻觉否决、reward=0。推荐采样组已完成2次本机请求，记忆仅保留3条元数据、仍漏掉账号，但回答说明信息不足。两组配置和产物已复核；下一步给推荐采样组运行03独立评分，当前新组无分数，60题未运行。
 
 ## 先弄清楚评什么
 
@@ -16,7 +16,7 @@
 
 ## 当前下一步：采样设置对照
 
-用户已确认先保持模型不变，比较推荐非思考采样参数组。运行02时使用--memory-format bounded-schema --sampling-profile qwen-recommended，见[采样对照指南](04_采样参数对照指南.md)。代码离线检查通过，尚未真实运行；保持旧单题失败和评分，不覆盖。
+用户已确认先保持模型不变，比较推荐非思考采样参数组。运行02时使用--memory-format bounded-schema --sampling-profile qwen-recommended，见[采样对照指南](04_采样参数对照指南.md)。推荐采样组已运行并核对，当前待03评分；旧组失败和评分保留，不覆盖。
 
 ## 分步入口
 
