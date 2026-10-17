@@ -1,0 +1,53 @@
+{
+  "planned_cases": 60,
+  "writer_states": {
+    "saved": 6,
+    "incomplete": 54
+  },
+  "judge_states": {
+    "scored": 2,
+    "pending": 57,
+    "running": 1
+  },
+  "scored_cases": 2,
+  "passed_cases": 2,
+  "unscored_cases": 58,
+  "all_case_attempts_and_outcomes_finished": false,
+  "full_60_judge_scores_available": false,
+  "pipeline_pass_rate_over_all_cases": null,
+  "pass_rate_scored_cases_only": 1.0,
+  "mean_reward_scored_cases_only": 0.875,
+  "writer_calls_including_imported": 197,
+  "new_writer_calls": 192,
+  "judge_calls_including_imported": 2,
+  "generation_failure_kinds": {
+    "truncated": 54
+  },
+  "by_layer": {
+    "layer1": {
+      "planned": 20,
+      "writer_saved": 5,
+      "generation_failures": 15,
+      "scored": 2,
+      "passed": 2,
+      "mean_reward_scored_cases_only": 0.875
+    },
+    "layer2": {
+      "planned": 20,
+      "writer_saved": 1,
+      "generation_failures": 19,
+      "scored": 0,
+      "passed": 0,
+      "mean_reward_scored_cases_only": null
+    },
+    "layer3": {
+      "planned": 20,
+      "writer_saved": 0,
+      "generation_failures": 20,
+      "scored": 0,
+      "passed": 0,
+      "mean_reward_scored_cases_only": null
+    }
+  },
+  "note": "生成或评分失败单列，无裁判分数不填0；已评分均分不代表60题均分。"
+}

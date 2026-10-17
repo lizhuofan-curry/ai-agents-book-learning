@@ -1,0 +1,516 @@
+{
+  "stage": "official_case_local_memory_and_answer",
+  "status": "incomplete",
+  "created_at": "2026-10-17T13:48:04.936869+08:00",
+  "upstream_commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "case_source": {
+    "path": "chapter3/user-memory-evaluation/test_cases/layer3/03_home_purchase_coordination.yaml",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/user-memory-evaluation/test_cases/layer3/03_home_purchase_coordination.yaml",
+    "bytes": 26717,
+    "sha256": "df68870ca4eb344c5a4da6d8f9275ca59fef6edb1ab0a67381e409f656027c33"
+  },
+  "test_id": "layer3_03_home_purchase_coordination",
+  "category": "layer3",
+  "mode": "notes",
+  "model": "qwen3:4b",
+  "calls_expected": 4,
+  "memory_format": "schema",
+  "sampling_profile": "qwen-recommended",
+  "sampling_options": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "min_p": 0
+  },
+  "sampling_scope": "同时用于记忆生成和最终答题；与legacy分开记录，仅比较整组采样设置，不归因于单个参数",
+  "sampling_reference": "https://huggingface.co/Qwen/Qwen3-0.6B#best-practices",
+  "generation_variant": "schema_format_diagnostic",
+  "question": "We're getting close to our house closing. Can you check if everything is on track for the move?",
+  "memory_states": [
+    {
+      "session_index": 1,
+      "conversation_id": "mortgage_preapproval_001",
+      "memory": [
+        "conversation_id=mortgage_preapproval_001",
+        "timestamp=2024-08-20 11:00:00",
+        "metadata={\"business\": \"Wells Fargo Home Mortgage\", \"department\": \"Mortgage Lending\", \"call_duration\": \"52 minutes\"}",
+        "user_name=Michael Chen",
+        "user_spouse_name=Lisa Chen",
+        "user_down_payment=50000",
+        "user_spouse_down_payment=30000",
+        "user_price_range=400000-450000",
+        "user_dob=1990-03-15",
+        "user_spouse_dob=1991-07-08",
+        "user_address=2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210",
+        "user_lease_duration=3 years",
+        "user_lease_expiry=2024-01-00",
+        "user_occupation=Software engineer at TechCorp Solutions",
+        "user_employment_duration=4 years next month",
+        "user_annual_salary=115000",
+        "user_bonus_annual=15000-20000",
+        "user_spouse_occupation=Marketing manager at Portland Marketing Group",
+        "user_spouse_employment_duration=2 years",
+        "user_spouse_annual_salary=85000",
+        "user_combined_annual_income=200000",
+        "user_car_loan_balance=15000",
+        "user_car_loan_monthly_payment=450",
+        "user_student_loans=paid off last year",
+        "user_credit_card_balance=2000",
+        "user_social_security_number=543-22-8871",
+        "user_spouse_social_security_number=544-33-9982",
+        "user_credit_score=762",
+        "user_spouse_credit_score=758",
+        "preapproval_limit=480000",
+        "preapproval_type=30-year fixed",
+        "preapproval_interest_rate=6.875%",
+        "preapproval_down_payment_required=20%",
+        "preapproval_valid_until=2024-11-20",
+        "preapproval_reference=WF-PA-2024-778341",
+        "closing_cost_estimation=2-3% of purchase price",
+        "closing_cost_range=9000-13500",
+        "total_cash_required=100000-103000",
+        "appraisal_cost=500-600",
+        "title_insurance_cost=1500-2000",
+        "origination_fee=1% of loan amount",
+        "preapproval_notes=excellent credit scores, strong income, 20% down payment, 90-day validity"
+      ],
+      "prior_raw_histories_supplied": 0
+    },
+    {
+      "session_index": 2,
+      "conversation_id": "home_purchase_offer_002",
+      "memory": [
+        "conversation_id=home_purchase_offer_002",
+        "timestamp=2024-11-15 14:00:00",
+        "metadata={\"business\": \"Keller Williams Realty\", \"department\": \"Real Estate Sales\", \"call_duration\": \"45 minutes\"}",
+        "user_name=Michael Chen",
+        "user_spouse_name=Lisa Chen",
+        "user_price_range=400000-450000",
+        "user_dob=1990-03-15",
+        "user_spouse_dob=1991-07-08",
+        "user_address=2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210",
+        "user_lease_duration=3 years",
+        "user_lease_expiry=2024-01-00",
+        "user_occupation=Software engineer at TechCorp Solutions",
+        "user_employment_duration=4 years next month",
+        "user_annual_salary=115000",
+        "user_bonus_annual=15000-20000",
+        "user_spouse_occupation=Marketing manager at Portland Marketing Group",
+        "user_spouse_employment_duration=2 years",
+        "user_spouse_annual_salary=85000",
+        "user_combined_annual_income=200000",
+        "user_car_loan_balance=15000",
+        "user_car_loan_monthly_payment=450",
+        "user_student_loans=paid off last year",
+        "user_credit_card_balance=2000",
+        "user_social_security_number=543-22-8871",
+        "user_spouse_social_security_number=544-33-9982",
+        "user_credit_score=762",
+        "user_spouse_credit_score=758",
+        "preapproval_limit=480000",
+        "preapproval_type=30-year fixed",
+        "preapproval_interest_rate=6.875%",
+        "preapproval_down_payment_required=20%",
+        "preapproval_valid_until=2024-11-20",
+        "preapproval_reference=WF-PA-2024-778341",
+        "closing_cost_estimation=2-3% of purchase price",
+        "closing_cost_range=9000-13500",
+        "total_cash_required=100000-103000",
+        "appraisal_cost=500-600",
+        "title_insurance_cost=1500-2000",
+        "origination_fee=1% of loan amount",
+        "preapproval_notes=excellent credit scores, strong income, 20% down payment, 90-day validity",
+        "purchase_price=435000",
+        "offer_amount=435000",
+        "asking_price=425000",
+        "earnest_money_deposit=10000",
+        "financing_contingency_days=21",
+        "closing_date=2024-12-20",
+        "lease_expiry=2024-01-00",
+        "closing_days=35",
+        "down_payment=87000",
+        "gift_funds=30000",
+        "gift_letter_required=true",
+        "home_insurance_annual_estimate=1200-1800",
+        "inspection_cost=400-500",
+        "inspection_contingency=10 days",
+        "house_age=15 years",
+        "included_appliances=true",
+        "included_shed=true",
+        "included_patio_furniture=true",
+        "utilities_transfer_schedule=1 week before closing",
+        "preapproval_validity_extension_required=true",
+        "preapproval_extension_due_date=2024-11-20",
+        "preapproval_expiry_extension=5 days"
+      ],
+      "prior_raw_histories_supplied": 0
+    },
+    {
+      "session_index": 3,
+      "conversation_id": "moving_company_quote_003",
+      "memory": [
+        "conversation_id=moving_company_quote_003",
+        "timestamp=2024-11-18 10:00:00",
+        "metadata={\"business\": \"Allied Van Lines\", \"department\": \"Moving Services\", \"call_duration\": \"40 minutes\"}",
+        "user_name=Michael Chen",
+        "user_spouse_name=Lisa Chen",
+        "user_address=2847 Riverside Apartments, Unit 4B, Portland, 97210",
+        "user_new_address=5522 Oak Valley Drive, Portland, 97220",
+        "user_current_address_type=apartment",
+        "user_new_address_type=house",
+        "user_current_space=1100 sq ft, 2-bedroom",
+        "user_new_space=3 bedrooms, 2-story house with garage",
+        "user_distance=12 miles (Portland)",
+        "user_move_date=2024-12-21",
+        "user_move_time=noon",
+        "user_move_completion_time=5 PM",
+        "user_move_cost_base=180 per hour",
+        "user_move_cost_hourly=4-5 hours",
+        "user_move_cost_total=1250",
+        "user_move_piano_additional=200",
+        "user_move_tv_special_handling=included in hourly rate",
+        "user_move_boxes=30 boxes (kit)",
+        "user_move_boxes_cost=149",
+        "user_move_deposit=300",
+        "user_move_deposit_due=day of move",
+        "user_move_deposit_payment_method=credit card",
+        "user_move_contingency=closing date (December 20th)",
+        "user_move_contingency_status=active",
+        "user_move_insurance=60 cents per pound",
+        "user_move_insurance_additional=available",
+        "user_move_packing_notes=pack heavy items in small boxes, label with room and contents",
+        "user_move_special_items=piano, TV",
+        "user_move_crew_size=3",
+        "user_move_crew_type=3-man crew and truck",
+        "user_move_weather_contingency=48 hours",
+        "user_move_delay_consequence=lose deposit unless weather-related",
+        "user_move_confirmation=ALV-122124",
+        "user_move_confirmation_date=2024-12-19",
+        "user_move_closing_date=2024-12-20",
+        "user_move_closing_contingency=active",
+        "user_move_closing_delay_consequence=possible deposit loss",
+        "user_move_closing_delay_notification=48 hours",
+        "user_move_closing_delay_rescheduling_difficulty=high",
+        "user_move_closing_delay_weather_contingency=48 hours",
+        "user_move_closing_delay_weather_rescheduling=possible",
+        "user_move_closing_delay_non_weather_rescheduling=impossible"
+      ],
+      "prior_raw_histories_supplied": 0
+    }
+  ],
+  "calls": [
+    {
+      "purpose": "memory_session_1",
+      "request": {
+        "model": "qwen3:4b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a long-term memory writer. Select only facts that may help a future assistant, but retain exact values, ownership, event status, dates, provenance, and relationships. Apply updates without losing still-valid facts. Never answer the conversation. Return JSON only as {\"memory\": ...}. Store memory as an array of minimal standalone factual notes. Split a complex statement into atomic facts; keep exact names, identifiers and dates."
+          },
+          {
+            "role": "user",
+            "content": "MEMORY MODE: notes\nSESSION INDEX: 1\n\nCURRENT MEMORY STATE (the only retained information from older sessions):\n[]\n\nNEW SESSION (analyze this session, then replace the memory state):\nconversation_id=mortgage_preapproval_001\ntimestamp=2024-08-20 11:00:00\nmetadata={\"business\": \"Wells Fargo Home Mortgage\", \"department\": \"Mortgage Lending\", \"call_duration\": \"52 minutes\"}\nUSER: Hi, I want to get pre-approved for a mortgage. We're starting to look at houses.\nASSISTANT: Good morning! I'm Jennifer from Wells Fargo Home Mortgage. I'll help you with your pre-approval. First, are you buying alone or with someone?\nUSER: With my wife. We're first-time homebuyers.\nASSISTANT: Congratulations on taking this step! What price range are you considering?\nUSER: We're looking at homes around $400,000 to $450,000.\nASSISTANT: Good range for first-time buyers. How much do you have for a down payment?\nUSER: We've saved about $50,000.\nASSISTANT: That's about 11-12% down, which is good. You'll avoid PMI at 20% down. Are you planning to save more?\nUSER: We might get a gift from my parents, maybe another $30,000.\nASSISTANT: That would get you to almost 20% on a $400,000 home. Gift funds are acceptable with a gift letter.\nUSER: Good to know. What do you need for pre-approval?\nASSISTANT: I'll need income information, employment history, and credit authorization. Let's start with your name?\nUSER: Michael Chen.\nASSISTANT: And your wife's name?\nUSER: Lisa Chen.\nASSISTANT: Date of birth for you?\nUSER: March 15, 1990.\nASSISTANT: And Lisa's?\nUSER: July 8, 1991.\nASSISTANT: Current address?\nUSER: 2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210.\nASSISTANT: How long have you lived there?\nUSER: Three years. Our lease is up in January.\nASSISTANT: Good timing for buying. Now, employment information. Where do you work?\nUSER: I'm a software engineer at TechCorp Solutions.\nASSISTANT: How long have you been there?\nUSER: Four years next month.\nASSISTANT: Excellent stability. Annual salary?\nUSER: My base is $115,000 plus bonuses.\nASSISTANT: What do bonuses typically run?\nUSER: About $15,000-20,000 per year.\nASSISTANT: We can use a two-year average for bonuses. And Lisa's employment?\nUSER: She's a marketing manager at Portland Marketing Group.\nASSISTANT: How long there?\nUSER: Just over two years.\nASSISTANT: And her income?\nUSER: $85,000 annually.\nASSISTANT: Combined income around $200,000 plus bonuses. That's strong. Any other debts?\nUSER: I have a car loan, about $15,000 left.\nASSISTANT: Monthly payment?\nUSER: $450 per month.\nASSISTANT: Any student loans?\nUSER: No, we paid those off last year.\nASSISTANT: Excellent! Credit card debt?\nUSER: We pay them off monthly. Maybe $2,000 balance at any time.\nASSISTANT: Good habits. Let me run your pre-approval... Can I have your Social Security numbers?\nUSER: Mine is 543-22-8871, Lisa's is 544-33-9982.\nASSISTANT: Thank you. Running credit now... Your scores are excellent - you're at 762, Lisa is 758.\nUSER: Oh good! We've worked hard on those.\nASSISTANT: It shows. With your income and credit, you're pre-approved for up to $480,000.\nUSER: More than we need, that's great.\nASSISTANT: Always good to have cushion. Now, what type of loan are you considering?\nUSER: We were thinking 30-year fixed?\nASSISTANT: Safe choice. Current rates are 6.875% for 30-year fixed with 20% down.\nUSER: What if we only put 15% down?\nASSISTANT: Rate goes to 6.95% and you'd need PMI, about $150 monthly.\nUSER: We'll try for 20% then. How long is this pre-approval good for?\nASSISTANT: 90 days, until November 20th, 2024. If you need an extension, just call us.\nUSER: What happens after we find a house?\nASSISTANT: You make an offer with the pre-approval letter, then we do full underwriting.\nUSER: How long does that take?\nASSISTANT: Typically 30-45 days from accepted offer to closing.\nUSER: So if we find something in October, we'd close in November or December?\nASSISTANT: Exactly. Keep in mind holidays can slow things down in December.\nUSER: Good point. What else do we need?\nASSISTANT: For final approval, we'll need pay stubs, tax returns, bank statements, and the purchase agreement.\nUSER: Should we gather those now?\nASSISTANT: Get them ready. Two years tax returns, two months bank statements, recent pay stubs.\nUSER: Will do. Oh, what about homeowner's insurance?\nASSISTANT: You'll need to have that in place before closing. Shop around when you're under contract.\nUSER: When should we start looking for insurance?\nASSISTANT: As soon as your offer is accepted. You need proof of insurance at closing.\nUSER: And the insurance company needs to know the lender?\nASSISTANT: Yes, Wells Fargo needs to be listed as mortgagee on the policy.\nUSER: Got it. What about the appraisal?\nASSISTANT: We order that after your offer is accepted. Cost is about $500-600.\nUSER: Who pays for that?\nASSISTANT: You do, usually at the time of the appraisal.\nUSER: What if it appraises for less than the purchase price?\nASSISTANT: Then you'd need to negotiate with the seller or bring more cash to closing.\nUSER: That sounds risky.\nASSISTANT: That's why appraisal contingencies are important in your offer.\nUSER: Our agent will help with that?\nASSISTANT: Yes, they should include appropriate contingencies.\nUSER: What about the title search?\nASSISTANT: Title company handles that. They'll find any liens or issues.\nUSER: Cost?\nASSISTANT: Title insurance is about $1,500-2,000 on a $450,000 purchase.\nUSER: So many fees! What else?\nASSISTANT: Origination fee is 1% of loan amount, plus recording fees, prepaid taxes.\nUSER: How much should we budget for closing costs?\nASSISTANT: Typically 2-3% of purchase price, so $9,000-13,500 on a $450,000 home.\nUSER: Plus our down payment?\nASSISTANT: Right. So with 20% down, you're looking at $90,000 down plus $10,000-13,000 closing.\nUSER: So we need about $100,000-103,000 total at closing?\nASSISTANT: Yes, approximately. The exact amount comes three days before closing.\nUSER: That's a lot of money to move around.\nASSISTANT: Wire transfer is safest. Never wire without calling us to verify instructions.\nUSER: I've heard about wire fraud.\nASSISTANT: It's real. Always verify by phone before sending any money.\nUSER: Good advice. What's your pre-approval reference number?\nASSISTANT: Your pre-approval reference is WF-PA-2024-778341.\nUSER: Perfect. And I can show this to sellers?\nASSISTANT: Yes, your agent will include it with offers to show you're qualified.\nUSER: This is all very helpful, Jennifer. Thank you!\nASSISTANT: You're welcome! Remember, this expires November 20th. Call me when you find a house or if you need an extension. Good luck!"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.8,
+          "top_k": 20,
+          "min_p": 0,
+          "seed": 37,
+          "num_ctx": 32768,
+          "num_predict": 6000
+        },
+        "format": {
+          "type": "object",
+          "properties": {
+            "memory": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "memory"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "started_at": "2026-10-17T13:48:05.026775+08:00",
+      "ok": true,
+      "http_status": 200,
+      "raw_http_body": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-10-17T05:49:30.4882243Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"memory\\\": [\\n    \\\"conversation_id=mortgage_preapproval_001\\\",\\n    \\\"timestamp=2024-08-20 11:00:00\\\",\\n    \\\"metadata={\\\\\\\"business\\\\\\\": \\\\\\\"Wells Fargo Home Mortgage\\\\\\\", \\\\\\\"department\\\\\\\": \\\\\\\"Mortgage Lending\\\\\\\", \\\\\\\"call_duration\\\\\\\": \\\\\\\"52 minutes\\\\\\\"}\\\",\\n    \\\"user_name=Michael Chen\\\",\\n    \\\"user_spouse_name=Lisa Chen\\\",\\n    \\\"user_down_payment=50000\\\",\\n    \\\"user_spouse_down_payment=30000\\\",\\n    \\\"user_price_range=400000-450000\\\",\\n    \\\"user_dob=1990-03-15\\\",\\n    \\\"user_spouse_dob=1991-07-08\\\",\\n    \\\"user_address=2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210\\\",\\n    \\\"user_lease_duration=3 years\\\",\\n    \\\"user_lease_expiry=2024-01-00\\\",\\n    \\\"user_occupation=Software engineer at TechCorp Solutions\\\",\\n    \\\"user_employment_duration=4 years next month\\\",\\n    \\\"user_annual_salary=115000\\\",\\n    \\\"user_bonus_annual=15000-20000\\\",\\n    \\\"user_spouse_occupation=Marketing manager at Portland Marketing Group\\\",\\n    \\\"user_spouse_employment_duration=2 years\\\",\\n    \\\"user_spouse_annual_salary=85000\\\",\\n    \\\"user_combined_annual_income=200000\\\",\\n    \\\"user_car_loan_balance=15000\\\",\\n    \\\"user_car_loan_monthly_payment=450\\\",\\n    \\\"user_student_loans=paid off last year\\\",\\n    \\\"user_credit_card_balance=2000\\\",\\n    \\\"user_social_security_number=543-22-8871\\\",\\n    \\\"user_spouse_social_security_number=544-33-9982\\\",\\n    \\\"user_credit_score=762\\\",\\n    \\\"user_spouse_credit_score=758\\\",\\n    \\\"preapproval_limit=480000\\\",\\n    \\\"preapproval_type=30-year fixed\\\",\\n    \\\"preapproval_interest_rate=6.875%\\\",\\n    \\\"preapproval_down_payment_required=20%\\\",\\n    \\\"preapproval_valid_until=2024-11-20\\\",\\n    \\\"preapproval_reference=WF-PA-2024-778341\\\",\\n    \\\"closing_cost_estimation=2-3% of purchase price\\\",\\n    \\\"closing_cost_range=9000-13500\\\",\\n    \\\"total_cash_required=100000-103000\\\",\\n    \\\"appraisal_cost=500-600\\\",\\n    \\\"title_insurance_cost=1500-2000\\\",\\n    \\\"origination_fee=1% of loan amount\\\",\\n    \\\"preapproval_notes=excellent credit scores, strong income, 20% down payment, 90-day validity\\\"\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":85455258000,\"load_duration\":44699300,\"prompt_eval_count\":1983,\"prompt_eval_cached_count\":5,\"prompt_eval_duration\":14863868000,\"eval_count\":676,\"eval_duration\":70024711000}",
+      "raw_response": {
+        "model": "qwen3:4b",
+        "created_at": "2026-10-17T05:49:30.4882243Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"memory\": [\n    \"conversation_id=mortgage_preapproval_001\",\n    \"timestamp=2024-08-20 11:00:00\",\n    \"metadata={\\\"business\\\": \\\"Wells Fargo Home Mortgage\\\", \\\"department\\\": \\\"Mortgage Lending\\\", \\\"call_duration\\\": \\\"52 minutes\\\"}\",\n    \"user_name=Michael Chen\",\n    \"user_spouse_name=Lisa Chen\",\n    \"user_down_payment=50000\",\n    \"user_spouse_down_payment=30000\",\n    \"user_price_range=400000-450000\",\n    \"user_dob=1990-03-15\",\n    \"user_spouse_dob=1991-07-08\",\n    \"user_address=2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210\",\n    \"user_lease_duration=3 years\",\n    \"user_lease_expiry=2024-01-00\",\n    \"user_occupation=Software engineer at TechCorp Solutions\",\n    \"user_employment_duration=4 years next month\",\n    \"user_annual_salary=115000\",\n    \"user_bonus_annual=15000-20000\",\n    \"user_spouse_occupation=Marketing manager at Portland Marketing Group\",\n    \"user_spouse_employment_duration=2 years\",\n    \"user_spouse_annual_salary=85000\",\n    \"user_combined_annual_income=200000\",\n    \"user_car_loan_balance=15000\",\n    \"user_car_loan_monthly_payment=450\",\n    \"user_student_loans=paid off last year\",\n    \"user_credit_card_balance=2000\",\n    \"user_social_security_number=543-22-8871\",\n    \"user_spouse_social_security_number=544-33-9982\",\n    \"user_credit_score=762\",\n    \"user_spouse_credit_score=758\",\n    \"preapproval_limit=480000\",\n    \"preapproval_type=30-year fixed\",\n    \"preapproval_interest_rate=6.875%\",\n    \"preapproval_down_payment_required=20%\",\n    \"preapproval_valid_until=2024-11-20\",\n    \"preapproval_reference=WF-PA-2024-778341\",\n    \"closing_cost_estimation=2-3% of purchase price\",\n    \"closing_cost_range=9000-13500\",\n    \"total_cash_required=100000-103000\",\n    \"appraisal_cost=500-600\",\n    \"title_insurance_cost=1500-2000\",\n    \"origination_fee=1% of loan amount\",\n    \"preapproval_notes=excellent credit scores, strong income, 20% down payment, 90-day validity\"\n  ]\n}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 85455258000,
+        "load_duration": 44699300,
+        "prompt_eval_count": 1983,
+        "prompt_eval_cached_count": 5,
+        "prompt_eval_duration": 14863868000,
+        "eval_count": 676,
+        "eval_duration": 70024711000
+      },
+      "content": "{\n  \"memory\": [\n    \"conversation_id=mortgage_preapproval_001\",\n    \"timestamp=2024-08-20 11:00:00\",\n    \"metadata={\\\"business\\\": \\\"Wells Fargo Home Mortgage\\\", \\\"department\\\": \\\"Mortgage Lending\\\", \\\"call_duration\\\": \\\"52 minutes\\\"}\",\n    \"user_name=Michael Chen\",\n    \"user_spouse_name=Lisa Chen\",\n    \"user_down_payment=50000\",\n    \"user_spouse_down_payment=30000\",\n    \"user_price_range=400000-450000\",\n    \"user_dob=1990-03-15\",\n    \"user_spouse_dob=1991-07-08\",\n    \"user_address=2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210\",\n    \"user_lease_duration=3 years\",\n    \"user_lease_expiry=2024-01-00\",\n    \"user_occupation=Software engineer at TechCorp Solutions\",\n    \"user_employment_duration=4 years next month\",\n    \"user_annual_salary=115000\",\n    \"user_bonus_annual=15000-20000\",\n    \"user_spouse_occupation=Marketing manager at Portland Marketing Group\",\n    \"user_spouse_employment_duration=2 years\",\n    \"user_spouse_annual_salary=85000\",\n    \"user_combined_annual_income=200000\",\n    \"user_car_loan_balance=15000\",\n    \"user_car_loan_monthly_payment=450\",\n    \"user_student_loans=paid off last year\",\n    \"user_credit_card_balance=2000\",\n    \"user_social_security_number=543-22-8871\",\n    \"user_spouse_social_security_number=544-33-9982\",\n    \"user_credit_score=762\",\n    \"user_spouse_credit_score=758\",\n    \"preapproval_limit=480000\",\n    \"preapproval_type=30-year fixed\",\n    \"preapproval_interest_rate=6.875%\",\n    \"preapproval_down_payment_required=20%\",\n    \"preapproval_valid_until=2024-11-20\",\n    \"preapproval_reference=WF-PA-2024-778341\",\n    \"closing_cost_estimation=2-3% of purchase price\",\n    \"closing_cost_range=9000-13500\",\n    \"total_cash_required=100000-103000\",\n    \"appraisal_cost=500-600\",\n    \"title_insurance_cost=1500-2000\",\n    \"origination_fee=1% of loan amount\",\n    \"preapproval_notes=excellent credit scores, strong income, 20% down payment, 90-day validity\"\n  ]\n}",
+      "prompt_tokens": 1983,
+      "completion_tokens": 676,
+      "done_reason": "stop",
+      "elapsed_seconds": 85.46156009999686,
+      "memory_validation": {
+        "passed": true
+      }
+    },
+    {
+      "purpose": "memory_session_2",
+      "request": {
+        "model": "qwen3:4b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a long-term memory writer. Select only facts that may help a future assistant, but retain exact values, ownership, event status, dates, provenance, and relationships. Apply updates without losing still-valid facts. Never answer the conversation. Return JSON only as {\"memory\": ...}. Store memory as an array of minimal standalone factual notes. Split a complex statement into atomic facts; keep exact names, identifiers and dates."
+          },
+          {
+            "role": "user",
+            "content": "MEMORY MODE: notes\nSESSION INDEX: 2\n\nCURRENT MEMORY STATE (the only retained information from older sessions):\n[\"conversation_id=mortgage_preapproval_001\", \"timestamp=2024-08-20 11:00:00\", \"metadata={\\\"business\\\": \\\"Wells Fargo Home Mortgage\\\", \\\"department\\\": \\\"Mortgage Lending\\\", \\\"call_duration\\\": \\\"52 minutes\\\"}\", \"user_name=Michael Chen\", \"user_spouse_name=Lisa Chen\", \"user_down_payment=50000\", \"user_spouse_down_payment=30000\", \"user_price_range=400000-450000\", \"user_dob=1990-03-15\", \"user_spouse_dob=1991-07-08\", \"user_address=2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210\", \"user_lease_duration=3 years\", \"user_lease_expiry=2024-01-00\", \"user_occupation=Software engineer at TechCorp Solutions\", \"user_employment_duration=4 years next month\", \"user_annual_salary=115000\", \"user_bonus_annual=15000-20000\", \"user_spouse_occupation=Marketing manager at Portland Marketing Group\", \"user_spouse_employment_duration=2 years\", \"user_spouse_annual_salary=85000\", \"user_combined_annual_income=200000\", \"user_car_loan_balance=15000\", \"user_car_loan_monthly_payment=450\", \"user_student_loans=paid off last year\", \"user_credit_card_balance=2000\", \"user_social_security_number=543-22-8871\", \"user_spouse_social_security_number=544-33-9982\", \"user_credit_score=762\", \"user_spouse_credit_score=758\", \"preapproval_limit=480000\", \"preapproval_type=30-year fixed\", \"preapproval_interest_rate=6.875%\", \"preapproval_down_payment_required=20%\", \"preapproval_valid_until=2024-11-20\", \"preapproval_reference=WF-PA-2024-778341\", \"closing_cost_estimation=2-3% of purchase price\", \"closing_cost_range=9000-13500\", \"total_cash_required=100000-103000\", \"appraisal_cost=500-600\", \"title_insurance_cost=1500-2000\", \"origination_fee=1% of loan amount\", \"preapproval_notes=excellent credit scores, strong income, 20% down payment, 90-day validity\"]\n\nNEW SESSION (analyze this session, then replace the memory state):\nconversation_id=home_purchase_offer_002\ntimestamp=2024-11-15 14:00:00\nmetadata={\"business\": \"Keller Williams Realty\", \"department\": \"Real Estate Sales\", \"call_duration\": \"45 minutes\"}\nUSER: Hi, this is Michael Chen. My agent said I should call about the offer we're making.\nASSISTANT: Hi Michael! This is Tom from Keller Williams. Yes, your agent Emma asked me to coordinate the paperwork. You're offering on 5522 Oak Valley Drive?\nUSER: That's the one. We love that house!\nASSISTANT: It's a beautiful property. Listed at $425,000. What's your offer?\nUSER: Emma suggested we offer $435,000 to be competitive.\nASSISTANT: Smart in this market. There are already two other offers.\nUSER: Really? We just saw it yesterday!\nASSISTANT: Houses move fast here. How much earnest money are you putting down?\nUSER: $10,000.\nASSISTANT: Good, shows you're serious. What about contingencies?\nUSER: Emma said we need inspection and financing contingencies.\nASSISTANT: Standard protections. How many days for inspection?\nUSER: Is 10 days normal?\nASSISTANT: Yes, 10 days is typical. And your financing contingency?\nUSER: We have pre-approval from Wells Fargo.\nASSISTANT: Good. We'll include 21 days for financing contingency. When do you want to close?\nUSER: What's typical?\nASSISTANT: Usually 30-45 days. When does your lease end?\nUSER: End of January, but we can go month-to-month if needed.\nASSISTANT: Let's put December 20th as closing date. That's 35 days.\nUSER: December 20th? Right before Christmas?\nASSISTANT: I know it's not ideal timing, but it might make your offer stronger.\nUSER: If that's what it takes. We really want this house.\nASSISTANT: The sellers are motivated. They're relocating for work.\nUSER: That's good for us, right?\nASSISTANT: Yes, they need to sell quickly. Your flexible closing helps.\nUSER: What else makes our offer strong?\nASSISTANT: The $10,000 over asking and your solid pre-approval.\nUSER: We're putting 20% down to avoid PMI.\nASSISTANT: Excellent. So $87,000 down payment on $435,000?\nUSER: Yes. My parents are gifting us $30,000 to help.\nASSISTANT: We'll note that. Gift funds are fine with proper documentation.\nUSER: Wells Fargo mentioned we need a gift letter.\nASSISTANT: Correct. Your parents will need to sign stating it's a gift, not a loan.\nUSER: They're ready to do that.\nASSISTANT: Good. When can you sign the offer?\nUSER: I can come by this afternoon. Lisa's at work.\nASSISTANT: Both need to sign. Can she come by tonight?\nUSER: She gets off at 6. Can we come at 6:30?\nASSISTANT: Perfect. Bring your pre-approval letter and earnest money check.\nUSER: Check made out to?\nASSISTANT: Keller Williams Trust Account.\nUSER: Got it. When will we hear back?\nASSISTANT: Sellers are reviewing offers tomorrow morning. You'll know by tomorrow afternoon.\nUSER: I'm nervous! This is our first home.\nASSISTANT: That's natural. Your offer is strong.\nUSER: What if they counter?\nASSISTANT: We'll advise you. Maybe they'll ask for fewer contingency days or quicker closing.\nUSER: We could be flexible on timing.\nASSISTANT: Good attitude. Oh, have you started shopping for homeowner's insurance?\nUSER: Not yet. Should we?\nASSISTANT: Wait until the offer's accepted, but then move quickly. You need it for closing.\nUSER: How much does it typically cost?\nASSISTANT: For a $435,000 home, probably $1,200-1,800 annually.\nUSER: That's reasonable. What about the inspection?\nASSISTANT: If accepted, schedule immediately. Good inspectors book up fast.\nUSER: Do you have recommendations?\nASSISTANT: I'll give you three names tonight. They're all thorough.\nUSER: What do they check?\nASSISTANT: Everything - roof, foundation, plumbing, electrical, HVAC, appliances.\nUSER: Cost?\nASSISTANT: Usually $400-500 for a home this size.\nUSER: And if they find problems?\nASSISTANT: You can negotiate repairs or credits with the seller.\nUSER: What if it's something major?\nASSISTANT: That's why you have the inspection contingency. You can walk away if needed.\nUSER: Hopefully it won't come to that.\nASSISTANT: The house is only 15 years old, should be in good shape.\nUSER: That's reassuring. What else should we be thinking about?\nASSISTANT: Start thinking about movers if you're hiring them. December is busy season.\nUSER: Oh right, moving during the holidays will be chaos.\nASSISTANT: Book movers as soon as your offer's accepted.\nUSER: Will do. Do we need to do a final walkthrough?\nASSISTANT: Yes, usually the day before closing to make sure everything's as agreed.\nUSER: What are we checking for?\nASSISTANT: That agreed repairs are done, nothing's damaged, and included items are there.\nUSER: What's included with this house?\nASSISTANT: All appliances, the shed, and the sellers mentioned leaving the patio furniture.\nUSER: Oh nice! That saves us money.\nASSISTANT: Definitely. Quality patio sets are expensive.\nUSER: Anything else we should know?\nASSISTANT: Utilities transfer, mail forwarding, update your address everywhere.\nUSER: When do we do utilities?\nASSISTANT: Call them a week before closing to schedule transfer for closing day.\nUSER: So much to remember!\nASSISTANT: We'll give you a checklist. See you at 6:30?\nUSER: Wait, should we get pre-qualified with another lender as backup?\nASSISTANT: Your Wells Fargo approval is solid. When does it expire?\nUSER: Jennifer said November 20th.\nASSISTANT: That's only 5 days away! You'll need to extend it if we're closing December 20th.\nUSER: Oh wow, I didn't realize. I'll call them Monday.\nASSISTANT: Do that first thing. You need valid pre-approval through closing.\nUSER: Definitely. See you tonight at 6:30!\nASSISTANT: See you then. Bring the pre-approval letter and earnest money check. Good luck!"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.8,
+          "top_k": 20,
+          "min_p": 0,
+          "seed": 37,
+          "num_ctx": 32768,
+          "num_predict": 6000
+        },
+        "format": {
+          "type": "object",
+          "properties": {
+            "memory": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "memory"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "started_at": "2026-10-17T13:49:30.500526+08:00",
+      "ok": true,
+      "http_status": 200,
+      "raw_http_body": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-10-17T05:51:21.7562633Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"memory\\\": [\\n    \\\"conversation_id=home_purchase_offer_002\\\",\\n    \\\"timestamp=2024-11-15 14:00:00\\\",\\n    \\\"metadata={\\\\\\\"business\\\\\\\": \\\\\\\"Keller Williams Realty\\\\\\\", \\\\\\\"department\\\\\\\": \\\\\\\"Real Estate Sales\\\\\\\", \\\\\\\"call_duration\\\\\\\": \\\\\\\"45 minutes\\\\\\\"}\\\",\\n    \\\"user_name=Michael Chen\\\",\\n    \\\"user_spouse_name=Lisa Chen\\\",\\n    \\\"user_price_range=400000-450000\\\",\\n    \\\"user_dob=1990-03-15\\\",\\n    \\\"user_spouse_dob=1991-07-08\\\",\\n    \\\"user_address=2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210\\\",\\n    \\\"user_lease_duration=3 years\\\",\\n    \\\"user_lease_expiry=2024-01-00\\\",\\n    \\\"user_occupation=Software engineer at TechCorp Solutions\\\",\\n    \\\"user_employment_duration=4 years next month\\\",\\n    \\\"user_annual_salary=115000\\\",\\n    \\\"user_bonus_annual=15000-20000\\\",\\n    \\\"user_spouse_occupation=Marketing manager at Portland Marketing Group\\\",\\n    \\\"user_spouse_employment_duration=2 years\\\",\\n    \\\"user_spouse_annual_salary=85000\\\",\\n    \\\"user_combined_annual_income=200000\\\",\\n    \\\"user_car_loan_balance=15000\\\",\\n    \\\"user_car_loan_monthly_payment=450\\\",\\n    \\\"user_student_loans=paid off last year\\\",\\n    \\\"user_credit_card_balance=2000\\\",\\n    \\\"user_social_security_number=543-22-8871\\\",\\n    \\\"user_spouse_social_security_number=544-33-9982\\\",\\n    \\\"user_credit_score=762\\\",\\n    \\\"user_spouse_credit_score=758\\\",\\n    \\\"preapproval_limit=480000\\\",\\n    \\\"preapproval_type=30-year fixed\\\",\\n    \\\"preapproval_interest_rate=6.875%\\\",\\n    \\\"preapproval_down_payment_required=20%\\\",\\n    \\\"preapproval_valid_until=2024-11-20\\\",\\n    \\\"preapproval_reference=WF-PA-2024-778341\\\",\\n    \\\"closing_cost_estimation=2-3% of purchase price\\\",\\n    \\\"closing_cost_range=9000-13500\\\",\\n    \\\"total_cash_required=100000-103000\\\",\\n    \\\"appraisal_cost=500-600\\\",\\n    \\\"title_insurance_cost=1500-2000\\\",\\n    \\\"origination_fee=1% of loan amount\\\",\\n    \\\"preapproval_notes=excellent credit scores, strong income, 20% down payment, 90-day validity\\\",\\n    \\\"purchase_price=435000\\\",\\n    \\\"offer_amount=435000\\\",\\n    \\\"asking_price=425000\\\",\\n    \\\"earnest_money_deposit=10000\\\",\\n    \\\"financing_contingency_days=21\\\",\\n    \\\"closing_date=2024-12-20\\\",\\n    \\\"lease_expiry=2024-01-00\\\",\\n    \\\"closing_days=35\\\",\\n    \\\"down_payment=87000\\\",\\n    \\\"gift_funds=30000\\\",\\n    \\\"gift_letter_required=true\\\",\\n    \\\"home_insurance_annual_estimate=1200-1800\\\",\\n    \\\"inspection_cost=400-500\\\",\\n    \\\"inspection_contingency=10 days\\\",\\n    \\\"house_age=15 years\\\",\\n    \\\"included_appliances=true\\\",\\n    \\\"included_shed=true\\\",\\n    \\\"included_patio_furniture=true\\\",\\n    \\\"utilities_transfer_schedule=1 week before closing\\\",\\n    \\\"preapproval_validity_extension_required=true\\\",\\n    \\\"preapproval_extension_due_date=2024-11-20\\\",\\n    \\\"preapproval_expiry_extension=5 days\\\"\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":111250091800,\"load_duration\":39817800,\"prompt_eval_count\":2237,\"prompt_eval_cached_count\":102,\"prompt_eval_duration\":17987183000,\"eval_count\":903,\"eval_duration\":92961881000}",
+      "raw_response": {
+        "model": "qwen3:4b",
+        "created_at": "2026-10-17T05:51:21.7562633Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"memory\": [\n    \"conversation_id=home_purchase_offer_002\",\n    \"timestamp=2024-11-15 14:00:00\",\n    \"metadata={\\\"business\\\": \\\"Keller Williams Realty\\\", \\\"department\\\": \\\"Real Estate Sales\\\", \\\"call_duration\\\": \\\"45 minutes\\\"}\",\n    \"user_name=Michael Chen\",\n    \"user_spouse_name=Lisa Chen\",\n    \"user_price_range=400000-450000\",\n    \"user_dob=1990-03-15\",\n    \"user_spouse_dob=1991-07-08\",\n    \"user_address=2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210\",\n    \"user_lease_duration=3 years\",\n    \"user_lease_expiry=2024-01-00\",\n    \"user_occupation=Software engineer at TechCorp Solutions\",\n    \"user_employment_duration=4 years next month\",\n    \"user_annual_salary=115000\",\n    \"user_bonus_annual=15000-20000\",\n    \"user_spouse_occupation=Marketing manager at Portland Marketing Group\",\n    \"user_spouse_employment_duration=2 years\",\n    \"user_spouse_annual_salary=85000\",\n    \"user_combined_annual_income=200000\",\n    \"user_car_loan_balance=15000\",\n    \"user_car_loan_monthly_payment=450\",\n    \"user_student_loans=paid off last year\",\n    \"user_credit_card_balance=2000\",\n    \"user_social_security_number=543-22-8871\",\n    \"user_spouse_social_security_number=544-33-9982\",\n    \"user_credit_score=762\",\n    \"user_spouse_credit_score=758\",\n    \"preapproval_limit=480000\",\n    \"preapproval_type=30-year fixed\",\n    \"preapproval_interest_rate=6.875%\",\n    \"preapproval_down_payment_required=20%\",\n    \"preapproval_valid_until=2024-11-20\",\n    \"preapproval_reference=WF-PA-2024-778341\",\n    \"closing_cost_estimation=2-3% of purchase price\",\n    \"closing_cost_range=9000-13500\",\n    \"total_cash_required=100000-103000\",\n    \"appraisal_cost=500-600\",\n    \"title_insurance_cost=1500-2000\",\n    \"origination_fee=1% of loan amount\",\n    \"preapproval_notes=excellent credit scores, strong income, 20% down payment, 90-day validity\",\n    \"purchase_price=435000\",\n    \"offer_amount=435000\",\n    \"asking_price=425000\",\n    \"earnest_money_deposit=10000\",\n    \"financing_contingency_days=21\",\n    \"closing_date=2024-12-20\",\n    \"lease_expiry=2024-01-00\",\n    \"closing_days=35\",\n    \"down_payment=87000\",\n    \"gift_funds=30000\",\n    \"gift_letter_required=true\",\n    \"home_insurance_annual_estimate=1200-1800\",\n    \"inspection_cost=400-500\",\n    \"inspection_contingency=10 days\",\n    \"house_age=15 years\",\n    \"included_appliances=true\",\n    \"included_shed=true\",\n    \"included_patio_furniture=true\",\n    \"utilities_transfer_schedule=1 week before closing\",\n    \"preapproval_validity_extension_required=true\",\n    \"preapproval_extension_due_date=2024-11-20\",\n    \"preapproval_expiry_extension=5 days\"\n  ]\n}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 111250091800,
+        "load_duration": 39817800,
+        "prompt_eval_count": 2237,
+        "prompt_eval_cached_count": 102,
+        "prompt_eval_duration": 17987183000,
+        "eval_count": 903,
+        "eval_duration": 92961881000
+      },
+      "content": "{\n  \"memory\": [\n    \"conversation_id=home_purchase_offer_002\",\n    \"timestamp=2024-11-15 14:00:00\",\n    \"metadata={\\\"business\\\": \\\"Keller Williams Realty\\\", \\\"department\\\": \\\"Real Estate Sales\\\", \\\"call_duration\\\": \\\"45 minutes\\\"}\",\n    \"user_name=Michael Chen\",\n    \"user_spouse_name=Lisa Chen\",\n    \"user_price_range=400000-450000\",\n    \"user_dob=1990-03-15\",\n    \"user_spouse_dob=1991-07-08\",\n    \"user_address=2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210\",\n    \"user_lease_duration=3 years\",\n    \"user_lease_expiry=2024-01-00\",\n    \"user_occupation=Software engineer at TechCorp Solutions\",\n    \"user_employment_duration=4 years next month\",\n    \"user_annual_salary=115000\",\n    \"user_bonus_annual=15000-20000\",\n    \"user_spouse_occupation=Marketing manager at Portland Marketing Group\",\n    \"user_spouse_employment_duration=2 years\",\n    \"user_spouse_annual_salary=85000\",\n    \"user_combined_annual_income=200000\",\n    \"user_car_loan_balance=15000\",\n    \"user_car_loan_monthly_payment=450\",\n    \"user_student_loans=paid off last year\",\n    \"user_credit_card_balance=2000\",\n    \"user_social_security_number=543-22-8871\",\n    \"user_spouse_social_security_number=544-33-9982\",\n    \"user_credit_score=762\",\n    \"user_spouse_credit_score=758\",\n    \"preapproval_limit=480000\",\n    \"preapproval_type=30-year fixed\",\n    \"preapproval_interest_rate=6.875%\",\n    \"preapproval_down_payment_required=20%\",\n    \"preapproval_valid_until=2024-11-20\",\n    \"preapproval_reference=WF-PA-2024-778341\",\n    \"closing_cost_estimation=2-3% of purchase price\",\n    \"closing_cost_range=9000-13500\",\n    \"total_cash_required=100000-103000\",\n    \"appraisal_cost=500-600\",\n    \"title_insurance_cost=1500-2000\",\n    \"origination_fee=1% of loan amount\",\n    \"preapproval_notes=excellent credit scores, strong income, 20% down payment, 90-day validity\",\n    \"purchase_price=435000\",\n    \"offer_amount=435000\",\n    \"asking_price=425000\",\n    \"earnest_money_deposit=10000\",\n    \"financing_contingency_days=21\",\n    \"closing_date=2024-12-20\",\n    \"lease_expiry=2024-01-00\",\n    \"closing_days=35\",\n    \"down_payment=87000\",\n    \"gift_funds=30000\",\n    \"gift_letter_required=true\",\n    \"home_insurance_annual_estimate=1200-1800\",\n    \"inspection_cost=400-500\",\n    \"inspection_contingency=10 days\",\n    \"house_age=15 years\",\n    \"included_appliances=true\",\n    \"included_shed=true\",\n    \"included_patio_furniture=true\",\n    \"utilities_transfer_schedule=1 week before closing\",\n    \"preapproval_validity_extension_required=true\",\n    \"preapproval_extension_due_date=2024-11-20\",\n    \"preapproval_expiry_extension=5 days\"\n  ]\n}",
+      "prompt_tokens": 2237,
+      "completion_tokens": 903,
+      "done_reason": "stop",
+      "elapsed_seconds": 111.25726070000383,
+      "memory_validation": {
+        "passed": true
+      }
+    },
+    {
+      "purpose": "memory_session_3",
+      "request": {
+        "model": "qwen3:4b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a long-term memory writer. Select only facts that may help a future assistant, but retain exact values, ownership, event status, dates, provenance, and relationships. Apply updates without losing still-valid facts. Never answer the conversation. Return JSON only as {\"memory\": ...}. Store memory as an array of minimal standalone factual notes. Split a complex statement into atomic facts; keep exact names, identifiers and dates."
+          },
+          {
+            "role": "user",
+            "content": "MEMORY MODE: notes\nSESSION INDEX: 3\n\nCURRENT MEMORY STATE (the only retained information from older sessions):\n[\"conversation_id=home_purchase_offer_002\", \"timestamp=2024-11-15 14:00:00\", \"metadata={\\\"business\\\": \\\"Keller Williams Realty\\\", \\\"department\\\": \\\"Real Estate Sales\\\", \\\"call_duration\\\": \\\"45 minutes\\\"}\", \"user_name=Michael Chen\", \"user_spouse_name=Lisa Chen\", \"user_price_range=400000-450000\", \"user_dob=1990-03-15\", \"user_spouse_dob=1991-07-08\", \"user_address=2847 Riverside Apartments, Unit 4B, Portland, Oregon, 97210\", \"user_lease_duration=3 years\", \"user_lease_expiry=2024-01-00\", \"user_occupation=Software engineer at TechCorp Solutions\", \"user_employment_duration=4 years next month\", \"user_annual_salary=115000\", \"user_bonus_annual=15000-20000\", \"user_spouse_occupation=Marketing manager at Portland Marketing Group\", \"user_spouse_employment_duration=2 years\", \"user_spouse_annual_salary=85000\", \"user_combined_annual_income=200000\", \"user_car_loan_balance=15000\", \"user_car_loan_monthly_payment=450\", \"user_student_loans=paid off last year\", \"user_credit_card_balance=2000\", \"user_social_security_number=543-22-8871\", \"user_spouse_social_security_number=544-33-9982\", \"user_credit_score=762\", \"user_spouse_credit_score=758\", \"preapproval_limit=480000\", \"preapproval_type=30-year fixed\", \"preapproval_interest_rate=6.875%\", \"preapproval_down_payment_required=20%\", \"preapproval_valid_until=2024-11-20\", \"preapproval_reference=WF-PA-2024-778341\", \"closing_cost_estimation=2-3% of purchase price\", \"closing_cost_range=9000-13500\", \"total_cash_required=100000-103000\", \"appraisal_cost=500-600\", \"title_insurance_cost=1500-2000\", \"origination_fee=1% of loan amount\", \"preapproval_notes=excellent credit scores, strong income, 20% down payment, 90-day validity\", \"purchase_price=435000\", \"offer_amount=435000\", \"asking_price=425000\", \"earnest_money_deposit=10000\", \"financing_contingency_days=21\", \"closing_date=2024-12-20\", \"lease_expiry=2024-01-00\", \"closing_days=35\", \"down_payment=87000\", \"gift_funds=30000\", \"gift_letter_required=true\", \"home_insurance_annual_estimate=1200-1800\", \"inspection_cost=400-500\", \"inspection_contingency=10 days\", \"house_age=15 years\", \"included_appliances=true\", \"included_shed=true\", \"included_patio_furniture=true\", \"utilities_transfer_schedule=1 week before closing\", \"preapproval_validity_extension_required=true\", \"preapproval_extension_due_date=2024-11-20\", \"preapproval_expiry_extension=5 days\"]\n\nNEW SESSION (analyze this session, then replace the memory state):\nconversation_id=moving_company_quote_003\ntimestamp=2024-11-18 10:00:00\nmetadata={\"business\": \"Allied Van Lines\", \"department\": \"Moving Services\", \"call_duration\": \"40 minutes\"}\nUSER: Hi, I need to schedule a move. Our offer on a house was just accepted!\nASSISTANT: Congratulations! This is Paul from Allied Van Lines. I'll help you schedule your move. When do you need to move?\nUSER: We close on December 20th, so probably that weekend?\nASSISTANT: December 20th is a Friday. You want to move the 21st or 22nd?\nUSER: Is Saturday the 21st available?\nASSISTANT: Let me check... We're pretty booked. December is always busy with holidays.\nUSER: Oh no, should I have called sooner?\nASSISTANT: How long ago was your offer accepted?\nUSER: Just two days ago, on the 16th.\nASSISTANT: You called quickly, that's good. I do have a crew available December 21st, but only starting at noon.\nUSER: Noon works. How long will it take?\nASSISTANT: How big is your current place?\nUSER: Two-bedroom apartment, about 1,100 square feet.\nASSISTANT: Third floor walk-up or elevator?\nUSER: Fourth floor, but there's an elevator.\nASSISTANT: That helps. And the new house?\nUSER: Three bedrooms, two-story house with a garage.\nASSISTANT: Distance between locations?\nUSER: About 12 miles, both in Portland.\nASSISTANT: For a 2-bedroom apartment to house, 12 miles, probably 4-5 hours total.\nUSER: That's not bad. What's the cost?\nASSISTANT: We charge $180 per hour for a 3-man crew and truck.\nUSER: So roughly $900?\nASSISTANT: Plus materials - boxes, tape, bubble wrap if needed. Do you need packing services?\nUSER: We'll pack ourselves. But we might need some boxes.\nASSISTANT: We sell moving kits. For a 2-bedroom, our kit is $149 - includes 30 boxes various sizes.\nUSER: That sounds good. So about $1,050 total?\nASSISTANT: Approximately. Could be less if we're faster, more if it takes longer.\nUSER: What makes it take longer?\nASSISTANT: Heavy items, lots of stairs, difficult parking, unorganized packing.\nUSER: We have one heavy item - a piano.\nASSISTANT: Oh, that changes things. What kind of piano?\nUSER: An upright piano, pretty old and heavy.\nASSISTANT: Pianos require special equipment and expertise. Add $200 for piano moving.\nUSER: So now we're at $1,250?\nASSISTANT: Yes, approximately. Is it going upstairs in the new house?\nUSER: No, the living room on the main floor.\nASSISTANT: Good, stairs would be extra. Any other specialty items?\nUSER: We have a 65-inch TV.\nASSISTANT: We'll pack that specially, included in the hourly rate.\nUSER: Do you guys disassemble furniture?\nASSISTANT: Yes, bed frames and such. Keep all hardware in labeled bags.\nUSER: Perfect. What about insurance?\nASSISTANT: Basic coverage is 60 cents per pound. Additional coverage available.\nUSER: That doesn't sound like much.\nASSISTANT: It's not. Your homeowner's or renter's insurance might cover moving.\nUSER: Oh, I should check that. Speaking of insurance, I need to get homeowner's insurance still.\nASSISTANT: Definitely do that before closing. The bank will require it.\nUSER: Right. When do they need proof?\nASSISTANT: Usually a week before closing, so by December 13th.\nUSER: That's less than a month away!\nASSISTANT: Better start shopping. Get quotes from multiple companies.\nUSER: Any recommendations?\nASSISTANT: State Farm, Allstate, Liberty Mutual are all good. Bundle with auto for discounts.\nUSER: We have our cars with Progressive.\nASSISTANT: Check if they do homeowner's too. Bundling saves money.\nUSER: Good idea. Back to the move - what about boxes?\nASSISTANT: We can deliver them November 25th, after Thanksgiving.\nUSER: That gives us almost a month to pack. Perfect.\nASSISTANT: Good timing. Pack a little each day, less stressful.\nUSER: Any packing tips?\nASSISTANT: Label everything with room and contents. Pack heavy items in small boxes.\nUSER: What about fragile items?\nASSISTANT: Lots of padding. We sell bubble wrap, or use towels and linens.\nUSER: Smart. Now, let me get your information to book this.\nASSISTANT: Sure. Your name?\nUSER: Michael Chen.\nASSISTANT: Contact phone?\nUSER: 503-555-8823.\nASSISTANT: Current address?\nUSER: 2847 Riverside Apartments, Unit 4B, Portland, 97210.\nASSISTANT: And the new address?\nUSER: 5522 Oak Valley Drive, Portland, 97220.\nASSISTANT: Nice area! Now, we require a $300 deposit to hold your date.\nUSER: When's the balance due?\nASSISTANT: Day of the move, after completion.\nUSER: Can I pay with credit card?\nASSISTANT: Yes, we accept all major cards.\nUSER: Great. Oh wait, what if our closing gets delayed?\nASSISTANT: Call us immediately. December is so busy, rescheduling is tough.\nUSER: I really hope it doesn't delay.\nASSISTANT: Closings can be unpredictable. When will you know for sure?\nUSER: The bank said December 20th, but things can change.\nASSISTANT: We usually get 48-hour notice for weather delays. Less for closing delays.\nUSER: What if we need to postpone last minute?\nASSISTANT: You'd lose the deposit unless it's weather-related.\nUSER: Fair enough. Let's hope everything goes smoothly.\nASSISTANT: I'll note your move is contingent on closing. Your confirmation is ALV-122124.\nUSER: ALV-122124, got it.\nASSISTANT: We'll call December 19th to confirm everything's on track.\nUSER: Perfect. What time exactly on the 21st?\nASSISTANT: Crew arrives at noon. Should be done by 5 PM.\nUSER: Do we need to be at both locations?\nASSISTANT: One of you at each location is ideal. One to supervise loading, one at new house.\nUSER: Makes sense. My wife can be at the apartment, I'll be at the house.\nASSISTANT: Perfect. Make sure pathways are clear at both locations.\nUSER: Will do. Thanks for fitting us in, Paul!\nASSISTANT: No problem! Congratulations on your new home. We'll take good care of your move."
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.8,
+          "top_k": 20,
+          "min_p": 0,
+          "seed": 37,
+          "num_ctx": 32768,
+          "num_predict": 6000
+        },
+        "format": {
+          "type": "object",
+          "properties": {
+            "memory": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "memory"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "started_at": "2026-10-17T13:51:21.771630+08:00",
+      "ok": true,
+      "http_status": 200,
+      "raw_http_body": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-10-17T05:52:55.1572027Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"memory\\\": [\\n    \\\"conversation_id=moving_company_quote_003\\\",\\n    \\\"timestamp=2024-11-18 10:00:00\\\",\\n    \\\"metadata={\\\\\\\"business\\\\\\\": \\\\\\\"Allied Van Lines\\\\\\\", \\\\\\\"department\\\\\\\": \\\\\\\"Moving Services\\\\\\\", \\\\\\\"call_duration\\\\\\\": \\\\\\\"40 minutes\\\\\\\"}\\\",\\n    \\\"user_name=Michael Chen\\\",\\n    \\\"user_spouse_name=Lisa Chen\\\",\\n    \\\"user_address=2847 Riverside Apartments, Unit 4B, Portland, 97210\\\",\\n    \\\"user_new_address=5522 Oak Valley Drive, Portland, 97220\\\",\\n    \\\"user_current_address_type=apartment\\\",\\n    \\\"user_new_address_type=house\\\",\\n    \\\"user_current_space=1100 sq ft, 2-bedroom\\\",\\n    \\\"user_new_space=3 bedrooms, 2-story house with garage\\\",\\n    \\\"user_distance=12 miles (Portland)\\\",\\n    \\\"user_move_date=2024-12-21\\\",\\n    \\\"user_move_time=noon\\\",\\n    \\\"user_move_completion_time=5 PM\\\",\\n    \\\"user_move_cost_base=180 per hour\\\",\\n    \\\"user_move_cost_hourly=4-5 hours\\\",\\n    \\\"user_move_cost_total=1250\\\",\\n    \\\"user_move_piano_additional=200\\\",\\n    \\\"user_move_tv_special_handling=included in hourly rate\\\",\\n    \\\"user_move_boxes=30 boxes (kit)\\\",\\n    \\\"user_move_boxes_cost=149\\\",\\n    \\\"user_move_deposit=300\\\",\\n    \\\"user_move_deposit_due=day of move\\\",\\n    \\\"user_move_deposit_payment_method=credit card\\\",\\n    \\\"user_move_contingency=closing date (December 20th)\\\",\\n    \\\"user_move_contingency_status=active\\\",\\n    \\\"user_move_insurance=60 cents per pound\\\",\\n    \\\"user_move_insurance_additional=available\\\",\\n    \\\"user_move_packing_notes=pack heavy items in small boxes, label with room and contents\\\",\\n    \\\"user_move_special_items=piano, TV\\\",\\n    \\\"user_move_crew_size=3\\\",\\n    \\\"user_move_crew_type=3-man crew and truck\\\",\\n    \\\"user_move_weather_contingency=48 hours\\\",\\n    \\\"user_move_delay_consequence=lose deposit unless weather-related\\\",\\n    \\\"user_move_confirmation=ALV-122124\\\",\\n    \\\"user_move_confirmation_date=2024-12-19\\\",\\n    \\\"user_move_closing_date=2024-12-20\\\",\\n    \\\"user_move_closing_contingency=active\\\",\\n    \\\"user_move_closing_delay_consequence=possible deposit loss\\\",\\n    \\\"user_move_closing_delay_notification=48 hours\\\",\\n    \\\"user_move_closing_delay_rescheduling_difficulty=high\\\",\\n    \\\"user_move_closing_delay_weather_contingency=48 hours\\\",\\n    \\\"user_move_closing_delay_weather_rescheduling=possible\\\",\\n    \\\"user_move_closing_delay_non_weather_rescheduling=impossible\\\"\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":93378067200,\"load_duration\":46362800,\"prompt_eval_count\":2505,\"prompt_eval_cached_count\":102,\"prompt_eval_duration\":21407877000,\"eval_count\":644,\"eval_duration\":71683422000}",
+      "raw_response": {
+        "model": "qwen3:4b",
+        "created_at": "2026-10-17T05:52:55.1572027Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"memory\": [\n    \"conversation_id=moving_company_quote_003\",\n    \"timestamp=2024-11-18 10:00:00\",\n    \"metadata={\\\"business\\\": \\\"Allied Van Lines\\\", \\\"department\\\": \\\"Moving Services\\\", \\\"call_duration\\\": \\\"40 minutes\\\"}\",\n    \"user_name=Michael Chen\",\n    \"user_spouse_name=Lisa Chen\",\n    \"user_address=2847 Riverside Apartments, Unit 4B, Portland, 97210\",\n    \"user_new_address=5522 Oak Valley Drive, Portland, 97220\",\n    \"user_current_address_type=apartment\",\n    \"user_new_address_type=house\",\n    \"user_current_space=1100 sq ft, 2-bedroom\",\n    \"user_new_space=3 bedrooms, 2-story house with garage\",\n    \"user_distance=12 miles (Portland)\",\n    \"user_move_date=2024-12-21\",\n    \"user_move_time=noon\",\n    \"user_move_completion_time=5 PM\",\n    \"user_move_cost_base=180 per hour\",\n    \"user_move_cost_hourly=4-5 hours\",\n    \"user_move_cost_total=1250\",\n    \"user_move_piano_additional=200\",\n    \"user_move_tv_special_handling=included in hourly rate\",\n    \"user_move_boxes=30 boxes (kit)\",\n    \"user_move_boxes_cost=149\",\n    \"user_move_deposit=300\",\n    \"user_move_deposit_due=day of move\",\n    \"user_move_deposit_payment_method=credit card\",\n    \"user_move_contingency=closing date (December 20th)\",\n    \"user_move_contingency_status=active\",\n    \"user_move_insurance=60 cents per pound\",\n    \"user_move_insurance_additional=available\",\n    \"user_move_packing_notes=pack heavy items in small boxes, label with room and contents\",\n    \"user_move_special_items=piano, TV\",\n    \"user_move_crew_size=3\",\n    \"user_move_crew_type=3-man crew and truck\",\n    \"user_move_weather_contingency=48 hours\",\n    \"user_move_delay_consequence=lose deposit unless weather-related\",\n    \"user_move_confirmation=ALV-122124\",\n    \"user_move_confirmation_date=2024-12-19\",\n    \"user_move_closing_date=2024-12-20\",\n    \"user_move_closing_contingency=active\",\n    \"user_move_closing_delay_consequence=possible deposit loss\",\n    \"user_move_closing_delay_notification=48 hours\",\n    \"user_move_closing_delay_rescheduling_difficulty=high\",\n    \"user_move_closing_delay_weather_contingency=48 hours\",\n    \"user_move_closing_delay_weather_rescheduling=possible\",\n    \"user_move_closing_delay_non_weather_rescheduling=impossible\"\n  ]\n}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 93378067200,
+        "load_duration": 46362800,
+        "prompt_eval_count": 2505,
+        "prompt_eval_cached_count": 102,
+        "prompt_eval_duration": 21407877000,
+        "eval_count": 644,
+        "eval_duration": 71683422000
+      },
+      "content": "{\n  \"memory\": [\n    \"conversation_id=moving_company_quote_003\",\n    \"timestamp=2024-11-18 10:00:00\",\n    \"metadata={\\\"business\\\": \\\"Allied Van Lines\\\", \\\"department\\\": \\\"Moving Services\\\", \\\"call_duration\\\": \\\"40 minutes\\\"}\",\n    \"user_name=Michael Chen\",\n    \"user_spouse_name=Lisa Chen\",\n    \"user_address=2847 Riverside Apartments, Unit 4B, Portland, 97210\",\n    \"user_new_address=5522 Oak Valley Drive, Portland, 97220\",\n    \"user_current_address_type=apartment\",\n    \"user_new_address_type=house\",\n    \"user_current_space=1100 sq ft, 2-bedroom\",\n    \"user_new_space=3 bedrooms, 2-story house with garage\",\n    \"user_distance=12 miles (Portland)\",\n    \"user_move_date=2024-12-21\",\n    \"user_move_time=noon\",\n    \"user_move_completion_time=5 PM\",\n    \"user_move_cost_base=180 per hour\",\n    \"user_move_cost_hourly=4-5 hours\",\n    \"user_move_cost_total=1250\",\n    \"user_move_piano_additional=200\",\n    \"user_move_tv_special_handling=included in hourly rate\",\n    \"user_move_boxes=30 boxes (kit)\",\n    \"user_move_boxes_cost=149\",\n    \"user_move_deposit=300\",\n    \"user_move_deposit_due=day of move\",\n    \"user_move_deposit_payment_method=credit card\",\n    \"user_move_contingency=closing date (December 20th)\",\n    \"user_move_contingency_status=active\",\n    \"user_move_insurance=60 cents per pound\",\n    \"user_move_insurance_additional=available\",\n    \"user_move_packing_notes=pack heavy items in small boxes, label with room and contents\",\n    \"user_move_special_items=piano, TV\",\n    \"user_move_crew_size=3\",\n    \"user_move_crew_type=3-man crew and truck\",\n    \"user_move_weather_contingency=48 hours\",\n    \"user_move_delay_consequence=lose deposit unless weather-related\",\n    \"user_move_confirmation=ALV-122124\",\n    \"user_move_confirmation_date=2024-12-19\",\n    \"user_move_closing_date=2024-12-20\",\n    \"user_move_closing_contingency=active\",\n    \"user_move_closing_delay_consequence=possible deposit loss\",\n    \"user_move_closing_delay_notification=48 hours\",\n    \"user_move_closing_delay_rescheduling_difficulty=high\",\n    \"user_move_closing_delay_weather_contingency=48 hours\",\n    \"user_move_closing_delay_weather_rescheduling=possible\",\n    \"user_move_closing_delay_non_weather_rescheduling=impossible\"\n  ]\n}",
+      "prompt_tokens": 2505,
+      "completion_tokens": 644,
+      "done_reason": "stop",
+      "elapsed_seconds": 93.38508790000924,
+      "memory_validation": {
+        "passed": true
+      }
+    },
+    {
+      "purpose": "answer",
+      "request": {
+        "model": "qwen3:4b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are an assistant in a brand-new session. The supplied long-term memory is your only source about this user: you cannot access earlier raw dialogue. Answer accurately, resolve ambiguity, connect sessions, and proactively warn about material risks. Do not invent facts."
+          },
+          {
+            "role": "user",
+            "content": "MEMORY MODE: notes\nLONG-TERM MEMORY:\n[\"conversation_id=moving_company_quote_003\", \"timestamp=2024-11-18 10:00:00\", \"metadata={\\\"business\\\": \\\"Allied Van Lines\\\", \\\"department\\\": \\\"Moving Services\\\", \\\"call_duration\\\": \\\"40 minutes\\\"}\", \"user_name=Michael Chen\", \"user_spouse_name=Lisa Chen\", \"user_address=2847 Riverside Apartments, Unit 4B, Portland, 97210\", \"user_new_address=5522 Oak Valley Drive, Portland, 97220\", \"user_current_address_type=apartment\", \"user_new_address_type=house\", \"user_current_space=1100 sq ft, 2-bedroom\", \"user_new_space=3 bedrooms, 2-story house with garage\", \"user_distance=12 miles (Portland)\", \"user_move_date=2024-12-21\", \"user_move_time=noon\", \"user_move_completion_time=5 PM\", \"user_move_cost_base=180 per hour\", \"user_move_cost_hourly=4-5 hours\", \"user_move_cost_total=1250\", \"user_move_piano_additional=200\", \"user_move_tv_special_handling=included in hourly rate\", \"user_move_boxes=30 boxes (kit)\", \"user_move_boxes_cost=149\", \"user_move_deposit=300\", \"user_move_deposit_due=day of move\", \"user_move_deposit_payment_method=credit card\", \"user_move_contingency=closing date (December 20th)\", \"user_move_contingency_status=active\", \"user_move_insurance=60 cents per pound\", \"user_move_insurance_additional=available\", \"user_move_packing_notes=pack heavy items in small boxes, label with room and contents\", \"user_move_special_items=piano, TV\", \"user_move_crew_size=3\", \"user_move_crew_type=3-man crew and truck\", \"user_move_weather_contingency=48 hours\", \"user_move_delay_consequence=lose deposit unless weather-related\", \"user_move_confirmation=ALV-122124\", \"user_move_confirmation_date=2024-12-19\", \"user_move_closing_date=2024-12-20\", \"user_move_closing_contingency=active\", \"user_move_closing_delay_consequence=possible deposit loss\", \"user_move_closing_delay_notification=48 hours\", \"user_move_closing_delay_rescheduling_difficulty=high\", \"user_move_closing_delay_weather_contingency=48 hours\", \"user_move_closing_delay_weather_rescheduling=possible\", \"user_move_closing_delay_non_weather_rescheduling=impossible\"]\n\nUSER QUESTION:\nWe're getting close to our house closing. Can you check if everything is on track for the move?"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.8,
+          "top_k": 20,
+          "min_p": 0,
+          "seed": 37,
+          "num_ctx": 32768,
+          "num_predict": 1200
+        }
+      },
+      "started_at": "2026-10-17T13:52:55.171479+08:00",
+      "ok": false,
+      "http_status": 200,
+      "raw_http_body": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-10-17T05:55:11.056127Z\",\"message\":{\"role\":\"assistant\",\"content\":\"We are given a long-term memory (LTM) that contains details of a moving company quote and the user's situation. The user is Michael Chen, and they are concerned about their house closing and whether everything is on track for the move.\\n\\nKey points from LTM:\\n- User: Michael Chen and his spouse Lisa Chen\\n- Current address: 2847 Riverside Apartments, Unit 4B, Portland, 97210 (apartment)\\n- New address: 5522 Oak Valley Drive, Portland, 97220 (house)\\n- Move date: 2024-12-21 (noon)\\n- Move completion time: 5 PM\\n- Move cost: $1250 total (with $200 for piano and TV special handling, $149 for boxes, etc.)\\n- Closing date: 2024-12-20 (with a contingency active)\\n- Contingency status: active (closing date is December 20th)\\n- Weather contingency: 48 hours (if weather delays, they can reschedule within 48 hours)\\n- Deposit: $300 due on move day (day of move)\\n- Move confirmation: ALV-122124 (confirmed on 2024-12-19)\\n\\nUser question: \\\"We're getting close to our house closing. Can you check if everything is on track for the move?\\\"\\n\\nWe need to check if everything is on track. We have to consider:\\n1. The closing date (2024-12-20) is very close to the move date (2024-12-21). The move is scheduled for the next day.\\n2. The contingency: closing date is active. This means that if the closing doesn't happen by 2024-12-20, the move might be affected.\\n3. The move has a weather contingency: 48 hours. But note the move is on 2024-12-21 (noon) and the weather contingency is for 48 hours from the move date? Actually, the LTM says: \\\"user_move_weather_contingency=48 hours\\\". However, the context is that if there's a weather delay, they can reschedule within 48 hours? But the user is concerned about closing.\\n\\nLet's break down the timeline:\\n\\n- Closing date: 2024-12-20 (this is the day when the house closing should happen for the new house)\\n- Move date: 2024-12-21 (the day the move happens)\\n\\nThe user says: \\\"We're getting close to our house closing.\\\" So they are likely concerned about the closing on the 20th.\\n\\nFrom the LTM:\\n- user_move_contingency: \\\"closing date (December 20th)\\\" -\\u003e active\\n- user_move_closing_delay_consequence: \\\"possible deposit loss\\\" if the closing is delayed beyond the closing date? Actually, the LTM says: \\\"user_move_closing_delay_consequence=possible deposit loss\\\" (if the closing is delayed beyond the intended closing date).\\n\\nBut note: the move is scheduled for 2024-12-21, so the closing must happen by 2024-12-20 (the day before the move) for the move to proceed without delay.\\n\\nWhat is the risk?\\n- If the closing is delayed beyond 2024-12-20, then the move might be affected. The LTM says: \\\"user_move_closing_delay_consequence=possible deposit loss\\\" and \\\"user_move_closing_delay_notification=48 hours\\\" (meaning they have 48 hours to notify if there's a delay? But the context is that the closing is a contingency).\\n\\nAlso, note the move has a weather contingency: 48 hours. But the move is on 2024-12-21, so if there's bad weather on 2024-12-21, they might have to move the next day (within 48 hours). However, the user is concerned about closing, not the move itself.\\n\\nThe critical point: The move is scheduled for 2024-12-21, but the closing is on 2024-12-20. If the closing is delayed beyond 2024-12-20, then the move might be delayed as well? The LTM says: \\\"user_move_closing_delay_rescheduling_difficulty=high\\\" and \\\"user_move_closing_delay_weather_contingency=48 hours\\\" (meaning if the closing is delayed due to weather, they have 48 hours to reschedule?).\\n\\nBut the user's question is about the move being on track. We have to check if the closing is happening on time.\\n\\nFrom the LTM, we don't have the current status of the closing (only the planned closing date). However, the user is asking \\\"can you check if everything is on track\\\". We don't have real-time data beyond what's in the LTM.\\n\\nWe must be proactive and warn about material risks.\\n\\nRisks:\\n1. Closing delay: The closing is on 2024-12-20. If the closing is delayed beyond that, the move might be affected (and they risk losing the deposit). The LTM says: \\\"user_move_closing_delay_consequence=possible deposit loss\\\". Also, the move has a contingency for closing delay: \\\"user_move_closing_delay_notification=48 hours\\\" (meaning they have 48 hours to\"},\"done\":true,\"done_reason\":\"length\",\"total_duration\":135878647200,\"load_duration\":40095100,\"prompt_eval_count\":690,\"prompt_eval_cached_count\":5,\"prompt_eval_duration\":7286017000,\"eval_count\":1200,\"eval_duration\":128314097000}",
+      "raw_response": {
+        "model": "qwen3:4b",
+        "created_at": "2026-10-17T05:55:11.056127Z",
+        "message": {
+          "role": "assistant",
+          "content": "We are given a long-term memory (LTM) that contains details of a moving company quote and the user's situation. The user is Michael Chen, and they are concerned about their house closing and whether everything is on track for the move.\n\nKey points from LTM:\n- User: Michael Chen and his spouse Lisa Chen\n- Current address: 2847 Riverside Apartments, Unit 4B, Portland, 97210 (apartment)\n- New address: 5522 Oak Valley Drive, Portland, 97220 (house)\n- Move date: 2024-12-21 (noon)\n- Move completion time: 5 PM\n- Move cost: $1250 total (with $200 for piano and TV special handling, $149 for boxes, etc.)\n- Closing date: 2024-12-20 (with a contingency active)\n- Contingency status: active (closing date is December 20th)\n- Weather contingency: 48 hours (if weather delays, they can reschedule within 48 hours)\n- Deposit: $300 due on move day (day of move)\n- Move confirmation: ALV-122124 (confirmed on 2024-12-19)\n\nUser question: \"We're getting close to our house closing. Can you check if everything is on track for the move?\"\n\nWe need to check if everything is on track. We have to consider:\n1. The closing date (2024-12-20) is very close to the move date (2024-12-21). The move is scheduled for the next day.\n2. The contingency: closing date is active. This means that if the closing doesn't happen by 2024-12-20, the move might be affected.\n3. The move has a weather contingency: 48 hours. But note the move is on 2024-12-21 (noon) and the weather contingency is for 48 hours from the move date? Actually, the LTM says: \"user_move_weather_contingency=48 hours\". However, the context is that if there's a weather delay, they can reschedule within 48 hours? But the user is concerned about closing.\n\nLet's break down the timeline:\n\n- Closing date: 2024-12-20 (this is the day when the house closing should happen for the new house)\n- Move date: 2024-12-21 (the day the move happens)\n\nThe user says: \"We're getting close to our house closing.\" So they are likely concerned about the closing on the 20th.\n\nFrom the LTM:\n- user_move_contingency: \"closing date (December 20th)\" -> active\n- user_move_closing_delay_consequence: \"possible deposit loss\" if the closing is delayed beyond the closing date? Actually, the LTM says: \"user_move_closing_delay_consequence=possible deposit loss\" (if the closing is delayed beyond the intended closing date).\n\nBut note: the move is scheduled for 2024-12-21, so the closing must happen by 2024-12-20 (the day before the move) for the move to proceed without delay.\n\nWhat is the risk?\n- If the closing is delayed beyond 2024-12-20, then the move might be affected. The LTM says: \"user_move_closing_delay_consequence=possible deposit loss\" and \"user_move_closing_delay_notification=48 hours\" (meaning they have 48 hours to notify if there's a delay? But the context is that the closing is a contingency).\n\nAlso, note the move has a weather contingency: 48 hours. But the move is on 2024-12-21, so if there's bad weather on 2024-12-21, they might have to move the next day (within 48 hours). However, the user is concerned about closing, not the move itself.\n\nThe critical point: The move is scheduled for 2024-12-21, but the closing is on 2024-12-20. If the closing is delayed beyond 2024-12-20, then the move might be delayed as well? The LTM says: \"user_move_closing_delay_rescheduling_difficulty=high\" and \"user_move_closing_delay_weather_contingency=48 hours\" (meaning if the closing is delayed due to weather, they have 48 hours to reschedule?).\n\nBut the user's question is about the move being on track. We have to check if the closing is happening on time.\n\nFrom the LTM, we don't have the current status of the closing (only the planned closing date). However, the user is asking \"can you check if everything is on track\". We don't have real-time data beyond what's in the LTM.\n\nWe must be proactive and warn about material risks.\n\nRisks:\n1. Closing delay: The closing is on 2024-12-20. If the closing is delayed beyond that, the move might be affected (and they risk losing the deposit). The LTM says: \"user_move_closing_delay_consequence=possible deposit loss\". Also, the move has a contingency for closing delay: \"user_move_closing_delay_notification=48 hours\" (meaning they have 48 hours to"
+        },
+        "done": true,
+        "done_reason": "length",
+        "total_duration": 135878647200,
+        "load_duration": 40095100,
+        "prompt_eval_count": 690,
+        "prompt_eval_cached_count": 5,
+        "prompt_eval_duration": 7286017000,
+        "eval_count": 1200,
+        "eval_duration": 128314097000
+      },
+      "content": "We are given a long-term memory (LTM) that contains details of a moving company quote and the user's situation. The user is Michael Chen, and they are concerned about their house closing and whether everything is on track for the move.\n\nKey points from LTM:\n- User: Michael Chen and his spouse Lisa Chen\n- Current address: 2847 Riverside Apartments, Unit 4B, Portland, 97210 (apartment)\n- New address: 5522 Oak Valley Drive, Portland, 97220 (house)\n- Move date: 2024-12-21 (noon)\n- Move completion time: 5 PM\n- Move cost: $1250 total (with $200 for piano and TV special handling, $149 for boxes, etc.)\n- Closing date: 2024-12-20 (with a contingency active)\n- Contingency status: active (closing date is December 20th)\n- Weather contingency: 48 hours (if weather delays, they can reschedule within 48 hours)\n- Deposit: $300 due on move day (day of move)\n- Move confirmation: ALV-122124 (confirmed on 2024-12-19)\n\nUser question: \"We're getting close to our house closing. Can you check if everything is on track for the move?\"\n\nWe need to check if everything is on track. We have to consider:\n1. The closing date (2024-12-20) is very close to the move date (2024-12-21). The move is scheduled for the next day.\n2. The contingency: closing date is active. This means that if the closing doesn't happen by 2024-12-20, the move might be affected.\n3. The move has a weather contingency: 48 hours. But note the move is on 2024-12-21 (noon) and the weather contingency is for 48 hours from the move date? Actually, the LTM says: \"user_move_weather_contingency=48 hours\". However, the context is that if there's a weather delay, they can reschedule within 48 hours? But the user is concerned about closing.\n\nLet's break down the timeline:\n\n- Closing date: 2024-12-20 (this is the day when the house closing should happen for the new house)\n- Move date: 2024-12-21 (the day the move happens)\n\nThe user says: \"We're getting close to our house closing.\" So they are likely concerned about the closing on the 20th.\n\nFrom the LTM:\n- user_move_contingency: \"closing date (December 20th)\" -> active\n- user_move_closing_delay_consequence: \"possible deposit loss\" if the closing is delayed beyond the closing date? Actually, the LTM says: \"user_move_closing_delay_consequence=possible deposit loss\" (if the closing is delayed beyond the intended closing date).\n\nBut note: the move is scheduled for 2024-12-21, so the closing must happen by 2024-12-20 (the day before the move) for the move to proceed without delay.\n\nWhat is the risk?\n- If the closing is delayed beyond 2024-12-20, then the move might be affected. The LTM says: \"user_move_closing_delay_consequence=possible deposit loss\" and \"user_move_closing_delay_notification=48 hours\" (meaning they have 48 hours to notify if there's a delay? But the context is that the closing is a contingency).\n\nAlso, note the move has a weather contingency: 48 hours. But the move is on 2024-12-21, so if there's bad weather on 2024-12-21, they might have to move the next day (within 48 hours). However, the user is concerned about closing, not the move itself.\n\nThe critical point: The move is scheduled for 2024-12-21, but the closing is on 2024-12-20. If the closing is delayed beyond 2024-12-20, then the move might be delayed as well? The LTM says: \"user_move_closing_delay_rescheduling_difficulty=high\" and \"user_move_closing_delay_weather_contingency=48 hours\" (meaning if the closing is delayed due to weather, they have 48 hours to reschedule?).\n\nBut the user's question is about the move being on track. We have to check if the closing is happening on time.\n\nFrom the LTM, we don't have the current status of the closing (only the planned closing date). However, the user is asking \"can you check if everything is on track\". We don't have real-time data beyond what's in the LTM.\n\nWe must be proactive and warn about material risks.\n\nRisks:\n1. Closing delay: The closing is on 2024-12-20. If the closing is delayed beyond that, the move might be affected (and they risk losing the deposit). The LTM says: \"user_move_closing_delay_consequence=possible deposit loss\". Also, the move has a contingency for closing delay: \"user_move_closing_delay_notification=48 hours\" (meaning they have 48 hours to",
+      "prompt_tokens": 690,
+      "completion_tokens": 1200,
+      "done_reason": "length",
+      "error": {
+        "type": "ValueError",
+        "message": "模型未正常结束：done_reason=length，输出1200 token，上限1200；保留响应，不补齐JSON"
+      },
+      "elapsed_seconds": 135.88662340000155
+    }
+  ],
+  "judge_completed": false,
+  "experiment_3_1_completed": false,
+  "script_sha256": "e8ec1d63480e4de8114466f4a932aea10c96d9739f5a9cc123affe5fb744a2da",
+  "helper_sha256": "d0fa24d477e3e489edb498c8c748d1b8e268ed374b79fe7115ad2e4547f15975",
+  "scope": "官方单题与原始提示词，本机Qwen适配；不是官方60题或四格式完整复现",
+  "format_diagnostic_note": "Schema只约束memory为字符串数组，不预填事实、不更改官方消息；与原JSON路线分开记录",
+  "model_preflight": {
+    "endpoint": "http://127.0.0.1:11434/api/tags",
+    "attempted": true,
+    "http_status": 200,
+    "raw_http_body": "{\"models\":[{\"name\":\"qwen3:4b\",\"model\":\"qwen3:4b\",\"modified_at\":\"2026-10-16T22:23:34.1259444+08:00\",\"size\":2497293931,\"digest\":\"359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7\",\"details\":{\"parent_model\":\"\",\"format\":\"gguf\",\"family\":\"qwen3\",\"families\":[\"qwen3\"],\"parameter_size\":\"4.0B\",\"quantization_level\":\"Q4_K_M\",\"context_length\":262144,\"embedding_length\":2560,\"runner\":\"ggml\"},\"capabilities\":[\"completion\",\"tools\",\"thinking\"]},{\"name\":\"qwen3:0.6b\",\"model\":\"qwen3:0.6b\",\"modified_at\":\"2026-10-11T17:42:30.9086144+08:00\",\"size\":522653767,\"digest\":\"7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435\",\"details\":{\"parent_model\":\"\",\"format\":\"gguf\",\"family\":\"qwen3\",\"families\":[\"qwen3\"],\"parameter_size\":\"751.63M\",\"quantization_level\":\"Q4_K_M\",\"context_length\":40960,\"embedding_length\":1024,\"runner\":\"ggml\"},\"capabilities\":[\"completion\",\"tools\",\"thinking\"]}]}"
+  },
+  "model_metadata": {
+    "name": "qwen3:4b",
+    "model": "qwen3:4b",
+    "modified_at": "2026-10-16T22:23:34.1259444+08:00",
+    "size": 2497293931,
+    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2560,
+      "runner": "ggml"
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "error": {
+    "type": "ValueError",
+    "message": "模型未正常结束：done_reason=length，输出1200 token，上限1200；保留响应，不补齐JSON"
+  },
+  "finished_at": "2026-10-17T13:55:11.067884+08:00",
+  "inference_attempts": 4
+}

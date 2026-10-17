@@ -1,0 +1,265 @@
+{
+  "stage": "official_case_local_memory_and_answer",
+  "status": "incomplete",
+  "created_at": "2026-10-17T11:31:14.807425+08:00",
+  "upstream_commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "case_source": {
+    "path": "chapter3/user-memory-evaluation/test_cases/layer1/17_veterinary_care.yaml",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/user-memory-evaluation/test_cases/layer1/17_veterinary_care.yaml",
+    "bytes": 10538,
+    "sha256": "712b5726f9d3732d915cb338bf7080d5c048f1156e0718434befa2b86ae92013"
+  },
+  "test_id": "layer1_17_veterinary_care",
+  "category": "layer1",
+  "mode": "notes",
+  "model": "qwen3:4b",
+  "calls_expected": 2,
+  "memory_format": "schema",
+  "sampling_profile": "qwen-recommended",
+  "sampling_options": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "min_p": 0
+  },
+  "sampling_scope": "同时用于记忆生成和最终答题；与legacy分开记录，仅比较整组采样设置，不归因于单个参数",
+  "sampling_reference": "https://huggingface.co/Qwen/Qwen3-0.6B#best-practices",
+  "generation_variant": "schema_format_diagnostic",
+  "question": "What was Max's current weight versus ideal weight, and what was the complete cost breakdown for tomorrow's visit?",
+  "memory_states": [
+    {
+      "session_index": 1,
+      "conversation_id": "vet_consult_001",
+      "memory": [
+        "conversation_id=vet_consult_001",
+        "timestamp=2024-11-08 15:30:00",
+        "metadata={\"business\": \"Companion Animal Hospital\", \"department\": \"Veterinary Services\", \"call_duration\": \"49 minutes\"}",
+        "user_name=Robert Thompson",
+        "pet_name=Max",
+        "pet_species=Dog",
+        "pet_breed=Golden Retriever",
+        "pet_age=7 years",
+        "pet_weight=78 pounds",
+        "last_seen_date=2024-10-15",
+        "symptoms=limping on right rear leg, decreased energy",
+        "symptom_duration=2 weeks",
+        "symptom_start_description=gradual onset after regular walks",
+        "medical_history=mild hip dysplasia",
+        "last_xray_date=approximately 18 months ago (from diagnosis)",
+        "current_medication=glucosamine supplements (Cosequin DS)",
+        "medication_dosage=2 tablets daily with food",
+        "medication_effectiveness=decreased effectiveness recently",
+        "diet=Hill's Science Diet Adult Large Breed",
+        "food_quantity=3.5 cups per day",
+        "meals_per_day=2 (morning and evening)",
+        "digestion_status=normal (no vomiting or diarrhea)",
+        "recommended_treatment=Rimadyl (75mg twice daily for 78 pounds)",
+        "side_effects_possible=GI upset, decreased appetite, lethargy",
+        "blood_work_required=complete blood count, chemistry panel, urinalysis",
+        "blood_work_cost=$285",
+        "xray_cost=$420 (hip and leg X-rays)",
+        "total_diagnostics_cost=$705 (including $285 blood work and $420 x-rays)",
+        "exam_fee=$65",
+        "total_treatment_cost=$770 (for diagnostics and exam)",
+        "long_term_treatment_option=adequan injections (loading dose: 2x weekly for 4 weeks, then monthly maintenance)",
+        "adequan_injection_cost=$85 per injection",
+        "loading_series_cost=$680 (4 injections at $85 each)",
+        "maintenance_cost=$85 monthly",
+        "alternative_treatment=Dasuquin Advanced (oral joint supplement, $75 per month)",
+        "vaccinations_status=rabies due until 2025-03-20, DHPP expired (due October 30th, 2024)",
+        "vaccination_cost_DHPP=$42",
+        "vaccination_cost_heartworm_test=$47",
+        "total_additional_cost=$859 (including vaccines and tests)",
+        "ideal_weight=72-73 pounds",
+        "current_weight=78 pounds (5 pounds overweight)",
+        "diet_adjustment=reduce food to 3 cups daily, limit treats to 10% of daily calories",
+        "exercise_recommendation=shorter walks (20 minutes, 3 times daily) instead of 45 minutes twice daily",
+        "swimming_recommendation=2-3 sessions weekly (15-20 minutes each) at nearby heated pool",
+        "pool_cost=$25 per session or $80 monthly unlimited",
+        "omega_3_recommendation=1000mg per 10 pounds body weight (7000-8000mg daily for Max)",
+        "omega_3_brand_recommendations=Nordic Naturals or Grizzly Salmon Oil",
+        "omega_3_cost=$30-40 per month",
+        "immediate_symptoms_to_watch_for=sudden inability to walk, crying in pain, leg swelling, loss of appetite with medication",
+        "blood_work_fasting_requirements=no food after 10 PM tonight",
+        "appointment_time=9 AM tomorrow (Saturday)",
+        "appointment_date=2024-11-09",
+        "appointment_duration=2 hours",
+        "pickup_time=11 AM"
+      ],
+      "prior_raw_histories_supplied": 0
+    }
+  ],
+  "calls": [
+    {
+      "purpose": "memory_session_1",
+      "request": {
+        "model": "qwen3:4b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a long-term memory writer. Select only facts that may help a future assistant, but retain exact values, ownership, event status, dates, provenance, and relationships. Apply updates without losing still-valid facts. Never answer the conversation. Return JSON only as {\"memory\": ...}. Store memory as an array of minimal standalone factual notes. Split a complex statement into atomic facts; keep exact names, identifiers and dates."
+          },
+          {
+            "role": "user",
+            "content": "MEMORY MODE: notes\nSESSION INDEX: 1\n\nCURRENT MEMORY STATE (the only retained information from older sessions):\n[]\n\nNEW SESSION (analyze this session, then replace the memory state):\nconversation_id=vet_consult_001\ntimestamp=2024-11-08 15:30:00\nmetadata={\"business\": \"Companion Animal Hospital\", \"department\": \"Veterinary Services\", \"call_duration\": \"49 minutes\"}\nUSER: Hi, I need to discuss my dog's recent health issues and treatment options.\nASSISTANT: Hello, this is Dr. Sarah Mitchell from Companion Animal Hospital. I'd be happy to discuss your pet's health. Can you provide your name and your pet's name?\nUSER: I'm Robert Thompson, and my dog is Max.\nASSISTANT: Thank you, Mr. Thompson. Let me pull up Max's file... I see Max is a 7-year-old Golden Retriever, 78 pounds, last seen October 15th?\nUSER: Yes, that's right. He's been having some issues since then.\nASSISTANT: What symptoms have you noticed?\nUSER: He's been limping on his right rear leg and seems less energetic.\nASSISTANT: How long has the limping been going on?\nUSER: About two weeks now. It started gradually.\nASSISTANT: Any specific incident that might have caused it? A fall, rough play?\nUSER: Not that I noticed. He just started favoring it after our regular walks.\nASSISTANT: I see in his history that Max has mild hip dysplasia. This could be related. When was his last X-ray?\nUSER: I think it was about 18 months ago when he was first diagnosed.\nASSISTANT: We should do new X-rays to check progression. Has he been taking any medications?\nUSER: He's been on glucosamine supplements, the ones you prescribed.\nASSISTANT: The Cosequin DS? What dosage?\nUSER: Two tablets daily with food.\nASSISTANT: Good. Has that been helping until recently?\nUSER: It seemed to, but not anymore.\nASSISTANT: We may need to add an anti-inflammatory. How's his appetite?\nUSER: Still good, eating his usual amount.\nASSISTANT: What food is he on?\nUSER: Hill's Science Diet Adult Large Breed, about 3.5 cups per day.\nASSISTANT: Split into how many meals?\nUSER: Two meals, morning and evening.\nASSISTANT: Perfect. Any vomiting or diarrhea?\nUSER: No, his digestion seems fine.\nASSISTANT: Good. Now, for the limping, I'd recommend starting with Rimadyl for pain and inflammation. Max weighs 78 pounds, so he'd need 75mg twice daily.\nUSER: Are there side effects?\nASSISTANT: Possible GI upset, decreased appetite, or lethargy. We'll do blood work first to check liver and kidney function.\nUSER: When should we do that?\nASSISTANT: Can you bring him in tomorrow morning? We do fasting blood work, so no food after 10 PM tonight.\nUSER: Tomorrow's Saturday - are you open?\nASSISTANT: Yes, we're open 8 AM to 2 PM Saturdays. How's 9 AM?\nUSER: That works. What tests will you run?\nASSISTANT: Complete blood count, chemistry panel, and urinalysis. Total cost is $285.\nUSER: And the X-rays?\nASSISTANT: Hip and leg X-rays would be $420. We can do those same visit if blood work looks good.\nUSER: So about $700 total for diagnostics?\nASSISTANT: Yes, $705 plus the exam fee of $65, so $770 total for tomorrow.\nUSER: Okay. What about long-term treatment?\nASSISTANT: Depending on X-ray results, we might consider adequan injections for joint health.\nUSER: What's that?\nASSISTANT: It's a series of injections that help rebuild joint cartilage. Loading dose is twice weekly for 4 weeks, then monthly.\nUSER: Cost?\nASSISTANT: Each injection is $85. So $680 for the loading series, then $85 monthly maintenance.\nUSER: That's expensive. Are there alternatives?\nASSISTANT: We could try oral joint supplements first. Dasuquin Advanced is stronger than Cosequin, about $75 per month.\nUSER: Let's see what the X-rays show first.\nASSISTANT: Absolutely. Now, is Max current on vaccinations?\nUSER: I think so. When were they due?\nASSISTANT: His rabies is good until March 2025, but his DHPP is due now - expired October 30th.\nUSER: Oh, I missed that. Can we do it tomorrow?\nASSISTANT: Yes, DHPP vaccine is $42. Also, his heartworm test is due.\nUSER: He's been on preventative, the Heartgard Plus.\nASSISTANT: Good, but we still need annual testing. That's $47.\nUSER: So adding those to tomorrow's visit?\nASSISTANT: Yes, new total would be $859 for everything tomorrow.\nUSER: Fine. What about his weight? The vet mentioned he could lose a few pounds last time.\nASSISTANT: Yes, ideal weight for Max would be 72-73 pounds. He's about 5 pounds over.\nUSER: How should I adjust his food?\nASSISTANT: Reduce to 3 cups daily instead of 3.5, and limit treats to 10% of daily calories.\nUSER: He loves his treats though.\nASSISTANT: Try baby carrots or green beans as low-calorie alternatives. Max likes vegetables?\nUSER: He'll eat anything!\nASSISTANT: Perfect. The weight loss will also help his joints.\nUSER: Should I change his exercise routine?\nASSISTANT: With the limping, shorter more frequent walks are better than long ones. How long are your walks now?\nUSER: Usually 45 minutes twice a day.\nASSISTANT: Try 20 minutes three times daily instead. Less stress on joints.\nUSER: What about swimming? He loves water.\nASSISTANT: Swimming is excellent for dogs with joint issues! Low impact but great exercise.\nUSER: There's a dog pool nearby that's heated.\nASSISTANT: Perfect. Two or three swim sessions weekly would be ideal, 15-20 minutes each.\nUSER: The pool charges $25 per session or $80 monthly unlimited.\nASSISTANT: The monthly unlimited would be cost-effective if you go twice weekly.\nUSER: I'll look into that. What about supplements besides joint ones?\nASSISTANT: Omega-3 fish oil helps with inflammation. 1000mg per 10 pounds body weight, so about 7000-8000mg daily for Max.\nUSER: Any brand recommendations?\nASSISTANT: Nordic Naturals or Grizzly Salmon Oil are good. About $30-40 per month.\nUSER: Should I start that now?\nASSISTANT: Yes, it's safe to start immediately. Give with food to avoid stomach upset.\nUSER: What symptoms should I watch for that would need immediate attention?\nASSISTANT: Sudden inability to walk, crying in pain, swelling of the leg, or loss of appetite with the medication.\nUSER: And for tomorrow, just water is okay tonight?\nASSISTANT: Yes, water is fine. Just no food after 10 PM for accurate blood work.\nUSER: Should I bring anything?\nASSISTANT: Just Max's leash and any current medications he's taking. We'll need about 2 hours for everything.\nUSER: So I should plan to pick him up around 11?\nASSISTANT: Yes, 11 AM pickup would be perfect. We'll call if we finish earlier.\nUSER: Great. See you at 9 AM tomorrow.\nASSISTANT: Perfect. Max is in good hands, Mr. Thompson. We'll get to the bottom of his limping and get him comfortable again.\nUSER: Thank you, Dr. Mitchell. I really appreciate the thorough explanation.\nASSISTANT: You're very welcome. Don't hesitate to call if you have any concerns before tomorrow."
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.8,
+          "top_k": 20,
+          "min_p": 0,
+          "seed": 37,
+          "num_ctx": 32768,
+          "num_predict": 6000
+        },
+        "format": {
+          "type": "object",
+          "properties": {
+            "memory": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "memory"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "started_at": "2026-10-17T11:31:14.886215+08:00",
+      "ok": true,
+      "http_status": 200,
+      "raw_http_body": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-10-17T03:33:07.150287Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"memory\\\": [\\n    \\\"conversation_id=vet_consult_001\\\",\\n    \\\"timestamp=2024-11-08 15:30:00\\\",\\n    \\\"metadata={\\\\\\\"business\\\\\\\": \\\\\\\"Companion Animal Hospital\\\\\\\", \\\\\\\"department\\\\\\\": \\\\\\\"Veterinary Services\\\\\\\", \\\\\\\"call_duration\\\\\\\": \\\\\\\"49 minutes\\\\\\\"}\\\",\\n    \\\"user_name=Robert Thompson\\\",\\n    \\\"pet_name=Max\\\",\\n    \\\"pet_species=Dog\\\",\\n    \\\"pet_breed=Golden Retriever\\\",\\n    \\\"pet_age=7 years\\\",\\n    \\\"pet_weight=78 pounds\\\",\\n    \\\"last_seen_date=2024-10-15\\\",\\n    \\\"symptoms=limping on right rear leg, decreased energy\\\",\\n    \\\"symptom_duration=2 weeks\\\",\\n    \\\"symptom_start_description=gradual onset after regular walks\\\",\\n    \\\"medical_history=mild hip dysplasia\\\",\\n    \\\"last_xray_date=approximately 18 months ago (from diagnosis)\\\",\\n    \\\"current_medication=glucosamine supplements (Cosequin DS)\\\",\\n    \\\"medication_dosage=2 tablets daily with food\\\",\\n    \\\"medication_effectiveness=decreased effectiveness recently\\\",\\n    \\\"diet=Hill's Science Diet Adult Large Breed\\\",\\n    \\\"food_quantity=3.5 cups per day\\\",\\n    \\\"meals_per_day=2 (morning and evening)\\\",\\n    \\\"digestion_status=normal (no vomiting or diarrhea)\\\",\\n    \\\"recommended_treatment=Rimadyl (75mg twice daily for 78 pounds)\\\",\\n    \\\"side_effects_possible=GI upset, decreased appetite, lethargy\\\",\\n    \\\"blood_work_required=complete blood count, chemistry panel, urinalysis\\\",\\n    \\\"blood_work_cost=$285\\\",\\n    \\\"xray_cost=$420 (hip and leg X-rays)\\\",\\n    \\\"total_diagnostics_cost=$705 (including $285 blood work and $420 x-rays)\\\",\\n    \\\"exam_fee=$65\\\",\\n    \\\"total_treatment_cost=$770 (for diagnostics and exam)\\\",\\n    \\\"long_term_treatment_option=adequan injections (loading dose: 2x weekly for 4 weeks, then monthly maintenance)\\\",\\n    \\\"adequan_injection_cost=$85 per injection\\\",\\n    \\\"loading_series_cost=$680 (4 injections at $85 each)\\\",\\n    \\\"maintenance_cost=$85 monthly\\\",\\n    \\\"alternative_treatment=Dasuquin Advanced (oral joint supplement, $75 per month)\\\",\\n    \\\"vaccinations_status=rabies due until 2025-03-20, DHPP expired (due October 30th, 2024)\\\",\\n    \\\"vaccination_cost_DHPP=$42\\\",\\n    \\\"vaccination_cost_heartworm_test=$47\\\",\\n    \\\"total_additional_cost=$859 (including vaccines and tests)\\\",\\n    \\\"ideal_weight=72-73 pounds\\\",\\n    \\\"current_weight=78 pounds (5 pounds overweight)\\\",\\n    \\\"diet_adjustment=reduce food to 3 cups daily, limit treats to 10% of daily calories\\\",\\n    \\\"exercise_recommendation=shorter walks (20 minutes, 3 times daily) instead of 45 minutes twice daily\\\",\\n    \\\"swimming_recommendation=2-3 sessions weekly (15-20 minutes each) at nearby heated pool\\\",\\n    \\\"pool_cost=$25 per session or $80 monthly unlimited\\\",\\n    \\\"omega_3_recommendation=1000mg per 10 pounds body weight (7000-8000mg daily for Max)\\\",\\n    \\\"omega_3_brand_recommendations=Nordic Naturals or Grizzly Salmon Oil\\\",\\n    \\\"omega_3_cost=$30-40 per month\\\",\\n    \\\"immediate_symptoms_to_watch_for=sudden inability to walk, crying in pain, leg swelling, loss of appetite with medication\\\",\\n    \\\"blood_work_fasting_requirements=no food after 10 PM tonight\\\",\\n    \\\"appointment_time=9 AM tomorrow (Saturday)\\\",\\n    \\\"appointment_date=2024-11-09\\\",\\n    \\\"appointment_duration=2 hours\\\",\\n    \\\"pickup_time=11 AM\\\"\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":112258596600,\"load_duration\":49722700,\"prompt_eval_count\":1859,\"prompt_eval_cached_count\":5,\"prompt_eval_duration\":14299948000,\"eval_count\":885,\"eval_duration\":97459077000}",
+      "raw_response": {
+        "model": "qwen3:4b",
+        "created_at": "2026-10-17T03:33:07.150287Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"memory\": [\n    \"conversation_id=vet_consult_001\",\n    \"timestamp=2024-11-08 15:30:00\",\n    \"metadata={\\\"business\\\": \\\"Companion Animal Hospital\\\", \\\"department\\\": \\\"Veterinary Services\\\", \\\"call_duration\\\": \\\"49 minutes\\\"}\",\n    \"user_name=Robert Thompson\",\n    \"pet_name=Max\",\n    \"pet_species=Dog\",\n    \"pet_breed=Golden Retriever\",\n    \"pet_age=7 years\",\n    \"pet_weight=78 pounds\",\n    \"last_seen_date=2024-10-15\",\n    \"symptoms=limping on right rear leg, decreased energy\",\n    \"symptom_duration=2 weeks\",\n    \"symptom_start_description=gradual onset after regular walks\",\n    \"medical_history=mild hip dysplasia\",\n    \"last_xray_date=approximately 18 months ago (from diagnosis)\",\n    \"current_medication=glucosamine supplements (Cosequin DS)\",\n    \"medication_dosage=2 tablets daily with food\",\n    \"medication_effectiveness=decreased effectiveness recently\",\n    \"diet=Hill's Science Diet Adult Large Breed\",\n    \"food_quantity=3.5 cups per day\",\n    \"meals_per_day=2 (morning and evening)\",\n    \"digestion_status=normal (no vomiting or diarrhea)\",\n    \"recommended_treatment=Rimadyl (75mg twice daily for 78 pounds)\",\n    \"side_effects_possible=GI upset, decreased appetite, lethargy\",\n    \"blood_work_required=complete blood count, chemistry panel, urinalysis\",\n    \"blood_work_cost=$285\",\n    \"xray_cost=$420 (hip and leg X-rays)\",\n    \"total_diagnostics_cost=$705 (including $285 blood work and $420 x-rays)\",\n    \"exam_fee=$65\",\n    \"total_treatment_cost=$770 (for diagnostics and exam)\",\n    \"long_term_treatment_option=adequan injections (loading dose: 2x weekly for 4 weeks, then monthly maintenance)\",\n    \"adequan_injection_cost=$85 per injection\",\n    \"loading_series_cost=$680 (4 injections at $85 each)\",\n    \"maintenance_cost=$85 monthly\",\n    \"alternative_treatment=Dasuquin Advanced (oral joint supplement, $75 per month)\",\n    \"vaccinations_status=rabies due until 2025-03-20, DHPP expired (due October 30th, 2024)\",\n    \"vaccination_cost_DHPP=$42\",\n    \"vaccination_cost_heartworm_test=$47\",\n    \"total_additional_cost=$859 (including vaccines and tests)\",\n    \"ideal_weight=72-73 pounds\",\n    \"current_weight=78 pounds (5 pounds overweight)\",\n    \"diet_adjustment=reduce food to 3 cups daily, limit treats to 10% of daily calories\",\n    \"exercise_recommendation=shorter walks (20 minutes, 3 times daily) instead of 45 minutes twice daily\",\n    \"swimming_recommendation=2-3 sessions weekly (15-20 minutes each) at nearby heated pool\",\n    \"pool_cost=$25 per session or $80 monthly unlimited\",\n    \"omega_3_recommendation=1000mg per 10 pounds body weight (7000-8000mg daily for Max)\",\n    \"omega_3_brand_recommendations=Nordic Naturals or Grizzly Salmon Oil\",\n    \"omega_3_cost=$30-40 per month\",\n    \"immediate_symptoms_to_watch_for=sudden inability to walk, crying in pain, leg swelling, loss of appetite with medication\",\n    \"blood_work_fasting_requirements=no food after 10 PM tonight\",\n    \"appointment_time=9 AM tomorrow (Saturday)\",\n    \"appointment_date=2024-11-09\",\n    \"appointment_duration=2 hours\",\n    \"pickup_time=11 AM\"\n  ]\n}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 112258596600,
+        "load_duration": 49722700,
+        "prompt_eval_count": 1859,
+        "prompt_eval_cached_count": 5,
+        "prompt_eval_duration": 14299948000,
+        "eval_count": 885,
+        "eval_duration": 97459077000
+      },
+      "content": "{\n  \"memory\": [\n    \"conversation_id=vet_consult_001\",\n    \"timestamp=2024-11-08 15:30:00\",\n    \"metadata={\\\"business\\\": \\\"Companion Animal Hospital\\\", \\\"department\\\": \\\"Veterinary Services\\\", \\\"call_duration\\\": \\\"49 minutes\\\"}\",\n    \"user_name=Robert Thompson\",\n    \"pet_name=Max\",\n    \"pet_species=Dog\",\n    \"pet_breed=Golden Retriever\",\n    \"pet_age=7 years\",\n    \"pet_weight=78 pounds\",\n    \"last_seen_date=2024-10-15\",\n    \"symptoms=limping on right rear leg, decreased energy\",\n    \"symptom_duration=2 weeks\",\n    \"symptom_start_description=gradual onset after regular walks\",\n    \"medical_history=mild hip dysplasia\",\n    \"last_xray_date=approximately 18 months ago (from diagnosis)\",\n    \"current_medication=glucosamine supplements (Cosequin DS)\",\n    \"medication_dosage=2 tablets daily with food\",\n    \"medication_effectiveness=decreased effectiveness recently\",\n    \"diet=Hill's Science Diet Adult Large Breed\",\n    \"food_quantity=3.5 cups per day\",\n    \"meals_per_day=2 (morning and evening)\",\n    \"digestion_status=normal (no vomiting or diarrhea)\",\n    \"recommended_treatment=Rimadyl (75mg twice daily for 78 pounds)\",\n    \"side_effects_possible=GI upset, decreased appetite, lethargy\",\n    \"blood_work_required=complete blood count, chemistry panel, urinalysis\",\n    \"blood_work_cost=$285\",\n    \"xray_cost=$420 (hip and leg X-rays)\",\n    \"total_diagnostics_cost=$705 (including $285 blood work and $420 x-rays)\",\n    \"exam_fee=$65\",\n    \"total_treatment_cost=$770 (for diagnostics and exam)\",\n    \"long_term_treatment_option=adequan injections (loading dose: 2x weekly for 4 weeks, then monthly maintenance)\",\n    \"adequan_injection_cost=$85 per injection\",\n    \"loading_series_cost=$680 (4 injections at $85 each)\",\n    \"maintenance_cost=$85 monthly\",\n    \"alternative_treatment=Dasuquin Advanced (oral joint supplement, $75 per month)\",\n    \"vaccinations_status=rabies due until 2025-03-20, DHPP expired (due October 30th, 2024)\",\n    \"vaccination_cost_DHPP=$42\",\n    \"vaccination_cost_heartworm_test=$47\",\n    \"total_additional_cost=$859 (including vaccines and tests)\",\n    \"ideal_weight=72-73 pounds\",\n    \"current_weight=78 pounds (5 pounds overweight)\",\n    \"diet_adjustment=reduce food to 3 cups daily, limit treats to 10% of daily calories\",\n    \"exercise_recommendation=shorter walks (20 minutes, 3 times daily) instead of 45 minutes twice daily\",\n    \"swimming_recommendation=2-3 sessions weekly (15-20 minutes each) at nearby heated pool\",\n    \"pool_cost=$25 per session or $80 monthly unlimited\",\n    \"omega_3_recommendation=1000mg per 10 pounds body weight (7000-8000mg daily for Max)\",\n    \"omega_3_brand_recommendations=Nordic Naturals or Grizzly Salmon Oil\",\n    \"omega_3_cost=$30-40 per month\",\n    \"immediate_symptoms_to_watch_for=sudden inability to walk, crying in pain, leg swelling, loss of appetite with medication\",\n    \"blood_work_fasting_requirements=no food after 10 PM tonight\",\n    \"appointment_time=9 AM tomorrow (Saturday)\",\n    \"appointment_date=2024-11-09\",\n    \"appointment_duration=2 hours\",\n    \"pickup_time=11 AM\"\n  ]\n}",
+      "prompt_tokens": 1859,
+      "completion_tokens": 885,
+      "done_reason": "stop",
+      "elapsed_seconds": 112.26517189999868,
+      "memory_validation": {
+        "passed": true
+      }
+    },
+    {
+      "purpose": "answer",
+      "request": {
+        "model": "qwen3:4b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are an assistant in a brand-new session. The supplied long-term memory is your only source about this user: you cannot access earlier raw dialogue. Answer accurately, resolve ambiguity, connect sessions, and proactively warn about material risks. Do not invent facts."
+          },
+          {
+            "role": "user",
+            "content": "MEMORY MODE: notes\nLONG-TERM MEMORY:\n[\"conversation_id=vet_consult_001\", \"timestamp=2024-11-08 15:30:00\", \"metadata={\\\"business\\\": \\\"Companion Animal Hospital\\\", \\\"department\\\": \\\"Veterinary Services\\\", \\\"call_duration\\\": \\\"49 minutes\\\"}\", \"user_name=Robert Thompson\", \"pet_name=Max\", \"pet_species=Dog\", \"pet_breed=Golden Retriever\", \"pet_age=7 years\", \"pet_weight=78 pounds\", \"last_seen_date=2024-10-15\", \"symptoms=limping on right rear leg, decreased energy\", \"symptom_duration=2 weeks\", \"symptom_start_description=gradual onset after regular walks\", \"medical_history=mild hip dysplasia\", \"last_xray_date=approximately 18 months ago (from diagnosis)\", \"current_medication=glucosamine supplements (Cosequin DS)\", \"medication_dosage=2 tablets daily with food\", \"medication_effectiveness=decreased effectiveness recently\", \"diet=Hill's Science Diet Adult Large Breed\", \"food_quantity=3.5 cups per day\", \"meals_per_day=2 (morning and evening)\", \"digestion_status=normal (no vomiting or diarrhea)\", \"recommended_treatment=Rimadyl (75mg twice daily for 78 pounds)\", \"side_effects_possible=GI upset, decreased appetite, lethargy\", \"blood_work_required=complete blood count, chemistry panel, urinalysis\", \"blood_work_cost=$285\", \"xray_cost=$420 (hip and leg X-rays)\", \"total_diagnostics_cost=$705 (including $285 blood work and $420 x-rays)\", \"exam_fee=$65\", \"total_treatment_cost=$770 (for diagnostics and exam)\", \"long_term_treatment_option=adequan injections (loading dose: 2x weekly for 4 weeks, then monthly maintenance)\", \"adequan_injection_cost=$85 per injection\", \"loading_series_cost=$680 (4 injections at $85 each)\", \"maintenance_cost=$85 monthly\", \"alternative_treatment=Dasuquin Advanced (oral joint supplement, $75 per month)\", \"vaccinations_status=rabies due until 2025-03-20, DHPP expired (due October 30th, 2024)\", \"vaccination_cost_DHPP=$42\", \"vaccination_cost_heartworm_test=$47\", \"total_additional_cost=$859 (including vaccines and tests)\", \"ideal_weight=72-73 pounds\", \"current_weight=78 pounds (5 pounds overweight)\", \"diet_adjustment=reduce food to 3 cups daily, limit treats to 10% of daily calories\", \"exercise_recommendation=shorter walks (20 minutes, 3 times daily) instead of 45 minutes twice daily\", \"swimming_recommendation=2-3 sessions weekly (15-20 minutes each) at nearby heated pool\", \"pool_cost=$25 per session or $80 monthly unlimited\", \"omega_3_recommendation=1000mg per 10 pounds body weight (7000-8000mg daily for Max)\", \"omega_3_brand_recommendations=Nordic Naturals or Grizzly Salmon Oil\", \"omega_3_cost=$30-40 per month\", \"immediate_symptoms_to_watch_for=sudden inability to walk, crying in pain, leg swelling, loss of appetite with medication\", \"blood_work_fasting_requirements=no food after 10 PM tonight\", \"appointment_time=9 AM tomorrow (Saturday)\", \"appointment_date=2024-11-09\", \"appointment_duration=2 hours\", \"pickup_time=11 AM\"]\n\nUSER QUESTION:\nWhat was Max's current weight versus ideal weight, and what was the complete cost breakdown for tomorrow's visit?"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.8,
+          "top_k": 20,
+          "min_p": 0,
+          "seed": 37,
+          "num_ctx": 32768,
+          "num_predict": 1200
+        }
+      },
+      "started_at": "2026-10-17T11:33:07.165297+08:00",
+      "ok": false,
+      "http_status": 200,
+      "raw_http_body": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-10-17T03:35:12.7171531Z\",\"message\":{\"role\":\"assistant\",\"content\":\"We are given a long-term memory with specific details about the user's pet and the veterinary consultation.\\n The user question: \\\"What was Max's current weight versus ideal weight, and what was the complete cost breakdown for tomorrow's visit?\\\"\\n\\n Let's extract the relevant information from the memory:\\n\\n 1. Current weight: \\\"current_weight=78 pounds\\\"\\n 2. Ideal weight: \\\"ideal_weight=72-73 pounds\\\"\\n\\n So, Max is currently 78 pounds, which is 5 pounds overweight (as noted: \\\"current_weight=78 pounds (5 pounds overweight)\\\").\\n\\n For the cost breakdown for tomorrow's visit:\\n\\n The memory states:\\n   - total_treatment_cost=$770 (for diagnostics and exam)\\n   - total_additional_cost=$859 (including vaccines and tests)\\n\\n However, note that the appointment is scheduled for tomorrow (2024-11-09) and the cost breakdown for the visit should be the cost of the visit itself and any immediate costs that are due at the time of the visit.\\n\\n But the memory also gives:\\n   - blood_work_cost=$285\\n   - xray_cost=$420 (hip and leg X-rays)\\n   - exam_fee=$65\\n   - total_treatment_cost=$770 (for diagnostics and exam) -\\u003e which is $285 + $420 + $65 = $770\\n\\n Also, the user has additional costs that are due at the time of the visit (as per the memory):\\n   - vaccination_cost_DHPP=$42\\n   - vaccination_cost_heartworm_test=$47\\n   - total_additional_cost=$859\\n\\n However, note: the memory says \\\"total_additional_cost=$859 (including vaccines and tests)\\\". This $859 is the cost for vaccines and tests that are being addressed at the time of the visit? But the visit is for diagnostics and treatment, and the vaccines are due as well.\\n\\n But the question is about the cost breakdown for tomorrow's visit. The memory also specifies the appointment time and date.\\n\\n Important: The memory states that the total cost for the visit (as per the treatment and diagnostics) is $770, and then there are additional costs of $859 for vaccines and tests. However, note that the vaccines and tests are not part of the same visit? The memory says \\\"total_additional_cost=$859 (including vaccines and tests)\\\".\\n\\n Let's break down the costs that are due at the time of the visit (tomorrow):\\n\\n   - The $770 is the cost for the diagnostics and exam (which will be done at the visit).\\n   - The $859 is the cost for vaccines and tests that are being done at the same time? But note: the memory says \\\"total_additional_cost=$859 (including vaccines and tests)\\\".\\n\\n However, the memory also states:\\n   - \\\"vaccinations_status=rabies due until 2025-03-20, DHPP expired (due October 30th, 2024)\\\"\\n   - So they need to get DHPP and a heartworm test.\\n\\n But the question is: \\\"complete cost breakdown for tomorrow's visit\\\"\\n\\n We have to note that the visit is scheduled for tomorrow (2024-11-09) and the costs that are due at that visit are:\\n\\n   - The $770 (for diagnostics and exam) -\\u003e this is the cost of the veterinary examination and the required blood work and X-rays.\\n   - The $859 (for vaccines and tests) -\\u003e this is the cost for the DHPP vaccine and the heartworm test.\\n\\n However, the memory says: \\\"total_additional_cost=$859 (including vaccines and tests)\\\".\\n\\n But wait: the memory also says that the appointment includes the blood work and X-rays? And the vaccines and tests are separate.\\n\\n Let me re-read the memory: the total_treatment_cost=$770 (for diagnostics and exam) and total_additional_cost=$859 (for vaccines and tests). So the total cost for the visit would be $770 + $859 = $1629.\\n\\n However, the question asks for the \\\"complete cost breakdown for tomorrow's visit\\\". We must be cautious.\\n\\n Another point: the memory states that the appointment is for 2 hours and the visit is tomorrow (Saturday, 2024-11-09). The costs that are due at the time of the visit are:\\n\\n   - The $770 (diagnostics and exam) -\\u003e this is the cost of the blood work, X-rays, and the exam.\\n   - The $859 (vaccines and tests) -\\u003e this is the cost of the DHPP vaccine and the heartworm test.\\n\\n But note: the memory says \\\"total_additional_cost=$859 (including vaccines and tests)\\\".\\n\\n However, the user might be expecting a breakdown of the costs that are due at the time of the visit.\\n\\n Let's look at the memory for the exact breakdown:\\n\\n   - blood_work_cost=$285\\n   - xray_cost=$420\\n   - exam_fee=$65\\n   - total_treatment_cost=$770 (which is $285+$420+$65)\\n\\n   - vaccination_cost_DHPP=$42\\n   - vaccination_cost_heartworm_test=$47\\n   - total_additional_cost=$859 (which is $42+$47? but wait, the memory says $859? That doesn't add up to $89. So there must be more.)\\n\\n Wait, the memory says: \\\"total_additional_cost=$859 (including vaccines and tests)\\\". This implies that the\"},\"done\":true,\"done_reason\":\"length\",\"total_duration\":125545800800,\"load_duration\":48661100,\"prompt_eval_count\":921,\"prompt_eval_cached_count\":5,\"prompt_eval_duration\":7019800000,\"eval_count\":1200,\"eval_duration\":118164361000}",
+      "raw_response": {
+        "model": "qwen3:4b",
+        "created_at": "2026-10-17T03:35:12.7171531Z",
+        "message": {
+          "role": "assistant",
+          "content": "We are given a long-term memory with specific details about the user's pet and the veterinary consultation.\n The user question: \"What was Max's current weight versus ideal weight, and what was the complete cost breakdown for tomorrow's visit?\"\n\n Let's extract the relevant information from the memory:\n\n 1. Current weight: \"current_weight=78 pounds\"\n 2. Ideal weight: \"ideal_weight=72-73 pounds\"\n\n So, Max is currently 78 pounds, which is 5 pounds overweight (as noted: \"current_weight=78 pounds (5 pounds overweight)\").\n\n For the cost breakdown for tomorrow's visit:\n\n The memory states:\n   - total_treatment_cost=$770 (for diagnostics and exam)\n   - total_additional_cost=$859 (including vaccines and tests)\n\n However, note that the appointment is scheduled for tomorrow (2024-11-09) and the cost breakdown for the visit should be the cost of the visit itself and any immediate costs that are due at the time of the visit.\n\n But the memory also gives:\n   - blood_work_cost=$285\n   - xray_cost=$420 (hip and leg X-rays)\n   - exam_fee=$65\n   - total_treatment_cost=$770 (for diagnostics and exam) -> which is $285 + $420 + $65 = $770\n\n Also, the user has additional costs that are due at the time of the visit (as per the memory):\n   - vaccination_cost_DHPP=$42\n   - vaccination_cost_heartworm_test=$47\n   - total_additional_cost=$859\n\n However, note: the memory says \"total_additional_cost=$859 (including vaccines and tests)\". This $859 is the cost for vaccines and tests that are being addressed at the time of the visit? But the visit is for diagnostics and treatment, and the vaccines are due as well.\n\n But the question is about the cost breakdown for tomorrow's visit. The memory also specifies the appointment time and date.\n\n Important: The memory states that the total cost for the visit (as per the treatment and diagnostics) is $770, and then there are additional costs of $859 for vaccines and tests. However, note that the vaccines and tests are not part of the same visit? The memory says \"total_additional_cost=$859 (including vaccines and tests)\".\n\n Let's break down the costs that are due at the time of the visit (tomorrow):\n\n   - The $770 is the cost for the diagnostics and exam (which will be done at the visit).\n   - The $859 is the cost for vaccines and tests that are being done at the same time? But note: the memory says \"total_additional_cost=$859 (including vaccines and tests)\".\n\n However, the memory also states:\n   - \"vaccinations_status=rabies due until 2025-03-20, DHPP expired (due October 30th, 2024)\"\n   - So they need to get DHPP and a heartworm test.\n\n But the question is: \"complete cost breakdown for tomorrow's visit\"\n\n We have to note that the visit is scheduled for tomorrow (2024-11-09) and the costs that are due at that visit are:\n\n   - The $770 (for diagnostics and exam) -> this is the cost of the veterinary examination and the required blood work and X-rays.\n   - The $859 (for vaccines and tests) -> this is the cost for the DHPP vaccine and the heartworm test.\n\n However, the memory says: \"total_additional_cost=$859 (including vaccines and tests)\".\n\n But wait: the memory also says that the appointment includes the blood work and X-rays? And the vaccines and tests are separate.\n\n Let me re-read the memory: the total_treatment_cost=$770 (for diagnostics and exam) and total_additional_cost=$859 (for vaccines and tests). So the total cost for the visit would be $770 + $859 = $1629.\n\n However, the question asks for the \"complete cost breakdown for tomorrow's visit\". We must be cautious.\n\n Another point: the memory states that the appointment is for 2 hours and the visit is tomorrow (Saturday, 2024-11-09). The costs that are due at the time of the visit are:\n\n   - The $770 (diagnostics and exam) -> this is the cost of the blood work, X-rays, and the exam.\n   - The $859 (vaccines and tests) -> this is the cost of the DHPP vaccine and the heartworm test.\n\n But note: the memory says \"total_additional_cost=$859 (including vaccines and tests)\".\n\n However, the user might be expecting a breakdown of the costs that are due at the time of the visit.\n\n Let's look at the memory for the exact breakdown:\n\n   - blood_work_cost=$285\n   - xray_cost=$420\n   - exam_fee=$65\n   - total_treatment_cost=$770 (which is $285+$420+$65)\n\n   - vaccination_cost_DHPP=$42\n   - vaccination_cost_heartworm_test=$47\n   - total_additional_cost=$859 (which is $42+$47? but wait, the memory says $859? That doesn't add up to $89. So there must be more.)\n\n Wait, the memory says: \"total_additional_cost=$859 (including vaccines and tests)\". This implies that the"
+        },
+        "done": true,
+        "done_reason": "length",
+        "total_duration": 125545800800,
+        "load_duration": 48661100,
+        "prompt_eval_count": 921,
+        "prompt_eval_cached_count": 5,
+        "prompt_eval_duration": 7019800000,
+        "eval_count": 1200,
+        "eval_duration": 118164361000
+      },
+      "content": "We are given a long-term memory with specific details about the user's pet and the veterinary consultation.\n The user question: \"What was Max's current weight versus ideal weight, and what was the complete cost breakdown for tomorrow's visit?\"\n\n Let's extract the relevant information from the memory:\n\n 1. Current weight: \"current_weight=78 pounds\"\n 2. Ideal weight: \"ideal_weight=72-73 pounds\"\n\n So, Max is currently 78 pounds, which is 5 pounds overweight (as noted: \"current_weight=78 pounds (5 pounds overweight)\").\n\n For the cost breakdown for tomorrow's visit:\n\n The memory states:\n   - total_treatment_cost=$770 (for diagnostics and exam)\n   - total_additional_cost=$859 (including vaccines and tests)\n\n However, note that the appointment is scheduled for tomorrow (2024-11-09) and the cost breakdown for the visit should be the cost of the visit itself and any immediate costs that are due at the time of the visit.\n\n But the memory also gives:\n   - blood_work_cost=$285\n   - xray_cost=$420 (hip and leg X-rays)\n   - exam_fee=$65\n   - total_treatment_cost=$770 (for diagnostics and exam) -> which is $285 + $420 + $65 = $770\n\n Also, the user has additional costs that are due at the time of the visit (as per the memory):\n   - vaccination_cost_DHPP=$42\n   - vaccination_cost_heartworm_test=$47\n   - total_additional_cost=$859\n\n However, note: the memory says \"total_additional_cost=$859 (including vaccines and tests)\". This $859 is the cost for vaccines and tests that are being addressed at the time of the visit? But the visit is for diagnostics and treatment, and the vaccines are due as well.\n\n But the question is about the cost breakdown for tomorrow's visit. The memory also specifies the appointment time and date.\n\n Important: The memory states that the total cost for the visit (as per the treatment and diagnostics) is $770, and then there are additional costs of $859 for vaccines and tests. However, note that the vaccines and tests are not part of the same visit? The memory says \"total_additional_cost=$859 (including vaccines and tests)\".\n\n Let's break down the costs that are due at the time of the visit (tomorrow):\n\n   - The $770 is the cost for the diagnostics and exam (which will be done at the visit).\n   - The $859 is the cost for vaccines and tests that are being done at the same time? But note: the memory says \"total_additional_cost=$859 (including vaccines and tests)\".\n\n However, the memory also states:\n   - \"vaccinations_status=rabies due until 2025-03-20, DHPP expired (due October 30th, 2024)\"\n   - So they need to get DHPP and a heartworm test.\n\n But the question is: \"complete cost breakdown for tomorrow's visit\"\n\n We have to note that the visit is scheduled for tomorrow (2024-11-09) and the costs that are due at that visit are:\n\n   - The $770 (for diagnostics and exam) -> this is the cost of the veterinary examination and the required blood work and X-rays.\n   - The $859 (for vaccines and tests) -> this is the cost for the DHPP vaccine and the heartworm test.\n\n However, the memory says: \"total_additional_cost=$859 (including vaccines and tests)\".\n\n But wait: the memory also says that the appointment includes the blood work and X-rays? And the vaccines and tests are separate.\n\n Let me re-read the memory: the total_treatment_cost=$770 (for diagnostics and exam) and total_additional_cost=$859 (for vaccines and tests). So the total cost for the visit would be $770 + $859 = $1629.\n\n However, the question asks for the \"complete cost breakdown for tomorrow's visit\". We must be cautious.\n\n Another point: the memory states that the appointment is for 2 hours and the visit is tomorrow (Saturday, 2024-11-09). The costs that are due at the time of the visit are:\n\n   - The $770 (diagnostics and exam) -> this is the cost of the blood work, X-rays, and the exam.\n   - The $859 (vaccines and tests) -> this is the cost of the DHPP vaccine and the heartworm test.\n\n But note: the memory says \"total_additional_cost=$859 (including vaccines and tests)\".\n\n However, the user might be expecting a breakdown of the costs that are due at the time of the visit.\n\n Let's look at the memory for the exact breakdown:\n\n   - blood_work_cost=$285\n   - xray_cost=$420\n   - exam_fee=$65\n   - total_treatment_cost=$770 (which is $285+$420+$65)\n\n   - vaccination_cost_DHPP=$42\n   - vaccination_cost_heartworm_test=$47\n   - total_additional_cost=$859 (which is $42+$47? but wait, the memory says $859? That doesn't add up to $89. So there must be more.)\n\n Wait, the memory says: \"total_additional_cost=$859 (including vaccines and tests)\". This implies that the",
+      "prompt_tokens": 921,
+      "completion_tokens": 1200,
+      "done_reason": "length",
+      "error": {
+        "type": "ValueError",
+        "message": "模型未正常结束：done_reason=length，输出1200 token，上限1200；保留响应，不补齐JSON"
+      },
+      "elapsed_seconds": 125.55329029999848
+    }
+  ],
+  "judge_completed": false,
+  "experiment_3_1_completed": false,
+  "script_sha256": "e8ec1d63480e4de8114466f4a932aea10c96d9739f5a9cc123affe5fb744a2da",
+  "helper_sha256": "d0fa24d477e3e489edb498c8c748d1b8e268ed374b79fe7115ad2e4547f15975",
+  "scope": "官方单题与原始提示词，本机Qwen适配；不是官方60题或四格式完整复现",
+  "format_diagnostic_note": "Schema只约束memory为字符串数组，不预填事实、不更改官方消息；与原JSON路线分开记录",
+  "model_preflight": {
+    "endpoint": "http://127.0.0.1:11434/api/tags",
+    "attempted": true,
+    "http_status": 200,
+    "raw_http_body": "{\"models\":[{\"name\":\"qwen3:4b\",\"model\":\"qwen3:4b\",\"modified_at\":\"2026-10-16T22:23:34.1259444+08:00\",\"size\":2497293931,\"digest\":\"359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7\",\"details\":{\"parent_model\":\"\",\"format\":\"gguf\",\"family\":\"qwen3\",\"families\":[\"qwen3\"],\"parameter_size\":\"4.0B\",\"quantization_level\":\"Q4_K_M\",\"context_length\":262144,\"embedding_length\":2560,\"runner\":\"ggml\"},\"capabilities\":[\"completion\",\"tools\",\"thinking\"]},{\"name\":\"qwen3:0.6b\",\"model\":\"qwen3:0.6b\",\"modified_at\":\"2026-10-11T17:42:30.9086144+08:00\",\"size\":522653767,\"digest\":\"7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435\",\"details\":{\"parent_model\":\"\",\"format\":\"gguf\",\"family\":\"qwen3\",\"families\":[\"qwen3\"],\"parameter_size\":\"751.63M\",\"quantization_level\":\"Q4_K_M\",\"context_length\":40960,\"embedding_length\":1024,\"runner\":\"ggml\"},\"capabilities\":[\"completion\",\"tools\",\"thinking\"]}]}"
+  },
+  "model_metadata": {
+    "name": "qwen3:4b",
+    "model": "qwen3:4b",
+    "modified_at": "2026-10-16T22:23:34.1259444+08:00",
+    "size": 2497293931,
+    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2560,
+      "runner": "ggml"
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "error": {
+    "type": "ValueError",
+    "message": "模型未正常结束：done_reason=length，输出1200 token，上限1200；保留响应，不补齐JSON"
+  },
+  "finished_at": "2026-10-17T11:35:12.727435+08:00",
+  "inference_attempts": 2
+}

@@ -1,0 +1,3 @@
+评分对象： layer1_05_internet_service ；独立模型： deepseek-flash
+原始对话、评分标准和预期行为只交给裁判；不再调用本机writer。
+最多1次DeepSeek API请求，无自动重试。

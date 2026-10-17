@@ -1,0 +1,27 @@
+{
+  "mode": "notes",
+  "memory": [
+    "conversation_id=internet_setup_001",
+    "timestamp=2024-11-08 11:00:00",
+    "metadata={\"business\": \"Velocity Communications\", \"department\": \"New Service Sales\", \"call_duration\": \"45 minutes\"}",
+    "user_name=Kevin Zhang",
+    "user_address=7622 Willow Creek Drive, Austin, Texas, 78759",
+    "internet_plan=Performance (1 Gig, $79.99/month)",
+    "cable_package=Preferred (200+ channels, HBO and Showtime, $94.99/month)",
+    "equipment_fee=40.97 (1 DVR box at $12.99 + 2 standard boxes at $7.99 each + $12 modem/router)",
+    "promotional_discount=50% off first three months for services",
+    "installation_date=2024-11-14",
+    "installation_time_window=10:00-14:00 (Tuesday)",
+    "account_number=VEL-89923476",
+    "paperless_billing=true",
+    "autopay_account=Chase Bank (routing 111000614, account 8829447651)",
+    "monthly_rate=185.95 (after paperless discount and promotional pricing)",
+    "first_bill_date=2024-11-24",
+    "first_bill_due_date=2024-12-14",
+    "service_tier=1 Gig internet (supports 25+ devices simultaneously, WiFi 6 dual-band)",
+    "cable_channel_inclusions=HBO, HBO2, HBO Family, HBO Latino, HBO Signature, HBO Comedy, HBO Zone, HBO Max streaming",
+    "parental_controls_available=true",
+    "technical_support=1-800-VELOCITY (24/7)",
+    "installation_notes=2-3 hours for three TVs and internet"
+  ]
+}

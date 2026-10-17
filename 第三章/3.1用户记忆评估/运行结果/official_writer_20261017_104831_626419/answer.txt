@@ -1,0 +1,47 @@
+We are given a long-term memory session with details about Rebecca Anne Sullivan's airline booking.
+ The user is asking for two things:
+   1. Her flight confirmation number
+   2. The seats she selected
+
+ From the long-term memory (LTM) we have:
+   - confirmation_number: "PAC-778K4M"
+   - outbound_seat: "12C (aisle, right side)"
+   - return_seat: "14C (aisle, right side)"
+
+ We note that the user is asking for the seats she selected. Since she has two flights (outbound and return), we should provide both seats.
+
+ Steps:
+   - We have the confirmation number: "PAC-778K4M"
+   - For seats: 
+        Outbound: 12C (aisle, right side)
+        Return: 14C (aisle, right side)
+
+ We must answer accurately and without inventing facts.
+
+ Also, note: the user says "I need to add it to my calendar". We don't have to do the calendar part, just provide the info.
+
+ Let's structure the response:
+   - Remind the confirmation number: PAC-778K4M
+   - Remind the seats: 
+        Outbound flight (Seattle to Miami): Seat 12C (aisle, right side)
+        Return flight (Miami to Seattle): Seat 14C (aisle, right side)
+
+ We are not adding any extra information that isn't in the LTM.
+
+ Important: The LTM also has other details, but the user only asked for confirmation number and seats.
+
+ Let's write the response accordingly.
+</think>
+
+Based on your recent conversation with Pacific Airways Reservations on November 10, 2024, here are the details you requested:
+
+**Flight Confirmation Number**:  
+`PAC-778K4M`  
+
+**Seats Selected**:  
+- **Outbound Flight (PA 890)**: Seat 12C (aisle, right side)  
+- **Return Flight (PA 891)**: Seat 14C (aisle, right side)  
+
+This information is securely stored in your Pacific Airways account and matches your booking for travel dates **December 5–9, 2024**. You can add this to your calendar using the confirmation number and seat details above.  
+
+*Note: Ensure your Apple Wallet/Google Pay has the mobile boarding pass enabled for seamless check-in (as noted in your booking).*
