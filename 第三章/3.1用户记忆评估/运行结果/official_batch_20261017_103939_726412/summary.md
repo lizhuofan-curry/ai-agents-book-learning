@@ -2,16 +2,16 @@
 
 配置：qwen3:4b / schema / qwen-recommended / notes。
 
-已评分2/60，已通过2题，未评分58题。
+已评分6/60，已通过4题，未评分54题。
 
 生成或评分失败单列，无裁判分数不填0；已评分均分不代表60题均分。
 
-仅已评分用例的平均reward：0.875。
+仅已评分用例的平均reward：0.5833333333333334。
 
 | 层次 | 计划 | 生成完成 | 生成失败 | 已评分 | 通过 | 已评分均分 |
 | --- | --- | --- | --- | --- | --- | --- |
-| layer1 | 20 | 5 | 15 | 2 | 2 | 0.875 |
-| layer2 | 20 | 1 | 19 | 0 | 0 | None |
+| layer1 | 20 | 5 | 15 | 5 | 4 | 0.7 |
+| layer2 | 20 | 1 | 19 | 1 | 0 | 0.0 |
 | layer3 | 20 | 0 | 20 | 0 | 0 | None |
 
 | 用例 | 生成 | 裁判 | passed | reward |
@@ -20,12 +20,12 @@
 | layer1_02_insurance_claim | incomplete | pending | — | — |
 | layer1_03_medical_appointment | incomplete | pending | — | — |
 | layer1_04_airline_booking | saved | scored | True | 0.9375 |
-| layer1_05_internet_service | saved | running | — | — |
+| layer1_05_internet_service | saved | scored | True | 0.875 |
 | layer1_06_credit_card_app | incomplete | pending | — | — |
 | layer1_07_car_rental | incomplete | pending | — | — |
 | layer1_08_hotel_reservation | incomplete | pending | — | — |
-| layer1_09_home_security | saved | pending | — | — |
-| layer1_10_pharmacy_transfer | saved | pending | — | — |
+| layer1_09_home_security | saved | scored | False | 0.0 |
+| layer1_10_pharmacy_transfer | saved | scored | True | 0.875 |
 | layer1_11_mortgage_application | incomplete | pending | — | — |
 | layer1_12_gym_membership | incomplete | pending | — | — |
 | layer1_13_tax_preparation | incomplete | pending | — | — |
@@ -42,7 +42,7 @@
 | layer2_04_multiple_subscriptions | incomplete | pending | — | — |
 | layer2_05_multiple_bank_accounts | incomplete | pending | — | — |
 | layer2_06_multiple_insurance_policies | incomplete | pending | — | — |
-| layer2_07_multiple_medications | saved | pending | — | — |
+| layer2_07_multiple_medications | saved | scored | False | 0.0 |
 | layer2_08_multiple_rental_properties | incomplete | pending | — | — |
 | layer2_09_multiple_children_schools | incomplete | pending | — | — |
 | layer2_10_travel_rebooking_chain | incomplete | pending | — | — |

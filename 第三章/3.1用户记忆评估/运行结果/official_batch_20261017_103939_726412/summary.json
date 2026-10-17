@@ -5,21 +5,20 @@
     "incomplete": 54
   },
   "judge_states": {
-    "scored": 2,
-    "pending": 57,
-    "running": 1
+    "scored": 6,
+    "pending": 54
   },
-  "scored_cases": 2,
-  "passed_cases": 2,
-  "unscored_cases": 58,
-  "all_case_attempts_and_outcomes_finished": false,
+  "scored_cases": 6,
+  "passed_cases": 4,
+  "unscored_cases": 54,
+  "all_case_attempts_and_outcomes_finished": true,
   "full_60_judge_scores_available": false,
-  "pipeline_pass_rate_over_all_cases": null,
-  "pass_rate_scored_cases_only": 1.0,
-  "mean_reward_scored_cases_only": 0.875,
+  "pipeline_pass_rate_over_all_cases": 0.06666666666666667,
+  "pass_rate_scored_cases_only": 0.6666666666666666,
+  "mean_reward_scored_cases_only": 0.5833333333333334,
   "writer_calls_including_imported": 197,
   "new_writer_calls": 192,
-  "judge_calls_including_imported": 2,
+  "judge_calls_including_imported": 6,
   "generation_failure_kinds": {
     "truncated": 54
   },
@@ -28,17 +27,17 @@
       "planned": 20,
       "writer_saved": 5,
       "generation_failures": 15,
-      "scored": 2,
-      "passed": 2,
-      "mean_reward_scored_cases_only": 0.875
+      "scored": 5,
+      "passed": 4,
+      "mean_reward_scored_cases_only": 0.7
     },
     "layer2": {
       "planned": 20,
       "writer_saved": 1,
       "generation_failures": 19,
-      "scored": 0,
+      "scored": 1,
       "passed": 0,
-      "mean_reward_scored_cases_only": null
+      "mean_reward_scored_cases_only": 0.0
     },
     "layer3": {
       "planned": 20,

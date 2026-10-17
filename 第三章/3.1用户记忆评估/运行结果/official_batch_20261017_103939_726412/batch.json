@@ -2352,8 +2352,23 @@
         "imported": false
       },
       "judge": {
-        "status": "running",
-        "log": "layer1_05_internet_service_judge.log"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.1用户记忆评估\\运行结果\\official_judge_20261017_151145_701308\\record.json",
+        "sha256": "836bc3b4a4a7752a2c072e05cffb7312770408740266714eb4fff754babdf5e8",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 3
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.875
+        },
+        "log": "layer1_05_internet_service_judge.log",
+        "imported": false
       }
     },
     {
@@ -4070,7 +4085,23 @@
         "imported": false
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.1用户记忆评估\\运行结果\\official_judge_20261017_151156_275668\\record.json",
+        "sha256": "9682ebab45e843dc821149f30771e7bc864246aa93d4509130a9b17efec6888e",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 2
+          },
+          "hallucination_veto": true,
+          "passed": false,
+          "reward": 0.0
+        },
+        "log": "layer1_09_home_security_judge.log",
+        "imported": false
       }
     },
     {
@@ -4510,7 +4541,23 @@
         "imported": false
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.1用户记忆评估\\运行结果\\official_judge_20261017_151206_603673\\record.json",
+        "sha256": "89086be8eca4c10b51d99e64a152396d08040959c328b1a737e4359229fd7151",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 3
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.875
+        },
+        "log": "layer1_10_pharmacy_transfer_judge.log",
+        "imported": false
       }
     },
     {
@@ -15933,7 +15980,23 @@
         "imported": false
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.1用户记忆评估\\运行结果\\official_judge_20261017_151217_461890\\record.json",
+        "sha256": "2b0a6a396e8386ba3d447c3e1e8a9bddb2068e58af6ea51fb137912b802bba69",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 1,
+            "recall": 1,
+            "reasoning": 1,
+            "proactivity": 1
+          },
+          "hallucination_veto": true,
+          "passed": false,
+          "reward": 0.0
+        },
+        "log": "layer2_07_multiple_medications_judge.log",
+        "imported": false
       }
     },
     {

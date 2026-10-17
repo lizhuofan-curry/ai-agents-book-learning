@@ -1,0 +1,16 @@
+评分对象： layer1_09_home_security ；独立模型： deepseek-flash
+原始对话、评分标准和预期行为只交给裁判；不再调用本机writer。
+最多1次DeepSeek API请求，无自动重试。
+裁判四维评分： {
+  "scores": {
+    "precision": 4,
+    "recall": 4,
+    "reasoning": 3,
+    "proactivity": 2
+  },
+  "hallucination_veto": true,
+  "passed": false,
+  "reward": 0.0
+}
+OFFICIAL_SINGLE_CASE_SCORED：仅该题评分完成，不代表60题或四格式比较完成。
+独立评分记录： E:\AI_Agents_Book\第三章\3.1用户记忆评估\运行结果\official_judge_20261017_151156_275668\record.json
