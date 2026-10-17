@@ -1,0 +1,143 @@
+{
+  "repository": "https://github.com/bojieli/ai-agent-book",
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "tree_sha": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "retrieved_on": "2026-10-17",
+  "date_timezone": "Asia/Shanghai (client date)",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/LICENSE",
+      "bytes": 11338,
+      "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074",
+      "git_blob_sha1": "bd3e071f150cf46f86c91d3341d36644f16e11cb"
+    },
+    {
+      "path": "chapter3/experiment_utils.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/experiment_utils.py",
+      "bytes": 7084,
+      "sha256": "736968d4844624b13647de1f907426a7098b5696f7865257c86bab2225cd064b",
+      "git_blob_sha1": "1feced9f9eab1f80a4b86b93b2534442311489e1"
+    },
+    {
+      "path": "chapter3/sparse-embedding/README.md",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/README.md",
+      "bytes": 14691,
+      "sha256": "981f6d2eafa96491cf8fbbde76ff934dcda16566034ae62630980dba72d6c76b",
+      "git_blob_sha1": "87aae119dadc5e30f3974ed7ca2ef2d165594135"
+    },
+    {
+      "path": "chapter3/sparse-embedding/benchmark.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/benchmark.py",
+      "bytes": 7038,
+      "sha256": "f3601a917de0b1a169691fbb5fb4323b7310220af9eb2221414ed74220a8da89",
+      "git_blob_sha1": "9d5395f4005d80b3c46c3e50a4d7eb1983af1969"
+    },
+    {
+      "path": "chapter3/sparse-embedding/bm25_engine.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/bm25_engine.py",
+      "bytes": 20749,
+      "sha256": "ad6ddfa11ab626de719e89f462d4e9648ee457b64433e7c7c8ae145899d101f2",
+      "git_blob_sha1": "a991776997b825850f40d98611dcee065babb0fa"
+    },
+    {
+      "path": "chapter3/sparse-embedding/cli.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/cli.py",
+      "bytes": 16004,
+      "sha256": "6b76c01fd3889a029b5c37a4f589e3a438bc093c406e144e5e4209441c556ec2",
+      "git_blob_sha1": "8373d8c53726f959f6bc8d7e328f14d0008b7424"
+    },
+    {
+      "path": "chapter3/sparse-embedding/config.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/config.py",
+      "bytes": 277,
+      "sha256": "c46b1de3e60b726f1bf09269fb2592fbc0a03fd47ffbd8f27c740a6d33114b7b",
+      "git_blob_sha1": "9fc0f0b882679c88fb71413f0346e8861e392de2"
+    },
+    {
+      "path": "chapter3/sparse-embedding/demo.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/demo.py",
+      "bytes": 11737,
+      "sha256": "63a57cf37009834d65f5c09c7382868b3f669faf4260c0cebb573e42a8891795",
+      "git_blob_sha1": "37f73226a1a40ac4bad8b05915b35e13fb4dd5cd"
+    },
+    {
+      "path": "chapter3/sparse-embedding/quickstart.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/quickstart.py",
+      "bytes": 7554,
+      "sha256": "1b6cbfa218fcbf7f97ecb7126f42194f6465c2c6b8bcc17d060c8a358a8ebf5a",
+      "git_blob_sha1": "cf3f498be6492f6fbc8675b45a0cdd7c4cd9be5b"
+    },
+    {
+      "path": "chapter3/sparse-embedding/requirements.txt",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/requirements.txt",
+      "bytes": 100,
+      "sha256": "4b65e9fea3316e3fcac40ff36bac41511eb3d5923f8eb34ca44d3bd789d200b6",
+      "git_blob_sha1": "e110618f67f0dd950e9d8520d74dbe9df821746b"
+    },
+    {
+      "path": "chapter3/sparse-embedding/server.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/server.py",
+      "bytes": 18238,
+      "sha256": "6a22212b30490f9efeca246635c790df6dc3ae60e9ec7618dea37ba7e700bebb",
+      "git_blob_sha1": "b5344b57904fe9828985afe7565e7ca4444f9f24"
+    },
+    {
+      "path": "chapter3/sparse-embedding/test_bm25_empty_term.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/test_bm25_empty_term.py",
+      "bytes": 541,
+      "sha256": "4e53a179227f762c91bb9a9bdc7d7a4b41008ad3f05127493fabf8ec134b15c0",
+      "git_blob_sha1": "3c5399e50063d8e1b6c3c7c17689bea8e1e8db2f"
+    },
+    {
+      "path": "chapter3/sparse-embedding/test_engine.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/test_engine.py",
+      "bytes": 11962,
+      "sha256": "a48a3acaeb628dbe629dcdf98890a33910b3deed0f8645caef3a01857e3f0c5b",
+      "git_blob_sha1": "c81a7473c529b8992caf05a657bb43fd6d29e505"
+    },
+    {
+      "path": "chapter3/sparse-embedding/test_tokenize_apostrophes.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/test_tokenize_apostrophes.py",
+      "bytes": 286,
+      "sha256": "529cb1755d0e7a0900089af28e4ee9f55133e97593ab6c5ace66300cded2ff5a",
+      "git_blob_sha1": "b3940521e6c00b9c3f51c79bdce67a2cc3c17c52"
+    },
+    {
+      "path": "chapter3/sparse-embedding/validation/latest.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/validation/latest.json",
+      "bytes": 1643,
+      "sha256": "b3c7389c3df96cd0df60412a7ee528e1484847740a2df9688779b7f6509aaf76",
+      "git_blob_sha1": "39f65fb5d442da887686865aec8677d87faa1e4c"
+    },
+    {
+      "path": "chapter3/sparse-embedding/validation/runs/20260729T183232Z-3_5-f9f70b37/evidence.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/validation/runs/20260729T183232Z-3_5-f9f70b37/evidence.json",
+      "bytes": 9093,
+      "sha256": "69bc798be2f18e814b53665d29692cb4182e70561f4dcf222f25bf36d21eae0e",
+      "git_blob_sha1": "3bff574a1780b61851423015b25cdbd79dd504c8"
+    },
+    {
+      "path": "chapter3/sparse-embedding/validation/runs/20260729T183232Z-3_5-f9f70b37/manifest.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/validation/runs/20260729T183232Z-3_5-f9f70b37/manifest.json",
+      "bytes": 1554,
+      "sha256": "632bd554d004aa4139907c02006d34f6c0c192a3b8e940689b5d154eadbc67d0",
+      "git_blob_sha1": "5300d2c8567423da0836e7dc0a7016f19652617d"
+    },
+    {
+      "path": "chapter3/sparse-embedding/validation/runs/20260729T183232Z-3_5-f9f70b37/receipts.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/validation/runs/20260729T183232Z-3_5-f9f70b37/receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "git_blob_sha1": "fe51488c7066f6687ef680d6bfaa4f7768ef205c"
+    },
+    {
+      "path": "chapter3/sparse-embedding/verify_improvements.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/sparse-embedding/verify_improvements.py",
+      "bytes": 1,
+      "sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+      "git_blob_sha1": "0519ecba6ea913e21689ec692e81e9e4973fbf73"
+    }
+  ],
+  "note": "validation文件是原作者历史记录，不是本地实验成绩。"
+}

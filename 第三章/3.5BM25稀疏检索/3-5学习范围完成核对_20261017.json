@@ -1,0 +1,29 @@
+{
+  "status": "learning_scope_completed",
+  "completed_at": "2026-10-17T22:40:22.471126+08:00",
+  "scope": "官方BM25自定义12文档5共享查询本地CLI学习路线",
+  "run_directory": "运行结果\\bm25_aligned_20261017_222322_578910",
+  "record_sha256": "6488a6afaac472ca2b8448d6d6b86758d7104609ab8ba28d3cfcedb33a43ef97",
+  "audit_sha256": "721e7950d318e0b89b2d6783137d1e140382321f01a5873caf14d7a0a2e0d917",
+  "common_bm25": {
+    "recall_at_5": 0.6,
+    "precision_at_5_fixed_slots": 0.16,
+    "mrr_at_5": 0.6
+  },
+  "common_dense_saved": {
+    "recall_at_5": 1,
+    "precision_at_5_fixed_slots": 0.32,
+    "mrr_at_5": 1
+  },
+  "additional_code_query_not_in_average": true,
+  "model_requests": 0,
+  "embedding_forward_batches": 0,
+  "network_requests": 0,
+  "not_run": [
+    "HTTP/Web UI",
+    "SPLADE",
+    "Chinese tokenizer adaptation",
+    "parameter sweep"
+  ],
+  "next": "3-6 hybrid retrieval, not started"
+}

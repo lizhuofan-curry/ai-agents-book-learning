@@ -1,0 +1,26 @@
+{
+  "status": "offline_preparation_checked",
+  "date": "2026-10-17",
+  "script_sha256": "3b2e8d199919c1456c95d63980b8fcd7f122157e19106d5b8f5656607ad11da4",
+  "fixture_sha256": "09cfda0b998efbbac5dc92abc151e812ed3b0e2ab81d807adcbb2ac7dfcd5a79",
+  "manifest_sha256": "8db475f5145291cf715adc1878ac70227ab0bb4ff3088bcbbf2f694b538eb28a",
+  "checks": [
+    "syntax parsed",
+    "25 upstream files and two audited source records verified; corpus and labels aligned",
+    "RRF rewards agreement across routes on a three-document toy case",
+    "RRF unchanged when raw-score scale changes without rank changes",
+    "per-route min-max, zero-score tail retention and stable ties checked on toy case",
+    "empty sparse route and singleton normalization handled explicitly",
+    "duplicate IDs, nonfinite scores and inverted input order rejected",
+    "fixed precision denominator and top-5-only reciprocal rank checked",
+    "preview validates sources without creating experiment results or fusing official queries",
+    "source experiment records unchanged after checks"
+  ],
+  "check_count": 10,
+  "formal_queries_fused": 0,
+  "model_requests": 0,
+  "embedding_forward_batches": 0,
+  "network_requests": 0,
+  "preview_stdout": "3-6两路融合：沿用12篇文档、5条查询；每路最多取前5，最终展示Top-5。\n复用已核对的MiniLM和BM25排名；官方RRF(k=60)与min-max后等权融合各做一次。\n生成式模型请求0，嵌入前向0，网络请求0；不安装依赖或下载模型。\n本步只做候选融合；后续再做神经重排，不预设混合一定优于单路。\nFUSION_PREVIEW_ONLY：官方资料及两份已核对来源验证通过；未运行正式融合。\n",
+  "scope": "Preparation only; toy fusion checks and source verification are not user formal results."
+}

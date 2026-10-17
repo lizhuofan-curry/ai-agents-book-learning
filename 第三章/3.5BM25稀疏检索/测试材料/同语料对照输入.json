@@ -1,0 +1,100 @@
+{
+  "source_3_4": {
+    "record_relative_to_project": "第三章\\3.4稠密向量检索\\运行结果\\text_embedding_20261017_213507_432933\\record.json",
+    "record_sha256": "c5beeef30ba92df39051d00574d4d2fc3d803a952762b34e82080a284d888456",
+    "audit_sha256": "850db9b54f6d1cefb32be7f92cf0d0da6d89f5b4a74d9a5f894e3c09ebad6bb7",
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "note": "复用已核对的排名，不重新执行嵌入模型"
+  },
+  "corpus": [
+    {
+      "doc_id": "doc_1",
+      "title": "Python Language",
+      "text": "Python is a high-level programming language known for readability and a simple syntax."
+    },
+    {
+      "doc_id": "doc_2",
+      "title": "JavaScript Runtime",
+      "text": "JavaScript runs in the browser and on servers via Node.js for full-stack web development."
+    },
+    {
+      "doc_id": "doc_3",
+      "title": "Model Distillation",
+      "text": "Model distillation compresses a large teacher model into a smaller student model while preserving accuracy."
+    },
+    {
+      "doc_id": "doc_4",
+      "title": "Knowledge Distillation",
+      "text": "Knowledge distillation transfers knowledge from a big neural network to a compact model for efficient inference."
+    },
+    {
+      "doc_id": "doc_5",
+      "title": "BM25 Ranking",
+      "text": "BM25 is a probabilistic ranking function using term frequency and inverse document frequency."
+    },
+    {
+      "doc_id": "doc_6",
+      "title": "HTTP Errors",
+      "text": "The HTTP 404 error code means the requested resource was not found on the web server."
+    },
+    {
+      "doc_id": "doc_7",
+      "title": "A Playful Kitten",
+      "text": "A cute kitten chased a ball of yarn across the living room floor all afternoon."
+    },
+    {
+      "doc_id": "doc_8",
+      "title": "Silent Hunter",
+      "text": "The feline predator stalked its prey silently through the tall grass at dusk."
+    },
+    {
+      "doc_id": "doc_9",
+      "title": "Hardware Fault",
+      "text": "Error code XK9-2B4-7Q1 indicates a hardware fault in the storage controller board."
+    },
+    {
+      "doc_id": "doc_10",
+      "title": "Transformers",
+      "text": "Transformer models use self-attention to process input sequences in parallel efficiently."
+    },
+    {
+      "doc_id": "doc_11",
+      "title": "Deep Learning",
+      "text": "Deep learning stacks many layers of neurons to extract hierarchical features from raw data."
+    },
+    {
+      "doc_id": "doc_12",
+      "title": "Gradient Descent",
+      "text": "Gradient descent minimizes a loss function by iteratively updating the model parameters."
+    }
+  ],
+  "labels": {
+    "a cat playing": [
+      "doc_7",
+      "doc_8"
+    ],
+    "model distillation": [
+      "doc_3",
+      "doc_4"
+    ],
+    "training neural networks": [
+      "doc_11",
+      "doc_12"
+    ],
+    "self attention in sequence models": [
+      "doc_10"
+    ],
+    "web server resource not found": [
+      "doc_6"
+    ]
+  },
+  "code_demo": {
+    "query": "XK9-2B4-7Q1",
+    "relevant_doc_ids": [
+      "doc_9"
+    ],
+    "scope": "仅BM25额外编码查询展示，不与没有运行过该查询的稠密结果比较"
+  },
+  "protocol_note": "官方稀疏CLI默认10篇文档且查询不同；本地使用官方算法的自定义语料接口，与3-4统一12篇文档和5查询。比较固定Top-5分母；官方按返回数计算的precision另列。"
+}

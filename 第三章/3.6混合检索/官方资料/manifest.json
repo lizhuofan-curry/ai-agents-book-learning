@@ -1,0 +1,184 @@
+{
+  "repository": "https://github.com/bojieli/ai-agent-book",
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "tree_sha": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "retrieved_on": "2026-10-17",
+  "files": [
+    {
+      "path": "chapter3/retrieval-pipeline/README.md",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/README.md",
+      "bytes": 16764,
+      "sha256": "c51a102287c00f68c77cddf25f7b8c940010e3c43d10a4dc598443b52d8e08ba",
+      "git_blob_sha1": "f340038afef43c1ad1ec1459023dcfd1f3f9e475"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/campaign.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/campaign.py",
+      "bytes": 5019,
+      "sha256": "59fdde0060261dd89f8aeffa8a2e3fed0887510c1b4b29bee50a47698e514dde",
+      "git_blob_sha1": "2f32e7e6b4da43d12c7d3aa3957f78b3a652a783"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/config.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/config.py",
+      "bytes": 2593,
+      "sha256": "3102ff783d0e094fc3e62373c5ca86e21749f89a5d07628ca506234aa7f7976f",
+      "git_blob_sha1": "a62ef1e2a996b1df20f0e86d46fa69e585542422"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/demo.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/demo.py",
+      "bytes": 11260,
+      "sha256": "c14b943dfa000e85d529d07da2041706a6f72b0f56864b82a7d6f714ce9107c8",
+      "git_blob_sha1": "0e2009ccd6fa167e47043d7becd22cad7e466f4b"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/document_store.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/document_store.py",
+      "bytes": 3765,
+      "sha256": "28f180b187f0f60c1491097768b146033ce67de956433d5b8bb79b9a4c5e6184",
+      "git_blob_sha1": "39feb3dadf6fc26589ee1db7770f4d3e3804f716"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/evaluate.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/evaluate.py",
+      "bytes": 37506,
+      "sha256": "5ec2d32d386d396b909b1709cac66d55717753dccfcbb66c2d4e0e48b3049371",
+      "git_blob_sha1": "67de7dfcca766b7dff3bd31c506ee894344fc7cf"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/fusion.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/fusion.py",
+      "bytes": 5718,
+      "sha256": "ad72671f9236767496718a7620c83025de869f9dce6058a2599efd0a7c4791a9",
+      "git_blob_sha1": "1b2fba65b3780d79a33e9058a4fe4d03c1b37a09"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/main.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/main.py",
+      "bytes": 9895,
+      "sha256": "8276ae8ca145f00b127a01371dc20911cdda2829fea11c72dd8f5ecf0771d495",
+      "git_blob_sha1": "b0cfa6f5bee5124fe10efecf9f0b7ff51701c687"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/requirements.txt",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/requirements.txt",
+      "bytes": 345,
+      "sha256": "16b6db0000a4f7d088dbef619a5181d94f7c2f764c227be72890b2d62e916958",
+      "git_blob_sha1": "cb1d90b93ac9637112705afd561ff0dd3ca63ac3"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/reranker.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/reranker.py",
+      "bytes": 9960,
+      "sha256": "7efebfc1828ad4bea30913b8dd38f61d593b372078e76f9535c19c52320b0f60",
+      "git_blob_sha1": "c9f3d8e8e63aac7a96be8792f73cc17ec106b0dd"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/restart_services.sh",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/restart_services.sh",
+      "bytes": 2026,
+      "sha256": "f8f1976ec27b9f3c099ca82f4b17a766a30fc5dbfb267eb373b4a00d5d474800",
+      "git_blob_sha1": "05741ea5cdab5d02328857f42295d570ae3c8f02"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/retrieval_client.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/retrieval_client.py",
+      "bytes": 9004,
+      "sha256": "eedc426cd0248048d3ad48a72f5065b4f811ba46beb0ae1e880b1b0a617694cb",
+      "git_blob_sha1": "af8ace0cb5af29f3e5ba390f2abbd9721062f46d"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/retrieval_pipeline.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/retrieval_pipeline.py",
+      "bytes": 16288,
+      "sha256": "f049cdfd87be89b4244c1ca78b0e4faa86831605eb80d2f2fd4b2375c59cf36c",
+      "git_blob_sha1": "c2e95ed8b0b5bc3b3f9a93d81b072616791e156e"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/stage_evaluator.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/stage_evaluator.py",
+      "bytes": 17194,
+      "sha256": "1bba693ec0b16c4f502bbe9f75f6b887650c813de113788bbf2bd5873e4a4067",
+      "git_blob_sha1": "b2dbf0db4404ecb0bdb306b570e41fb5880e06e8"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/start_all_services.sh",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/start_all_services.sh",
+      "bytes": 3353,
+      "sha256": "0ad5045600f342ff108579156b8e6ea0269ed5e3525e48e032c6f46a8f77b9aa",
+      "git_blob_sha1": "86ef9d389d3cfada286ba97705b53f397074a8c6"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/stop_all_services.sh",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/stop_all_services.sh",
+      "bytes": 361,
+      "sha256": "bbb72856c8a2b280571de04b3de08d6840f97f73a9f8b6e1b167333120de2760",
+      "git_blob_sha1": "75c657a6f14b25bc417e9d0da84d4e604d46e129"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/test_client.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/test_client.py",
+      "bytes": 18816,
+      "sha256": "9e0ada43c2225c4e479d553f8c47840353953c7314bb7ec09fce1ede234d03bd",
+      "git_blob_sha1": "3338e365ca42c03d62478e2532eb39f0af0c6cf0"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/test_improvements.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/test_improvements.py",
+      "bytes": 2561,
+      "sha256": "21ce98c3d5514b8cd34c2a186c6a0622f398cb1848d2e7778bdb1a2119b183a0",
+      "git_blob_sha1": "6b9a9b9c4888e175a35e45956f7d0e929ae505df"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/test_pipeline.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/test_pipeline.py",
+      "bytes": 9057,
+      "sha256": "a6abb2dc63b4ba6f07a21babf8d2edee305b5ea86d41daba7ee9d0f5e738c215",
+      "git_blob_sha1": "c9c8ae8a9ccff10698590d193fe926e598437385"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/test_weighted_fusion_dedup.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/test_weighted_fusion_dedup.py",
+      "bytes": 541,
+      "sha256": "20d6a7a90d156f4a11c2127e01fb0ebaaddf1f60f03a680440973ef6fcea8377",
+      "git_blob_sha1": "2b11e573c0da7850ecf2656bb509e79c42652864"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/validation/latest.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/validation/latest.json",
+      "bytes": 2840,
+      "sha256": "149708ea6f42102015082fd4c8561b0b2e8d2508be650d509b9b01d96259b5d6",
+      "git_blob_sha1": "19fbecd928af3e227d736ec1c6e0614031fb1739"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/validation/runs/20260729T183512Z-3_6-a398d0f7/evidence.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/validation/runs/20260729T183512Z-3_6-a398d0f7/evidence.json",
+      "bytes": 96316,
+      "sha256": "280aae37e6da541881550a29ce799b81e9d381db3ea541eebbbddb6a72295788",
+      "git_blob_sha1": "1e815d6259222c043a158cbd47032708a59bc03c"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/validation/runs/20260729T183512Z-3_6-a398d0f7/manifest.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/validation/runs/20260729T183512Z-3_6-a398d0f7/manifest.json",
+      "bytes": 2751,
+      "sha256": "c305591efaeb1f85d6bab118e6bc8761a6e805feb0abf2b8146403be151dbcbf",
+      "git_blob_sha1": "0956c185d9d853b25ddb751b586456fe49099ccd"
+    },
+    {
+      "path": "chapter3/retrieval-pipeline/validation/runs/20260729T183512Z-3_6-a398d0f7/receipts.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/retrieval-pipeline/validation/runs/20260729T183512Z-3_6-a398d0f7/receipts.json",
+      "bytes": 881,
+      "sha256": "3db117d3cc0779290333a8da33db529dccd88af2434c966a7930e2dad9434e1e",
+      "git_blob_sha1": "f76a2c4a264b7e0b42caf99018253f92aee621a1"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/LICENSE",
+      "bytes": 11338,
+      "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074",
+      "git_blob_sha1": "bd3e071f150cf46f86c91d3341d36644f16e11cb"
+    }
+  ],
+  "note": "Upstream validation files are historical author evidence, not local experiment results."
+}

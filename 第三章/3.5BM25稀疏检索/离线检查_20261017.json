@@ -1,0 +1,90 @@
+{
+  "checked_at": "2026-10-17T22:13:05.154830+08:00",
+  "script_sha256": "e632aa0ff76ed0e52dcbc3359e46d76ab5b832b3d193ecf3fe529c46d13b18f1",
+  "manifest_sha256": "4c736b2abe6c3e7a73b322b30e96471d7cb9d8aeebd8ed87c790996209bf3058",
+  "fixture_sha256": "d15bd2f807044478cc975aeec1a473a66874e7bfb5050cba5a9986e735b0e2ec",
+  "passed": 18,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "新入口源码可编译",
+      "passed": true
+    },
+    {
+      "name": "19份官方材料与3-4共享输入来源哈希通过",
+      "passed": true
+    },
+    {
+      "name": "玩具文档TF和去停用词长度一致",
+      "passed": true
+    },
+    {
+      "name": "倒排表只记录实际包含该词的文档",
+      "passed": true
+    },
+    {
+      "name": "RSJ稀有词IDF与独立公式一致",
+      "passed": true
+    },
+    {
+      "name": "负IDF保留raw并以1e-6评分",
+      "passed": true
+    },
+    {
+      "name": "未登录词IDF为0且检索为空",
+      "passed": true
+    },
+    {
+      "name": "TF饱和与长度归一化分项符合手算",
+      "passed": true
+    },
+    {
+      "name": "重复查询词按原算法累计且贡献能求和",
+      "passed": true
+    },
+    {
+      "name": "小写回退后的词项用于实际计分",
+      "passed": true
+    },
+    {
+      "name": "玩具编码作为整体词项保留",
+      "passed": true
+    },
+    {
+      "name": "固定Precision分母5与官方返回数分母明确区分",
+      "passed": true
+    },
+    {
+      "name": "共同MRR@5拒绝用第6名命中抬分",
+      "passed": true
+    },
+    {
+      "name": "空返回不填充文档或伪造分数",
+      "passed": true
+    },
+    {
+      "name": "重复检索ID会拒绝",
+      "passed": true
+    },
+    {
+      "name": "相同TF时b=0无长度惩罚而b=1偏向短文档",
+      "passed": true
+    },
+    {
+      "name": "未生成正式BM25运行目录",
+      "passed": true
+    },
+    {
+      "name": "编码展示的标签和文档与官方默认样例一致",
+      "passed": true
+    }
+  ],
+  "formal_12_document_queries_executed": false,
+  "toy_index_only": true,
+  "model_requests": 0,
+  "embedding_forward_batches": 0,
+  "network_requests": 0,
+  "scope": "源文件/输入校验与独立玩具语料的公式、分词回退和指标验证；不是用户正式同语料评估结果",
+  "actual_preview_exit_code": 0,
+  "actual_preview_output": "3-5 BM25：沿用3-4的12篇文档、5条查询与标注，Top-5。\nk1=1.5，b=0.75；展示分词、倒排索引、TF、DF、IDF及逐词贡献。\n复用已核对的MiniLM结果，不重新编码；另有1条BM25编码查询展示，不计入5题对照。\n模型请求0，嵌入前向0，网络请求0；不安装依赖、下载模型或启动服务。\n对照统一Precision分母5、MRR仅看前5；官方按实际返回数的Precision另列，不直接混比。\nBM25_PREVIEW_ONLY：19份官方资料和同语料来源核验通过，不建索引、不创建结果目录。\n"
+}

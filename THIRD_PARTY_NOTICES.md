@@ -1,5 +1,7 @@
 # 来源与改动说明
 
+2026-10-17，实验3-6保存Bojie Li的固定提交`dbc046eb896ac4e39aa19c7774c8bf49583b89a6`下retrieval-pipeline目录24份文件及根LICENSE，逐文件来源及校验见[清单](第三章/3.6混合检索/官方资料/manifest.json)。本地第一步直接加载未经修改的`fusion.py`，新增已核对两路实测来源校验、同语料前5候选并集、分数贡献与排名变化、统一指标及逐查询保存；不调用官方服务或自动下载重排模型。官方validation是作者历史输出，不算本人成绩；本步代码准备不等于正式融合或神经重排已完成。原版权与Apache 2.0许可证保留。
+
 2026-10-15，第三章实验3-1直接保存并复用[官方提交dbc046eb896ac4e39aa19c7774c8bf49583b89a6](https://github.com/bojieli/ai-agent-book/tree/dbc046eb896ac4e39aa19c7774c8bf49583b89a6)中的60个评估用例、run_evaluation.py及experiment_utils.py，来源、原始根LICENSE与逐文件哈希保存在[官方资料](第三章/3.1用户记忆评估/官方资料/manifest.json)。原始文件未修改；本地02/03适配加载原始提示词与评分函数，增加Ollama调用、完整响应留存、输入隔离核对、严格JSON/评分检查及产物哈希核验。模型、运行环境和传输参数的差异在实验记录中单列；下载材料和离线检查不构成正式实验结果。
 
 第三章实验3-1第一步参考Bojie Li的[user-memory说明](https://github.com/bojieli/ai-agent-book/blob/main/chapter3/user-memory/README.md)及[对话读取记忆的实现](https://github.com/bojieli/ai-agent-book/blob/main/chapter3/user-memory/conversational_agent.py)，独立编写虚构对话的本机记忆提取代码与分步指南。使用Ollama现有接口、短事实文件、来源原话检查、完整原始响应及文件哈希；不复制官方Agent实现或评估用例，不将单次提取当作三层评估或四格式对照的完整复现。官方main链接于2026-10-14在线核对，未固定提交。

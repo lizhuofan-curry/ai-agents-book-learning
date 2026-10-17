@@ -1,0 +1,21 @@
+{
+  "sources": {
+    "dense": {
+      "record_relative_to_project": "第三章/3.4稠密向量检索/运行结果/text_embedding_20261017_213507_432933/record.json",
+      "allowed_results_relative_to_project": "第三章/3.4稠密向量检索/运行结果",
+      "record_sha256": "c5beeef30ba92df39051d00574d4d2fc3d803a952762b34e82080a284d888456",
+      "audit_sha256": "850db9b54f6d1cefb32be7f92cf0d0da6d89f5b4a74d9a5f894e3c09ebad6bb7",
+      "expected_status": "text_embedding_eval_saved",
+      "expected_audit_status": "real_text_embedding_record_verified"
+    },
+    "sparse": {
+      "record_relative_to_project": "第三章/3.5BM25稀疏检索/运行结果/bm25_aligned_20261017_222322_578910/record.json",
+      "allowed_results_relative_to_project": "第三章/3.5BM25稀疏检索/运行结果",
+      "record_sha256": "6488a6afaac472ca2b8448d6d6b86758d7104609ab8ba28d3cfcedb33a43ef97",
+      "audit_sha256": "721e7950d318e0b89b2d6783137d1e140382321f01a5873caf14d7a0a2e0d917",
+      "expected_status": "bm25_aligned_eval_saved",
+      "expected_audit_status": "bm25_aligned_record_verified"
+    }
+  },
+  "protocol_note": "Reuse only the five shared query rankings. Per-source top-5, union preserved, final top-5. No labels sent to fusion. No extra BM25-only code query."
+}
