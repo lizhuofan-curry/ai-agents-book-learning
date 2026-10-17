@@ -1,0 +1,10 @@
+Resolved 63 packages in 10ms
+   Building hnswlib==0.8.0
+   Building annoy==1.17.3
+      Built annoy==1.17.3
+      Built hnswlib==0.8.0
+Prepared 2 packages in 52.95s
+Installed 3 packages in 61ms
+ + annoy==1.17.3
+ + colorlog==6.8.0
+ + hnswlib==0.8.0
