@@ -1,0 +1,117 @@
+We are given a long-term memory in JSON format for session_1 (airline_booking_001). The user is asking for two things:
+ 1. Their flight confirmation number
+ 2. The seats they selected
+
+ From the memory, we can see:
+   - The booking has a "confirmation" field: "PAC-778K4M"
+   - The seats are in the "seats" field for both outbound and return. However, the user might be referring to the seats they selected for the outbound flight (since they are traveling from Seattle to Miami) or both? But typically, when booking a round trip, we have two sets of seats. The user says "what seats I selected", so we should provide both.
+
+ But note: the user says "I need to add it to my calendar". They might be planning their trip, so they want the outbound flight seats? However, the question is about both.
+
+ Let's look at the memory:
+
+   "outbound": {
+        ...,
+        "seats": {"row": 12, "seat": "C", "aisle": "right"}
+   },
+   "return": {
+        ...,
+        "seats": {"row": 14, "seat": "C", "aisle": "right"}
+   }
+
+ So the user has selected:
+   - Outbound: Row 12, Seat C (right aisle)
+   - Return: Row 14, Seat C (right aisle)
+
+ However, the user might be expecting a single string of seats? But the question says "seats I selected", plural.
+
+ Since the user is asking for a reminder to add to their calendar, they probably need the outbound flight seats (the one they are leaving on) because that's the first one. But to be safe, we can provide both.
+
+ But note: the user's question is: "Can you remind me of my flight confirmation number and what seats I selected?"
+
+ We'll answer:
+   - Confirmation number: PAC-778K4M
+   - Seats: 
+        Outbound: Row 12, Seat C (right aisle)
+        Return: Row 14, Seat C (right aisle)
+
+ However, the user might not need the return seats? But the booking has two flights. We should be precise.
+
+ Alternatively, the user might be referring to the seats for the entire trip? But the calendar is for the trip, so they might want both.
+
+ But note: the user says "what seats I selected" (plural). So we'll list both.
+
+ Important: The memory says the user has a Pacific Rewards account and the booking is for Pacific Airways.
+
+ Let's structure the response:
+
+   "Your flight confirmation number is: PAC-778K4M.
+    For your outbound flight (Seattle to Miami) on December 5, 2024, you have selected:
+        Row 12, Seat C (right aisle)
+    For your return flight (Miami to Seattle) on December 9, 2024, you have selected:
+        Row 14, Seat C (right aisle)"
+
+ However, the user might not need the details of the flights? But the question is about the seats.
+
+ But note: the user says "I need to add it to my calendar". They might just need the flight numbers and dates? However, the question specifically asks for the confirmation number and the seats.
+
+ We are to be accurate and resolve ambiguity.
+
+ Since the memory is clear, we can output the above.
+
+ But wait: the user might be confused about which seats? The memory shows two sets. We'll present both.
+
+ Also, note: the user's email and other details are in the memory, but we don't need to mention them unless asked.
+
+ Let's write the response in a friendly, helpful manner.
+
+ However, the instruction says: "Do not invent facts". We are only using the memory.
+
+ We have the memory: so we are safe.
+
+ Response:
+
+   "Sure! Here's your flight confirmation number and seat details:
+
+    - Confirmation number: PAC-778K4M
+    - Outbound seats (Seattle to Miami, Dec 5): Row 12, Seat C (right aisle)
+    - Return seats (Miami to Seattle, Dec 9): Row 14, Seat C (right aisle)
+
+    You can add these to your calendar as needed."
+
+ But note: the user might not care about the dates? However, the question is about the seats. But the seats are for specific flights. We are including the flight dates to be clear.
+
+ Alternatively, we could say: "Your selected seats are: Outbound - Row 12, Seat C (right aisle); Return - Row 14, Seat C (right aisle)."
+
+ However, the user might be planning the calendar for the entire trip, so including the dates is helpful.
+
+ But the question doesn't ask for dates, so we can be concise.
+
+ Let's stick to the user's request: they want the confirmation number and the seats.
+
+ We'll write:
+
+   "Your flight confirmation number is PAC-778K4M. You have selected:
+      Outbound: Row 12, Seat C (right aisle)
+      Return: Row 14, Seat C (right aisle)"
+
+ This is accurate and from the memory.
+
+ Important: We must not add any extra information that isn't in the memory.
+
+ Let me check the memory again: the memory has the exact strings.
+
+ So, we output that.
+
+ Also, note: the user might be in a hurry, so we keep it short and to the point.
+
+ Final response:
+</think>
+
+Your flight confirmation number is **PAC-778K4M**.  
+
+Here are your selected seats:  
+- **Outbound flight** (Seattle → Miami, December 5): **Row 12, Seat C (right aisle)**  
+- **Return flight** (Miami → Seattle, December 9): **Row 14, Seat C (right aisle)**  
+
+You can add these details to your calendar for easy reference. Let me know if you need further assistance! 😊

@@ -1,0 +1,168 @@
+{
+  "mode": "advanced_json_cards",
+  "memory": [
+    {
+      "category": "user",
+      "card_key": "rebecca_sullivan",
+      "backstory": "User provided full name, contact details, and travel preferences for a round-trip flight booking with Pacific Airways",
+      "person": "Rebecca Anne Sullivan",
+      "relationship": "Primary user of the booking",
+      "timestamp": "2024-11-10 16:30:00",
+      "status": "active",
+      "facts": {
+        "name": "Rebecca Anne Sullivan",
+        "email": "rsullivan82@techmail.com",
+        "phone": "206-555-4412",
+        "address": "8923 Evergreen Way, Apartment 14B, Seattle, Washington, 98101",
+        "dob": "1982-01-18",
+        "pacific_rewards_number": "PR-4478829",
+        "miles_earned": "5400",
+        "seat_outbound": "12C",
+        "seat_return": "14C",
+        "flight_outbound": "PA 890",
+        "flight_return": "PA 891",
+        "outbound_departure": "2024-12-05T10:45:00",
+        "outbound_arrival": "2024-12-05T19:10:00",
+        "return_departure": "2024-12-09T14:35:00",
+        "return_arrival": "2024-12-09T20:55:00",
+        "total_cost": "1430",
+        "baggage_cost": "60",
+        "payment_method": "Visa",
+        "payment_card_number": "4532-8876-9901-3345",
+        "payment_expiry": "10/26",
+        "payment_cvv": "338",
+        "payment_zip": "98101",
+        "confirmation_number": "PAC-778K4M",
+        "tsa_precheck": "842756931",
+        "dietary_restrictions": "vegetarian",
+        "terminal_seattle": "B",
+        "terminal_miami": "D",
+        "aircraft_type": "Boeing 737-900",
+        "wifi_cost": "8 (per hour) / 15 (full flight)"
+      }
+    },
+    {
+      "category": "flight",
+      "card_key": "pa_890",
+      "backstory": "Outbound flight selected by user for December 5th with specific departure and arrival times",
+      "person": "Pacific Airways",
+      "relationship": "Outbound flight segment",
+      "timestamp": "2024-11-10 16:30:00",
+      "status": "confirmed",
+      "facts": {
+        "flight_number": "PA 890",
+        "departure_city": "Seattle",
+        "arrival_city": "Miami",
+        "departure_time": "10:45 AM",
+        "arrival_time": "7:10 PM",
+        "departure_date": "2024-12-05",
+        "arrival_date": "2024-12-05",
+        "seats": "12C",
+        "baggage_included": "1 personal item, 1 carry-on",
+        "price_economy": "685",
+        "price_business": "1450",
+        "aircraft": "Boeing 737-900"
+      }
+    },
+    {
+      "category": "flight",
+      "card_key": "pa_891",
+      "backstory": "Return flight selected by user for December 9th with specific departure and arrival times",
+      "person": "Pacific Airways",
+      "relationship": "Return flight segment",
+      "timestamp": "2024-11-10 16:30:00",
+      "status": "confirmed",
+      "facts": {
+        "flight_number": "PA 891",
+        "departure_city": "Miami",
+        "arrival_city": "Seattle",
+        "departure_time": "2:35 PM",
+        "arrival_time": "5:55 PM",
+        "departure_date": "2024-12-09",
+        "arrival_date": "2024-12-09",
+        "seats": "14C",
+        "baggage_included": "1 personal item, 1 carry-on",
+        "price_economy": "685",
+        "price_business": "1450",
+        "aircraft": "Boeing 737-900"
+      }
+    },
+    {
+      "category": "booking",
+      "card_key": "pacific_airways_booking",
+      "backstory": "Round-trip booking confirmed with Pacific Airways for Rebecca Sullivan",
+      "person": "Pacific Airways",
+      "relationship": "Active booking",
+      "timestamp": "2024-11-10 16:30:00",
+      "status": "active",
+      "facts": {
+        "confirmation_number": "PAC-778K4M",
+        "total_cost": "1430",
+        "baggage_cost": "60",
+        "payment_method": "Visa",
+        "payment_card_number": "4532-8876-9901-3345",
+        "payment_expiry": "10/26",
+        "payment_cvv": "338",
+        "payment_zip": "98101",
+        "tsa_precheck_number": "842756931",
+        "dietary_restrictions": "vegetarian",
+        "terminal_seattle": "B",
+        "terminal_miami": "D",
+        "aircraft_type": "Boeing 737-900",
+        "wifi_cost": "8 (per hour) / 15 (full flight)"
+      }
+    },
+    {
+      "category": "rewards",
+      "card_key": "pacific_rewards",
+      "backstory": "User joined Pacific Rewards program with specific details",
+      "person": "Pacific Airways",
+      "relationship": "User rewards account",
+      "timestamp": "2024-11-10 16:30:00",
+      "status": "active",
+      "facts": {
+        "user_id": "PR-4478829",
+        "miles_earned": "5400",
+        "date_of_birth": "1982-01-18",
+        "email": "rsullivan82@techmail.com",
+        "phone": "206-555-4412",
+        "address": "8923 Evergreen Way, Apartment 14B, Seattle, Washington, 98101"
+      }
+    },
+    {
+      "category": "policies",
+      "card_key": "cancellation_policy",
+      "backstory": "User inquired about cancellation and change policies for the booking",
+      "person": "Pacific Airways",
+      "relationship": "Booking policy",
+      "timestamp": "2024-11-10 16:30:00",
+      "status": "active",
+      "facts": {
+        "economy_refundable": "non-refundable",
+        "change_fee_economy": "200",
+        "fare_difference": "applied",
+        "medical_cancellation_credit": "credit for future travel (1 year) - $100 processing fee",
+        "travel_insurance": "TravelGuard coverage",
+        "insurance_cost": "89",
+        "insurance_coverage": "trip cancellation, medical emergencies, lost baggage, delays",
+        "insurance_deadline": "14 days from booking"
+      }
+    },
+    {
+      "category": "services",
+      "card_key": "lounge_access",
+      "backstory": "User inquired about lounge access options",
+      "person": "Pacific Airways",
+      "relationship": "Lounge access policy",
+      "timestamp": "2024-11-10 16:30:00",
+      "status": "active",
+      "facts": {
+        "business_class_lounge": "included",
+        "gold_status_lounge": "included",
+        "day_pass_lounge": "59",
+        "terminal_seattle": "B",
+        "terminal_miami": "D"
+      }
+    }
+  ]
+}

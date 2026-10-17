@@ -1,0 +1,101 @@
+{
+  "mode": "json_cards",
+  "memory": {
+    "session": {
+      "index": 1,
+      "conversation_id": "insurance_claim_001",
+      "timestamp": "2024-11-18 14:15:00",
+      "metadata": {
+        "business": "SafeGuard Auto Insurance",
+        "department": "Claims Department",
+        "call_duration": "52 minutes"
+      }
+    },
+    "user": {
+      "name": "Jennifer Martinez",
+      "policy_number": "SGA-8847291-04",
+      "vehicle": {
+        "make": "Honda",
+        "model": "Accord",
+        "year": 2019,
+        "mileage": 45000
+      },
+      "date_of_birth": "1988-07-22",
+      "accident": {
+        "time": "12:15 PM",
+        "date": "2024-11-18",
+        "location": "Intersection of Broadway and 45th Street, Sacramento",
+        "police_report_number": "SAC-2024-78432",
+        "other_vehicle": {
+          "make": "Toyota",
+          "model": "Camry",
+          "year": 2021,
+          "driver": "Robert Chen",
+          "insurance_policy_number": "NW-5543298",
+          "insurance_company": "Nationwide"
+        },
+        "witnesses": [
+          {
+            "name": "Maria Thompson",
+            "phone_number": "916-555-3847"
+          }
+        ],
+        "damage": {
+          "description": "Passenger side damaged: both doors dented, mirror gone, front and rear quarter panels damaged",
+          "vehicle_status": "Towed to Jerry's Auto Body, Riverside Drive, Sacramento, 95822",
+          "address": "3421 Riverside Drive, Sacramento, 95822",
+          "phone_number": "916-555-7823"
+        },
+        "personal_property": {
+          "laptop": {
+            "make": "Apple",
+            "model": "MacBook Pro",
+            "screen_size": "14-inch",
+            "purchase_price": 2200,
+            "receipt_status": "Email receipt from Apple"
+          }
+        },
+        "medical": {
+          "checkup": "Paramedics checked out at scene",
+          "medical_coverage": {
+            "limit": 5000
+          }
+        },
+        "rental_car": {
+          "provider": "Enterprise Rent-A-Car",
+          "location": "1800 L Street, Sacramento",
+          "confirmation_number": "ENT-7739482",
+          "pickup_time": "4 PM today",
+          "pickup_date": "2024-11-18"
+        },
+        "claim": {
+          "number": "CLM-2024-894327",
+          "status": "Active",
+          "coverage": {
+            "comprehensive": true,
+            "collision": true,
+            "deductible": 500,
+            "rental_reimbursement": {
+              "limit": 40,
+              "days": 30
+            },
+            "personal_property": {
+              "limit": 2500
+            },
+            "medical_payments": {
+              "limit": 5000
+            }
+          },
+          "additional_info": {
+            "gap_insurance": true,
+            "subrogation": true
+          }
+        },
+        "contact_info": {
+          "phone_number": "916-555-8899",
+          "address": "892 Oak Lane, Sacramento, 95821"
+        }
+      }
+    }
+  }
+}

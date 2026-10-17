@@ -1,0 +1,78 @@
+{
+  "mode": "json_cards",
+  "memory": {
+    "session_1": {
+      "conversation_id": "hotel_booking_001",
+      "timestamp": "2024-11-09 19:30:00",
+      "metadata": {
+        "business": "Hilton Hotels",
+        "department": "Reservations",
+        "call_duration": "46 minutes"
+      },
+      "user": {
+        "name": "Richard and Susan Thompson",
+        "email": "rthompson@techcompany.com",
+        "phone": "619-555-9821",
+        "credit_card": {
+          "number": "4556-7890-1234-5678",
+          "expiration": "07/26",
+          "name": "Richard P Thompson"
+        }
+      },
+      "reservation": {
+        "property": "Hilton San Diego Bayfront",
+        "check_in": "2024-12-08",
+        "check_out": "2024-12-10",
+        "room": {
+          "number": "1912",
+          "type": "Junior Suite",
+          "floor": "19",
+          "features": [
+            "650 square feet",
+            "king bed",
+            "separate seating area",
+            "floor-to-ceiling windows overlooking the bay",
+            "marble bathroom with soaking tub"
+          ]
+        },
+        "package": {
+          "name": "Romance Package",
+          "includes": [
+            "chocolate-covered strawberries",
+            "champagne on arrival",
+            "late checkout (2 PM)",
+            "breakfast in bed"
+          ],
+          "price": "125"
+        },
+        "total": {
+          "base": "1058",
+          "tax": "150",
+          "final": "1333"
+        },
+        "dinner_reservation": {
+          "restaurant": "Vela",
+          "date": "2024-12-09",
+          "time": "19:30",
+          "guests": "2"
+        },
+        "special_requests": {
+          "floor": "18 or higher",
+          "roses": "dozen red roses"
+        },
+        "hilton_honors": {
+          "member_id": "HH294857301",
+          "points": {
+            "base": "13000",
+            "bonus": "20%",
+            "final": "15600"
+          }
+        },
+        "payment": {
+          "method": "credit card",
+          "confirmation_number": "HSD-445782"
+        }
+      }
+    }
+  }
+}

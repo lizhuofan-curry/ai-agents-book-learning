@@ -1,0 +1,80 @@
+{
+  "mode": "json_cards",
+  "memory": {
+    "pharmacy_transfer_001": {
+      "session": {
+        "conversation_id": "pharmacy_transfer_001",
+        "timestamp": "2024-11-13 10:00:00",
+        "metadata": {
+          "business": "Walgreens Pharmacy",
+          "department": "Pharmacy Services",
+          "call_duration": "39 minutes"
+        }
+      },
+      "user": {
+        "name": "Matthew Harrison",
+        "date_of_birth": "September 5th, 1975",
+        "phone_number": "773-555-4429",
+        "address": "3924 North Lincoln Avenue, Chicago, Illinois, 60613",
+        "insurance": "UnitedHealthcare",
+        "member_id": "UHC887234561",
+        "group_number": "445KL8",
+        "cardholder": "Matthew Harrison",
+        "prescriptions": [
+          {
+            "medication": "metoprolol",
+            "strength": "50 milligrams",
+            "frequency": "twice daily",
+            "prescription_number": "RX7739482",
+            "tier": "Tier 1",
+            "copay": "$10"
+          },
+          {
+            "medication": "rosuvastatin",
+            "strength": "20 milligrams",
+            "frequency": "once at night",
+            "prescription_number": "RX7739483",
+            "tier": "Tier 1",
+            "copay": "$10"
+          },
+          {
+            "medication": "jardiance",
+            "strength": "10 milligrams",
+            "frequency": "once in the morning",
+            "prescription_number": "RX7739484",
+            "tier": "Tier 3",
+            "copay": "$47"
+          },
+          {
+            "medication": "gabapentin",
+            "strength": "300 milligrams",
+            "frequency": "three times daily",
+            "prescription_number": "RX7739485",
+            "tier": "Tier 1",
+            "copay": "$10"
+          }
+        ],
+        "prescribing_physician": "Dr. Amanda Foster at Northwestern Medical Group",
+        "refills": "At least 6 refills left for all four prescriptions",
+        "last_fill_date": "About a week ago",
+        "medication_left": "Three weeks of medication",
+        "allergies": "Codeine (breaks out in hives)",
+        "supplements": [
+          "vitamin D3, 2000 units daily",
+          "fish oil"
+        ],
+        "total_copay": "$77",
+        "auto_refills": "Yes",
+        "synchronization": "Yes",
+        "walgreens_account_number": "WG-9847221",
+        "home_store": "3419 North Broadway, Chicago, Illinois",
+        "vaccine_records": "Flu shot at CVS",
+        "additional_services": [
+          "test strips for glucose meter (OneTouch Verio)",
+          "box of 100 test strips: $35"
+        ],
+        "total_order": "$112"
+      }
+    }
+  }
+}

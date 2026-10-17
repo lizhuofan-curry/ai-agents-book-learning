@@ -1,0 +1,56 @@
+We are given a long-term memory in the form of a JSON card for a reservation.
+ The user is asking for two specific pieces of information:
+  1. Hilton confirmation number
+  2. Room number
+
+ We have the long-term memory card with the key "hotel_booking_001" which contains:
+   - "confirmation_number": "HSD-445782"
+   - "room": "1912"
+
+ Therefore, we can directly extract and provide these two pieces of information.
+
+ Additionally, note that the user mentions "My wife is asking about our anniversary trip details". 
+ We have the backstory: "User requested a special weekend booking for their 10th anniversary in San Diego"
+
+ However, the user only asked for the confirmation number and room number, so we focus on that.
+
+ Let's structure the response:
+
+   - Confirm the confirmation number: HSD-445782
+   - Confirm the room number: 1912
+
+ We do not need to invent any facts beyond what is in the long-term memory.
+
+ Important: The long-term memory says the room is "1912", so we say "room 1912".
+
+ Also, note that the user is Richard and Susan Thompson (from the memory) and they are having their 10th anniversary.
+
+ But the user is asking for a reminder, so we keep it concise.
+
+ Response:
+
+   "Your Hilton confirmation number is HSD-445782, and your room number is 1912. Enjoy your anniversary trip in San Diego!"
+
+ However, note: the user says "My wife is asking", so we are responding to the user (who is Richard) on behalf of the wife.
+
+ We are being proactive: we are providing the exact details without extra fluff.
+
+ But let's check: the memory has the room as "1912" and the confirmation number as "HSD-445782".
+
+ We must be cautious: the memory says the room is "1912" (a string) and the confirmation number is a string starting with "HSD".
+
+ We output exactly as in the memory.
+
+ Also, note: the memory has the status as "confirmed", so we are safe.
+
+ Let's write the response.
+</think>
+
+Based on your reservation details in the system (confirmed on 2024-11-09), here are the specific details you requested:
+
+- **Hilton Confirmation Number**: `HSD-445782`  
+- **Room Number**: `1912` (Junior Suite, 650 sq ft, overlooking the bay)  
+
+This reservation is for your 10th anniversary trip in San Diego (Hilton San Diego Bayfront), with check-in on December 8, 2024. Your wife will find these details helpful for the dinner reservation at Vela restaurant on December 9th at 7:30 PM.  
+
+*Note: All details are verified against your confirmed booking. No changes are needed for the anniversary trip.*

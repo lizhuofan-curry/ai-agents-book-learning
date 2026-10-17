@@ -1,0 +1,148 @@
+{
+  "mode": "json_cards",
+  "memory": {
+    "patient": {
+      "name": "David Christopher Thompson",
+      "date_of_birth": "1979-08-09",
+      "address": "4521 Pine Valley Road, Denver, Colorado, 80203",
+      "phone": "303-555-7621",
+      "email": "dthompson79@email.com",
+      "insurance": {
+        "primary": {
+          "type": "Blue Cross Blue Shield",
+          "member_id": "BCB447829563",
+          "group_number": "78845-001",
+          "employer": "Meridian Software Solutions"
+        },
+        "is_primary_holder": true,
+        "secondary": null
+      },
+      "medical_history": {
+        "previous_physician": {
+          "name": "Dr. Sarah Mitchell",
+          "practice": "Denver General",
+          "duration": "5 years",
+          "status": "retiring"
+        },
+        "conditions": {
+          "hypertension": {
+            "diagnosis_date": "2021-08-09",
+            "medication": "Lisinopril 10 mg once daily",
+            "duration": "3 years"
+          },
+          "hyperlipidemia": {
+            "medication": "Atorvastatin 20 mg at night"
+          },
+          "gastroesophageal_reflux_disease": {
+            "medication": "Omeprazole 20 mg once in the morning",
+            "duration": "about a month"
+          }
+        },
+        "allergies": {
+          "medication": "Penicillin (hives)",
+          "food": null,
+          "environmental": "Tree pollen (seasonal)"
+        },
+        "lactose_intolerance": true,
+        "surgeries": [
+          {
+            "type": "Appendectomy",
+            "year": 2010,
+            "status": "smooth"
+          },
+          {
+            "type": "ACL repair (left knee)",
+            "year": 2018,
+            "status": "smooth"
+          }
+        ],
+        "hospitalizations": [
+          {
+            "type": "Pneumonia",
+            "year": 2021,
+            "duration": "2 days"
+          }
+        ],
+        "family_history": {
+          "parents": {
+            "mother": {
+              "age": 72,
+              "health_conditions": [
+                "Arthritis",
+                "High cholesterol"
+              ]
+            },
+            "father": {
+              "age": 68,
+              "health_conditions": [
+                "Diabetes",
+                "Hypertension"
+              ],
+              "status": "deceased"
+            }
+          },
+          "siblings": [
+            {
+              "name": "Sister",
+              "age": 45,
+              "health_conditions": [
+                "Thyroid issues"
+              ]
+            }
+          ],
+          "grandparents": {
+            "maternal": {
+              "health_conditions": [
+                "Breast cancer"
+              ]
+            },
+            "paternal": {
+              "health_conditions": [
+                "Prostate cancer"
+              ]
+            }
+          }
+        },
+        "lifestyle": {
+          "smoking": "Never",
+          "alcohol": "Occasional (wine on weekends)",
+          "exercise": "3 times a week (cardio and light weights)",
+          "back_pain": {
+            "duration": "6 weeks",
+            "location": "Lower back",
+            "symptoms": "Worsens with prolonged sitting",
+            "severity": "4-5 (sometimes 7)",
+            "treatment": "Ibuprofen and heating pads"
+          },
+          "weight": {
+            "current": 195,
+            "change": "10 pounds over past year"
+          },
+          "height": "5 feet 11 inches",
+          "sleep": "Difficulty falling asleep (especially with back pain)",
+          "snoring": "Occasional (no sleep apnea)"
+        },
+        "vaccinations": {
+          "covid": "Fully vaccinated with 2 boosters (last in September)",
+          "flu": "October",
+          "tetanus": "2 years ago (after stepping on a nail)"
+        },
+        "appointment": {
+          "scheduled": {
+            "doctor": "Dr. Robert Chen",
+            "date": "2024-11-21",
+            "time": "14:30",
+            "confirmation_number": "MV-789234"
+          },
+          "requirements": [
+            "Insurance card",
+            "Photo ID",
+            "List of current medications with dosages",
+            "Medical records from Dr. Mitchell"
+          ],
+          "fasting": "12 hours before appointment (no food after 2:30 AM)"
+        }
+      }
+    }
+  }
+}

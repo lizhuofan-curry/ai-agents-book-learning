@@ -1,0 +1,98 @@
+{
+  "mode": "json_cards",
+  "memory": {
+    "session_1": {
+      "conversation_id": "airline_booking_001",
+      "timestamp": "2024-11-10 16:30:00",
+      "metadata": {
+        "business": "Pacific Airways",
+        "department": "Reservations",
+        "call_duration": "48 minutes"
+      },
+      "user": {
+        "name": "Rebecca Anne Sullivan",
+        "email": "rsullivan82@techmail.com",
+        "phone": "206-555-4412",
+        "address": "8923 Evergreen Way, Apartment 14B, Seattle, Washington, 98101",
+        "dob": "1982-01-18",
+        "pacific_rewards": {
+          "number": "PR-4478829",
+          "miles_earned": 5400
+        }
+      },
+      "booking": {
+        "outbound": {
+          "flight_number": "PA 890",
+          "departure": {
+            "city": "Seattle",
+            "date": "2024-12-05",
+            "time": "10:45"
+          },
+          "arrival": {
+            "city": "Miami",
+            "date": "2024-12-05",
+            "time": "19:10"
+          },
+          "seats": {
+            "row": 12,
+            "seat": "C",
+            "aisle": "right"
+          },
+          "class": "economy",
+          "price": 685
+        },
+        "return": {
+          "flight_number": "PA 891",
+          "departure": {
+            "city": "Miami",
+            "date": "2024-12-09",
+            "time": "14:35"
+          },
+          "arrival": {
+            "city": "Seattle",
+            "date": "2024-12-09",
+            "time": "17:55"
+          },
+          "seats": {
+            "row": 14,
+            "seat": "C",
+            "aisle": "right"
+          },
+          "class": "economy",
+          "price": 685
+        },
+        "total": 1430,
+        "confirmation": "PAC-778K4M",
+        "baggage": {
+          "checked": 1,
+          "price": 30
+        },
+        "tasa_precheck": {
+          "number": "842756931"
+        },
+        "wifi": {
+          "price_per_hour": 8,
+          "price_full_flight": 15
+        },
+        "aircraft": "Boeing 737-900",
+        "terminal": {
+          "seattle": "Terminal B",
+          "miami": "Terminal D"
+        }
+      },
+      "additional_info": {
+        "cancellation_policy": "Economy tickets are non-refundable, but you can change your flight for a $200 change fee plus any fare difference.",
+        "medical_cancellation": "With a doctor's note, we can provide a credit for future travel valid for one year, minus a $100 processing fee.",
+        "travel_insurance": {
+          "cost": 89,
+          "coverage": "trip cancellation, medical emergencies, lost baggage, delays"
+        },
+        "lounge_access": {
+          "business_class": "required",
+          "gold_status": "required",
+          "day_pass": 59
+        }
+      }
+    }
+  }
+}

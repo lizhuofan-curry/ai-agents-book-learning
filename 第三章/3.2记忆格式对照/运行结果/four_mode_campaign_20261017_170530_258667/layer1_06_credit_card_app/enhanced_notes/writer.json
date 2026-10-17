@@ -1,0 +1,136 @@
+{
+  "stage": "four_format_writer_4096",
+  "status": "incomplete",
+  "created_at": "2026-10-17T18:19:30.656249+08:00",
+  "config": {
+    "model": "qwen3:4b",
+    "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "memory_format": "json",
+    "sampling_profile": "qwen-recommended",
+    "sampling_options": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "min_p": 0
+    },
+    "seed": 37,
+    "num_ctx": 32768,
+    "memory_max": 6000,
+    "answer_max": 4096,
+    "judge_model": "deepseek-flash",
+    "code_fingerprints": {
+      "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\我的代码\\04_四格式固定配置评估.py": "4fa73b1f0658306db456bc7190b05e1e54ab668a3ad53948f5a930bde1b6f757",
+      "E:\\AI_Agents_Book\\第三章\\3.1用户记忆评估\\我的代码\\官方评估工具.py": "d0fa24d477e3e489edb498c8c748d1b8e268ed374b79fe7115ad2e4547f15975",
+      "E:\\AI_Agents_Book\\第三章\\3.1用户记忆评估\\我的代码\\03_官方用例独立裁判评分.py": "2f76d8540ebd58fb85a64f5fc1dc0d5c73c092ceb9b5dce6914680a1c094ec82"
+    }
+  },
+  "upstream_commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "case_source": {
+    "path": "chapter3/user-memory-evaluation/test_cases/layer1/06_credit_card_application.yaml",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/user-memory-evaluation/test_cases/layer1/06_credit_card_application.yaml",
+    "bytes": 11172,
+    "sha256": "7c4358326df8671cad9814a8796df48e5a60cd807ee89a33e6d8523302e8630e"
+  },
+  "test_id": "layer1_06_credit_card_app",
+  "mode": "enhanced_notes",
+  "model": "qwen3:4b",
+  "memory_format": "json",
+  "sampling_profile": "qwen-recommended",
+  "calls": [
+    {
+      "purpose": "memory_session_1",
+      "request": {
+        "model": "qwen3:4b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a long-term memory writer. Select only facts that may help a future assistant, but retain exact values, ownership, event status, dates, provenance, and relationships. Apply updates without losing still-valid facts. Never answer the conversation. Return JSON only as {\"memory\": ...}. Store memory as an array of contextual paragraphs. Each paragraph must retain the entity, event, time, status, and relationships needed to interpret it."
+          },
+          {
+            "role": "user",
+            "content": "MEMORY MODE: enhanced_notes\nSESSION INDEX: 1\n\nCURRENT MEMORY STATE (the only retained information from older sessions):\n[]\n\nNEW SESSION (analyze this session, then replace the memory state):\nconversation_id=credit_card_app_001\ntimestamp=2024-11-06 13:20:00\nmetadata={\"business\": \"Premier Bank Credit Services\", \"department\": \"Card Applications\", \"call_duration\": \"41 minutes\"}\nUSER: Hi, I received a pre-approved offer for your Rewards Plus credit card and I'd like to apply.\nASSISTANT: Excellent! Thank you for your interest in the Premier Bank Rewards Plus card. I'm Sandra, and I'll help you with your application today. May I have the invitation code from your offer?\nUSER: Yes, it's RWD-447829-Q3.\nASSISTANT: Perfect! I see you're pre-approved for up to $15,000 credit limit. Let me verify some information. Is this Patricia Chen?\nUSER: Yes, that's me.\nASSISTANT: Wonderful, Ms. Chen. Can you confirm your date of birth?\nUSER: June 14th, 1990.\nASSISTANT: Thank you. And your current address?\nUSER: 2156 Mission Street, Apartment 8C, San Francisco, California, 94110.\nASSISTANT: How long have you been at this address?\nUSER: About three years now.\nASSISTANT: Excellent. Now, let me tell you about the Rewards Plus card benefits. You'll earn 3% cash back on dining and entertainment, 2% on groceries and gas, and 1% on everything else.\nUSER: Is there an annual fee?\nASSISTANT: No annual fee at all. Plus, you get a $200 bonus after spending $1,000 in the first three months.\nUSER: That sounds great. What's the interest rate?\nASSISTANT: Based on your pre-approval, you qualify for our best rate of 16.99% APR for purchases. Balance transfers are at 14.99% for the first 12 months, then the regular rate.\nUSER: Do you offer a 0% introductory rate?\nASSISTANT: Yes! You get 0% APR on purchases for the first 15 months, then it goes to the 16.99% rate.\nUSER: That's really good. What about balance transfer fees?\nASSISTANT: Balance transfers have a 3% fee, with a minimum of $10. But with the lower rate for 12 months, it often saves money overall.\nUSER: I have about $3,000 I'd like to transfer from another card.\nASSISTANT: That's perfectly fine. We can set that up once your card is approved. Now, I need to verify your employment information. Where do you work?\nUSER: I work at Bay Area Tech Solutions as a senior project manager.\nASSISTANT: How long have you been with Bay Area Tech Solutions?\nUSER: Five and a half years.\nASSISTANT: Excellent stability. What's your annual income?\nUSER: My base salary is $135,000, and I usually get about $20,000 in bonuses.\nASSISTANT: So total annual income around $155,000?\nUSER: Yes, that's right.\nASSISTANT: Do you have any additional sources of income?\nUSER: I do some freelance consulting, maybe $10,000 a year.\nASSISTANT: I'll note that as $165,000 total annual income. Now, do you rent or own your home?\nUSER: I rent.\nASSISTANT: What's your monthly rent payment?\nUSER: $2,850 per month.\nASSISTANT: Do you have any other credit cards currently?\nUSER: Yes, I have two - a Chase Sapphire and an American Express Blue.\nASSISTANT: What are the credit limits on those?\nUSER: Chase is $12,000 and Amex is $8,000.\nASSISTANT: And roughly what are your current balances?\nUSER: The Chase has about $3,000 which I want to transfer, and the Amex has maybe $500.\nASSISTANT: Thank you. Any other loans - auto, student loans, personal loans?\nUSER: I have a car loan with about $15,000 remaining.\nASSISTANT: What's your monthly payment on that?\nUSER: $425 per month.\nASSISTANT: Perfect. Now, what's your mother's maiden name for security purposes?\nUSER: It's Williams.\nASSISTANT: Thank you. Let me process your application now... Congratulations! You're approved for a $14,000 credit limit.\nUSER: That's fantastic! When will I receive the card?\nASSISTANT: Your card will arrive in 7-10 business days via USPS to your Mission Street address.\nUSER: Can I expedite it?\nASSISTANT: Absolutely! For $25, we can send it FedEx for delivery in 2-3 business days.\nUSER: Let's do that. I have some purchases coming up.\nASSISTANT: Perfect. It will arrive by November 9th. Now, would you like to set up that balance transfer?\nUSER: Yes, the $3,000 from my Chase card.\nASSISTANT: I'll need the account number for your Chase card.\nUSER: It's 4147-2298-8834-9002.\nASSISTANT: And which bank issues that card?\nUSER: Chase Bank.\nASSISTANT: Perfect. The $3,000 transfer will process within 7-14 days after you receive and activate your card. The 3% fee of $90 will be added to your first statement.\nUSER: That works. Can I add an authorized user?\nASSISTANT: Yes, you can add authorized users at no additional cost. Would you like to add someone now?\nUSER: Yes, my husband, James Chen.\nASSISTANT: I'll need his date of birth.\nUSER: March 22nd, 1988.\nASSISTANT: His card will arrive with yours. He'll earn rewards on his purchases that go into your account.\nUSER: Great. How do I track my rewards?\nASSISTANT: You can see your cash back balance on your monthly statement, online account, or mobile app. Rewards post after each statement closes.\nUSER: When can I redeem them?\nASSISTANT: You can redeem anytime once you have at least $25 in rewards. Options include statement credit, direct deposit, or check.\nUSER: Do the rewards expire?\nASSISTANT: No, they never expire as long as your account remains open and in good standing.\nUSER: What about foreign transaction fees?\nASSISTANT: The Rewards Plus card has no foreign transaction fees, making it perfect for international travel.\nUSER: That's great, I travel to Asia twice a year. What about rental car insurance?\nASSISTANT: Yes, you get automatic collision damage waiver when you rent with your card. Plus extended warranty on purchases and purchase protection.\nUSER: Is there fraud protection?\nASSISTANT: Absolutely. Zero liability for unauthorized charges, and we monitor 24/7 for suspicious activity. You can also set up instant alerts.\nUSER: How do I set up online access?\nASSISTANT: Once you receive your card, go to premier-bank.com/activate. You'll create a username and password there.\nUSER: Can I choose my payment due date?\nASSISTANT: Yes, after your first statement, you can call or go online to change your due date to any day of the month you prefer.\nUSER: I'd like it around the 15th of each month.\nASSISTANT: You can set that up after your first statement generates. Your temporary due date will be the 5th of each month.\nUSER: What's the minimum payment?\nASSISTANT: The minimum is 2% of your balance or $25, whichever is greater.\nUSER: And the credit limit again was?\nASSISTANT: You're approved for $14,000.\nUSER: Can I request an increase later?\nASSISTANT: Yes, after six months of on-time payments, you can request an increase online or by phone.\nUSER: Is there a cash advance option?\nASSISTANT: Yes, cash advances are available up to 30% of your credit limit, so up to $4,200 for you. The fee is 5% or $10 minimum, and the APR is 24.99%.\nUSER: I'll avoid that. What's the customer service number?\nASSISTANT: It's 1-800-555-CARD, available 24/7. Your account number for reference is 5524-8897-2234-4001.\nUSER: Let me write that down... 5524-8897-2234-4001?\nASSISTANT: That's correct. That's your new card number. You'll create a PIN when you activate the card.\nUSER: Perfect. Is there anything else I should know?\nASSISTANT: Just remember to activate your card as soon as it arrives to enable your purchase protection benefits and to start the balance transfer. You'll need the three-digit activation code that comes with the card.\nUSER: Sounds good. Thank you so much for your help!\nASSISTANT: You're very welcome, Ms. Chen! Your Premier Bank Rewards Plus card with a $14,000 limit will arrive via FedEx by November 9th. Remember, you have 0% APR for 15 months and will earn that $200 bonus after $1,000 in purchases. Thank you for choosing Premier Bank!"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.8,
+          "top_k": 20,
+          "min_p": 0,
+          "seed": 37,
+          "num_ctx": 32768,
+          "num_predict": 6000
+        },
+        "format": "json"
+      },
+      "started_at": "2026-10-17T18:19:30.745336+08:00",
+      "ok": true,
+      "http_status": 200,
+      "raw_http_body": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-10-17T10:19:54.5076885Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"memory\\\": [\\n    {\\n      \\\"entity\\\": \\\"Patricia Chen\\\",\\n      \\\"event\\\": \\\"Credit card application\\\",\\n      \\\"time\\\": \\\"2024-11-06 13:20:00\\\",\\n      \\\"status\\\": \\\"Approved\\\",\\n      \\\"relationships\\\": {\\n        \\\"credit_limit\\\": \\\"14,000\\\",\\n        \\\"card_type\\\": \\\"Premier Bank Rewards Plus\\\",\\n        \\\"application_source\\\": \\\"Pre-approved offer\\\",\\n        \\\"invitation_code\\\": \\\"RWD-447829-Q3\\\",\\n        \\\"account_number\\\": \\\"5524-8897-2234-4001\\\",\\n        \\\"activation_code\\\": \\\"3-digit code from card\\\",\\n        \\\"delivery\\\": \\\"FedEx by 2024-11-09\\\",\\n        \\\"balance_transfer\\\": \\\"3,000 from Chase card (4147-2298-8834-9002)\\\",\\n        \\\"authorized_user\\\": \\\"James Chen (DOB: March 22, 1988)\\\",\\n        \\\"annual_income\\\": \\\"165,000\\\",\\n        \\\"credit_cards\\\": [\\n          {\\n            \\\"type\\\": \\\"Chase Sapphire\\\",\\n            \\\"limit\\\": \\\"12,000\\\",\\n            \\\"balance\\\": \\\"3,000\\\"\\n          },\\n          {\\n            \\\"type\\\": \\\"American Express Blue\\\",\\n            \\\"limit\\\": \\\"8,000\\\",\\n            \\\"balance\\\": \\\"500\\\"\\n          }\\n        ],\\n        \\\"loans\\\": [\\n          {\\n            \\\"type\\\": \\\"Car loan\\\",\\n            \\\"remaining_balance\\\": \\\"15,000\\\",\\n            \\\"monthly_payment\\\": \\\"425\\\"\\n          }\\n        ],\\n        \\\"rental\\\": \\\"2,850/month\\\",\\n        \\\"interest_rate\\\": \\\"16.99% APR\\\",\\n        \\\"introductory_rate\\\": \\\"0% APR for 15 months\\\",\\n        \\\"balance_transfer_fee\\\": \\\"3% ($90 for $3,000)\\\",\\n        \\\"annual_fee\\\": \\\"0\\\",\\n        \\\"rewards\\\": {\\n          \\\"cash_back\\\": \\\"3% dining/entertainment, 2% groceries/gas, 1% everything else\\\",\\n          \\\"bonus\\\": \\\"200 after $1,000 in first 3 months\\\",\\n          \\\"rewards_expiry\\\": \\\"Never expire\\\",\\n          \\\"rewards_redemption\\\": \\\"Minimum $25, options: statement credit, direct deposit, check\\\"\\n        },\\n        \\\"foreign_transaction_fees\\\": \\\"0\\\",\\n        \\\"rental_car_coverage\\\": \\\"Collision damage waiver, extended warranty, purchase protection\\\",\\n        \\\"fraud_protection\\\": \\\"Zero liability, 24/7 monitoring, instant alerts\\\",\\n        \\\"customer_service\\\": \\\"1-800-555-CARD\\\",\\n        \\\"payment_due_date\\\": \\\"15th of each month (after first statement)\\\",\\n        \\\"minimum_payment\\\": \\\"2% of balance or $25\\\",\\n        \\\"cash_advance\\\": \\\"Up to 30% of limit ($4,200), 5% fee ($10 min), 24.99% APR\\\",\\n        \\\"credit_history\\\": \\\"Pre-approved for $15,000 (initial estimate)\\\"\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":23755908400,\"load_duration\":47724500,\"prompt_eval_count\":2241,\"prompt_eval_cached_count\":67,\"prompt_eval_duration\":815135000,\"eval_count\":691,\"eval_duration\":22580730000}",
+      "raw_response": {
+        "model": "qwen3:4b",
+        "created_at": "2026-10-17T10:19:54.5076885Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"memory\": [\n    {\n      \"entity\": \"Patricia Chen\",\n      \"event\": \"Credit card application\",\n      \"time\": \"2024-11-06 13:20:00\",\n      \"status\": \"Approved\",\n      \"relationships\": {\n        \"credit_limit\": \"14,000\",\n        \"card_type\": \"Premier Bank Rewards Plus\",\n        \"application_source\": \"Pre-approved offer\",\n        \"invitation_code\": \"RWD-447829-Q3\",\n        \"account_number\": \"5524-8897-2234-4001\",\n        \"activation_code\": \"3-digit code from card\",\n        \"delivery\": \"FedEx by 2024-11-09\",\n        \"balance_transfer\": \"3,000 from Chase card (4147-2298-8834-9002)\",\n        \"authorized_user\": \"James Chen (DOB: March 22, 1988)\",\n        \"annual_income\": \"165,000\",\n        \"credit_cards\": [\n          {\n            \"type\": \"Chase Sapphire\",\n            \"limit\": \"12,000\",\n            \"balance\": \"3,000\"\n          },\n          {\n            \"type\": \"American Express Blue\",\n            \"limit\": \"8,000\",\n            \"balance\": \"500\"\n          }\n        ],\n        \"loans\": [\n          {\n            \"type\": \"Car loan\",\n            \"remaining_balance\": \"15,000\",\n            \"monthly_payment\": \"425\"\n          }\n        ],\n        \"rental\": \"2,850/month\",\n        \"interest_rate\": \"16.99% APR\",\n        \"introductory_rate\": \"0% APR for 15 months\",\n        \"balance_transfer_fee\": \"3% ($90 for $3,000)\",\n        \"annual_fee\": \"0\",\n        \"rewards\": {\n          \"cash_back\": \"3% dining/entertainment, 2% groceries/gas, 1% everything else\",\n          \"bonus\": \"200 after $1,000 in first 3 months\",\n          \"rewards_expiry\": \"Never expire\",\n          \"rewards_redemption\": \"Minimum $25, options: statement credit, direct deposit, check\"\n        },\n        \"foreign_transaction_fees\": \"0\",\n        \"rental_car_coverage\": \"Collision damage waiver, extended warranty, purchase protection\",\n        \"fraud_protection\": \"Zero liability, 24/7 monitoring, instant alerts\",\n        \"customer_service\": \"1-800-555-CARD\",\n        \"payment_due_date\": \"15th of each month (after first statement)\",\n        \"minimum_payment\": \"2% of balance or $25\",\n        \"cash_advance\": \"Up to 30% of limit ($4,200), 5% fee ($10 min), 24.99% APR\",\n        \"credit_history\": \"Pre-approved for $15,000 (initial estimate)\"\n      }\n    }\n  ]\n}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 23755908400,
+        "load_duration": 47724500,
+        "prompt_eval_count": 2241,
+        "prompt_eval_cached_count": 67,
+        "prompt_eval_duration": 815135000,
+        "eval_count": 691,
+        "eval_duration": 22580730000
+      },
+      "content": "{\n  \"memory\": [\n    {\n      \"entity\": \"Patricia Chen\",\n      \"event\": \"Credit card application\",\n      \"time\": \"2024-11-06 13:20:00\",\n      \"status\": \"Approved\",\n      \"relationships\": {\n        \"credit_limit\": \"14,000\",\n        \"card_type\": \"Premier Bank Rewards Plus\",\n        \"application_source\": \"Pre-approved offer\",\n        \"invitation_code\": \"RWD-447829-Q3\",\n        \"account_number\": \"5524-8897-2234-4001\",\n        \"activation_code\": \"3-digit code from card\",\n        \"delivery\": \"FedEx by 2024-11-09\",\n        \"balance_transfer\": \"3,000 from Chase card (4147-2298-8834-9002)\",\n        \"authorized_user\": \"James Chen (DOB: March 22, 1988)\",\n        \"annual_income\": \"165,000\",\n        \"credit_cards\": [\n          {\n            \"type\": \"Chase Sapphire\",\n            \"limit\": \"12,000\",\n            \"balance\": \"3,000\"\n          },\n          {\n            \"type\": \"American Express Blue\",\n            \"limit\": \"8,000\",\n            \"balance\": \"500\"\n          }\n        ],\n        \"loans\": [\n          {\n            \"type\": \"Car loan\",\n            \"remaining_balance\": \"15,000\",\n            \"monthly_payment\": \"425\"\n          }\n        ],\n        \"rental\": \"2,850/month\",\n        \"interest_rate\": \"16.99% APR\",\n        \"introductory_rate\": \"0% APR for 15 months\",\n        \"balance_transfer_fee\": \"3% ($90 for $3,000)\",\n        \"annual_fee\": \"0\",\n        \"rewards\": {\n          \"cash_back\": \"3% dining/entertainment, 2% groceries/gas, 1% everything else\",\n          \"bonus\": \"200 after $1,000 in first 3 months\",\n          \"rewards_expiry\": \"Never expire\",\n          \"rewards_redemption\": \"Minimum $25, options: statement credit, direct deposit, check\"\n        },\n        \"foreign_transaction_fees\": \"0\",\n        \"rental_car_coverage\": \"Collision damage waiver, extended warranty, purchase protection\",\n        \"fraud_protection\": \"Zero liability, 24/7 monitoring, instant alerts\",\n        \"customer_service\": \"1-800-555-CARD\",\n        \"payment_due_date\": \"15th of each month (after first statement)\",\n        \"minimum_payment\": \"2% of balance or $25\",\n        \"cash_advance\": \"Up to 30% of limit ($4,200), 5% fee ($10 min), 24.99% APR\",\n        \"credit_history\": \"Pre-approved for $15,000 (initial estimate)\"\n      }\n    }\n  ]\n}",
+      "prompt_tokens": 2241,
+      "completion_tokens": 691,
+      "done_reason": "stop",
+      "elapsed_seconds": 23.76193819999753,
+      "memory_validation": {
+        "passed": false,
+        "error": "笔记记忆必须是字符串数组；不代替模型重写格式"
+      }
+    }
+  ],
+  "memory_states": [],
+  "model_preflight": {
+    "attempted": true,
+    "endpoint": "http://127.0.0.1:11434/api/tags",
+    "http_status": 200,
+    "raw_http_body": "{\"models\":[{\"name\":\"qwen3:4b\",\"model\":\"qwen3:4b\",\"modified_at\":\"2026-10-16T22:23:34.1259444+08:00\",\"size\":2497293931,\"digest\":\"359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7\",\"details\":{\"parent_model\":\"\",\"format\":\"gguf\",\"family\":\"qwen3\",\"families\":[\"qwen3\"],\"parameter_size\":\"4.0B\",\"quantization_level\":\"Q4_K_M\",\"context_length\":262144,\"embedding_length\":2560,\"runner\":\"ggml\"},\"capabilities\":[\"completion\",\"tools\",\"thinking\"]},{\"name\":\"qwen3:0.6b\",\"model\":\"qwen3:0.6b\",\"modified_at\":\"2026-10-11T17:42:30.9086144+08:00\",\"size\":522653767,\"digest\":\"7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435\",\"details\":{\"parent_model\":\"\",\"format\":\"gguf\",\"family\":\"qwen3\",\"families\":[\"qwen3\"],\"parameter_size\":\"751.63M\",\"quantization_level\":\"Q4_K_M\",\"context_length\":40960,\"embedding_length\":1024,\"runner\":\"ggml\"},\"capabilities\":[\"completion\",\"tools\",\"thinking\"]}]}"
+  },
+  "model_metadata": {
+    "name": "qwen3:4b",
+    "model": "qwen3:4b",
+    "modified_at": "2026-10-16T22:23:34.1259444+08:00",
+    "size": 2497293931,
+    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2560,
+      "runner": "ggml"
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "error": {
+    "type": "ValueError",
+    "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+  },
+  "finished_at": "2026-10-17T18:19:54.515767+08:00"
+}

@@ -1,0 +1,48 @@
+{
+  "mode": "advanced_json_cards",
+  "memory": [
+    {
+      "category": "reservation",
+      "card_key": "hotel_booking_001",
+      "backstory": "User requested a special weekend booking for their 10th anniversary in San Diego",
+      "person": "Richard and Susan Thompson",
+      "relationship": "Customer",
+      "timestamp": "2024-11-09 19:30:00",
+      "status": "confirmed",
+      "facts": {
+        "hotel": "Hilton San Diego Bayfront",
+        "check_in": "2024-12-08T00:00:00",
+        "check_out": "2024-12-10T00:00:00",
+        "room": "1912",
+        "room_type": "Junior Suite",
+        "room_size": "650 sq ft",
+        "room_features": [
+          "king bed",
+          "separate seating area",
+          "floor-to-ceiling windows overlooking the bay",
+          "marble bathroom with soaking tub"
+        ],
+        "package": "Romance Package",
+        "package_price": "125",
+        "total_price": "1333",
+        "tax": "12.7%",
+        "tax_amount": "150",
+        "confirmation_number": "HSD-445782",
+        "phone": "619-555-9821",
+        "email": "rthompson@techcompany.com",
+        "credit_card": "Visa 4556-7890-1234-5678",
+        "card_expiration": "07/26",
+        "card_name": "Richard P Thompson",
+        "hilton_honors": "HH294857301",
+        "hilton_honors_points": "15600",
+        "dinner_reservation": "Vela restaurant",
+        "dinner_date": "2024-12-09",
+        "dinner_time": "19:30",
+        "dinner_guests": "2",
+        "floor_request": "18 or higher",
+        "floor_assigned": "19",
+        "special_request": "dozen red roses"
+      }
+    }
+  ]
+}

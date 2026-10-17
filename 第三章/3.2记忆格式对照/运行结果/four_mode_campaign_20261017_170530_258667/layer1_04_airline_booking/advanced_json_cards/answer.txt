@@ -1,0 +1,74 @@
+We are given a long-term memory in JSON format. The user is asking for two things:
+1. Their flight confirmation number
+2. The seats they selected
+
+Let's look at the long-term memory:
+
+The user's booking is under the category "booking" with card_key "pacific_airways_booking". 
+In that card, we have:
+  "confirmation_number": "PAC-778K4M"
+
+Also, for the seats:
+  The outbound flight (PA 890) has "seats": "12C"
+  The return flight (PA 891) has "seats": "14C"
+
+But the user is asking for "what seats I selected". Since it's a round-trip, they have two seats.
+
+We also note that the user's booking has:
+  "seat_outbound": "12C"
+  "seat_return": "14C"
+
+So the answer should be:
+  Confirmation number: PAC-778K4M
+  Seats: Outbound: 12C, Return: 14C
+
+We must be cautious: the user says "I need to add it to my calendar". So we are providing the confirmation number and the seats.
+
+Let's check the memory for any other relevant details.
+
+The memory also has:
+  - The booking is active (status: active)
+  - The confirmation number is clearly stated as "PAC-778K4M"
+
+We don't have any ambiguity in the memory for these details.
+
+We should also note that the user is Rebecca Sullivan (from the user card) and the booking is for Pacific Airways.
+
+So the response should be:
+
+"Your flight confirmation number is PAC-778K4M. You have selected seats 12C for the outbound flight (PA 890) and 14C for the return flight (PA 891)."
+
+We don't need to mention the flight numbers again because the user asked for seats and confirmation number, but including the flight numbers might be helpful for the calendar (as they are part of the booking). However, the user didn't ask for flight numbers, so we can keep it concise.
+
+But note: the user says "add it to my calendar". They might want the flight numbers too? However, the question specifically asks for "confirmation number and what seats I selected". So we stick to that.
+
+Also, note: the memory has a field "confirmation_number" in the booking card, and the seats are in the outbound and return flight cards.
+
+Let's write the response accordingly.
+
+We must be cautious: the memory says the outbound seat is "12C" and return is "14C". We present it clearly.
+
+We don't have any material risks to warn about (like the payment details being sensitive) because the user is asking for the confirmation number and seats, which are public and safe to share.
+
+So the response is:
+
+"Your flight confirmation number is PAC-778K4M. You have selected seats 12C for the outbound flight and 14C for the return flight."
+
+This is accurate and resolves the ambiguity.
+
+Note: The user's name is Rebecca Anne Sullivan, but we don't need to include it in the response because the user is asking for their own information and the memory is for them.
+
+We are not inventing facts: we are taking from the memory.
+
+Let's code the response in the required format.
+</think>
+
+Your flight confirmation number is **PAC-778K4M**.  
+
+You have selected:  
+- **Outbound flight (PA 890)**: Seat **12C**  
+- **Return flight (PA 891)**: Seat **14C**  
+
+This information is ready for you to add to your calendar. No sensitive details were included in this response.  
+
+*Note: Your booking is active and confirmed with Pacific Airways. Always verify flight details 24–48 hours before departure for terminal changes.*

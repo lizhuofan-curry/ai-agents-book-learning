@@ -1,0 +1,46 @@
+{
+  "mode": "advanced_json_cards",
+  "memory": [
+    {
+      "category": "Claim",
+      "card_key": "claim_001",
+      "backstory": "Initial claim filing for accident involving Jennifer Martinez",
+      "person": "Jennifer Martinez",
+      "relationship": "Claimant",
+      "timestamp": "2024-11-18T14:15:00Z",
+      "status": "active",
+      "facts": {
+        "policy_number": "SGA-8847291-04",
+        "vehicle_make_model": "2019 Honda Accord",
+        "accident_date": "2024-11-18",
+        "accident_time": "12:15",
+        "accident_location": "Intersection of Broadway and 45th Street, Sacramento",
+        "police_report_number": "SAC-2024-78432",
+        "claim_number": "CLM-2024-894327",
+        "rental_car_confirmation": "ENT-7739482",
+        "deductible": "500",
+        "coverage_type": "comprehensive and collision",
+        "rental_coverage": "up to $40 per day for 30 days",
+        "medical_payments_coverage": "up to $5,000",
+        "personal_property_coverage": "up to $2,500",
+        "claimant_address": "892 Oak Lane, Sacramento, 95821",
+        "vehicle_damage": "Passenger side damage: dented doors, missing mirror, damaged quarter panels",
+        "vehicle_status": "Non-driveable, towed to Jerry's Auto Body (3421 Riverside Drive, Sacramento, 95822)",
+        "accident_details": "Jennifer was heading northbound on Broadway with a green light at 45th Street. Another car ran red light from 45th Street and hit her passenger side.",
+        "other_driver": "Robert Chen, blue 2021 Toyota Camry (Nationwide Insurance, policy number NW-5543298)",
+        "witnesses": "Maria Thompson (916-555-3847)",
+        "medical_status": "Paramedics cleared at scene, minor injuries (bruising on shoulder)",
+        "additional_expenses": "Laptop damage (MacBook Pro 14-inch, $2,200, purchased last year)",
+        "subrogation_status": "Pursuing against Robert Chen's insurance for deductible reimbursement",
+        "rental_car_details": "Enterprise Rent-A-Car, downtown location (1800 L Street), available by 4 PM today",
+        "adjuster": "Patricia Wong (contact: 916-555-8899)",
+        "vehicle_loan_balance": "Approx. $8,000 (Honda Financial Services)",
+        "gap_insurance": "Active",
+        "temporary_insurance": "Emailed to claimant",
+        "registration_replacement": "To be mailed to 892 Oak Lane, Sacramento, 95821",
+        "claim_status_update": "Adjuster to inspect vehicle within 24-48 hours",
+        "claimant_contact": "916-555-8899 (updated from previous number)"
+      }
+    }
+  ]
+}

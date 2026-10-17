@@ -1,0 +1,142 @@
+We are given a long-term memory in the form of a JSON card for a patient. The user is asking about their upcoming doctor's appointment.
+
+From the memory card:
+- appointment_date: "2024-11-21"
+- appointment_time: "14:30"
+- appointment_doctor: "Dr. Robert Chen"
+
+So, the appointment is scheduled for:
+  Day: November 21, 2024
+  Time: 14:30 (which is 2:30 PM)
+
+The doctor is Dr. Robert Chen.
+
+We must answer the user's question directly and accurately.
+
+Note: The user is David Christopher Thompson (as per the patient record) and they are the one who has this appointment.
+
+Let's structure the answer:
+
+"I am scheduled to see Dr. Robert Chen on November 21, 2024 at 2:30 PM."
+
+But note: the time is in 24-hour format (14:30) so we can convert to 12-hour format for clarity? However, the user didn't specify the format. Since the appointment time was given as "14:30", we can present it as "2:30 PM" for common understanding.
+
+Alternatively, we can present it as "14:30" if the user prefers 24-hour format? But the user's question doesn't specify. However, in the context of an appointment, it's common to use 12-hour with AM/PM.
+
+But the memory card has the time as "14:30", so we can say:
+
+"Your appointment is scheduled for November 21, 2024 at 14:30 (2:30 PM) with Dr. Robert Chen."
+
+However, the user might be in a context where 24-hour time is standard (like in medical settings). But since the user is asking in English and typically we use 12-hour in spoken English, I'll convert to 12-hour for clarity.
+
+But note: the instruction says "Answer accurately". We have the exact string from the memory: "14:30". We can present it as is and then add a note? However, the user didn't ask for conversion.
+
+Let me check the memory: the time is stored as "14:30". We can output it as "14:30" and then say "2:30 PM" in parentheses? But the user might not need that.
+
+Alternatively, the user might be expecting a simple answer without conversion. Since the appointment time is given in 24-hour format in the memory, and the user is asking for the day and time, we can just state the day and the time as stored.
+
+But to be helpful, I'll convert to 12-hour format for the user.
+
+However, the instruction says: "Do not invent facts". We are not inventing facts, we are just presenting the facts from the memory.
+
+So, the answer:
+
+Your upcoming appointment is scheduled for **November 21, 2024** at **14:30** (2:30 PM) with **Dr. Robert Chen**.
+
+But wait, the user might be in a different timezone? The memory doesn't specify timezone. The appointment location is in Denver, so we assume local time (Mountain Time). However, the memory card doesn't have timezone. But the user is in Denver (from address: 4521 Pine Valley Road, Denver, Colorado) so we can assume Denver time.
+
+We don't have to add timezone because the appointment is set in the local time of the medical center.
+
+So, the answer is clear.
+
+Let me write the response.
+
+Also, note: the memory card says the appointment is confirmed with a confirmation number and reminders, but the user didn't ask for that.
+
+So, we answer only what the user asked.
+
+Response:
+
+"Your appointment is scheduled for **November 21, 2024** at **14:30** (2:30 PM) with **Dr. Robert Chen**."
+
+But to be precise, let's check if the time string in the memory is exactly as we think. The memory says: "appointment_time": "14:30"
+
+We can write it as "14:30" without conversion? The user might be used to 24-hour format.
+
+However, the user's question is in English and they might expect 12-hour. But the instruction says: "Answer accurately". We have to be accurate to the memory.
+
+I think the safest is to present it as stored: "14:30" (which is 2:30 PM in 12-hour format). But we can write it in a way that is clear.
+
+Alternatively, we can say: "The appointment is set for November 21, 2024 at 2:30 PM (14:30) with Dr. Robert Chen."
+
+But the user didn't ask for conversion. However, to avoid confusion, I'll convert to 12-hour.
+
+Let me see: the memory card has the time as "14:30", which is standard in many countries for 2:30 PM.
+
+In the context of the medical center in Denver, the time is local time.
+
+So, I'll write:
+
+Your upcoming appointment is scheduled for **November 21, 2024** at **2:30 PM** with **Dr. Robert Chen**.
+
+But note: the memory card has the time as "14:30", which is 2:30 PM. So it's correct.
+
+Alternatively, we can avoid conversion and just say "14:30" but the user might not understand.
+
+Given that the user is in the US (Denver) and the appointment is in the US, it's common to use 12-hour with AM/PM.
+
+I think it's better to write in 12-hour format.
+
+But the instruction says: "Do not invent facts". We are not inventing facts, we are just presenting the time as it is. The time 14:30 is a fact from the memory.
+
+So, I'll write:
+
+"Your appointment is scheduled for November 21, 2024 at 14:30 (2:30 PM) with Dr. Robert Chen."
+
+This way, we are giving both formats.
+
+But the user didn't ask for conversion. However, to be helpful and avoid confusion, we do it.
+
+Alternatively, the user might be a professional who uses 24-hour. But the question is from a patient.
+
+Given the context, I think the response should be:
+
+**Appointment Details:**
+- **Date:** November 21, 2024
+- **Time:** 14:30 (2:30 PM)
+- **Doctor:** Dr. Robert Chen
+
+But the user didn't ask for a list. They asked for day and time and which doctor.
+
+So, a concise answer:
+
+"Your appointment is scheduled for November 21, 2024 at 14:30 (2:30 PM) with Dr. Robert Chen."
+
+Let me check the memory again: the appointment_date is "2024-11-21", which is November 21, 2024.
+
+Yes.
+
+We are not inventing facts. We are using the facts from the memory.
+
+So, this is accurate.
+
+One more thing: the user says "I need to confirm my upcoming doctor's appointment". So we are confirming by stating the details.
+
+We don't have to say it's confirmed? The memory says the appointment is scheduled and has a confirmation number and reminders. But the user is asking for the day and time and doctor, so we just state that.
+
+We don't have to add extra information unless it's relevant.
+
+So, the response is as above.
+
+Let me write it in a natural way.
+</think>
+
+Based on your patient record in the Mountain View Medical Center system, your upcoming appointment details are as follows:
+
+- **Date:** November 21, 2024  
+- **Time:** 14:30 (2:30 PM)  
+- **Doctor:** Dr. Robert Chen  
+
+This appointment is confirmed with a reminder set for a text message (confirmation number: MV-789234). The appointment is scheduled at **750 Broadway, Suite 200, Denver**.  
+
+*Note: All times and locations are in Denver time (Mountain Time). If you need further assistance with scheduling or reminders, let me know.*

@@ -1,0 +1,57 @@
+{
+  "mode": "json_cards",
+  "memory": {
+    "car_rental_001": {
+      "session": {
+        "conversation_id": "car_rental_001",
+        "timestamp": "2024-11-14 10:15:00",
+        "metadata": {
+          "business": "Enterprise Rent-A-Car",
+          "department": "Reservations",
+          "call_duration": "44 minutes"
+        }
+      },
+      "user": {
+        "name": "Gregory Alan Mitchell",
+        "dob": "1981-05-12",
+        "email": "gmitchell81@businessmail.com",
+        "phone": "602-555-7734",
+        "home_address": "5521 North Central Avenue, Phoenix, Arizona, 85012",
+        "corporate_address": "7823 Preston Road, Dallas, Texas, 75252",
+        "corporate": "TechCorp Inc.",
+        "corporate_card": "3782-445589-31004",
+        "corporate_card_expiration": "March 2026",
+        "enterprise_plus": "EP-9982734",
+        "points_earned": 400,
+        "points_needed_for_free_day": 6000,
+        "vehicle_category": "midsize",
+        "vehicle_price_per_day": 52,
+        "vehicle_type": "Toyota Camry or Nissan Altima",
+        "pickup_location": "Phoenix Sky Harbor Airport",
+        "pickup_date": "2024-11-21",
+        "pickup_time": "10:30",
+        "return_date": "2024-11-24",
+        "return_time": "14:30",
+        "total_days": 4,
+        "total_price_before_taxes": 235.96,
+        "total_price_with_taxes": 287.42,
+        "total_price_with_corporate_discount": 258.68,
+        "confirmation_number": "E7739482M",
+        "corporate_discount_code": "TC-8847",
+        "additional_driver_cost": 15,
+        "roadside_assistance": true,
+        "roadside_assistance_price_per_day": 6.99,
+        "gas_price_in_phoenix": "3.50-3.70 per gallon",
+        "insurance": "basic damage waiver ($29/day) skipped",
+        "navigation": "skipped",
+        "special_equipment": "none",
+        "documents_needed": [
+          "driver's license",
+          "credit card"
+        ],
+        "receipt_email": "gmitchell81@businessmail.com",
+        "corporate_additional_driver_discount": "free"
+      }
+    }
+  }
+}

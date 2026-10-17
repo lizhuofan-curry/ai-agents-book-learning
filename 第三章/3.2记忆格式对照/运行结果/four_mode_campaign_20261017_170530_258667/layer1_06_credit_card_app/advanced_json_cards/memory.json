@@ -1,0 +1,85 @@
+{
+  "mode": "advanced_json_cards",
+  "memory": [
+    {
+      "category": "application",
+      "card_key": "credit_card_app_001",
+      "backstory": "User applied for Premier Bank Rewards Plus credit card after receiving pre-approved offer",
+      "person": "Patricia Chen",
+      "relationship": "applicant",
+      "timestamp": "2024-11-06T13:20:00Z",
+      "status": "approved",
+      "facts": {
+        "credit_limit": "14000",
+        "application_date": "2024-11-06",
+        "card_number": "5524-8897-2234-4001",
+        "invitation_code": "RWD-447829-Q3",
+        "annual_income": "165000",
+        "date_of_birth": "1990-06-14",
+        "address": "2156 Mission Street, Apartment 8C, San Francisco, California, 94110",
+        "rental_payment": "2850",
+        "employment": "Bay Area Tech Solutions",
+        "employment_duration": "5.5 years",
+        "base_salary": "135000",
+        "bonus": "20000",
+        "freelance_income": "10000",
+        "existing_credit_cards": [
+          {
+            "name": "Chase Sapphire",
+            "limit": "12000",
+            "balance": "3000"
+          },
+          {
+            "name": "American Express Blue",
+            "limit": "8000",
+            "balance": "500"
+          }
+        ],
+        "car_loan": {
+          "remaining_balance": "15000",
+          "monthly_payment": "425"
+        },
+        "mother_maiden_name": "Williams",
+        "authorized_user": {
+          "name": "James Chen",
+          "date_of_birth": "1988-03-22"
+        },
+        "balance_transfer": {
+          "amount": "3000",
+          "source_card": "Chase Bank (4147-2298-8834-9002)",
+          "fee": "90",
+          "processing_time": "7-14 days",
+          "target_account": "Premier Bank Rewards Plus"
+        },
+        "interest_rate": "16.99%",
+        "introductory_rate": "0%",
+        "introductory_period": "15 months",
+        "balance_transfer_fee": "3%",
+        "minimum_payment": "25",
+        "customer_service_number": "1-800-555-CARD",
+        "delivery_method": "FedEx",
+        "delivery_date": "2024-11-09",
+        "rewards_program": {
+          "cash_back": {
+            "dining_entertainment": "3%",
+            "groceries_gas": "2%",
+            "everything_else": "1%"
+          },
+          "bonus": "200",
+          "bonus_threshold": "1000",
+          "bonus_period": "3 months"
+        },
+        "foreign_transaction_fee": "0",
+        "rental_car_insurance": "collision_damage_waiver",
+        "purchase_protection": "yes",
+        "fraud_protection": "zero_liability",
+        "statement_cycle": "monthly",
+        "due_date": "15th",
+        "cash_advance_limit": "4200",
+        "cash_advance_fee": "5%",
+        "cash_advance_apr": "24.99%",
+        "activation_code": "to_be_provided"
+      }
+    }
+  ]
+}

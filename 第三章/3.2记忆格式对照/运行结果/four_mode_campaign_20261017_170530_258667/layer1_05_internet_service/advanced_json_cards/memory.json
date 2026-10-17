@@ -1,0 +1,43 @@
+{
+  "mode": "advanced_json_cards",
+  "memory": [
+    {
+      "category": "Service Setup",
+      "card_key": "internet_setup_001",
+      "backstory": "Initial setup conversation with Kevin Zhang for internet and cable service at 7622 Willow Creek Drive, Austin, Texas",
+      "person": "Kevin Zhang",
+      "relationship": "Customer",
+      "timestamp": "2024-11-08 11:00:00",
+      "status": "active",
+      "facts": {
+        "business": "Velocity Communications",
+        "department": "New Service Sales",
+        "call_duration": "45 minutes",
+        "service_address": "7622 Willow Creek Drive, Austin, Texas, 78759",
+        "internet_plan": "Performance 1 Gig",
+        "internet_price": "79.99",
+        "cable_package": "Preferred",
+        "cable_price": "94.99",
+        "equipment_fee": "40.97",
+        "total_monthly_rate": "185.95",
+        "promotional_discount": "50% off first three months",
+        "installation_date": "2024-11-14",
+        "installation_time": "10:00-12:00",
+        "account_number": "VEL-89923476",
+        "email": "kzhang87@email.com",
+        "phone": "512-555-8823",
+        "ssn": "455-78-9234",
+        "dob": "1987-04-03",
+        "routing_number": "111000614",
+        "account_number_chase": "8829447651",
+        "cable_channels": "200+ channels, HBO, Showtime",
+        "hbo_includes": "HBO, HBO2, HBO Family, HBO Latino, HBO Signature, HBO Comedy, HBO Zone, HBO Max streaming",
+        "streaming_access": "HBO Max streaming included with Preferred package",
+        "internet_speed": "1 Gig",
+        "devices_supported": "25+ devices",
+        "wifi_type": "WiFi 6 (2.4GHz and 5GHz)",
+        "installation_notes": "2-3 hours for three TVs and internet"
+      }
+    }
+  ]
+}

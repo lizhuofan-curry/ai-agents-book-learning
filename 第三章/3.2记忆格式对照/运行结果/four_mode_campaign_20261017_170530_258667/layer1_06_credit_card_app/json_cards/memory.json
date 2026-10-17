@@ -1,0 +1,95 @@
+{
+  "mode": "json_cards",
+  "memory": {
+    "credit_card_applications": {
+      "RWD-447829-Q3": {
+        "user": {
+          "name": "Patricia Chen",
+          "dob": "1990-06-14",
+          "address": "2156 Mission Street, Apartment 8C, San Francisco, California, 94110",
+          "address_duration": "3 years",
+          "employment": {
+            "company": "Bay Area Tech Solutions",
+            "position": "senior project manager",
+            "tenure": "5.5 years",
+            "annual_income": "155000",
+            "additional_income": "10000",
+            "total_annual_income": "165000"
+          },
+          "credit_cards": [
+            {
+              "card_type": "Chase Sapphire",
+              "credit_limit": "12000",
+              "current_balance": "3000"
+            },
+            {
+              "card_type": "American Express Blue",
+              "credit_limit": "8000",
+              "current_balance": "500"
+            }
+          ],
+          "loans": [
+            {
+              "type": "auto loan",
+              "remaining_balance": "15000",
+              "monthly_payment": "425"
+            }
+          ],
+          "mother_maiden_name": "Williams",
+          "card_approval": {
+            "credit_limit": "14000",
+            "application_status": "approved",
+            "delivery": {
+              "method": "FedEx",
+              "estimated_delivery_date": "2024-11-09",
+              "cost": "25"
+            },
+            "balance_transfer": {
+              "amount": "3000",
+              "source_card": "Chase Sapphire",
+              "source_card_number": "4147-2298-8834-9002",
+              "bank": "Chase Bank",
+              "fee": "90",
+              "processing_time": "7-14 days"
+            },
+            "authorized_users": [
+              {
+                "name": "James Chen",
+                "dob": "1988-03-22"
+              }
+            ],
+            "rewards": {
+              "cash_back": {
+                "dining_entertainment": "3%",
+                "groceries_gas": "2%",
+                "everything_else": "1%"
+              },
+              "annual_fee": "0",
+              "bonus": "200",
+              "bonus_condition": "1000 in first 3 months",
+              "interest_rates": {
+                "purchase": "16.99%",
+                "balance_transfer": "14.99% for 12 months, then 16.99%",
+                "introductory_0_percent": "15 months"
+              },
+              "rewards_expiry": "never",
+              "foreign_transaction_fees": "0",
+              "rental_car_insurance": "automatic collision damage waiver",
+              "purchase_protection": "yes",
+              "fraud_protection": "zero liability",
+              "customer_service": "1-800-555-CARD",
+              "account_number": "5524-8897-2234-4001",
+              "payment_due_date": "15th of each month",
+              "minimum_payment": "2% of balance or $25",
+              "cash_advance": {
+                "limit": "4200",
+                "fee": "5% or $10 minimum",
+                "apr": "24.99%"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

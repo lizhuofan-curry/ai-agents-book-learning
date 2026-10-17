@@ -1,0 +1,38 @@
+We are given the long-term memory in JSON format. We need to extract the account number and installation service code for Nancy Rodriguez.
+
+From the memory:
+- In the "User" category card (with key "nancy_rodriguez"):
+    - account_number: "ADT-7789234"
+    - service_code: "SVC-44821"
+
+- Also, in the "Service" category card (with key "adt_security_installation"):
+    - account_number: "ADT-7789234"
+    - service_code: "SVC-44821"
+
+Both cards have the same account number and service code.
+
+The user is asking for their ADT account number and installation service code. The technician just arrived and is asking for them.
+
+So, the answer should be:
+- Account number: ADT-7789234
+- Service code: SVC-44821
+
+We must be precise and not invent facts. The memory provides these exact values.
+
+Also, note: The user's name is Nancy Rodriguez, and the memory is for her.
+
+Therefore, we can directly answer.
+
+Let's write the response clearly.
+</think>
+
+Based on your long-term memory record (which is the only source I have access to), here are your ADT security details:
+
+- **ADT Account Number**: `ADT-7789234`  
+- **Installation Service Code**: `SVC-44821`  
+
+This information matches both your user profile and the service installation records in the system. The technician can use these codes to verify your account during the installation process.  
+
+⚠️ **Proactive warning**: Always ensure the technician is using the *exact* codes you provided (no typos). If the technician requests additional verification beyond these codes (e.g., your full social security number, email, or date of birth), **do not share sensitive information** unless you’ve previously confirmed it with ADT in writing. Your SSN and email are already stored in the system for security purposes, but sharing them with unverified technicians is a risk.  
+
+Let me know if you need further assistance!

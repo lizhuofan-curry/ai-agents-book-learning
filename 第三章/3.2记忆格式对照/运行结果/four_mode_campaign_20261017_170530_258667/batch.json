@@ -104,7 +104,21 @@
         "answer_output_tokens": 1763
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_01_bank_account\\json_cards\\judge.json",
+        "sha256": "736ff10d202e438e129909f04d027a18421894b369ba10c9cf24fc54be6143cb",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 3,
+            "reasoning": 3,
+            "proactivity": 3
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.8125
+        }
       }
     },
     {
@@ -129,7 +143,21 @@
         "answer_output_tokens": 518
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_01_bank_account\\advanced_json_cards\\judge.json",
+        "sha256": "dfe09c721b4123e6a76b06144ba098cfe4402a9ab5920baffb9f2531e9325d13",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 2,
+            "recall": 2,
+            "reasoning": 1,
+            "proactivity": 2
+          },
+          "hallucination_veto": true,
+          "passed": false,
+          "reward": 0.0
+        }
       }
     },
     {
@@ -238,7 +266,21 @@
         "answer_output_tokens": 1501
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer2_01_multiple_vehicles\\advanced_json_cards\\judge.json",
+        "sha256": "4ada1d196f5483110925d472108ef8b6e721f480d4869e4e6f8d10dfcb266563",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 1,
+            "recall": 1,
+            "reasoning": 1,
+            "proactivity": 1
+          },
+          "hallucination_veto": true,
+          "passed": false,
+          "reward": 0.0
+        }
       }
     },
     {
@@ -358,7 +400,24 @@
       "category": "layer1",
       "mode": "notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_02_insurance_claim\\notes\\writer.json",
+        "sha256": "ba8a97725d7196e68b3a23372fc131ce1f628e413e07a9b4f2298328d4412b88",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2639,
+        "output_tokens": 1877,
+        "request_seconds": 74.87389060000714,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2639,
+        "memory_output_tokens": 1877,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -369,7 +428,24 @@
       "category": "layer1",
       "mode": "enhanced_notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_02_insurance_claim\\enhanced_notes\\writer.json",
+        "sha256": "fb2c2437e6990ed5e9ed35b9c7f0893fd5c477ea56ec9ed79ada2e67f6968ce9",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2642,
+        "output_tokens": 596,
+        "request_seconds": 21.716336400000728,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2642,
+        "memory_output_tokens": 596,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -380,10 +456,38 @@
       "category": "layer1",
       "mode": "json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_02_insurance_claim\\json_cards\\writer.json",
+        "sha256": "af2171e5b9d37267f59005e9399bf226c907616dc27455257baa80f26119cb35",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 3450,
+        "output_tokens": 4223,
+        "request_seconds": 138.2536228000099,
+        "last_memory_utf8_bytes": 1994,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2635,
+        "memory_output_tokens": 852,
+        "answer_input_tokens": 815,
+        "answer_output_tokens": 3371
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_02_insurance_claim\\json_cards\\judge.json",
+        "sha256": "e61d57b0e92de237cb4476337aa1c831b028b8477e49dd90a7655edd307baa5b",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 3,
+            "recall": 2,
+            "reasoning": 2,
+            "proactivity": 3
+          },
+          "hallucination_veto": false,
+          "passed": false,
+          "reward": 0.625
+        }
       }
     },
     {
@@ -391,10 +495,38 @@
       "category": "layer1",
       "mode": "advanced_json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_02_insurance_claim\\advanced_json_cards\\writer.json",
+        "sha256": "68632d02c9ad9353aac72c6692a3105349064edf84920a75828946dadf59f070",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 3458,
+        "output_tokens": 3129,
+        "request_seconds": 99.01997660000052,
+        "last_memory_utf8_bytes": 2171,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2658,
+        "memory_output_tokens": 742,
+        "answer_input_tokens": 800,
+        "answer_output_tokens": 2387
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_02_insurance_claim\\advanced_json_cards\\judge.json",
+        "sha256": "955c989da7e19dcd7b32b5353ead68fb6a1985b95c34a4c46df79bb7062f26a3",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 2,
+            "recall": 2,
+            "reasoning": 2,
+            "proactivity": 3
+          },
+          "hallucination_veto": true,
+          "passed": false,
+          "reward": 0.0
+        }
       }
     },
     {
@@ -402,7 +534,24 @@
       "category": "layer1",
       "mode": "notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_03_medical_appointment\\notes\\writer.json",
+        "sha256": "4f2981bb2318539ce79c0d5d4d0d7aee2f641b6916ccbba94dbc9400ff0647e8",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2426,
+        "output_tokens": 1117,
+        "request_seconds": 38.202940000002855,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2426,
+        "memory_output_tokens": 1117,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -413,7 +562,24 @@
       "category": "layer1",
       "mode": "enhanced_notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_03_medical_appointment\\enhanced_notes\\writer.json",
+        "sha256": "e0ed6131b6a2dfdeff8f4398690f39e4c0353cbf8cb574f2bc4108a41f1bab3a",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2429,
+        "output_tokens": 1165,
+        "request_seconds": 39.91390030000184,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2429,
+        "memory_output_tokens": 1165,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -424,10 +590,38 @@
       "category": "layer1",
       "mode": "json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_03_medical_appointment\\json_cards\\writer.json",
+        "sha256": "c1385c178a15e56490b043269f604713eb06eb8cc692319ac8603e5f126089ed",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 3378,
+        "output_tokens": 1590,
+        "request_seconds": 54.325676300009945,
+        "last_memory_utf8_bytes": 2676,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2422,
+        "memory_output_tokens": 1060,
+        "answer_input_tokens": 956,
+        "answer_output_tokens": 530
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_03_medical_appointment\\json_cards\\judge.json",
+        "sha256": "fb899b433db5a302758afb4f4e623da97355406f731ff83b18cf781a032f8593",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 2
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.8125
+        }
       }
     },
     {
@@ -435,10 +629,38 @@
       "category": "layer1",
       "mode": "advanced_json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_03_medical_appointment\\advanced_json_cards\\writer.json",
+        "sha256": "ed83f0afd43828ebd3a0912797299beec6849cb81980ccadf602e90ae9b6ae8a",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 3458,
+        "output_tokens": 2812,
+        "request_seconds": 88.53569679999782,
+        "last_memory_utf8_bytes": 2999,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2445,
+        "memory_output_tokens": 989,
+        "answer_input_tokens": 1013,
+        "answer_output_tokens": 1823
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_03_medical_appointment\\advanced_json_cards\\judge.json",
+        "sha256": "2b7f377555dd1b82b10c7af3f2342a6701fa73a3cf19b0e446ae8db054a91880",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 4,
+            "proactivity": 3
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.9375
+        }
       }
     },
     {
@@ -446,7 +668,24 @@
       "category": "layer1",
       "mode": "notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_04_airline_booking\\notes\\writer.json",
+        "sha256": "064656594fb3ffa2e8f510c4241a1af3535d44dccb8c3eabac3fa4072fcf775d",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2384,
+        "output_tokens": 847,
+        "request_seconds": 28.67044299999543,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2384,
+        "memory_output_tokens": 847,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -457,7 +696,24 @@
       "category": "layer1",
       "mode": "enhanced_notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_04_airline_booking\\enhanced_notes\\writer.json",
+        "sha256": "1cb613ebb3a75ca556b6500e6ff5b12ebda7ccb5e6529af42f3ef5129eeee754",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2387,
+        "output_tokens": 1390,
+        "request_seconds": 48.51463479999802,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "JSON字段重复：event"
+        },
+        "memory_input_tokens": 2387,
+        "memory_output_tokens": 1390,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -468,10 +724,28 @@
       "category": "layer1",
       "mode": "json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_04_airline_booking\\json_cards\\writer.json",
+        "sha256": "8805bec7d00314d1df103da6692f3eb33f0441e7a0dfdf90b80f6d8f65bca128",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 3159,
+        "output_tokens": 2086,
+        "request_seconds": 64.20197629999893,
+        "last_memory_utf8_bytes": 1798,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2380,
+        "memory_output_tokens": 815,
+        "answer_input_tokens": 779,
+        "answer_output_tokens": 1271
       },
       "judge": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_04_airline_booking\\json_cards\\judge.json",
+        "sha256": "2943d9b9ae853f5330d7a65b25b52c6c604bd937824b1a26426b1453df35c64c",
+        "calls": 1,
+        "result": null
       }
     },
     {
@@ -479,10 +753,38 @@
       "category": "layer1",
       "mode": "advanced_json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_04_airline_booking\\advanced_json_cards\\writer.json",
+        "sha256": "3703cb3c10497d55f7465eb0d956c057e278d36c2ab5b0046d969a832c162762",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 4252,
+        "output_tokens": 2767,
+        "request_seconds": 93.55478629999561,
+        "last_memory_utf8_bytes": 4826,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2403,
+        "memory_output_tokens": 1934,
+        "answer_input_tokens": 1849,
+        "answer_output_tokens": 833
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_04_airline_booking\\advanced_json_cards\\judge.json",
+        "sha256": "c73b83e7219f9b17552aa743d182b6b2e632725b23060ec2a0be7096e4ffa9cd",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 4,
+            "proactivity": 3
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.9375
+        }
       }
     },
     {
@@ -490,7 +792,24 @@
       "category": "layer1",
       "mode": "notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_05_internet_service\\notes\\writer.json",
+        "sha256": "a94f0c88b49ac43b7270b39142f942dca001e8612fbde002dc3a87b337010e91",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2470,
+        "output_tokens": 680,
+        "request_seconds": 32.45292889999109,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2470,
+        "memory_output_tokens": 680,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -501,7 +820,24 @@
       "category": "layer1",
       "mode": "enhanced_notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_05_internet_service\\enhanced_notes\\writer.json",
+        "sha256": "15b55f785a514fcdfd8ed168fbcff02cf8b4e029b47caefd695b9a4fa1b78fef",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2473,
+        "output_tokens": 583,
+        "request_seconds": 20.573225999993156,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "JSON字段重复：account_number"
+        },
+        "memory_input_tokens": 2473,
+        "memory_output_tokens": 583,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -512,7 +848,21 @@
       "category": "layer1",
       "mode": "json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_05_internet_service\\json_cards\\writer.json",
+        "sha256": "ce949bcdae11413c951e89b75ad276c6161a3fbfaad2397041d54f3d0152efb1",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 3121,
+        "output_tokens": 2391,
+        "request_seconds": 74.20823570000357,
+        "last_memory_utf8_bytes": 1488,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2466,
+        "memory_output_tokens": 661,
+        "answer_input_tokens": 655,
+        "answer_output_tokens": 1730
       },
       "judge": {
         "status": "pending"
@@ -523,7 +873,21 @@
       "category": "layer1",
       "mode": "advanced_json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_05_internet_service\\advanced_json_cards\\writer.json",
+        "sha256": "1c741c0d096d4c78a868108cd073728012ab9774efaa34437bd0955dc0d5249f",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 3076,
+        "output_tokens": 3776,
+        "request_seconds": 120.65160129999276,
+        "last_memory_utf8_bytes": 1393,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2489,
+        "memory_output_tokens": 533,
+        "answer_input_tokens": 587,
+        "answer_output_tokens": 3243
       },
       "judge": {
         "status": "pending"
@@ -534,7 +898,24 @@
       "category": "layer1",
       "mode": "notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_06_credit_card_app\\notes\\writer.json",
+        "sha256": "5e5a88c0e497b32a4a92ac563c39f32e4c8340a7bbf820ae0c981848eb84af75",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "request_seconds": 134.96602750000602,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "RuntimeError",
+          "message": "Ollama HTTP 500"
+        },
+        "memory_input_tokens": 0,
+        "memory_output_tokens": 0,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -545,7 +926,24 @@
       "category": "layer1",
       "mode": "enhanced_notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_06_credit_card_app\\enhanced_notes\\writer.json",
+        "sha256": "5c7bf493999e91bb4b18c943db71bd1a96b03bcb51f59ab44b71e14834f09e66",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2241,
+        "output_tokens": 691,
+        "request_seconds": 23.76193819999753,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2241,
+        "memory_output_tokens": 691,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -556,7 +954,21 @@
       "category": "layer1",
       "mode": "json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_06_credit_card_app\\json_cards\\writer.json",
+        "sha256": "7d4877c466ac9a502da4b38f0c1151c121eb0ad763d119e67f7eb9c0333f310c",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 3020,
+        "output_tokens": 3390,
+        "request_seconds": 106.87470319998101,
+        "last_memory_utf8_bytes": 1915,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2234,
+        "memory_output_tokens": 809,
+        "answer_input_tokens": 786,
+        "answer_output_tokens": 2581
       },
       "judge": {
         "status": "pending"
@@ -567,7 +979,21 @@
       "category": "layer1",
       "mode": "advanced_json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_06_credit_card_app\\advanced_json_cards\\writer.json",
+        "sha256": "74db342e1e43038f7fa3d9b563c24409109987eec6691ee917d720532dfec44d",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 3080,
+        "output_tokens": 4125,
+        "request_seconds": 134.2261758000095,
+        "last_memory_utf8_bytes": 2025,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2257,
+        "memory_output_tokens": 823,
+        "answer_input_tokens": 823,
+        "answer_output_tokens": 3302
       },
       "judge": {
         "status": "pending"
@@ -578,7 +1004,24 @@
       "category": "layer1",
       "mode": "notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_07_car_rental\\notes\\writer.json",
+        "sha256": "9a368e9f97936bb1f6d167dbe8aa72a44325dde814179e978533b2b54cc07ffe",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2134,
+        "output_tokens": 2265,
+        "request_seconds": 80.80263790000754,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2134,
+        "memory_output_tokens": 2265,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -589,7 +1032,24 @@
       "category": "layer1",
       "mode": "enhanced_notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_07_car_rental\\enhanced_notes\\writer.json",
+        "sha256": "7b8ac90c943d69ef56344f92d7b6ed2f2e390546f3a803030915964a8a01bef4",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2137,
+        "output_tokens": 619,
+        "request_seconds": 21.067385699992883,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2137,
+        "memory_output_tokens": 619,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -600,7 +1060,21 @@
       "category": "layer1",
       "mode": "json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_07_car_rental\\json_cards\\writer.json",
+        "sha256": "ec182638a922b6ecba361a856cd13f21ac6f7eb865e60b0e9e0ea6a0580032bb",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 2806,
+        "output_tokens": 1975,
+        "request_seconds": 60.29697299998952,
+        "last_memory_utf8_bytes": 1569,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2130,
+        "memory_output_tokens": 633,
+        "answer_input_tokens": 676,
+        "answer_output_tokens": 1342
       },
       "judge": {
         "status": "pending"
@@ -611,7 +1085,21 @@
       "category": "layer1",
       "mode": "advanced_json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_07_car_rental\\advanced_json_cards\\writer.json",
+        "sha256": "9f158427537d80e87d1e33fceeedec68119b3009c697bb568ac37466b6a1c2f0",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 2839,
+        "output_tokens": 3292,
+        "request_seconds": 103.74988820000726,
+        "last_memory_utf8_bytes": 1660,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2153,
+        "memory_output_tokens": 640,
+        "answer_input_tokens": 686,
+        "answer_output_tokens": 2652
       },
       "judge": {
         "status": "pending"
@@ -622,7 +1110,24 @@
       "category": "layer1",
       "mode": "notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_08_hotel_reservation\\notes\\writer.json",
+        "sha256": "9688b44b5a3365c0c745c41363be826cb5b89921073677b9c42e76f029a85830",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 1964,
+        "output_tokens": 1792,
+        "request_seconds": 60.84140039999329,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 1964,
+        "memory_output_tokens": 1792,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -633,7 +1138,24 @@
       "category": "layer1",
       "mode": "enhanced_notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_08_hotel_reservation\\enhanced_notes\\writer.json",
+        "sha256": "5d5c7e79b8020bac4d030c1ecdb54e9c386435e23c54c29d6d34ebd96570be1a",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 1967,
+        "output_tokens": 506,
+        "request_seconds": 17.0696617999929,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 1967,
+        "memory_output_tokens": 506,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -644,7 +1166,21 @@
       "category": "layer1",
       "mode": "json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_08_hotel_reservation\\json_cards\\writer.json",
+        "sha256": "18d97f2ce94b78766bd2140a955585d11668dd5a2d5351a979774e81068c4af5",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 2558,
+        "output_tokens": 1875,
+        "request_seconds": 56.65290190000087,
+        "last_memory_utf8_bytes": 1331,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 1960,
+        "memory_output_tokens": 600,
+        "answer_input_tokens": 598,
+        "answer_output_tokens": 1275
       },
       "judge": {
         "status": "pending"
@@ -655,7 +1191,21 @@
       "category": "layer1",
       "mode": "advanced_json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_08_hotel_reservation\\advanced_json_cards\\writer.json",
+        "sha256": "230793d85da51f8f4c0ad1bd33a1da9ab6b2f1a9f03681311665843c60251799",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 2550,
+        "output_tokens": 1157,
+        "request_seconds": 35.61968340000021,
+        "last_memory_utf8_bytes": 1213,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 1983,
+        "memory_output_tokens": 516,
+        "answer_input_tokens": 567,
+        "answer_output_tokens": 641
       },
       "judge": {
         "status": "pending"
@@ -666,7 +1216,24 @@
       "category": "layer1",
       "mode": "notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_09_home_security\\notes\\writer.json",
+        "sha256": "33bbd1bb3a42e16198d04c55be544beacbbd16a2105a6e99595d0ae0ed95591b",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2127,
+        "output_tokens": 2549,
+        "request_seconds": 90.31890670000575,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2127,
+        "memory_output_tokens": 2549,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -677,7 +1244,24 @@
       "category": "layer1",
       "mode": "enhanced_notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_09_home_security\\enhanced_notes\\writer.json",
+        "sha256": "7d2a59d6652873819b0b1e0db38d52967f5eb51618b31baa0c81cc66f9abcbd5",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2130,
+        "output_tokens": 1830,
+        "request_seconds": 63.59235720000288,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2130,
+        "memory_output_tokens": 1830,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -688,7 +1272,21 @@
       "category": "layer1",
       "mode": "json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_09_home_security\\json_cards\\writer.json",
+        "sha256": "a5abbe30dce81247dca09c3adc6c462aa2e4a70d800d07f95b031ba00f345e08",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 2801,
+        "output_tokens": 1461,
+        "request_seconds": 45.97305729999789,
+        "last_memory_utf8_bytes": 1589,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2123,
+        "memory_output_tokens": 698,
+        "answer_input_tokens": 678,
+        "answer_output_tokens": 763
       },
       "judge": {
         "status": "pending"
@@ -699,7 +1297,21 @@
       "category": "layer1",
       "mode": "advanced_json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_09_home_security\\advanced_json_cards\\writer.json",
+        "sha256": "db0c6135561fa11f200b0cc1879eb1d8f49eb89d2388cf7774c08f37b796964c",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 3175,
+        "output_tokens": 1483,
+        "request_seconds": 48.43378349998966,
+        "last_memory_utf8_bytes": 2816,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 2146,
+        "memory_output_tokens": 1028,
+        "answer_input_tokens": 1029,
+        "answer_output_tokens": 455
       },
       "judge": {
         "status": "pending"
@@ -710,7 +1322,24 @@
       "category": "layer1",
       "mode": "notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_10_pharmacy_transfer\\notes\\writer.json",
+        "sha256": "41943b93b1075784be5ce063d58cd573e9a3e7b0264d9d371708fa1ce8b05f30",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 1827,
+        "output_tokens": 759,
+        "request_seconds": 24.927050799989956,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 1827,
+        "memory_output_tokens": 759,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -721,7 +1350,24 @@
       "category": "layer1",
       "mode": "enhanced_notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_10_pharmacy_transfer\\enhanced_notes\\writer.json",
+        "sha256": "30a94b8c24b370f3ef544c2755d382caff0dbf5dca358708080b7b36f48cd0c0",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 1830,
+        "output_tokens": 658,
+        "request_seconds": 21.75170110000181,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 1830,
+        "memory_output_tokens": 658,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -732,7 +1378,21 @@
       "category": "layer1",
       "mode": "json_cards",
       "writer": {
-        "status": "pending"
+        "status": "saved",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_10_pharmacy_transfer\\json_cards\\writer.json",
+        "sha256": "311b83c5c81ebb76d6f684f86954d65d1cf5fddac1eb6aa67318765e734edef9",
+        "calls": 2,
+        "tag_queries": 1,
+        "input_tokens": 2554,
+        "output_tokens": 1159,
+        "request_seconds": 35.97099829999206,
+        "last_memory_utf8_bytes": 1867,
+        "failure_kind": null,
+        "error": null,
+        "memory_input_tokens": 1823,
+        "memory_output_tokens": 735,
+        "answer_input_tokens": 731,
+        "answer_output_tokens": 424
       },
       "judge": {
         "status": "pending"
@@ -743,7 +1403,24 @@
       "category": "layer1",
       "mode": "advanced_json_cards",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_10_pharmacy_transfer\\advanced_json_cards\\writer.json",
+        "sha256": "dc5ef1f6b4ba1b1d39d43fe9f3127f36ef0d4a8d1c45b4a60210c81e52b96ea0",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "request_seconds": 32.05746240000008,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "RuntimeError",
+          "message": "Ollama HTTP 500"
+        },
+        "memory_input_tokens": 0,
+        "memory_output_tokens": 0,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -754,7 +1431,24 @@
       "category": "layer1",
       "mode": "notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_11_mortgage_application\\notes\\writer.json",
+        "sha256": "340a62e1f5e828cdd23a9d0e974320a147e8fe3e2c017f1dda6bc37de6a3a8bb",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2536,
+        "output_tokens": 1136,
+        "request_seconds": 39.961037200002465,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2536,
+        "memory_output_tokens": 1136,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"
@@ -765,7 +1459,24 @@
       "category": "layer1",
       "mode": "enhanced_notes",
       "writer": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_11_mortgage_application\\enhanced_notes\\writer.json",
+        "sha256": "2b3a89ea6d15577bf8a8cfb841860bab853800681f2fc982a182dcb476d0fb31",
+        "calls": 1,
+        "tag_queries": 1,
+        "input_tokens": 2539,
+        "output_tokens": 1414,
+        "request_seconds": 50.83298439999635,
+        "last_memory_utf8_bytes": null,
+        "failure_kind": "generation_error",
+        "error": {
+          "type": "ValueError",
+          "message": "笔记记忆必须是字符串数组；不代替模型重写格式"
+        },
+        "memory_input_tokens": 2539,
+        "memory_output_tokens": 1414,
+        "answer_input_tokens": 0,
+        "answer_output_tokens": 0
       },
       "judge": {
         "status": "pending"

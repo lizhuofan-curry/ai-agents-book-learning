@@ -1,0 +1,81 @@
+{
+  "mode": "json_cards",
+  "memory": {
+    "customer": {
+      "name": "Kevin Zhang",
+      "address": "7622 Willow Creek Drive, Austin, Texas, 78759",
+      "dob": "1987-04-03",
+      "ssn": "455-78-9234",
+      "phone": "512-555-8823",
+      "email": "kzhang87@email.com",
+      "account_number": "VEL-89923476",
+      "service_type": "internet + cable",
+      "internet_plan": "Performance (1 Gig)",
+      "cable_package": "Preferred",
+      "equipment": {
+        "modem_router": "Fiber",
+        "cable_boxes": [
+          {
+            "type": "DVR-enabled",
+            "count": 1
+          },
+          {
+            "type": "Standard",
+            "count": 2
+          }
+        ]
+      },
+      "billing": {
+        "monthly_rate": 185.95,
+        "promotional_rate": 74.99,
+        "promotional_duration": "3 months",
+        "equipment_fee": 40.97,
+        "taxes_and_fees": "12-15",
+        "autopay": {
+          "account_type": "Checking",
+          "bank": "Chase Bank",
+          "routing_number": "111000614",
+          "account_number": "8829447651"
+        },
+        "first_bill_date": "2024-11-24",
+        "due_date": "2024-12-14",
+        "service_start_date": "2024-11-14",
+        "installation_date": "2024-11-14",
+        "installation_time": "10:00-12:00",
+        "installation_location": "7622 Willow Creek Drive, Austin, Texas, 78759",
+        "installation_technician": "Velocity Communications",
+        "cable_channels": {
+          "Preferred": [
+            "HBO",
+            "HBO2",
+            "HBO Family",
+            "HBO Latino",
+            "HBO Signature",
+            "HBO Comedy",
+            "HBO Zone",
+            "HBO Max streaming"
+          ]
+        }
+      },
+      "additional_info": {
+        "wifi": {
+          "type": "WiFi 6",
+          "bands": [
+            "2.4GHz",
+            "5GHz"
+          ]
+        },
+        "streaming": {
+          "apps": [
+            "HBO Max",
+            "Showtime"
+          ]
+        },
+        "parental_controls": "Available",
+        "technical_support": "1-800-VELOCITY",
+        "contract": "Month-to-month",
+        "upgrade_downgrade": "Immediate for upgrades, next billing cycle for downgrades"
+      }
+    }
+  }
+}

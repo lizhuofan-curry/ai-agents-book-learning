@@ -1,0 +1,89 @@
+We are given a long-term memory in JSON format for session_1 (hotel_booking_001) and the user's question.
+
+The user is asking for:
+1. Hilton confirmation number
+2. Room number
+
+From the long-term memory (session_1):
+
+- The payment section has: "confirmation_number": "HSD-445782"
+- The reservation section has: "room": {"number": "1912"}
+
+So, the answer should be:
+- Hilton confirmation number: HSD-44578: We see it's "HSD-445782" (note: the memory says "HSD-445782")
+- Room number: 1912
+
+Additionally, the user mentions that his wife is asking about the anniversary trip details. We can also provide a bit of context to be helpful, but we must stick to the facts from the memory.
+
+Important: The memory says the reservation is for "Hilton San Diego Bayfront" and the check-in is 2024-12-08 (which is in the future from the current time? But the user is asking about the confirmation, so we don't have to worry about the current time). However, the user is specifically asking for the confirmation number and room number.
+
+Let's structure the answer:
+
+- Remind the user of the Hilton confirmation number: HSD-445782
+- Remind the user of the room number: 1912
+
+We can also note that the reservation is for an anniversary trip (since the user says "anniversary trip") and the details are in the memory.
+
+But note: the memory does not have a field for "anniversary" explicitly, but the context of the user's question and the fact that they are booking for a trip (with the reservation date in the future) might be the anniversary. However, we are not to invent facts. We have the reservation details.
+
+We must be cautious: the memory says the reservation is for a "Romance Package" and the check-in is 2024-12-08 (which is in the future) and the check-out is 2024-12-10. The user says "anniversary trip", so we can mention that the reservation is for a 2-night stay (from Dec 8 to Dec 10) but the user didn't ask for that. They only asked for the confirmation number and room number.
+
+So, we answer directly:
+
+"Your Hilton reservation confirmation number is HSD-445782 and your room number is 1912."
+
+We don't have to add extra details unless the user asks. But the user says "my wife is asking about our anniversary trip details", so we can also provide a brief note about the trip to be helpful without overstepping.
+
+However, the instruction says: "Answer accurately, resolve ambiguity, connect sessions, and proactively warn about material risks."
+
+We don't have any material risks in this context (like security issues) because the information is from a reservation and the user is asking for their own reservation details.
+
+Let's write the answer:
+
+"Your Hilton reservation confirmation number is **HSD-445782** and your room number is **1912**. This reservation covers your 2-night stay at Hilton San Diego Bayfront from December 8 to December 10, 2024, including the Romance Package with chocolate-covered strawberries, champagne on arrival, late checkout until 2 PM, and breakfast in bed."
+
+But note: the user only asked for the confirmation number and room number. We can keep it concise to avoid over-answering.
+
+Alternatively, we can do:
+
+"Here are the details you requested:
+- Hilton confirmation number: HSD-445782
+- Room number: 1912"
+
+But the user mentioned "anniversary trip", so we can add a note about the trip to be helpful.
+
+However, the instruction says: "Do not invent facts". We have the reservation details in the memory, so we can state the dates and the package as part of the reservation.
+
+But the user didn't ask for the dates or package. So to be precise, we'll stick to what they asked and then add a minimal context.
+
+Given the above, I'll write:
+
+"Your Hilton reservation confirmation number is **HSD-445782** and your room number is **1912**. This reservation is for your anniversary trip at Hilton San Diego Bayfront from December 8 to December 10, 2024."
+
+This is accurate and doesn't invent facts.
+
+Wait, the memory says the reservation is for "Hilton San Diego Bayfront", so we can say that.
+
+But note: the user is Richard and Susan Thompson, so we are addressing them as the couple.
+
+Let me check the memory again: the user in the memory is "Richard and Susan Thompson".
+
+So, the answer:
+
+"Your Hilton reservation confirmation number is **HSD-445782** and your room number is **1912**. This reservation covers your anniversary trip at Hilton San Diego Bayfront from December 8 to December 10, 2024."
+
+This is accurate and we are not inventing facts.
+
+We are not adding any risk warnings because the information is for a reservation and the user is asking for their own reservation details.
+
+So, the response is as above.
+</think>
+
+Here are the details you requested from your Hilton San Diego Bayfront reservation:  
+
+- **Hilton confirmation number**: `HSD-445782`  
+- **Room number**: `1912` (Junior Suite on floor 19)  
+
+This reservation covers your anniversary trip from **December 8–10, 2024**, including the Romance Package (chocolate-covered strawberries, champagne on arrival, late checkout until 2 PM, and breakfast in bed).  
+
+Let me know if your wife needs additional details about the trip! 😊

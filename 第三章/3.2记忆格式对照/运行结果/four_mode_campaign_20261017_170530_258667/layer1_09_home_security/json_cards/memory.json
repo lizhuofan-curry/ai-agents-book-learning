@@ -1,0 +1,88 @@
+{
+  "mode": "json_cards",
+  "memory": {
+    "session_1": {
+      "conversation_id": "security_install_001",
+      "timestamp": "2024-11-11 14:45:00",
+      "metadata": {
+        "business": "ADT Security Services",
+        "department": "Sales and Installation",
+        "call_duration": "48 minutes"
+      },
+      "user": {
+        "name": "Nancy Rodriguez",
+        "city": "Houston",
+        "state": "Texas",
+        "neighborhood": "Heights"
+      },
+      "home": {
+        "type": "two-story house",
+        "square_feet": 2400,
+        "entry_points": {
+          "doors": 3,
+          "windows": {
+            "ground_floor": {
+              "front": 6,
+              "sides": 4,
+              "back": 4
+            },
+            "total": 18
+          }
+        },
+        "garage": "two-car attached garage",
+        "sliding_glass_doors": 1
+      },
+      "security_package": {
+        "name": "Smart Home Security",
+        "included": {
+          "door_sensors": 3,
+          "window_sensors": 15,
+          "motion_detectors": "various",
+          "smart_hub": 1,
+          "cameras": 2
+        },
+        "additional_items": {
+          "cameras": 2,
+          "glass_break_detectors": 1,
+          "smoke_detectors": 1,
+          "carbon_monoxide_detectors": 1
+        },
+        "costs": {
+          "equipment_package": 849,
+          "additional_cameras": 398,
+          "glass_break_detector": 120,
+          "smoke_detector": 65,
+          "co_detector": 100,
+          "installation": 99,
+          "total_equipment_and_installation": 1631,
+          "monthly_monitoring": 52.99,
+          "financing": {
+            "term": 12,
+            "interest_rate": 0,
+            "monthly_payment": 188.91
+          }
+        },
+        "installation_schedule": {
+          "date": "2024-11-16",
+          "time": "8:00 AM - 12:00 PM"
+        }
+      },
+      "account_info": {
+        "account_number": "ADT-7789234",
+        "service_code": "SVC-44821"
+      },
+      "user_details": {
+        "ssn": "523-84-7791",
+        "date_of_birth": "1978-10-15",
+        "address": "1847 Heights Boulevard, Houston, Texas, 77008",
+        "tenure": "6 years",
+        "employment": "full-time marketing director"
+      },
+      "contract": {
+        "email": "nrodriguez78@email.com",
+        "status": "pending",
+        "financing_approval": true
+      }
+    }
+  }
+}
