@@ -1,0 +1,93 @@
+{
+  "mode": "json_cards",
+  "memory": {
+    "bank_setup_001": {
+      "session": {
+        "conversation_id": "bank_setup_001",
+        "timestamp": "2024-11-15 10:30:00",
+        "metadata": {
+          "business": "First National Bank",
+          "department": "New Accounts",
+          "call_duration": "47 minutes"
+        }
+      },
+      "user_info": {
+        "full_legal_name": "Michael James Robertson",
+        "date_of_birth": "March 15th, 1985",
+        "residential_address": "1847 Maple Street, Apartment 3B, Portland, Oregon, 97205",
+        "residential_address_duration": "about two and a half years",
+        "phone_number": "503-555-8924",
+        "email_address": "mrobertson85@email.com",
+        "employment_status": "employed full-time as a software engineer at TechCorp Industries",
+        "employment_duration": "coming up on four years this December",
+        "annual_income": "$125,000 a year, before taxes",
+        "social_security_number": "547-82-9163",
+        "driver_license_number": "Oregon license, number D758392",
+        "account_type": "Premium Checking",
+        "account_number": "4429853327",
+        "savings_account_number": "4429853328",
+        "deposits": {
+          "checking_deposit": "5000",
+          "savings_deposit": "500"
+        },
+        "transfer_settings": {
+          "monthly_transfer": {
+            "amount": "200",
+            "frequency": "monthly",
+            "day_of_month": "15"
+          }
+        },
+        "online_banking": {
+          "username": "MRobertson503",
+          "password": "to_be_set_at_login"
+        },
+        "mobile_banking": "enrolled",
+        "debit_card": {
+          "pin": "4827",
+          "arrival_date": "7-10 business days"
+        },
+        "overdraft_protection": {
+          "option": "linked_to_savings_account"
+        },
+        "security_questions": {
+          "first_pet": "Buddy",
+          "city_of_birth": "Denver, Colorado",
+          "mother_maiden_name": "Harrison"
+        },
+        "statement_type": "electronic",
+        "direct_deposits": {
+          "paycheck": {
+            "routing_number": "123006800",
+            "account_number": "4429853327"
+          }
+        },
+        "initial_deposit": {
+          "checking": "5000",
+          "savings": "500"
+        },
+        "external_bank_info": {
+          "wells_fargo_account_number": "8847293001",
+          "wells_fargo_routing_number": "121000248"
+        },
+        "credit_card_options": {
+          "cashback": {
+            "annual_fee": "$95",
+            "waived_first_year": true
+          },
+          "travel_rewards": {
+            "features": "3x points on travel and dining"
+          },
+          "basic": {
+            "annual_fee": "none"
+          }
+        },
+        "atm_fees": {
+          "unlimited_free_withdrawals_at_first_national_atms": true,
+          "reimbursement_for_other_banks": "up to $15 per month"
+        },
+        "first_national_atm_count": "47 in Portland metro area",
+        "international_transaction_fee": "3%"
+      }
+    }
+  }
+}

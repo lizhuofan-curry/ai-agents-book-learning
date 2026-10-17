@@ -1,0 +1,30 @@
+We are given a long-term memory in JSON format for a session called "bank_setup_001". The user is asking for their checking account number to set up direct deposit at work.
+
+Looking at the memory:
+- The account type is "Premium Checking"
+- The account number is explicitly stated as: "account_number": "4429853327"
+- Also, there is a "direct_deposits" section which includes a paycheck deposit with the account number "4429853327"
+
+The user specifically asks for the checking account number. In the memory, the checking account number is stored under "account_number" and it is "4429853327".
+
+Additionally, note that the user says: "I need it to set up my direct deposit at work". The direct deposits section shows that the paycheck direct deposit is set to the same account number (4429853327) for the checking account.
+
+Therefore, the checking account number is 4429853327.
+
+We must be precise and not invent facts. The memory provides this information clearly.
+
+Answer: The checking account number is 4429853327.
+
+We also note that the user might be confused about the difference between checking and savings accounts, but the question is clear: they want the checking account number.
+
+Let's format the response to be helpful and direct.
+
+Response: Your checking account number is 4429853327. This is the account number we set up for direct deposits at work.
+</think>
+
+Your checking account number is **4429853327**. This is the account number we configured for your Premium Checking account, and it's already linked to your direct deposit settings at work (as shown in the `direct_deposits.paycheck` section of your records). 
+
+**Important note for safety**:  
+While this account number is secure in our system, **do not share it with anyone** (including your employer) unless you've verified the legitimacy of the request through your bank's official channels. Unauthorized sharing could lead to fraud. Always confirm with your bank via phone or secure portal before providing account details to third parties. 
+
+If you're setting up direct deposits at work, your employer should use the **routing number 123006800** (from the `direct_deposits.paycheck` section) with this account number. Let me know if you need help verifying this with your bank!
