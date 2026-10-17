@@ -1,0 +1,170 @@
+{
+  "mode": "advanced_json_cards",
+  "memory": [
+    {
+      "category": "Policy",
+      "card_key": "policy_001",
+      "backstory": "Initial policy for Mr. William Chen",
+      "person": "William Chen",
+      "relationship": "Primary policyholder",
+      "timestamp": "2024-10-15 11:00:00",
+      "status": "active",
+      "facts": {
+        "policy_number": "SF-789234501",
+        "vehicle_1": "2019 Honda Accord",
+        "coverage": "100/300/100 liability, comprehensive, collision with $500 deductibles",
+        "premium": "$924/year",
+        "address": "4421 Oak Street, Austin"
+      }
+    },
+    {
+      "category": "Vehicle",
+      "card_key": "vehicle_001",
+      "backstory": "2019 Honda Accord",
+      "person": "William Chen",
+      "relationship": "Primary vehicle for wife",
+      "timestamp": "2024-10-15 11:00:00",
+      "status": "active",
+      "facts": {
+        "make_model": "2019 Honda Accord",
+        "policy_suffix": "-01",
+        "coverage": "100/300/100 liability, comprehensive, collision with $500 deductibles",
+        "premium_contribution": "$924/year"
+      }
+    },
+    {
+      "category": "Vehicle",
+      "card_key": "vehicle_002",
+      "backstory": "2023 Tesla Model 3",
+      "person": "William Chen",
+      "relationship": "Secondary vehicle",
+      "timestamp": "2024-10-15 11:00:00",
+      "status": "active",
+      "facts": {
+        "make_model": "2023 Tesla Model 3",
+        "policy_suffix": "-02",
+        "vin": "5YJ3E7EB8PF445892",
+        "trim": "Long Range AWD",
+        "color": "Pearl White with black interior",
+        "purchase_date": "2024-10-10",
+        "purchase_type": "Financed through Tesla Financial",
+        "primary_driver": "William Chen",
+        "parking_location": "Garage at 4421 Oak Street, Austin",
+        "commute_distance": "15 miles each way (30 miles daily)",
+        "annual_mileage": "12,000 miles/year",
+        "comprehensive_deductible": "$1000",
+        "collision_deductible": "$1000",
+        "gap_insurance": "$89/year",
+        "coverage": "100/300/100 liability, comprehensive, collision with $1000 deductibles"
+      }
+    },
+    {
+      "category": "Policy",
+      "card_key": "policy_002",
+      "backstory": "Updated policy for Mr. William Chen",
+      "person": "William Chen",
+      "relationship": "Primary policyholder",
+      "timestamp": "2024-10-15 11:00:00",
+      "status": "active",
+      "facts": {
+        "policy_number": "SF-789234501",
+        "total_premium": "$2,605/year",
+        "vehicles": [
+          "2019 Honda Accord",
+          "2023 Tesla Model 3"
+        ],
+        "coverage": "100/300/100 liability, comprehensive, collision with $1000 deductibles for Tesla",
+        "address": "4421 Oak Street, Austin"
+      }
+    },
+    {
+      "category": "Additional Coverage",
+      "card_key": "additional_coverage_001",
+      "backstory": "Teenage driver considerations",
+      "person": "William Chen",
+      "relationship": "Parent of 16-year-old son",
+      "timestamp": "2024-10-15 11:00:00",
+      "status": "active",
+      "facts": {
+        "son_age": "16",
+        "son_status": "Has driver's permit",
+        "expected_premium_increase": "$2,200-$2,800/year",
+        "discounts": [
+          "Good student discount (15% off)",
+          "Defensive driving course (10% off)"
+        ],
+        "recommended_action": "Keep son as secondary driver for Honda only"
+      }
+    },
+    {
+      "category": "Rideshare Coverage",
+      "card_key": "rideshare_001",
+      "backstory": "Rideshare driving considerations",
+      "person": "William Chen",
+      "relationship": "Primary policyholder",
+      "timestamp": "2024-10-15 11:00:00",
+      "status": "active",
+      "facts": {
+        "rideshare_endorsement": "Required for Uber/lyft",
+        "additional_cost": "$250/year",
+        "coverage_type": "Gap between personal and commercial coverage"
+      }
+    },
+    {
+      "category": "Rental Coverage",
+      "card_key": "rental_001",
+      "backstory": "Rental car reimbursement details",
+      "person": "William Chen",
+      "relationship": "Primary policyholder",
+      "timestamp": "2024-10-15 11:00:00",
+      "status": "active",
+      "facts": {
+        "reimbursement_limit": "$40/day",
+        "maximum_claim": "$1,200 per claim"
+      }
+    },
+    {
+      "category": "Towing",
+      "card_key": "towing_001",
+      "backstory": "Emergency roadside assistance",
+      "person": "William Chen",
+      "relationship": "Primary policyholder",
+      "timestamp": "2024-10-15 11:00:00",
+      "status": "active",
+      "facts": {
+        "towing_distance": "100 miles",
+        "services": [
+          "Jump starts",
+          "Flat tire repairs",
+          "Lockouts"
+        ]
+      }
+    },
+    {
+      "category": "Uninsured Motorist Coverage",
+      "card_key": "uninsured_motorist_001",
+      "backstory": "Texas-specific coverage",
+      "person": "William Chen",
+      "relationship": "Primary policyholder",
+      "timestamp": "2024-10-15 11:00:00",
+      "status": "active",
+      "facts": {
+        "coverage_level": "100/300",
+        "state_specific": "Texas (20% of drivers are uninsured)"
+      }
+    },
+    {
+      "category": "Charging Safety",
+      "card_key": "charging_safety_001",
+      "backstory": "Public vs. home charging considerations",
+      "person": "William Chen",
+      "relationship": "Primary policyholder",
+      "timestamp": "2024-10-15 11:00:00",
+      "status": "active",
+      "facts": {
+        "home_charging": "Preferred (safer)",
+        "public_charging": "Higher risk of damage"
+      }
+    }
+  ]
+}

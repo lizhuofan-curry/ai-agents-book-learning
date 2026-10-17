@@ -1,0 +1,111 @@
+We are given a long-term memory in JSON format for the session "bank_setup_001". The user is asking for their checking account number to set up direct deposit at work.
+
+Looking at the memory, we have:
+- "account_number": "4429853327" (this is the checking account number)
+- Also, note that there is a "direct_deposits" section which includes the paycheck details with the account number (4429853327) and routing number.
+
+The user specifically says: "What was my checking account number again? I need it to set up my direct deposit at work."
+
+In the memory, the checking account number is clearly stated as "4429853327".
+
+We must be cautious: the user is asking for the checking account number (not the savings). The memory shows:
+  "account_number": "4429853327"
+  "savings_account_number": "4429853328"
+
+So the checking account number is 4429853327.
+
+Additionally, the user mentions they need it to set up direct deposit at work. The memory also shows the direct deposit information for paycheck:
+  "direct_deposits": {
+      "paycheck": {
+          "routing_number": "123006800",
+          "account_number": "4429853327"
+      }
+  }
+
+Therefore, we can confidently provide the checking account number as 4429853327.
+
+We should also note that the user is trying to set up direct deposit at work, and the bank has already set up a direct deposit for the paycheck (with the same account number). But the user is asking for the checking account number again, so we just need to give the number.
+
+Important: The user might be confused about the account number for direct deposit. However, the memory shows that the bank has already set up the direct deposit for the paycheck to the checking account (4429853327). So the number they need is 4429853327.
+
+We must not invent facts. The memory is our only source.
+
+Answer: The checking account number is 4429853327.
+
+But note: The user says "I need it to set up my direct deposit at work". However, the memory shows that the direct deposit for the paycheck is already set up (with the account number 4429853327). So they might not need to set it up again? But the user is asking for the number, so we just provide it.
+
+We are to resolve ambiguity: There is no ambiguity here because the memory clearly states the checking account number.
+
+We also note that the user might be concerned about the direct deposit setup. But the question is only about the checking account number.
+
+So, the answer is: 4429853327
+
+We should phrase it clearly and professionally.
+
+Also, we must warn about material risks? In this context, the user is just asking for a number. There are no material risks that we need to warn about from the information given. However, we can note that the account number is sensitive and should be used only for the intended purpose (as per the user's request).
+
+But the instruction says: "proactively warn about material risks". Since the user is trying to set up direct deposit at work, we can note that they should ensure they are using the correct account number for their direct deposit (which we have provided) and that they should not share this number with anyone.
+
+However, the user is asking for the number again, so we are not making the number public in a way that could be misused? We are just providing it to the user.
+
+Given the context, we can add a note about security.
+
+But the instruction says: "Do not invent facts". We don't have to invent facts about risks beyond what the memory tells us. The memory doesn't have risk information.
+
+So, we'll just provide the number and a minimal security note.
+
+Let's write:
+
+"Your checking account number is **4429853327**. This number is for your Premium Checking account at First National Bank. Please note that this account number is sensitive and should only be used for the purpose of setting up direct deposits with your employer. Do not share this number with anyone."
+
+But wait, the user is asking for it to set up direct deposit at work. We have the information that the direct deposit for the paycheck is already set up to this account (as per the memory). So they might not need to set it up again? However, the user is asking for the number, so we provide it.
+
+Alternatively, the user might be confused because they are setting up direct deposit for the first time? But the memory shows that the direct deposit for the paycheck is already set up (with the same account number). So we can say:
+
+"Your checking account number for direct deposits is 4429853327. Since your direct deposit for paycheck is already set up to this account (as per our records), you may not need to set it up again. However, if you are setting up a new direct deposit for a different purpose, please confirm the details."
+
+But the user specifically says: "I need it to set up my direct deposit at work". And the memory shows that the direct deposit for the paycheck is already set up (with the account number 4429853327). So it's already set.
+
+However, the user might be asking because they are about to set up a new direct deposit? But the memory is from a bank setup session. The user says "to set up my direct deposit at work", meaning they are trying to set it up for the first time? But the memory shows that the direct deposit for the paycheck is already set.
+
+Given the complexity, we stick to the direct answer.
+
+Let's do:
+
+"Your checking account number is **4429853327**. This is the account number for your Premium Checking account at First National Bank that is used for direct deposits (including your paycheck)."
+
+We don't have to overcomplicate.
+
+But note: The user might be confused about the difference between the checking account and the savings account. We have provided the checking account number.
+
+So, the answer is: 4429853327
+
+We'll output that clearly.
+
+Also, the instruction says: "Answer accurately, resolve ambiguity, connect sessions, and proactively warn about material risks."
+
+We have resolved ambiguity: the checking account number is 4429853327.
+
+We don't have earlier sessions to connect (this is the first session we have in memory).
+
+Material risks: We can warn about the sensitivity of the account number. We don't have to invent facts, but we can state a standard security warning.
+
+So, the response:
+
+"Your checking account number is **4429853327**. This number is sensitive and should be used only for legitimate banking purposes. Please do not share this number with anyone outside of your bank or employer."
+
+But note: The user is at work, so they might be setting up direct deposit with their employer. We are not to invent facts beyond the memory.
+
+We are not told that the user is in a situation where they might be at risk of sharing the number. So we give a standard warning.
+
+Let's write the response.
+</think>
+
+Your checking account number is **4429853327** (for your Premium Checking account at First National Bank). This number is used for direct deposits, including your paycheck as confirmed in our records. 
+
+### Important Security Note:
+This account number is highly sensitive and **should only be shared with your employer or bank personnel** when explicitly required for direct deposit setup. Never share it with third parties (e.g., unverified websites, strangers) as this could lead to unauthorized account access or fraud. 
+
+Since your direct deposit for paycheck is already configured to this account (as per your session records), you may not need to re-enter it unless your employer requires a new setup. For additional security, always use the bank’s official portal or phone support when managing direct deposits. 
+
+Let me know if you need further assistance! 🔒

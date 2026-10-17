@@ -1,0 +1,247 @@
+{
+  "planned_cases": 60,
+  "planned_variants": 240,
+  "writer_states": {
+    "incomplete": 9,
+    "saved": 3,
+    "pending": 228
+  },
+  "judge_states": {
+    "pending": 240
+  },
+  "scored_variants": 0,
+  "passed_variants": 0,
+  "all_attempts_and_outcomes_finished": false,
+  "pipeline_pass_rate_all_variants": null,
+  "pass_rate_scored_only": null,
+  "mean_reward_scored_only": null,
+  "writer_calls": 22,
+  "judge_calls": 0,
+  "generation_failure_kinds": {
+    "generation_error": 8,
+    "truncated": 1
+  },
+  "input_tokens": 39651,
+  "output_tokens": 26289,
+  "memory_input_tokens": 34525,
+  "memory_output_tokens": 18411,
+  "answer_input_tokens": 5126,
+  "answer_output_tokens": 7878,
+  "request_seconds": 1005.656348599965,
+  "tag_queries": 12,
+  "full_240_judge_scores_available": false,
+  "by_mode": {
+    "notes": {
+      "planned_variants": 60,
+      "writer_states": {
+        "incomplete": 3,
+        "pending": 57
+      },
+      "judge_states": {
+        "pending": 60
+      },
+      "scored_variants": 0,
+      "passed_variants": 0,
+      "all_attempts_and_outcomes_finished": false,
+      "pipeline_pass_rate_all_variants": null,
+      "pass_rate_scored_only": null,
+      "mean_reward_scored_only": null,
+      "writer_calls": 3,
+      "judge_calls": 0,
+      "generation_failure_kinds": {
+        "generation_error": 3
+      },
+      "input_tokens": 5932,
+      "output_tokens": 3417,
+      "memory_input_tokens": 5932,
+      "memory_output_tokens": 3417,
+      "answer_input_tokens": 0,
+      "answer_output_tokens": 0,
+      "request_seconds": 125.85206519997155,
+      "tag_queries": 3
+    },
+    "enhanced_notes": {
+      "planned_variants": 60,
+      "writer_states": {
+        "incomplete": 3,
+        "pending": 57
+      },
+      "judge_states": {
+        "pending": 60
+      },
+      "scored_variants": 0,
+      "passed_variants": 0,
+      "all_attempts_and_outcomes_finished": false,
+      "pipeline_pass_rate_all_variants": null,
+      "pass_rate_scored_only": null,
+      "mean_reward_scored_only": null,
+      "writer_calls": 3,
+      "judge_calls": 0,
+      "generation_failure_kinds": {
+        "generation_error": 3
+      },
+      "input_tokens": 3893,
+      "output_tokens": 2894,
+      "memory_input_tokens": 3893,
+      "memory_output_tokens": 2894,
+      "answer_input_tokens": 0,
+      "answer_output_tokens": 0,
+      "request_seconds": 141.32944009998755,
+      "tag_queries": 3
+    },
+    "json_cards": {
+      "planned_variants": 60,
+      "writer_states": {
+        "saved": 1,
+        "incomplete": 2,
+        "pending": 57
+      },
+      "judge_states": {
+        "pending": 60
+      },
+      "scored_variants": 0,
+      "passed_variants": 0,
+      "all_attempts_and_outcomes_finished": false,
+      "pipeline_pass_rate_all_variants": null,
+      "pass_rate_scored_only": null,
+      "mean_reward_scored_only": null,
+      "writer_calls": 8,
+      "judge_calls": 0,
+      "generation_failure_kinds": {
+        "generation_error": 1,
+        "truncated": 1
+      },
+      "input_tokens": 14345,
+      "output_tokens": 10315,
+      "memory_input_tokens": 12898,
+      "memory_output_tokens": 4456,
+      "answer_input_tokens": 1447,
+      "answer_output_tokens": 5859,
+      "request_seconds": 350.94393040002615,
+      "tag_queries": 3
+    },
+    "advanced_json_cards": {
+      "planned_variants": 60,
+      "writer_states": {
+        "saved": 2,
+        "incomplete": 1,
+        "pending": 57
+      },
+      "judge_states": {
+        "pending": 60
+      },
+      "scored_variants": 0,
+      "passed_variants": 0,
+      "all_attempts_and_outcomes_finished": false,
+      "pipeline_pass_rate_all_variants": null,
+      "pass_rate_scored_only": null,
+      "mean_reward_scored_only": null,
+      "writer_calls": 8,
+      "judge_calls": 0,
+      "generation_failure_kinds": {
+        "generation_error": 1
+      },
+      "input_tokens": 15481,
+      "output_tokens": 9663,
+      "memory_input_tokens": 11802,
+      "memory_output_tokens": 7644,
+      "answer_input_tokens": 3679,
+      "answer_output_tokens": 2019,
+      "request_seconds": 387.53091289997974,
+      "tag_queries": 3
+    }
+  },
+  "by_layer": {
+    "layer1": {
+      "planned_variants": 80,
+      "writer_states": {
+        "incomplete": 2,
+        "saved": 2,
+        "pending": 76
+      },
+      "judge_states": {
+        "pending": 80
+      },
+      "scored_variants": 0,
+      "passed_variants": 0,
+      "all_attempts_and_outcomes_finished": false,
+      "pipeline_pass_rate_all_variants": null,
+      "pass_rate_scored_only": null,
+      "mean_reward_scored_only": null,
+      "writer_calls": 6,
+      "judge_calls": 0,
+      "generation_failure_kinds": {
+        "generation_error": 2
+      },
+      "input_tokens": 11803,
+      "output_tokens": 7208,
+      "memory_input_tokens": 8886,
+      "memory_output_tokens": 4927,
+      "answer_input_tokens": 2917,
+      "answer_output_tokens": 2281,
+      "request_seconds": 255.97303409999586,
+      "tag_queries": 4
+    },
+    "layer2": {
+      "planned_variants": 80,
+      "writer_states": {
+        "incomplete": 3,
+        "saved": 1,
+        "pending": 76
+      },
+      "judge_states": {
+        "pending": 80
+      },
+      "scored_variants": 0,
+      "passed_variants": 0,
+      "all_attempts_and_outcomes_finished": false,
+      "pipeline_pass_rate_all_variants": null,
+      "pass_rate_scored_only": null,
+      "mean_reward_scored_only": null,
+      "writer_calls": 7,
+      "judge_calls": 0,
+      "generation_failure_kinds": {
+        "generation_error": 3
+      },
+      "input_tokens": 13382,
+      "output_tokens": 7451,
+      "memory_input_tokens": 11811,
+      "memory_output_tokens": 5950,
+      "answer_input_tokens": 1571,
+      "answer_output_tokens": 1501,
+      "request_seconds": 307.84754549998615,
+      "tag_queries": 4
+    },
+    "layer3": {
+      "planned_variants": 80,
+      "writer_states": {
+        "incomplete": 4,
+        "pending": 76
+      },
+      "judge_states": {
+        "pending": 80
+      },
+      "scored_variants": 0,
+      "passed_variants": 0,
+      "all_attempts_and_outcomes_finished": false,
+      "pipeline_pass_rate_all_variants": null,
+      "pass_rate_scored_only": null,
+      "mean_reward_scored_only": null,
+      "writer_calls": 9,
+      "judge_calls": 0,
+      "generation_failure_kinds": {
+        "generation_error": 3,
+        "truncated": 1
+      },
+      "input_tokens": 14466,
+      "output_tokens": 11630,
+      "memory_input_tokens": 13828,
+      "memory_output_tokens": 7534,
+      "answer_input_tokens": 638,
+      "answer_output_tokens": 4096,
+      "request_seconds": 441.835768999983,
+      "tag_queries": 4
+    }
+  },
+  "note": "技术失败无裁判分数，不填0；已评分均分与通过率只对应已评分子集。"
+}
