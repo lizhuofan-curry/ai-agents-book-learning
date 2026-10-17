@@ -1,0 +1,4 @@
+[2024-11-01 09:00:00] ERROR request_id=demo-001 stage=payment_retry status=failed
+USER: My SSN is [REDACTED]. My card is [REDACTED].
+USER: My password is [REDACTED]. I was diagnosed with [REDACTED].
+ASSISTANT: The request failed with HTTP 503; please retry later.

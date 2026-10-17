@@ -7,18 +7,18 @@
     "pending": 190
   },
   "judge_states": {
-    "pending": 231,
-    "scored": 8,
-    "incomplete": 1
+    "pending": 220,
+    "scored": 18,
+    "incomplete": 2
   },
-  "scored_variants": 8,
-  "passed_variants": 4,
+  "scored_variants": 18,
+  "passed_variants": 9,
   "all_attempts_and_outcomes_finished": false,
   "pipeline_pass_rate_all_variants": null,
   "pass_rate_scored_only": 0.5,
-  "mean_reward_scored_only": 0.515625,
+  "mean_reward_scored_only": 0.4791666666666667,
   "writer_calls": 77,
-  "judge_calls": 9,
+  "judge_calls": 20,
   "generation_failure_kinds": {
     "generation_error": 29,
     "truncated": 1
@@ -99,18 +99,18 @@
         "pending": 48
       },
       "judge_states": {
-        "scored": 3,
-        "pending": 56,
-        "incomplete": 1
+        "scored": 8,
+        "pending": 50,
+        "incomplete": 2
       },
-      "scored_variants": 3,
-      "passed_variants": 2,
+      "scored_variants": 8,
+      "passed_variants": 3,
       "all_attempts_and_outcomes_finished": false,
       "pipeline_pass_rate_all_variants": null,
-      "pass_rate_scored_only": 0.6666666666666666,
-      "mean_reward_scored_only": 0.75,
+      "pass_rate_scored_only": 0.375,
+      "mean_reward_scored_only": 0.3984375,
       "writer_calls": 26,
-      "judge_calls": 4,
+      "judge_calls": 10,
       "generation_failure_kinds": {
         "generation_error": 1,
         "truncated": 1
@@ -132,17 +132,17 @@
         "pending": 48
       },
       "judge_states": {
-        "scored": 5,
-        "pending": 55
+        "scored": 10,
+        "pending": 50
       },
-      "scored_variants": 5,
-      "passed_variants": 2,
+      "scored_variants": 10,
+      "passed_variants": 6,
       "all_attempts_and_outcomes_finished": false,
       "pipeline_pass_rate_all_variants": null,
-      "pass_rate_scored_only": 0.4,
-      "mean_reward_scored_only": 0.375,
+      "pass_rate_scored_only": 0.6,
+      "mean_reward_scored_only": 0.54375,
       "writer_calls": 25,
-      "judge_calls": 5,
+      "judge_calls": 10,
       "generation_failure_kinds": {
         "generation_error": 2
       },
@@ -165,18 +165,18 @@
         "pending": 38
       },
       "judge_states": {
-        "pending": 72,
-        "scored": 7,
-        "incomplete": 1
+        "pending": 61,
+        "scored": 17,
+        "incomplete": 2
       },
-      "scored_variants": 7,
-      "passed_variants": 4,
+      "scored_variants": 17,
+      "passed_variants": 9,
       "all_attempts_and_outcomes_finished": false,
       "pipeline_pass_rate_all_variants": null,
-      "pass_rate_scored_only": 0.5714285714285714,
-      "mean_reward_scored_only": 0.5892857142857143,
+      "pass_rate_scored_only": 0.5294117647058824,
+      "mean_reward_scored_only": 0.5073529411764706,
       "writer_calls": 61,
-      "judge_calls": 8,
+      "judge_calls": 19,
       "generation_failure_kinds": {
         "generation_error": 23
       },

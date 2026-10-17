@@ -1,0 +1,4 @@
+[2024-11-01 09:00:00] ERROR request_id=demo-001 stage=payment_retry status=failed
+USER: My SSN is [REDACTED_SSN]. My card is [REDACTED_CREDIT_CARD].
+USER: My password is demo_pass_42. I was diagnosed with type 2 diabetes.
+ASSISTANT: The request failed with HTTP 503; please retry later.

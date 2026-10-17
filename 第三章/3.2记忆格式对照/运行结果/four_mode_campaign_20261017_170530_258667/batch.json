@@ -865,7 +865,21 @@
         "answer_output_tokens": 1730
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_05_internet_service\\json_cards\\judge.json",
+        "sha256": "9dcba783c3cb74afad2b40daac99c818007a912a1b07f3d0f11d61f086c5cff6",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 3
+          },
+          "hallucination_veto": true,
+          "passed": false,
+          "reward": 0.0
+        }
       }
     },
     {
@@ -890,7 +904,21 @@
         "answer_output_tokens": 3243
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_05_internet_service\\advanced_json_cards\\judge.json",
+        "sha256": "89febd72a6276fd89ec0f4eecf8cab84c564880fdaae11eefd4f8317fa12d98f",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 3
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.875
+        }
       }
     },
     {
@@ -971,7 +999,21 @@
         "answer_output_tokens": 2581
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_06_credit_card_app\\json_cards\\judge.json",
+        "sha256": "05081800a50eb51fca94e70a7399530d3771d449004542ec5c8de49546b8ef87",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 3,
+            "recall": 4,
+            "reasoning": 2,
+            "proactivity": 3
+          },
+          "hallucination_veto": true,
+          "passed": false,
+          "reward": 0.0
+        }
       }
     },
     {
@@ -996,7 +1038,21 @@
         "answer_output_tokens": 3302
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_06_credit_card_app\\advanced_json_cards\\judge.json",
+        "sha256": "242c949465033b09c9da509adb6f3da705f1b46b5fdcca4993e66e2aaaf5b4c5",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 4
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.9375
+        }
       }
     },
     {
@@ -1077,7 +1133,21 @@
         "answer_output_tokens": 1342
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_07_car_rental\\json_cards\\judge.json",
+        "sha256": "ee6078878aba2e966e3261334236300ca669a81ee01db49b1a84afa7c89df0be",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 3,
+            "recall": 4,
+            "reasoning": 2,
+            "proactivity": 2
+          },
+          "hallucination_veto": true,
+          "passed": false,
+          "reward": 0.0
+        }
       }
     },
     {
@@ -1102,7 +1172,21 @@
         "answer_output_tokens": 2652
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_07_car_rental\\advanced_json_cards\\judge.json",
+        "sha256": "b03e7db8801981a40a36f0190b126f47997224aff2eb505acc8579b792b0c6c3",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 3
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.875
+        }
       }
     },
     {
@@ -1183,7 +1267,21 @@
         "answer_output_tokens": 1275
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_08_hotel_reservation\\json_cards\\judge.json",
+        "sha256": "1a392930069c97b6b99d19d58f1446d57952384733d2d4888531d7d7467091ee",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 4,
+            "proactivity": 3
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.9375
+        }
       }
     },
     {
@@ -1208,7 +1306,21 @@
         "answer_output_tokens": 641
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_08_hotel_reservation\\advanced_json_cards\\judge.json",
+        "sha256": "dd33c54b1a3008f45ec0ae35b397019f12c1dceca150f52d2b349deb86a46e8e",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 3
+          },
+          "hallucination_veto": false,
+          "passed": true,
+          "reward": 0.875
+        }
       }
     },
     {
@@ -1289,7 +1401,21 @@
         "answer_output_tokens": 763
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_09_home_security\\json_cards\\judge.json",
+        "sha256": "cf0c41b857d7e17611d5ae63ad1218f403cd58e3038733f29371c69a9a8b74da",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 3
+          },
+          "hallucination_veto": true,
+          "passed": false,
+          "reward": 0.0
+        }
       }
     },
     {
@@ -1314,7 +1440,21 @@
         "answer_output_tokens": 455
       },
       "judge": {
-        "status": "pending"
+        "status": "scored",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_09_home_security\\advanced_json_cards\\judge.json",
+        "sha256": "6f5fb1eba3bbb5106fe2c1f40aa634a95517335df7a72119a5286ef1bd104985",
+        "calls": 1,
+        "result": {
+          "scores": {
+            "precision": 4,
+            "recall": 4,
+            "reasoning": 3,
+            "proactivity": 2
+          },
+          "hallucination_veto": true,
+          "passed": false,
+          "reward": 0.0
+        }
       }
     },
     {
@@ -1395,7 +1535,11 @@
         "answer_output_tokens": 424
       },
       "judge": {
-        "status": "pending"
+        "status": "incomplete",
+        "path": "E:\\AI_Agents_Book\\第三章\\3.2记忆格式对照\\运行结果\\four_mode_campaign_20261017_170530_258667\\layer1_10_pharmacy_transfer\\json_cards\\judge.json",
+        "sha256": "f43a95f9abb2e5f075728c6eb31e7ed37c12013f1fd8f2bfefe1db4173ff2434",
+        "calls": 1,
+        "result": null
       }
     },
     {

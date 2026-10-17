@@ -4,15 +4,15 @@
 
 qwen3:4b，四组原JSON，推荐采样，seed=37，窗口32768，记忆/答题上限6000/4096。
 
-计划60题×四模式=240组；已评分8组，通过4组。
+计划60题×四模式=240组；已评分18组，通过9组。
 技术失败单列，无分数不填0；模式排名需检查相同用例上的评分覆盖。
 
 | 模式 | 计划 | 生成完整 | 生成失败 | 已评分 | 通过 | 仅已评分均分 | 输入token | 输出token | 请求秒数 |
 | --- | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | ---: |
 | notes | 60 | 0 | 13 | 0 | 0 | None | 26439 | 16439 | 731.87 |
 | enhanced_notes | 60 | 0 | 13 | 0 | 0 | None | 26668 | 12346 | 470.12 |
-| json_cards | 60 | 10 | 2 | 3 | 2 | 0.75 | 41192 | 30465 | 987.70 |
-| advanced_json_cards | 60 | 10 | 2 | 5 | 2 | 0.375 | 41369 | 32204 | 1143.38 |
+| json_cards | 60 | 10 | 2 | 8 | 3 | 0.3984375 | 41192 | 30465 | 987.70 |
+| advanced_json_cards | 60 | 10 | 2 | 10 | 6 | 0.54375 | 41369 | 32204 | 1143.38 |
 
 | 用例 | 模式 | 生成 | 评分 | passed | reward |
 | --- | --- | --- | --- | --- | --- |
@@ -42,27 +42,27 @@ qwen3:4b，四组原JSON，推荐采样，seed=37，窗口32768，记忆/答题�
 | layer1_04_airline_booking | advanced_json_cards | saved | scored | True | 0.9375 |
 | layer1_05_internet_service | notes | incomplete | pending | — | — |
 | layer1_05_internet_service | enhanced_notes | incomplete | pending | — | — |
-| layer1_05_internet_service | json_cards | saved | pending | — | — |
-| layer1_05_internet_service | advanced_json_cards | saved | pending | — | — |
+| layer1_05_internet_service | json_cards | saved | scored | False | 0.0 |
+| layer1_05_internet_service | advanced_json_cards | saved | scored | True | 0.875 |
 | layer1_06_credit_card_app | notes | incomplete | pending | — | — |
 | layer1_06_credit_card_app | enhanced_notes | incomplete | pending | — | — |
-| layer1_06_credit_card_app | json_cards | saved | pending | — | — |
-| layer1_06_credit_card_app | advanced_json_cards | saved | pending | — | — |
+| layer1_06_credit_card_app | json_cards | saved | scored | False | 0.0 |
+| layer1_06_credit_card_app | advanced_json_cards | saved | scored | True | 0.9375 |
 | layer1_07_car_rental | notes | incomplete | pending | — | — |
 | layer1_07_car_rental | enhanced_notes | incomplete | pending | — | — |
-| layer1_07_car_rental | json_cards | saved | pending | — | — |
-| layer1_07_car_rental | advanced_json_cards | saved | pending | — | — |
+| layer1_07_car_rental | json_cards | saved | scored | False | 0.0 |
+| layer1_07_car_rental | advanced_json_cards | saved | scored | True | 0.875 |
 | layer1_08_hotel_reservation | notes | incomplete | pending | — | — |
 | layer1_08_hotel_reservation | enhanced_notes | incomplete | pending | — | — |
-| layer1_08_hotel_reservation | json_cards | saved | pending | — | — |
-| layer1_08_hotel_reservation | advanced_json_cards | saved | pending | — | — |
+| layer1_08_hotel_reservation | json_cards | saved | scored | True | 0.9375 |
+| layer1_08_hotel_reservation | advanced_json_cards | saved | scored | True | 0.875 |
 | layer1_09_home_security | notes | incomplete | pending | — | — |
 | layer1_09_home_security | enhanced_notes | incomplete | pending | — | — |
-| layer1_09_home_security | json_cards | saved | pending | — | — |
-| layer1_09_home_security | advanced_json_cards | saved | pending | — | — |
+| layer1_09_home_security | json_cards | saved | scored | False | 0.0 |
+| layer1_09_home_security | advanced_json_cards | saved | scored | False | 0.0 |
 | layer1_10_pharmacy_transfer | notes | incomplete | pending | — | — |
 | layer1_10_pharmacy_transfer | enhanced_notes | incomplete | pending | — | — |
-| layer1_10_pharmacy_transfer | json_cards | saved | pending | — | — |
+| layer1_10_pharmacy_transfer | json_cards | saved | incomplete | — | — |
 | layer1_10_pharmacy_transfer | advanced_json_cards | incomplete | pending | — | — |
 | layer1_11_mortgage_application | notes | incomplete | pending | — | — |
 | layer1_11_mortgage_application | enhanced_notes | incomplete | pending | — | — |

@@ -1,0 +1,12 @@
+{
+  "sample_id": "synthetic_pii_01_password_assignment",
+  "synthetic_only": true,
+  "text": "[2024-11-01 09:00:00] ERROR request_id=demo-001 stage=payment_retry status=failed\nUSER: My SSN is 123-45-6789. My card is 4111 1111 1111 1111.\nUSER: password=\"demo_pass_42\". I was diagnosed with type 2 diabetes.\nASSISTANT: The request failed with HTTP 503; please retry later.\n",
+  "gold_sensitive_values": [
+    {"type": "ssn", "value": "123-45-6789"},
+    {"type": "credit_card", "value": "4111 1111 1111 1111"},
+    {"type": "password", "value": "demo_pass_42"},
+    {"type": "medical_diagnosis", "value": "type 2 diabetes"}
+  ],
+  "preserve_debug_values": ["request_id=demo-001", "stage=payment_retry", "status=failed", "HTTP 503"]
+}
