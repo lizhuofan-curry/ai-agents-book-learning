@@ -24,6 +24,11 @@ chapter2 = [
     "torch>=2.7,<3",
     "transformers>=4.51,<5",
 ]
+chapter3-index = [
+    "annoy==1.17.3",
+    "colorlog==6.8.0",
+    "hnswlib==0.8.0",
+]
 
 [tool.uv]
 package = false
