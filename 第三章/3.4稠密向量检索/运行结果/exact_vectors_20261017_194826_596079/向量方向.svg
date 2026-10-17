@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 430">
+<rect width="500" height="430" fill="white"/>
+<text x="30" y="30" font-size="18" font-family="sans-serif">Unit vectors and query direction</text>
+<circle cx="230" cy="225" r="150" fill="none" stroke="#d7dce3"/>
+<path d="M55 225H415 M230 400V55" stroke="#9aa5b5" fill="none"/>
+<path d="M230 225H360L350 219M360 225L350 231" stroke="#d34c44" stroke-width="3" fill="none"/>
+<text x="285" y="251" fill="#d34c44" font-size="13" font-family="sans-serif">query q=(1,0)</text>
+<line x1="230" y1="225" x2="380.000" y2="225.000" stroke="#cbd5e1"/>
+<circle cx="380.000" cy="225.000" r="5" fill="#377dba"/>
+<text x="388.000" y="243.000" font-family="sans-serif" font-size="14">A</text>
+<line x1="230" y1="225" x2="379.083" y2="208.435" stroke="#cbd5e1"/>
+<circle cx="379.083" cy="208.435" r="5" fill="#377dba"/>
+<text x="387.083" y="199.435" font-family="sans-serif" font-size="14">B</text>
+<line x1="230" y1="225" x2="336.066" y2="118.934" stroke="#cbd5e1"/>
+<circle cx="336.066" cy="118.934" r="5" fill="#377dba"/>
+<text x="344.066" y="109.934" font-family="sans-serif" font-size="14">C</text>
+<line x1="230" y1="225" x2="230.000" y2="75.000" stroke="#cbd5e1"/>
+<circle cx="230.000" cy="75.000" r="5" fill="#377dba"/>
+<text x="238.000" y="66.000" font-family="sans-serif" font-size="14">D</text>
+<line x1="230" y1="225" x2="123.934" y2="118.934" stroke="#cbd5e1"/>
+<circle cx="123.934" cy="118.934" r="5" fill="#377dba"/>
+<text x="131.934" y="109.934" font-family="sans-serif" font-size="14">E</text>
+<line x1="230" y1="225" x2="80.000" y2="225.000" stroke="#cbd5e1"/>
+<circle cx="80.000" cy="225.000" r="5" fill="#377dba"/>
+<text x="88.000" y="216.000" font-family="sans-serif" font-size="14">F</text>
+<text x="30" y="415" font-size="12" font-family="sans-serif" fill="#556070">Manual coordinates only; no text embeddings or ANN index.</text></svg>
