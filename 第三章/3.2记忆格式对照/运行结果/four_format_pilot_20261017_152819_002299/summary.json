@@ -1,0 +1,24 @@
+{
+  "scope": "银行单题四格式预实验；不是60题×四格式完整评估，不与3-1的schema成绩合并",
+  "planned_cases": 1,
+  "planned_mode_variants": 4,
+  "writer_states": {
+    "incomplete": 3,
+    "saved": 1
+  },
+  "judge_states": {
+    "pending": 3,
+    "scored": 1
+  },
+  "scored_variants": 1,
+  "passed_variants": 0,
+  "pilot_all_outcomes_finished": true,
+  "full_60_case_four_mode_evaluation_completed": false,
+  "all_four_variants_scored": false,
+  "writer_calls": 6,
+  "judge_calls": 1,
+  "failure_kinds": {
+    "generation_error": 2,
+    "truncated": 1
+  }
+}

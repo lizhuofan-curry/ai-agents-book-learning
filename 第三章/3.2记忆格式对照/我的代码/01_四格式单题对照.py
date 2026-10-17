@@ -247,6 +247,10 @@ def main():
     with lock.open("x", encoding="utf-8") as stream:
         stream.write(str(os.getpid()))
     try:
+        # 预读后其他进程可能刚好结束；取得锁后重读，避免使用旧pending状态重复请求。
+        if args.batch:
+            state = json.loads((directory / "batch.json").read_text(encoding="utf-8"))
+            validate_state(state, official, manifest)
         recover(directory, state, official)
         save_batch(directory, state)
         print("预实验目录：", directory, flush=True)

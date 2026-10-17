@@ -1,0 +1,22 @@
+Okay, the user is asking for their checking account number again because they need it to set up direct deposit at work. Let me check the long-term memory provided.
+
+Looking at the memory: The first National Bank opened a new checking account (Premium Checking) for Michael James Robertson with account number 4429853327. The details mention this account number clearly. The user also has a savings account with number 4429853328, but the user specifically asked for the checking account.
+
+I need to make sure I don't confuse the two accounts. The checking account is 4429853327, savings is 4429853328. The user said "checking account number again," so it's definitely the checking one. 
+
+The user is probably stressed about setting up direct deposit, so I should respond clearly and concisely. No need to add extra info unless necessary. Just state the checking account number as 4429853327. 
+
+Also, the memory says the account was opened on 2024-11-15, but the user doesn't need that. They just need the number. 
+
+I should double-check that there's no ambiguity. The memory specifies "Premium Checking account with account number 4429853327". So that's correct. 
+
+No risks here—just providing the number they need. They might have to confirm with their bank, but the memory is clear. 
+
+Response should be straightforward: "Your checking account number is 4429853327."
+</think>
+
+Your checking account number is **4429853327** (Premium Checking account). 
+
+This is confirmed in the long-term memory record for your account opening on 2024-11-15. For direct deposit at work, you’ll need to provide this number to your employer’s payroll system. 
+
+⚠️ **Proactive warning**: Always verify with your employer’s payroll department that they accept this account number format (e.g., some systems require the routing number too). The routing number for this account is **121000248** (from the initial deposit details), but direct deposit typically uses the account number + routing number. Double-check with your employer to avoid delays.
