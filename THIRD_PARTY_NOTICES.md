@@ -1,5 +1,9 @@
 # 来源与改动说明
 
+2026-10-18，实验3-7保存Bojie Li固定提交`dbc046eb896ac4e39aa19c7774c8bf49583b89a6`的structured-index目录与根LICENSE共27份资料，来源与逐文件校验见[清单](第三章/3.7结构化索引/官方资料/manifest.json)。本地第一步直接调用未修改`structured_vs_flat_demo.py`中的人工知识、词频余弦、图构建与BFS函数，增加冻结输入、逐题完整证据、原子保存、中文解释边界和哈希检查；没有调用带预设成败打印的run_demo入口。原始validation和checkpoints只为作者历史证据；示意摘要/关系不是模型构建结果。Intel PDF和文本保留原始来源身份，不将仓库Apache许可证视为重新授予Intel材料版权。
+
+2026-10-18，实验3-6神经重排参考固定版本`retrieval-pipeline/evaluate.py::CrossEncoderReranker`及模型提供方[ms-marco-MiniLM-L6-v2](https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2)的Transformers配对打分用法，独立实现冻结候选的CPU入口，新增E盘固定版本safetensors校验、离线本地加载、原始输入/分数与名次留存、无回退/重试及事后指标。本步采用官方支持的轻量替代模型，名称修正为模型提供方的实际ID，不称BGE默认模型复现。模型7份文件及原始模型卡下载自版本`233902d25c440f23af6f7d6e94d2946bac0bee0a`，模型卡标注Apache 2.0；来源、Git blob/LFS SHA256及文件哈希见本实验`官方资料/轻量重排模型清单.json`。下载和加载检查不是正式实验分数。
+
 2026-10-17，实验3-6保存Bojie Li的固定提交`dbc046eb896ac4e39aa19c7774c8bf49583b89a6`下retrieval-pipeline目录24份文件及根LICENSE，逐文件来源及校验见[清单](第三章/3.6混合检索/官方资料/manifest.json)。本地第一步直接加载未经修改的`fusion.py`，新增已核对两路实测来源校验、同语料前5候选并集、分数贡献与排名变化、统一指标及逐查询保存；不调用官方服务或自动下载重排模型。官方validation是作者历史输出，不算本人成绩；本步代码准备不等于正式融合或神经重排已完成。原版权与Apache 2.0许可证保留。
 
 2026-10-15，第三章实验3-1直接保存并复用[官方提交dbc046eb896ac4e39aa19c7774c8bf49583b89a6](https://github.com/bojieli/ai-agent-book/tree/dbc046eb896ac4e39aa19c7774c8bf49583b89a6)中的60个评估用例、run_evaluation.py及experiment_utils.py，来源、原始根LICENSE与逐文件哈希保存在[官方资料](第三章/3.1用户记忆评估/官方资料/manifest.json)。原始文件未修改；本地02/03适配加载原始提示词与评分函数，增加Ollama调用、完整响应留存、输入隔离核对、严格JSON/评分检查及产物哈希核验。模型、运行环境和传输参数的差异在实验记录中单列；下载材料和离线检查不构成正式实验结果。

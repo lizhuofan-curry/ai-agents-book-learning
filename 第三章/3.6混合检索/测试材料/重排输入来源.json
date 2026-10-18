@@ -1,0 +1,8 @@
+{
+  "fusion_record_relative_to_project": "第三章/3.6混合检索/运行结果/hybrid_fusion_20261017_225332_048534/record.json",
+  "fusion_record_sha256": "e055bfb30c60177207289dd38c8335b98ff99df86484be68d125c4841f7ac07d",
+  "fusion_audit_sha256": "77dffc2e776573755eb675b7b952da84e57c37b6803c117d2e2e6bcd6d50e4ce",
+  "fusion_helper_sha256": "3b2e8d199919c1456c95d63980b8fcd7f122157e19106d5b8f5656607ad11da4",
+  "model_manifest_sha256": "e931fdfec93c3546c08fa08aeee5eedc6d071b2b902b5ddd1c9c012c3ccafbbe",
+  "protocol_note": "Use all saved RRF union candidates, score 27 pairs once (5 batches). No labels provided to model. No formal inference during preparation."
+}

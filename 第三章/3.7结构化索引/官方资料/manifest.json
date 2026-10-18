@@ -1,0 +1,198 @@
+{
+  "repository": "https://github.com/bojieli/ai-agent-book",
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "tree_sha": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "retrieved_on": "2026-10-18",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/LICENSE",
+      "bytes": 11338,
+      "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074",
+      "git_blob_sha1": "bd3e071f150cf46f86c91d3341d36644f16e11cb"
+    },
+    {
+      "path": "chapter3/structured-index/IMPLEMENTATION_GUIDE.md",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/IMPLEMENTATION_GUIDE.md",
+      "bytes": 8845,
+      "sha256": "6f66871b51d953e0cc51317aa71f7d391c7729d85ed2d8d409e65cadc5f9e856",
+      "git_blob_sha1": "0183d841a7942131da7de32c5b109d0d708c089f"
+    },
+    {
+      "path": "chapter3/structured-index/README.md",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/README.md",
+      "bytes": 11805,
+      "sha256": "7864022f46a2ef962fbb1c6ae28d0f1d0efe72afe8edbb768934fc2ea659e97f",
+      "git_blob_sha1": "1fc982306920862c6791ab8fdb44dc65d5721d25"
+    },
+    {
+      "path": "chapter3/structured-index/api_service.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/api_service.py",
+      "bytes": 13677,
+      "sha256": "e01ec00e743a5498cb707d7cbcc4230dd305b73a551fa6e218eeb375291a9130",
+      "git_blob_sha1": "d2d96748e753d17661662599a6a54bf2eb0cf97a"
+    },
+    {
+      "path": "chapter3/structured-index/campaign.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/campaign.py",
+      "bytes": 27215,
+      "sha256": "2d525c2b2ccfaf6a5a1cc53be3517b0a2dcb7658d5831365f71929ad38f9365c",
+      "git_blob_sha1": "57acc9078fe468b992c76af3168f5d7b24100774"
+    },
+    {
+      "path": "chapter3/structured-index/config.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/config.py",
+      "bytes": 7061,
+      "sha256": "2c2a12c5612340e2a709c18383ea4a78454809cd10de76f27194a55cfe545be4",
+      "git_blob_sha1": "0957b9cc713864d70611d5a0baaffe9060bdae2a"
+    },
+    {
+      "path": "chapter3/structured-index/data/intel-sdm-volume-1.pdf",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/data/intel-sdm-volume-1.pdf",
+      "bytes": 3645716,
+      "sha256": "9d862bd7592d9fdd9f747c91d5e85be23ae3103f77185d1dcf7c5eb7277e5bdb",
+      "git_blob_sha1": "d2efcbdbe2d2fc0fa91df4d0e6c16a4d4640ec86"
+    },
+    {
+      "path": "chapter3/structured-index/data/intel-sdm-volume-1.txt",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/data/intel-sdm-volume-1.txt",
+      "bytes": 2248688,
+      "sha256": "95e5185e8f5c68690963158e6e4616b8da903bf5740c3238c5cf282ef2eb84c8",
+      "git_blob_sha1": "8af8217c7724e1e1429f0878f43569bcffcaae0d"
+    },
+    {
+      "path": "chapter3/structured-index/document_processor.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/document_processor.py",
+      "bytes": 10551,
+      "sha256": "97a259f8bbef1f2889499a6bb9af09427eb350a80f31d4233b8a9a628fa4dd5b",
+      "git_blob_sha1": "accfd6d724a9878c8d517767766b7fcf850d0bef"
+    },
+    {
+      "path": "chapter3/structured-index/download_sample.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/download_sample.py",
+      "bytes": 13821,
+      "sha256": "fd061fad2db40a0edef9bc39342eabc06b9ba9203744e6ac3e89cdf97af9dac1",
+      "git_blob_sha1": "d9a23f9c9d7985e8fa3a3c1aa84ef846ca94b4f7"
+    },
+    {
+      "path": "chapter3/structured-index/env.example",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/env.example",
+      "bytes": 1353,
+      "sha256": "0024be60d8fd6d057ea2c3abd70dd00b0aa6072e6a9a07fa01e53f5ba592f494",
+      "git_blob_sha1": "a620be94be311b33b9a94ff720d962595a7145e5"
+    },
+    {
+      "path": "chapter3/structured-index/graphrag_indexer.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/graphrag_indexer.py",
+      "bytes": 25225,
+      "sha256": "20fafbdb26ae1755c03af0af0bbcad1fd1663ae2e9235bdaad669721366c4862",
+      "git_blob_sha1": "336466291c2414351fe4a1ad4bb1bd314b6d3f36"
+    },
+    {
+      "path": "chapter3/structured-index/hybrid_retriever.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/hybrid_retriever.py",
+      "bytes": 20827,
+      "sha256": "9b6f61d2e6174964620267fc2561206559a56ebd3e6094e91d83de8170f6fe5c",
+      "git_blob_sha1": "74d0d358f05aa1b4a012cddb0a80aa3b019ae5dd"
+    },
+    {
+      "path": "chapter3/structured-index/main.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/main.py",
+      "bytes": 8889,
+      "sha256": "9b8d16df96c6f1886004518f59cec86f890a3e9a2b2e26a540ee5f87acc6a6b5",
+      "git_blob_sha1": "26f2192cd1036c74ae497d155e2d89da2ef3e47f"
+    },
+    {
+      "path": "chapter3/structured-index/raptor_indexer.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/raptor_indexer.py",
+      "bytes": 12699,
+      "sha256": "a8169f187a4324a7aab74dcdc9dd28c42a40f9414fb20e5cfa35e3b6802483b2",
+      "git_blob_sha1": "7fec6bd57d7cca18cc74daf4cb3efa8b47137220"
+    },
+    {
+      "path": "chapter3/structured-index/requirements.txt",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/requirements.txt",
+      "bytes": 789,
+      "sha256": "f6f739779c0670404f2e48778435366787cabc95d6b47d91a90bced70af3b31d",
+      "git_blob_sha1": "9473e28fb053ba939b9a054f898f98580af5f19a"
+    },
+    {
+      "path": "chapter3/structured-index/structured_vs_flat_demo.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/structured_vs_flat_demo.py",
+      "bytes": 14406,
+      "sha256": "e7769dea7aac64a85ef82ee79d521081d994504f38cce1d8e5ee5a1247bfff14",
+      "git_blob_sha1": "fc683234aa9c01691f698d2f6dbe1288e9f3fc4a"
+    },
+    {
+      "path": "chapter3/structured-index/test_graphrag_search_top_k.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/test_graphrag_search_top_k.py",
+      "bytes": 4982,
+      "sha256": "3ca0e6da75df819cc841e089b4fa516ea60cdc12eb9b458f4d4a2091661a96f5",
+      "git_blob_sha1": "1fb86817f2e7050b847ed5ede4866c62ed0bbc4a"
+    },
+    {
+      "path": "chapter3/structured-index/test_hybrid_retriever.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/test_hybrid_retriever.py",
+      "bytes": 4919,
+      "sha256": "cce26170e5ee8fda90ba34804edff4731f658182c6c6319e688a89833f09f384",
+      "git_blob_sha1": "74a4e8dc96f4db5574af6182f72d955bf3a72ffe"
+    },
+    {
+      "path": "chapter3/structured-index/test_indexing.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/test_indexing.py",
+      "bytes": 6335,
+      "sha256": "10efb4811e164aee209984f9effe46608d7eadc57d2e0a58e8467ceb6df34d98",
+      "git_blob_sha1": "b9270ea341773cf55011754295807b37f49930d6"
+    },
+    {
+      "path": "chapter3/structured-index/test_raptor_chunk_step.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/test_raptor_chunk_step.py",
+      "bytes": 1790,
+      "sha256": "3c3a13f28ee87825b3648149ce98803fd99bb7ac5e46bba6263451db6f7b0eb4",
+      "git_blob_sha1": "1968c8e3dc5ad0b91fd90a9eadd50bf1097084bd"
+    },
+    {
+      "path": "chapter3/structured-index/validation/checkpoints/intel-9d862bd7592d/ark.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/validation/checkpoints/intel-9d862bd7592d/ark.json",
+      "bytes": 784986,
+      "sha256": "567d460d38ae526ba0649905d73755bde5caa4091eb4f741a9bddbf044b5f6c4",
+      "git_blob_sha1": "86963c99a37decbda07906cbcc2c0afb21ea64c8"
+    },
+    {
+      "path": "chapter3/structured-index/validation/checkpoints/intel-9d862bd7592d/moonshot.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/validation/checkpoints/intel-9d862bd7592d/moonshot.json",
+      "bytes": 25068,
+      "sha256": "37d40af153e60248be052590ae6f89f7fbeaa11d7e080254772430c1e7754e0a",
+      "git_blob_sha1": "74d9342f102fd19bad07a5fbc4ae928b5dea9f0b"
+    },
+    {
+      "path": "chapter3/structured-index/validation/latest.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/validation/latest.json",
+      "bytes": 3278,
+      "sha256": "4f4f7eb688179b181929f78f07d1722f9713aae745d8874b87f3e7b24f15cebe",
+      "git_blob_sha1": "cfcf2f4a4dbb8bf60539ffa8ff76af101703f518"
+    },
+    {
+      "path": "chapter3/structured-index/validation/runs/20260729T200642Z-3_7-4d2d5f9c/evidence.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/validation/runs/20260729T200642Z-3_7-4d2d5f9c/evidence.json",
+      "bytes": 535721,
+      "sha256": "89b3c03fbbd8e32304ed2639537a229c006ecf422bd8e9292bedf9201ee5810e",
+      "git_blob_sha1": "78f91640429d133ccd1e43ff8afc2097d05c066a"
+    },
+    {
+      "path": "chapter3/structured-index/validation/runs/20260729T200642Z-3_7-4d2d5f9c/manifest.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/validation/runs/20260729T200642Z-3_7-4d2d5f9c/manifest.json",
+      "bytes": 3189,
+      "sha256": "438f2a73543dd019ac047623b73ec94646ccd20b7dd31ae7b636fedca4e70c25",
+      "git_blob_sha1": "d12bdf1ea1281385ab05a2f6db7580fcd1c1ee01"
+    },
+    {
+      "path": "chapter3/structured-index/validation/runs/20260729T200642Z-3_7-4d2d5f9c/receipts.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/validation/runs/20260729T200642Z-3_7-4d2d5f9c/receipts.json",
+      "bytes": 810051,
+      "sha256": "907dff07a0ee5496cfc2693cbd75ece8a7dc6f78eb76c928127cc98fba04c5e4",
+      "git_blob_sha1": "044872aeb5f6801560278a089d6b1d10fd9a98e6"
+    }
+  ],
+  "note": "Official validation/checkpoints are historical author evidence, not local results; demo uses curated example structures."
+}

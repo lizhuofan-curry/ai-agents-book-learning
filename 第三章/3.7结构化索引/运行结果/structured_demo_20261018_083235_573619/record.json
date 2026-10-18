@@ -1,0 +1,431 @@
+{
+  "stage": "chapter3_structured_curated_demo",
+  "status": "structured_curated_demo_saved",
+  "created_at": "2026-10-18T08:32:35.577485+08:00",
+  "script_sha256": "0f9204cc8a5a48d0bf1777c522c63684ec156b7ae50f1907bcd33d35548a908b",
+  "official_manifest_sha256": "1c3d6825b3d5999005661b95f58a5b717a94d09e695caf47b10c5d935f19eb06",
+  "fixture_sha256": "c7d41273beedb1e34dc3e621e61bcf917a26b5d2b548b9b2b087e677519cb542",
+  "upstream_commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "knowledge": {
+    "entities": {
+      "ADDPS": {
+        "type": "instruction",
+        "desc": "ADDPS：对打包的单精度浮点数执行并行加法，一次处理四路单精度浮点运算。"
+      },
+      "MOVAPS": {
+        "type": "instruction",
+        "desc": "MOVAPS：在向量寄存器与对齐内存之间搬运 128 位打包单精度浮点数据。"
+      },
+      "VADDPS": {
+        "type": "instruction",
+        "desc": "VADDPS：AVX 版本的打包单精度浮点加法，一次处理八路单精度浮点运算。"
+      },
+      "CPUID": {
+        "type": "instruction",
+        "desc": "CPUID：返回处理器标识与特性信息，用于探测处理器是否支持 SSE、AVX 等扩展。"
+      },
+      "SSE": {
+        "type": "extension",
+        "desc": "SSE（Streaming SIMD Extensions）：引入 128 位向量寄存器，支持打包单精度浮点并行运算。"
+      },
+      "AVX": {
+        "type": "extension",
+        "desc": "AVX（Advanced Vector Extensions）：把向量寄存器扩展到 256 位，进一步增强 SIMD 能力。"
+      },
+      "XMM": {
+        "type": "register",
+        "desc": "XMM0-XMM15：128 位向量寄存器，供 SSE 指令存放打包数据。"
+      },
+      "YMM": {
+        "type": "register",
+        "desc": "YMM0-YMM15：256 位向量寄存器，供 AVX 指令使用，低 128 位与 XMM 共享。"
+      },
+      "CR4.OSFXSR": {
+        "type": "control-bit",
+        "desc": "CR4.OSFXSR：操作系统支持 FXSAVE/FXRSTOR 的控制位，置 1 后才允许使用 SSE 指令。"
+      },
+      "CR0.EM": {
+        "type": "control-bit",
+        "desc": "CR0.EM：仿真标志位，为 1 时禁用 SIMD，必须清零才能执行 SSE / AVX 指令。"
+      }
+    },
+    "triples": [
+      [
+        "ADDPS",
+        "属于",
+        "SSE"
+      ],
+      [
+        "MOVAPS",
+        "属于",
+        "SSE"
+      ],
+      [
+        "VADDPS",
+        "属于",
+        "AVX"
+      ],
+      [
+        "ADDPS",
+        "操作",
+        "XMM"
+      ],
+      [
+        "VADDPS",
+        "操作",
+        "YMM"
+      ],
+      [
+        "SSE",
+        "使用寄存器",
+        "XMM"
+      ],
+      [
+        "AVX",
+        "使用寄存器",
+        "YMM"
+      ],
+      [
+        "AVX",
+        "扩展自",
+        "SSE"
+      ],
+      [
+        "SSE",
+        "需要启用",
+        "CR4.OSFXSR"
+      ],
+      [
+        "AVX",
+        "需要启用",
+        "CR4.OSFXSR"
+      ],
+      [
+        "SSE",
+        "要求清零",
+        "CR0.EM"
+      ],
+      [
+        "CPUID",
+        "探测",
+        "SSE"
+      ],
+      [
+        "CPUID",
+        "探测",
+        "AVX"
+      ]
+    ],
+    "tree_summary": {
+      "id": "SIMD 指令集综述",
+      "summary": "x86 的 SIMD 指令集自 MMX 起步，SSE 引入 128 位 XMM 向量寄存器并支持打包单精度浮点运算，AVX 进一步把寄存器扩展到 256 位 YMM，逐代提升单指令多数据的并行宽度；使用前需通过 CR0/CR4 控制位使能，并可用 CPUID 探测支持情况。",
+      "children": [
+        "ADDPS",
+        "MOVAPS",
+        "VADDPS",
+        "SSE",
+        "AVX",
+        "XMM",
+        "YMM"
+      ]
+    }
+  },
+  "protocol": {
+    "flat_top_k": 3,
+    "max_hops": 3,
+    "flat_scoring": "upstream token-frequency cosine",
+    "structure_origin": "upstream hand-curated entities, directed relations and parent summary",
+    "query_routing": "three fixed task types; not automatic query understanding",
+    "graph_start": "upstream longest entity-name substring match",
+    "tree_selection": "directly display fixed parent summary, not similarity-based tree search",
+    "flat_and_graph_information_budget_equal": false,
+    "not_an_accuracy_benchmark": true
+  },
+  "environment": {
+    "python": "3.11.16",
+    "networkx": "3.6.1"
+  },
+  "model_requests": 0,
+  "embedding_forward_batches": 0,
+  "network_requests": 0,
+  "real_index_built_from_document": false,
+  "queries": [
+    {
+      "case_id": "multi_hop",
+      "task": "多跳关系路径",
+      "query": "运行 ADDPS 指令前，操作系统必须把哪个控制寄存器位置 1？",
+      "flat_top_3": [
+        {
+          "name": "CR4.OSFXSR",
+          "type": "control-bit",
+          "desc": "CR4.OSFXSR：操作系统支持 FXSAVE/FXRSTOR 的控制位，置 1 后才允许使用 SSE 指令。",
+          "score": 0.4587317109255645
+        },
+        {
+          "name": "XMM",
+          "type": "register",
+          "desc": "XMM0-XMM15：128 位向量寄存器，供 SSE 指令存放打包数据。",
+          "score": 0.3185110286353031
+        },
+        {
+          "name": "YMM",
+          "type": "register",
+          "desc": "YMM0-YMM15：256 位向量寄存器，供 AVX 指令使用，低 128 位与 XMM 共享。",
+          "score": 0.29793978576556207
+        }
+      ],
+      "graph_start": "ADDPS",
+      "graph_all_paths": [
+        {
+          "steps": [
+            {
+              "source": "ADDPS",
+              "relation": "属于",
+              "target": "SSE"
+            }
+          ],
+          "hops": 1,
+          "formatted": "ADDPS --属于--> SSE"
+        },
+        {
+          "steps": [
+            {
+              "source": "ADDPS",
+              "relation": "操作",
+              "target": "XMM"
+            }
+          ],
+          "hops": 1,
+          "formatted": "ADDPS --操作--> XMM"
+        },
+        {
+          "steps": [
+            {
+              "source": "ADDPS",
+              "relation": "属于",
+              "target": "SSE"
+            },
+            {
+              "source": "SSE",
+              "relation": "使用寄存器",
+              "target": "XMM"
+            }
+          ],
+          "hops": 2,
+          "formatted": "ADDPS --属于--> SSE --使用寄存器--> XMM"
+        },
+        {
+          "steps": [
+            {
+              "source": "ADDPS",
+              "relation": "属于",
+              "target": "SSE"
+            },
+            {
+              "source": "SSE",
+              "relation": "需要启用",
+              "target": "CR4.OSFXSR"
+            }
+          ],
+          "hops": 2,
+          "formatted": "ADDPS --属于--> SSE --需要启用--> CR4.OSFXSR"
+        },
+        {
+          "steps": [
+            {
+              "source": "ADDPS",
+              "relation": "属于",
+              "target": "SSE"
+            },
+            {
+              "source": "SSE",
+              "relation": "要求清零",
+              "target": "CR0.EM"
+            }
+          ],
+          "hops": 2,
+          "formatted": "ADDPS --属于--> SSE --要求清零--> CR0.EM"
+        }
+      ],
+      "control_bit_paths": [
+        {
+          "steps": [
+            {
+              "source": "ADDPS",
+              "relation": "属于",
+              "target": "SSE"
+            },
+            {
+              "source": "SSE",
+              "relation": "需要启用",
+              "target": "CR4.OSFXSR"
+            }
+          ],
+          "hops": 2,
+          "formatted": "ADDPS --属于--> SSE --需要启用--> CR4.OSFXSR"
+        },
+        {
+          "steps": [
+            {
+              "source": "ADDPS",
+              "relation": "属于",
+              "target": "SSE"
+            },
+            {
+              "source": "SSE",
+              "relation": "要求清零",
+              "target": "CR0.EM"
+            }
+          ],
+          "hops": 2,
+          "formatted": "ADDPS --属于--> SSE --要求清零--> CR0.EM"
+        }
+      ],
+      "enable_paths": [
+        {
+          "steps": [
+            {
+              "source": "ADDPS",
+              "relation": "属于",
+              "target": "SSE"
+            },
+            {
+              "source": "SSE",
+              "relation": "需要启用",
+              "target": "CR4.OSFXSR"
+            }
+          ],
+          "hops": 2,
+          "formatted": "ADDPS --属于--> SSE --需要启用--> CR4.OSFXSR"
+        }
+      ],
+      "answer_nodes": [
+        "CR4.OSFXSR"
+      ],
+      "selection_rule": "fixed task: target type control-bit and final relation 需要启用"
+    },
+    {
+      "case_id": "cross_entity",
+      "task": "跨实体关系对齐",
+      "query": "SSE 与 AVX 使用的向量寄存器有什么区别？",
+      "flat_top_3": [
+        {
+          "name": "YMM",
+          "type": "register",
+          "desc": "YMM0-YMM15：256 位向量寄存器，供 AVX 指令使用，低 128 位与 XMM 共享。",
+          "score": 0.4592793267718459
+        },
+        {
+          "name": "XMM",
+          "type": "register",
+          "desc": "XMM0-XMM15：128 位向量寄存器，供 SSE 指令存放打包数据。",
+          "score": 0.3818813079129867
+        },
+        {
+          "name": "MOVAPS",
+          "type": "instruction",
+          "desc": "MOVAPS：在向量寄存器与对齐内存之间搬运 128 位打包单精度浮点数据。",
+          "score": 0.32496684180984076
+        }
+      ],
+      "structured_relations": [
+        {
+          "source": "SSE",
+          "relation": "使用寄存器",
+          "target": "XMM",
+          "target_description": "XMM0-XMM15：128 位向量寄存器，供 SSE 指令存放打包数据。"
+        },
+        {
+          "source": "AVX",
+          "relation": "使用寄存器",
+          "target": "YMM",
+          "target_description": "YMM0-YMM15：256 位向量寄存器，供 AVX 指令使用，低 128 位与 XMM 共享。"
+        }
+      ],
+      "selection_rule": "fixed task names SSE/AVX and relation 使用寄存器; not a learned query parser"
+    },
+    {
+      "case_id": "hierarchical",
+      "task": "父摘要与叶子导航",
+      "query": "概述一下 x86 的 SIMD 指令集",
+      "flat_top_3": [
+        {
+          "name": "CR4.OSFXSR",
+          "type": "control-bit",
+          "desc": "CR4.OSFXSR：操作系统支持 FXSAVE/FXRSTOR 的控制位，置 1 后才允许使用 SSE 指令。",
+          "score": 0.18973665961010275
+        },
+        {
+          "name": "CR0.EM",
+          "type": "control-bit",
+          "desc": "CR0.EM：仿真标志位，为 1 时禁用 SIMD，必须清零才能执行 SSE / AVX 指令。",
+          "score": 0.18973665961010275
+        },
+        {
+          "name": "XMM",
+          "type": "register",
+          "desc": "XMM0-XMM15：128 位向量寄存器，供 SSE 指令存放打包数据。",
+          "score": 0.13801311186847084
+        }
+      ],
+      "parent_summary": {
+        "id": "SIMD 指令集综述",
+        "summary": "x86 的 SIMD 指令集自 MMX 起步，SSE 引入 128 位 XMM 向量寄存器并支持打包单精度浮点运算，AVX 进一步把寄存器扩展到 256 位 YMM，逐代提升单指令多数据的并行宽度；使用前需通过 CR0/CR4 控制位使能，并可用 CPUID 探测支持情况。",
+        "children": [
+          "ADDPS",
+          "MOVAPS",
+          "VADDPS",
+          "SSE",
+          "AVX",
+          "XMM",
+          "YMM"
+        ]
+      },
+      "child_descriptions": [
+        {
+          "name": "ADDPS",
+          "type": "instruction",
+          "desc": "ADDPS：对打包的单精度浮点数执行并行加法，一次处理四路单精度浮点运算。"
+        },
+        {
+          "name": "MOVAPS",
+          "type": "instruction",
+          "desc": "MOVAPS：在向量寄存器与对齐内存之间搬运 128 位打包单精度浮点数据。"
+        },
+        {
+          "name": "VADDPS",
+          "type": "instruction",
+          "desc": "VADDPS：AVX 版本的打包单精度浮点加法，一次处理八路单精度浮点运算。"
+        },
+        {
+          "name": "SSE",
+          "type": "extension",
+          "desc": "SSE（Streaming SIMD Extensions）：引入 128 位向量寄存器，支持打包单精度浮点并行运算。"
+        },
+        {
+          "name": "AVX",
+          "type": "extension",
+          "desc": "AVX（Advanced Vector Extensions）：把向量寄存器扩展到 256 位，进一步增强 SIMD 能力。"
+        },
+        {
+          "name": "XMM",
+          "type": "register",
+          "desc": "XMM0-XMM15：128 位向量寄存器，供 SSE 指令存放打包数据。"
+        },
+        {
+          "name": "YMM",
+          "type": "register",
+          "desc": "YMM0-YMM15：256 位向量寄存器，供 AVX 指令使用，低 128 位与 XMM 共享。"
+        }
+      ],
+      "selection_rule": "directly return hand-authored parent summary; no automatic tree retrieval"
+    }
+  ],
+  "scope": "Official curated-structure teaching demo only, not LLM-built RAPTOR or GraphRAG performance evaluation.",
+  "graph": {
+    "node_count": 10,
+    "edge_count": 13,
+    "directed": true,
+    "acyclic": true
+  }
+}

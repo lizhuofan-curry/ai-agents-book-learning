@@ -1,0 +1,27 @@
+{
+  "status": "structured_demo_preparation_checked",
+  "checked_at": "2026-10-18T08:11:16.995896+08:00",
+  "script_sha256": "0f9204cc8a5a48d0bf1777c522c63684ec156b7ae50f1907bcd33d35548a908b",
+  "fixture_sha256": "c7d41273beedb1e34dc3e621e61bcf917a26b5d2b548b9b2b087e677519cb542",
+  "official_manifest_sha256": "1c3d6825b3d5999005661b95f58a5b717a94d09e695caf47b10c5d935f19eb06",
+  "checks": [
+    "entrypoint parsed and official constants plus three query literals extracted by AST",
+    "27 pinned upstream files and input source hash verified",
+    "existing networkx import and upstream demo import work with network connections blocked",
+    "frozen curated entity, relation endpoint and parent-child references consistent",
+    "synthetic directed graph verifies hop bound, edge direction and missing start behavior",
+    "synthetic edge removal removes the downstream path; no invented relation",
+    "longest-name matching disambiguates substring entity names",
+    "synthetic text checks lexical retrieval and empty-query finite score without embeddings",
+    "preview performs no official query and creates no experiment result",
+    "installed package versions unchanged; no dependency installation"
+  ],
+  "check_count": 10,
+  "networkx_version": "3.6.1",
+  "formal_queries_executed": 0,
+  "model_requests": 0,
+  "embedding_forward_batches": 0,
+  "network_requests": 0,
+  "preview_stdout": "3-7示意对照：官方人工整理的10个实体、13条关系、1个父摘要，3类固定问题。\n扁平侧使用词频余弦Top-3，不是MiniLM或BM25；图侧最多3跳，树侧直接展示预写摘要。\n生成式模型请求0，嵌入前向0，网络请求0；无安装、下载、API Key或自动重试。\n本步观察已有结构如何查询，不进行LLM抽取、社区发现、聚类或递归摘要。\nSTRUCTURED_DEMO_PREVIEW_ONLY：27份官方资料与输入来源通过校验；networkx= 3.6.1\n",
+  "scope": "Preparation only: curated input reference checks and synthetic graph/text checks; not a formal result or automatically built index."
+}
