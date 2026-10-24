@@ -1,0 +1,41 @@
+{
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "scope": "frozen historical prefixes, 15 labeled queries, two full source documents; not newly generated prefixes",
+  "files": [
+    {
+      "path": "LICENSE",
+      "size": 11338,
+      "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074"
+    },
+    {
+      "path": "chapter3/agentic-rag/laws/1-宪法/宪法.md",
+      "size": 52540,
+      "sha256": "4cbc5d5d8a4632eb5587ab6377ae5251ce21a149716690864db0b0ab6cd4b386"
+    },
+    {
+      "path": "chapter3/agentic-rag/laws/2-宪法相关法/检察官法（2019-04-23）.md",
+      "size": 20824,
+      "sha256": "16285739d98e9661208bf8b1f334d40d902af794dcef322605bc93ffbfb7c530"
+    },
+    {
+      "path": "chapter3/contextual-retrieval/README.md",
+      "size": 11614,
+      "sha256": "9845d1a0ab8f046eb582d84384c842c127325cde32bd46f5667fe690e35fc56c"
+    },
+    {
+      "path": "chapter3/contextual-retrieval/compare_retrieval.py",
+      "size": 15372,
+      "sha256": "5cb1213c44c94a875e14475c3f371799dd750c00001a9ab36b49034b460f94ef"
+    },
+    {
+      "path": "chapter3/contextual-retrieval/evaluation/retrieval_eval.json",
+      "size": 4426,
+      "sha256": "7df53f5877ac6a8ec96aa3b2dc575e8cc556e1c9a3eb0ce28800ddd20d0f4a99"
+    },
+    {
+      "path": "chapter3/contextual-retrieval/validation/runs/20260729T205807Z-3_10-35531780/evidence.json",
+      "size": 187239,
+      "sha256": "e8d2ea403646d0ed0041a5849f38bf16d43481ea8b622a30ae9bdf774b60b11b"
+    }
+  ]
+}

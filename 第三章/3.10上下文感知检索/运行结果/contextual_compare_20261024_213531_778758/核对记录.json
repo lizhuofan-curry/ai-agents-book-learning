@@ -1,0 +1,13 @@
+{
+  "status": "saved_rankings_and_metrics_verified",
+  "record_sha256": "b484df22901ad2f0ddc3b9cdea9a2fb65cbab5a694fc25c8e98e39d2ad5a5b4c",
+  "checks": [
+    "source and script hashes",
+    "22 exact historical chunks and 15 queries",
+    "rankings reproduced with same BM25 implementation",
+    "target positions and aggregate metrics"
+  ],
+  "limits": "Ranking reproduction reuses implementation; prefix semantic review limited to q09 and q02 illustrative examples, not all 22 prefixes.",
+  "model_requests": 0,
+  "network_requests": 0
+}
