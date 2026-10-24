@@ -1,0 +1,22 @@
+{
+  "status": "mechanical_checks_passed_semantic_findings",
+  "record_sha256": "b699d33ecc1fd2c21abf2a094b0c9414fb22095aa696fd866572efa9f886b5ae",
+  "checks": [
+    "baseline/source/script hashes",
+    "request settings and added prompt",
+    "complete raw responses and action parsing",
+    "frozen retriever reproduction of three search results",
+    "token totals and post-run coverage",
+    "saved comparison consistency"
+  ],
+  "new_model_requests": 0,
+  "new_network_requests": 0,
+  "findings": [
+    "Three different searches executed; model chose answer after third, not budget-exhausted control path.",
+    "Article 18 drunkenness statement retrieved and supported; not included in fixed gold targets.",
+    "Article 65 not retrieved; chunk_65 is article 63, not article 65.",
+    "Unsupported affirmative theft-history claim from baseline absent in new claims.",
+    "Article 235 exception omitted again; limitations still require semantic review."
+  ],
+  "limitations": "Saved-result check uses frozen retrieval implementation; one post-hoc prompt bundle on one case, not full legal review or causal/general performance evaluation."
+}
