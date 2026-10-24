@@ -1,0 +1,42 @@
+{
+  "status": "real_source_build_preparation_checked",
+  "checked_at": "2026-10-18T22:37:19.662294+08:00",
+  "script_sha256": "08448b48ec5c90d4adf28f6920a0f641de295bedd9edc676ab41491ff15934fc",
+  "fixture_sha256": "d2da41bcc24e86579bafd05eef92d86581ecb9b6f68c91f91151c74e8b6428b4",
+  "official_manifest_sha256": "1c3d6825b3d5999005661b95f58a5b717a94d09e695caf47b10c5d935f19eb06",
+  "checks": [
+    "two real excerpts verified against pinned source; both under upstream 2000-character limit",
+    "three local-only requests; bounded budget, disabled thinking, no labels",
+    "original prompt includes each full paragraph without 2000-char clipping",
+    "empty extracted facts permitted and never replaced by reference facts",
+    "duplicate JSON key rejected",
+    "Markdown JSON fences rejected",
+    "NaN JSON rejected",
+    "missing required arrays rejected",
+    "unexpected schema fields rejected",
+    "normalized quote maps back to exact raw source character offsets",
+    "invented evidence retained as rejected and excluded from graph",
+    "missing endpoint rejected without automatic entity creation",
+    "quote presence alone not mislabeled as semantic entailment",
+    "case-equal entity merge preserves parallel directed relations and mentions",
+    "summary quotes retain source provenance and pending semantic review",
+    "summary invented quote rejected without model or text fallback",
+    "truncated fake response raises without repairing or retrying",
+    "fake failure keeps raw HTTP response and exactly one attempt",
+    "preview makes no HTTP/model call or formal result directory",
+    "existing package versions unchanged"
+  ],
+  "check_count": 20,
+  "excerpt_characters": [
+    1074,
+    711
+  ],
+  "model_requests": 0,
+  "external_network_requests": 0,
+  "local_http_requests": 0,
+  "embedding_forward_batches": 0,
+  "formal_build_executed": false,
+  "fake_response_test_attempts": 1,
+  "preview_stdout": "3-7真实原文起步：Intel手册第5.5节两段原文，自动提取实体关系并生成单层摘要草稿。\n最多3次本机qwen3:4b推理、1次模型列表查询；无云端、外部网络、下载或自动重试。\n原文引句和偏移自动检查，语义正确性仍待人工核对；不作完整GraphRAG或RAPTOR验收。\nREAL_SOURCE_BUILD_PREVIEW_ONLY：材料与3个请求准备完成，模型请求0，HTTP请求0。\n",
+  "scope": "Preparation only, source verification and synthetic/adversarial tests; no generated entities, relations or summary result."
+}

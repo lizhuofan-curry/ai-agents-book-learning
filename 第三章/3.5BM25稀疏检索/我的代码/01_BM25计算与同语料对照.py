@@ -15,6 +15,9 @@ from typing import Dict, List, Set
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT.parents[1]
+sys.path.insert(0, str(PROJECT))
+from project_paths import project_path
+
 UPSTREAM = ROOT / "官方资料/upstream"
 MANIFEST = ROOT / "官方资料/manifest.json"
 FIXTURE = ROOT / "测试材料/同语料对照输入.json"
@@ -48,7 +51,7 @@ def load_materials():
             raise ValueError(f"官方源文件校验失败：{item['path']}")
     fixture = json.loads(FIXTURE.read_text(encoding="utf-8"))
     provenance = fixture["source_3_4"]
-    path = (PROJECT / provenance["record_relative_to_project"]).resolve()
+    path = project_path(provenance["record_relative_to_project"])
     if not path.is_relative_to((PROJECT / "第三章/3.4稠密向量检索/运行结果").resolve()):
         raise ValueError("稠密来源必须位于3-4运行结果")
     if sha(path) != provenance["record_sha256"] or sha(path.parent / "核对记录.json") != provenance["audit_sha256"]:

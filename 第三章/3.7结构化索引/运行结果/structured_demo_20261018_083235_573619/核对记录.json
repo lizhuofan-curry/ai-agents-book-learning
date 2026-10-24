@@ -1,0 +1,112 @@
+{
+  "status": "structured_curated_demo_record_verified",
+  "verified_at": "2026-10-18T16:59:32.148495+08:00",
+  "record_sha256": "bbf2e77483f3859d5b976d4b3256a054635e26adc36e71159b37edf0c637151c",
+  "audit_script_sha256": "165be02c5cd0c2901ebc2f9136f415e66096a4fde42827a9456cd7eb3678ae87",
+  "checks": [
+    "completed saved stage",
+    "script and material hashes unchanged",
+    "source LICENSE",
+    "source chapter3/structured-index/IMPLEMENTATION_GUIDE.md",
+    "source chapter3/structured-index/README.md",
+    "source chapter3/structured-index/api_service.py",
+    "source chapter3/structured-index/campaign.py",
+    "source chapter3/structured-index/config.py",
+    "source chapter3/structured-index/data/intel-sdm-volume-1.pdf",
+    "source chapter3/structured-index/data/intel-sdm-volume-1.txt",
+    "source chapter3/structured-index/document_processor.py",
+    "source chapter3/structured-index/download_sample.py",
+    "source chapter3/structured-index/env.example",
+    "source chapter3/structured-index/graphrag_indexer.py",
+    "source chapter3/structured-index/hybrid_retriever.py",
+    "source chapter3/structured-index/main.py",
+    "source chapter3/structured-index/raptor_indexer.py",
+    "source chapter3/structured-index/requirements.txt",
+    "source chapter3/structured-index/structured_vs_flat_demo.py",
+    "source chapter3/structured-index/test_graphrag_search_top_k.py",
+    "source chapter3/structured-index/test_hybrid_retriever.py",
+    "source chapter3/structured-index/test_indexing.py",
+    "source chapter3/structured-index/test_raptor_chunk_step.py",
+    "source chapter3/structured-index/validation/checkpoints/intel-9d862bd7592d/ark.json",
+    "source chapter3/structured-index/validation/checkpoints/intel-9d862bd7592d/moonshot.json",
+    "source chapter3/structured-index/validation/latest.json",
+    "source chapter3/structured-index/validation/runs/20260729T200642Z-3_7-4d2d5f9c/evidence.json",
+    "source chapter3/structured-index/validation/runs/20260729T200642Z-3_7-4d2d5f9c/manifest.json",
+    "source chapter3/structured-index/validation/runs/20260729T200642Z-3_7-4d2d5f9c/receipts.json",
+    "fixture source hash",
+    "all saved knowledge equals pinned literals",
+    "fixture equals source knowledge",
+    "protocol and zero inference claims",
+    "three fixed queries preserved",
+    "multi_hop flat names and metadata",
+    "multi_hop independent cosine",
+    "cross_entity flat names and metadata",
+    "cross_entity independent cosine",
+    "hierarchical flat names and metadata",
+    "hierarchical independent cosine",
+    "edge endpoints ADDPS/SSE",
+    "edge endpoints MOVAPS/SSE",
+    "edge endpoints VADDPS/AVX",
+    "edge endpoints ADDPS/XMM",
+    "edge endpoints VADDPS/YMM",
+    "edge endpoints SSE/XMM",
+    "edge endpoints AVX/YMM",
+    "edge endpoints AVX/SSE",
+    "edge endpoints SSE/CR4.OSFXSR",
+    "edge endpoints AVX/CR4.OSFXSR",
+    "edge endpoints SSE/CR0.EM",
+    "edge endpoints CPUID/SSE",
+    "edge endpoints CPUID/AVX",
+    "graph size and independent acyclicity",
+    "longest name entity start",
+    "all directed bounded paths complete",
+    "control and enabled path filtering",
+    "cross-entity relations and descriptions",
+    "parent and all seven child references",
+    "original record unchanged"
+  ],
+  "source_files_verified": 27,
+  "queries_verified": 3,
+  "query_summary": [
+    {
+      "case_id": "multi_hop",
+      "flat_names": [
+        "CR4.OSFXSR",
+        "XMM",
+        "YMM"
+      ]
+    },
+    {
+      "case_id": "cross_entity",
+      "flat_names": [
+        "YMM",
+        "XMM",
+        "MOVAPS"
+      ]
+    },
+    {
+      "case_id": "hierarchical",
+      "flat_names": [
+        "CR4.OSFXSR",
+        "CR0.EM",
+        "XMM"
+      ]
+    }
+  ],
+  "graph_all_path_count": 5,
+  "control_path_count": 2,
+  "enable_path_count": 1,
+  "parent_summary_child_count": 7,
+  "observations": {
+    "flat_already_retrieved_control_bit": true,
+    "flat_already_retrieved_both_registers": true,
+    "summary_mentions_entity_absent_from_leaves": true,
+    "control_bits_and_CPUID_not_in_children": true
+  },
+  "model_requests": 0,
+  "embedding_forward_batches": 0,
+  "network_requests": 0,
+  "formal_demo_rerun": false,
+  "hardware_claims_independently_validated": false,
+  "scope": "Saved output arithmetic and provenance audit only; no model construction, performance score or hardware correctness certification."
+}

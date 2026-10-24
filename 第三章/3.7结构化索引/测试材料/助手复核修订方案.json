@@ -1,0 +1,408 @@
+{
+  "kind": "assistant_authored_review_plan",
+  "version": 1,
+  "review_author": "Codex assistant",
+  "user_review_status": "not_yet_confirmed",
+  "is_model_output": false,
+  "baseline_directory": "real_source_build_20261018_223955_552003",
+  "baseline_record_sha256": "c1346aadb9ff8264d848e3123af1b3f0d7904e0c50b8835c324edfe71f636cea",
+  "baseline_artifact_sha256": "ecd7e02dd568ea49b12cd6ac54808558368992b860183bc846f67939b76332c1",
+  "baseline_audit_sha256": "34cb7d844ae97fea53c79674e2be04e52f11040d006712b92b9dc3fe67f5a99f",
+  "fixture_sha256": "d2da41bcc24e86579bafd05eef92d86581ecb9b6f68c91f91151c74e8b6428b4",
+  "official_manifest_sha256": "1c3d6825b3d5999005661b95f58a5b717a94d09e695caf47b10c5d935f19eb06",
+  "changes_scope": "Review edges, one missing group node, two node labels and parent summary. Other model entity descriptions are retained for provenance but not certified or used to answer queries.",
+  "node_revisions": [
+    {
+      "id": "entity_6",
+      "changes": {
+        "name": "Intel 64 and IA-32 processors that support Intel SSE extensions"
+      },
+      "evidence": [
+        {
+          "chunk_id": "sse_overview",
+          "quote": "Intel SSE instructions can only be executed on Intel 64 and IA-32 processors that support Intel SSE extensions."
+        }
+      ],
+      "reason": "Make the processor support qualifier explicit in the target label."
+    },
+    {
+      "id": "entity_8",
+      "changes": {
+        "name": "Intel SSE data transfer instructions",
+        "type": "instruction_group"
+      },
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1.1 Intel® SSE Data Transfer Instructions Intel SSE data transfer instructions move packed and scalar single precision floating-point operands between XMM registers and between XMM registers and memory. MOVAPS Move four aligned packed single precision floating-point values between XMM registers or between an XMM register and memory."
+        }
+      ],
+      "reason": "Resolve the short data transfer group name through its explicit section heading."
+    }
+  ],
+  "node_additions": [
+    {
+      "id": "entity_13",
+      "name": "Intel® SSE SIMD Single Precision Floating-Point Instructions",
+      "type": "instruction_group",
+      "description": "Source section 5.5.1 instruction group; not an individual instruction.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1 Intel® SSE SIMD Single Precision Floating-Point Instructions These instructions operate on packed and scalar single precision floating-point values located in XMM registers and/or memory."
+        }
+      ],
+      "reason": "The model named this group but its quote was malformed. Add the group explicitly from the unaltered source heading."
+    }
+  ],
+  "edge_policy": "Keep baseline immutable. Reviewed edges are an explicitly authored replacement view, not an automatic model retry or global extraction recall fix.",
+  "reviewed_edges": [
+    {
+      "id": "review_e00",
+      "source_id": "entity_0",
+      "relation": "executes_only_on",
+      "target_id": "entity_6",
+      "description": "SSE instructions can execute only on Intel 64/IA-32 processors that support SSE extensions.",
+      "evidence": [
+        {
+          "chunk_id": "sse_overview",
+          "quote": "Intel SSE instructions can only be executed on Intel 64 and IA-32 processors that support Intel SSE extensions."
+        }
+      ],
+      "review_basis": "Direct execution restriction; retain the SSE-support qualifier.",
+      "origin_reference": {
+        "kind": "accepted_model_edge",
+        "index": 0,
+        "action": "replace uses with execution constraint"
+      },
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e01",
+      "source_id": "entity_7",
+      "relation": "uses",
+      "target_id": "entity_2",
+      "description": "MOVAPS moves four aligned packed single-precision values between XMM registers, or between an XMM register and memory.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "MOVAPS Move four aligned packed single precision floating-point values between XMM registers or between an XMM register and memory."
+        }
+      ],
+      "review_basis": "Retain coarse uses relation, with the original packed-four-values scope.",
+      "origin_reference": {
+        "kind": "accepted_model_edge",
+        "index": 1,
+        "action": "retain relation; restate full source scope"
+      },
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e02",
+      "source_id": "entity_1",
+      "relation": "detects_support_for",
+      "target_id": "entity_0",
+      "description": "CPUID is used to detect support for SSE instructions; it is not represented as an execution dependency.",
+      "evidence": [
+        {
+          "chunk_id": "sse_overview",
+          "quote": "Intel SSE instructions can only be executed on Intel 64 and IA-32 processors that support Intel SSE extensions. Support for these instructions can be detected with the CPUID instruction."
+        }
+      ],
+      "review_basis": "Resolve \"these instructions\" using the preceding SSE sentence; use detection direction.",
+      "origin_reference": {
+        "kind": "raw_model_relationship",
+        "call_index": 0,
+        "item_index": 1,
+        "action": "replace depends_on and reverse direction"
+      },
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e03",
+      "source_id": "entity_0",
+      "relation": "contains_subgroup",
+      "target_id": "entity_13",
+      "description": "SSE instructions include a SIMD single-precision floating-point subgroup.",
+      "evidence": [
+        {
+          "chunk_id": "sse_overview",
+          "quote": "Intel SSE instructions are divided into four subgroups (note that the first subgroup has subordinate subgroups of its own): • SIMD single precision floating-point instructions that operate on the XMM registers. • MXCSR state management instructions. • 64-bit SIMD integer instructions that operate on the MMX registers. • Cacheability control, prefetch, and instruction ordering instructions."
+        },
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1 Intel® SSE SIMD Single Precision Floating-Point Instructions These instructions operate on packed and scalar single precision floating-point values located in XMM registers and/or memory."
+        }
+      ],
+      "review_basis": "Read the SSE subgroup list together with its section 5.5.1 heading.",
+      "origin_reference": null,
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e04",
+      "source_id": "entity_0",
+      "relation": "contains_subgroup",
+      "target_id": "entity_4",
+      "description": "MXCSR state management instructions form an SSE subgroup.",
+      "evidence": [
+        {
+          "chunk_id": "sse_overview",
+          "quote": "Intel SSE instructions are divided into four subgroups (note that the first subgroup has subordinate subgroups of its own): • SIMD single precision floating-point instructions that operate on the XMM registers. • MXCSR state management instructions. • 64-bit SIMD integer instructions that operate on the MMX registers. • Cacheability control, prefetch, and instruction ordering instructions."
+        }
+      ],
+      "review_basis": "The parent list contains the subgroup; do not use parent part_of child.",
+      "origin_reference": {
+        "kind": "raw_model_relationship",
+        "call_index": 0,
+        "item_index": 4,
+        "action": "replace reversed part_of with contains_subgroup"
+      },
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e05",
+      "source_id": "entity_0",
+      "relation": "contains_subgroup",
+      "target_id": "entity_5",
+      "description": "Cacheability control, prefetch and instruction ordering instructions form an SSE subgroup.",
+      "evidence": [
+        {
+          "chunk_id": "sse_overview",
+          "quote": "Intel SSE instructions are divided into four subgroups (note that the first subgroup has subordinate subgroups of its own): • SIMD single precision floating-point instructions that operate on the XMM registers. • MXCSR state management instructions. • 64-bit SIMD integer instructions that operate on the MMX registers. • Cacheability control, prefetch, and instruction ordering instructions."
+        }
+      ],
+      "review_basis": "The parent list contains the subgroup; relation direction is parent to child.",
+      "origin_reference": {
+        "kind": "raw_model_relationship",
+        "call_index": 0,
+        "item_index": 5,
+        "action": "replace reversed part_of with contains_subgroup"
+      },
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e06",
+      "source_id": "entity_0",
+      "relation": "includes_integer_operations_on",
+      "target_id": "entity_3",
+      "description": "The SSE family includes 64-bit SIMD integer instructions operating on MMX registers; this does not apply to every SSE instruction.",
+      "evidence": [
+        {
+          "chunk_id": "sse_overview",
+          "quote": "Intel SSE instructions are divided into four subgroups (note that the first subgroup has subordinate subgroups of its own): • SIMD single precision floating-point instructions that operate on the XMM registers. • MXCSR state management instructions. • 64-bit SIMD integer instructions that operate on the MMX registers. • Cacheability control, prefetch, and instruction ordering instructions."
+        }
+      ],
+      "review_basis": "Constrained family-level existential statement from the integer subgroup bullet.",
+      "origin_reference": null,
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e07",
+      "source_id": "entity_13",
+      "relation": "operates_on",
+      "target_id": "entity_2",
+      "description": "The SSE single-precision floating-point subgroup operates on values located in XMM registers and/or memory.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1 Intel® SSE SIMD Single Precision Floating-Point Instructions These instructions operate on packed and scalar single precision floating-point values located in XMM registers and/or memory."
+        }
+      ],
+      "review_basis": "Resolve \"These instructions\" from the immediately preceding section heading.",
+      "origin_reference": {
+        "kind": "raw_model_relationship",
+        "call_index": 1,
+        "item_index": 0,
+        "action": "restore subgroup endpoint using exact heading; keep scope"
+      },
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e08",
+      "source_id": "entity_13",
+      "relation": "contains_subgroup",
+      "target_id": "entity_8",
+      "description": "The SSE single-precision subgroup includes data transfer.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1 Intel® SSE SIMD Single Precision Floating-Point Instructions These instructions operate on packed and scalar single precision floating-point values located in XMM registers and/or memory. This subgroup is further divided into the following subordinate subgroups: data transfer, packed arithmetic, comparison, logical, shuffle and unpack, and conversion instructions."
+        },
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1.1 Intel® SSE Data Transfer Instructions Intel SSE data transfer instructions move packed and scalar single precision floating-point operands between XMM registers and between XMM registers and memory. MOVAPS Move four aligned packed single precision floating-point values between XMM registers or between an XMM register and memory."
+        }
+      ],
+      "review_basis": "Subgroup membership follows the explicit list under section 5.5.1; full data-transfer name is resolved through 5.5.1.1.",
+      "origin_reference": null,
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e09",
+      "source_id": "entity_13",
+      "relation": "contains_subgroup",
+      "target_id": "entity_9",
+      "description": "The SSE single-precision subgroup includes packed arithmetic.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1 Intel® SSE SIMD Single Precision Floating-Point Instructions These instructions operate on packed and scalar single precision floating-point values located in XMM registers and/or memory. This subgroup is further divided into the following subordinate subgroups: data transfer, packed arithmetic, comparison, logical, shuffle and unpack, and conversion instructions."
+        }
+      ],
+      "review_basis": "Subgroup membership follows the explicit list under section 5.5.1.",
+      "origin_reference": null,
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e10",
+      "source_id": "entity_13",
+      "relation": "contains_subgroup",
+      "target_id": "entity_10",
+      "description": "The SSE single-precision subgroup includes comparison.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1 Intel® SSE SIMD Single Precision Floating-Point Instructions These instructions operate on packed and scalar single precision floating-point values located in XMM registers and/or memory. This subgroup is further divided into the following subordinate subgroups: data transfer, packed arithmetic, comparison, logical, shuffle and unpack, and conversion instructions."
+        }
+      ],
+      "review_basis": "Subgroup membership follows the explicit list under section 5.5.1.",
+      "origin_reference": null,
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e11",
+      "source_id": "entity_13",
+      "relation": "contains_subgroup",
+      "target_id": "entity_11",
+      "description": "The SSE single-precision subgroup includes logical.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1 Intel® SSE SIMD Single Precision Floating-Point Instructions These instructions operate on packed and scalar single precision floating-point values located in XMM registers and/or memory. This subgroup is further divided into the following subordinate subgroups: data transfer, packed arithmetic, comparison, logical, shuffle and unpack, and conversion instructions."
+        }
+      ],
+      "review_basis": "Subgroup membership follows the explicit list under section 5.5.1.",
+      "origin_reference": null,
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e12",
+      "source_id": "entity_13",
+      "relation": "contains_subgroup",
+      "target_id": "entity_12",
+      "description": "The SSE single-precision subgroup includes shuffle and unpack.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1 Intel® SSE SIMD Single Precision Floating-Point Instructions These instructions operate on packed and scalar single precision floating-point values located in XMM registers and/or memory. This subgroup is further divided into the following subordinate subgroups: data transfer, packed arithmetic, comparison, logical, shuffle and unpack, and conversion instructions."
+        }
+      ],
+      "review_basis": "Subgroup membership follows the explicit list under section 5.5.1.",
+      "origin_reference": null,
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    },
+    {
+      "id": "review_e13",
+      "source_id": "entity_8",
+      "relation": "includes_instruction",
+      "target_id": "entity_7",
+      "description": "MOVAPS is listed under the Intel SSE Data Transfer Instructions heading.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "5.5.1.1 Intel® SSE Data Transfer Instructions Intel SSE data transfer instructions move packed and scalar single precision floating-point operands between XMM registers and between XMM registers and memory. MOVAPS Move four aligned packed single precision floating-point values between XMM registers or between an XMM register and memory."
+        }
+      ],
+      "review_basis": "Use the section 5.5.1.1 heading and instruction row together; section-context review, not a stand-alone sentence.",
+      "origin_reference": null,
+      "authorship": "assistant_editorial_review; not model output",
+      "user_review_status": "not_yet_confirmed"
+    }
+  ],
+  "reviewed_summary_claims": [
+    {
+      "id": "review_claim_0",
+      "text": "Intel SSE instructions extend SIMD execution from MMX and require Intel 64/IA-32 processors with SSE support, detectable via CPUID.",
+      "evidence": [
+        {
+          "chunk_id": "sse_overview",
+          "quote": "Intel SSE instructions represent an extension of the SIMD execution model introduced with the MMX technology. For more detail on these instructions, see Chapter 10, “Programming with Intel® Streaming SIMD Extensions (Intel® SSE).” Intel SSE instructions can only be executed on Intel 64 and IA-32 processors that support Intel SSE extensions. Support for these instructions can be detected with the CPUID instruction."
+        }
+      ],
+      "action": "retain model statement after paragraph review",
+      "origin_model_claim_index": 0
+    },
+    {
+      "id": "review_claim_1",
+      "text": "Intel SSE is divided into four subgroups: SIMD single-precision floating-point (XMM registers), MXCSR state management, 64-bit SIMD integer (MMX registers), and cache/prefetch/instruction ordering.",
+      "evidence": [
+        {
+          "chunk_id": "sse_overview",
+          "quote": "Intel SSE instructions are divided into four subgroups (note that the first subgroup has subordinate subgroups of its own): • SIMD single precision floating-point instructions that operate on the XMM registers. • MXCSR state management instructions. • 64-bit SIMD integer instructions that operate on the MMX registers. • Cacheability control, prefetch, and instruction ordering instructions."
+        }
+      ],
+      "action": "retain model statement after paragraph review",
+      "origin_model_claim_index": 1
+    },
+    {
+      "id": "review_claim_2",
+      "text": "Intel SSE data transfer instructions move packed and scalar single-precision floating-point operands between XMM registers, and between XMM registers and memory.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "Intel SSE data transfer instructions move packed and scalar single precision floating-point operands between XMM registers and between XMM registers and memory."
+        }
+      ],
+      "action": "split group-level statement from original claim 2",
+      "origin_model_claim_index": 2
+    },
+    {
+      "id": "review_claim_3",
+      "text": "MOVAPS moves four aligned packed single-precision floating-point values between XMM registers, or between an XMM register and memory.",
+      "evidence": [
+        {
+          "chunk_id": "sse_transfer",
+          "quote": "MOVAPS Move four aligned packed single precision floating-point values between XMM registers or between an XMM register and memory."
+        }
+      ],
+      "action": "separate MOVAPS packed-four-values statement from original claim 2",
+      "origin_model_claim_index": 2
+    }
+  ],
+  "queries": [
+    {
+      "case_id": "transfer_to_xmm",
+      "question": "SSE数据传输子组经哪条指令连接到XMM寄存器？",
+      "source_id": "entity_8",
+      "target_id": "entity_2",
+      "max_hops": 2
+    },
+    {
+      "case_id": "cpuid_detection",
+      "question": "CPUID与SSE支持情况有什么关系？",
+      "source_id": "entity_1",
+      "target_id": "entity_0",
+      "max_hops": 1
+    },
+    {
+      "case_id": "summary_scope",
+      "question": "概述SSE，并区分数据传输指令组与MOVAPS的操作范围。",
+      "kind": "display_fixed_reviewed_summary"
+    }
+  ],
+  "query_routing": "Question text and endpoint IDs are fixed by the assistant; no automatic natural-language parsing or model-generated answer.",
+  "scope": "Editorially reviewed teaching view and fixed-path queries only; no automatic improvement, equal-budget benchmark, community discovery, embedding clustering or RAPTOR recursion."
+}

@@ -17,6 +17,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT.parents[1]
+from ppt_platform import check_file, config_file, program, venv_python
 
 
 def read_json(path):
@@ -71,9 +72,9 @@ def main():
     parser.add_argument("--model", help="API模式为模型ID；configured模式为已配置模型别名")
     args = parser.parse_args()
     if Path(sys.prefix).resolve() != (PROJECT / ".venv").resolve():
-        raise RuntimeError("请使用 E:\\AI_Agents_Book\\.venv\\Scripts\\python.exe 运行")
-    config = read_json(ROOT / "工具链配置.json")
-    check = read_json(ROOT / "工具链检查.json")
+        raise RuntimeError(f"请使用 {venv_python(PROJECT)} 运行")
+    config = read_json(config_file(ROOT))
+    check = read_json(check_file(ROOT))
     if not config.get("toolchain_ready") or not check.get("ready"):
         raise RuntimeError("先运行03并得到PPT_TOOLCHAIN_READY")
     prepared = read_json(ROOT / "准备记录.json")
@@ -85,15 +86,15 @@ def main():
         candidate = (skill / name).resolve()
         if not candidate.is_relative_to(skill.resolve()) or digest(candidate) != expected:
             raise RuntimeError("官方Skill文件校验失败：" + name)
-    kimi = shutil.which("kimi") or str(Path.home() / ".kimi-code" / "bin" / "kimi.exe")
-    if not Path(kimi).is_file():
+    kimi = program("kimi", [Path.home() / ".kimi-code" / "bin" / ("kimi.exe" if os.name == "nt" else "kimi")])
+    if not kimi or not Path(kimi).is_file():
         raise RuntimeError("未找到Kimi Code，请反馈这个错误")
 
     run_dir = ROOT / "运行结果" / datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     run_dir.mkdir(parents=True)
     environment = os.environ.copy()
     environment.update(config["environment"])
-    bin_dirs = [str(PROJECT / ".venv" / "Scripts")]
+    bin_dirs = [str(venv_python(PROJECT).parent)]
     bin_dirs += [str(Path(p).parent) for p in config["programs"].values() if p]
     environment["PATH"] = os.pathsep.join(bin_dirs + [environment.get("PATH", "")])
     environment["VIRTUAL_ENV"] = str(PROJECT / ".venv")
@@ -109,7 +110,7 @@ def main():
         "{{RUN_DIR}}": run_dir.as_posix(), "{{PAPER}}": paper.as_posix(),
         "{{SKILL}}": skill.as_posix(), "{{PYTHON}}": Path(sys.executable).as_posix(),
         "{{NODE}}": Path(config["programs"]["node"]).as_posix(),
-        "{{ADAPTER}}": (Path(__file__).parent / "html2pptx_windows.cjs").as_posix(),
+        "{{ADAPTER}}": (Path(__file__).parent / "html2pptx.cjs").as_posix(),
     }
     prompt = Path(__file__).with_name("论文PPT任务提示词.md").read_text(encoding="utf-8")
     for token, value in replacements.items():
@@ -130,7 +131,7 @@ def main():
         "official_skill_revision": prepared["official_skill"]["revision"],
         "toolchain_checked_at": check["checked_at"],
         "permission_mode": "Kimi --prompt的默认auto策略；不是文件系统沙箱",
-        "adapter": str(Path(__file__).with_name("html2pptx_windows.cjs")),
+        "adapter": str(Path(__file__).with_name("html2pptx.cjs")),
         "exit_code": None, "artifact_acceptance": "待检查产物及渐进式加载轨迹",
     }
     receipt_path = run_dir / "启动记录.json"

@@ -118,6 +118,7 @@ def check_environment():
             Path(r'C:\Program Files\LibreOffice\program\soffice.exe'),
             Path(r'C:\Program Files (x86)\LibreOffice\program\soffice.exe'),
             Path(r'E:\LibreOffice\program\soffice.exe'),
+            Path('/Applications/LibreOffice.app/Contents/MacOS/soffice'),
         ]),
     }
     python_packages = {

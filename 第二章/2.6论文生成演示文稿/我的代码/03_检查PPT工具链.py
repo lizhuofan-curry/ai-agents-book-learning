@@ -10,6 +10,7 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+from ppt_platform import check_file, config_file, program
 
 
 def main():
@@ -17,7 +18,7 @@ def main():
               'python': sys.executable, 'python_imports': {}, 'node': None,
               'programs': {}, 'issues': [], 'ready': False,
               'scope': '检查导入、JS加载、浏览器启动与工具路径；未验证论文PPT或Agent登录。'}
-    config_path = ROOT / '工具链配置.json'
+    config_path = config_file(ROOT)
     config = None
     try:
         config = json.loads(config_path.read_text(encoding='utf-8'))
@@ -35,13 +36,21 @@ def main():
                          'dependencies' / 'native' / 'poppler' / 'Library' / 'bin' / 'pdftoppm.exe'],
         }.items():
             saved = config['programs'].get(name)
-            found = saved if saved and Path(saved).is_file() else shutil.which(name)
-            if not found:
-                found = next((str(path) for path in candidates if path.is_file()), None)
+            found = saved if saved and Path(saved).is_file() and (os.name == 'nt' or Path(saved).suffix.lower() != '.exe') else program(name, candidates)
             record['programs'][name] = found
             config['programs'][name] = found
             if not found:
                 record['issues'].append('未找到程序：' + name)
+            else:
+                try:
+                    flag = '--version' if name == 'soffice' else '-v'
+                    probe = subprocess.run([found, flag], env=environment, capture_output=True,
+                                           text=True, encoding='utf-8', errors='replace', timeout=30)
+                    record.setdefault('program_versions', {})[name] = (probe.stdout + probe.stderr).strip()[:500]
+                    if probe.returncode != 0:
+                        record['issues'].append('程序版本检查失败：' + name)
+                except (OSError, subprocess.SubprocessError) as exc:
+                    record['issues'].append('程序不能执行：' + name + '；' + type(exc).__name__)
         for name in ('pptx', 'defusedxml', 'PIL', 'pypdf'):
             try:
                 module = importlib.import_module(name)
@@ -74,7 +83,9 @@ def main():
         if record['ready']:
             config['failure'] = None
         config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding='utf-8')
-    (ROOT / '工具链检查.json').write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding='utf-8')
+    check_path = check_file(ROOT)
+    check_path.parent.mkdir(parents=True, exist_ok=True)
+    check_path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding='utf-8')
     print(json.dumps(record, ensure_ascii=False, indent=2), flush=True)
     if not record['ready']:
         print('PPT_TOOLCHAIN_INCOMPLETE：工具链未齐，具体问题见issues；不需要重下论文和Skill。')

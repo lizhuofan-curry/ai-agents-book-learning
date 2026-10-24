@@ -7,7 +7,7 @@
 <p align="center">从一次模型请求开始，逐步理解Agent的工具调用、消息流与执行循环。</p>
 
 [![CI](https://github.com/lizhuofan-curry/ai-agents-book-learning/actions/workflows/ci.yml/badge.svg)](https://github.com/lizhuofan-curry/ai-agents-book-learning/actions/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](pyproject.toml)
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![uv](https://img.shields.io/badge/uv-依赖管理-DE5FE9?logo=uv&logoColor=white)](uv.lock)
 [![License](https://img.shields.io/badge/License-Apache%202.0-16A085)](LICENSE)
 
@@ -92,7 +92,7 @@ AI_Agents_Book/
 
 ## 📖 第三章学习进度
 
-实验3-2的[50组学习范围已收尾](第三章/3.2记忆格式对照/05_50组学习结果总结.md)，原190组不再开展。3-3的[两条合成日志小结](第三章/3.3日志脱敏/03_两条样例学习总结.md)已完成：密码改写后规则2/4→3/4，4B两条均4/4，指定调试信息保留；不称通用PII召回率或安全部署验收。当前[3-4稠密向量检索](第三章/3.4稠密向量检索/README.md)的二维向量基础已由用户实测并核对，Top-3为A/B/C，模型和网络请求均0。合成向量ANNOY/HNSW入口、依赖锁及离线检查已准备；C++/SDK与三个索引依赖已安装，导入及6向量原生健康检查通过。3000向量、100查询正式对照已实测核对：ANNOY召回16.9%，HNSW ef=20/200为55.7%/99.2%，高召回HNSW本次耗时与精确排序接近。见[索引对照总结](第三章/3.4稠密向量检索/03_合成向量索引对照总结.md)；MiniLM真实文本也已实测核对：官方12篇文档、5条查询，Recall@5=1、Precision@5=0.32、MRR=1，两索引Top-5均与精确结果一致。本地CLI学习范围已收尾，见[实验3-4小结](第三章/3.4稠密向量检索/04_真实文本结果与实验3-4小结.md)，未扩展BGE-M3 HTTP服务。当前[3-5 BM25稀疏检索](第三章/3.5BM25稀疏检索/README.md)本地CLI学习范围已实测核对并总结：同一12篇文档/5查询下，BM25共同口径Recall/Precision/MRR@5为0.6/0.16/0.6，已保存MiniLM为1/0.32/1；逐词贡献和编码展示已核对，模型和网络请求均0。见[3-5小结](第三章/3.5BM25稀疏检索/02_结果分析与学习小结.md)；[3-6混合检索](第三章/3.6混合检索/README.md)第一步融合已由用户实测并独立核对：RRF与加权融合Recall/Precision/MRR@5均1/0.32/0.9，原稠密为1/0.32/1；一题首个相关结果排名下降。2026-10-18已完成轻量神经重排27对、5批CPU评分，无截断；保存输入、分数、排名及指标已独立核对，重排仍为1/0.32/0.9。3-6本地同语料学习范围已收尾，见[最终小结](第三章/3.6混合检索/05_重排结果与实验3-6小结.md)；未部署默认BGE或HTTP服务。[3-7结构化索引](第三章/3.7结构化索引/README.md)第一步人工示意对照已准备，10项离线检查通过；正式三条查询待用户运行，不调用模型，真实索引构建尚未进行。
+实验3-2的[50组学习范围已收尾](第三章/3.2记忆格式对照/05_50组学习结果总结.md)，原190组不再开展。3-3的[两条合成日志小结](第三章/3.3日志脱敏/03_两条样例学习总结.md)已完成：密码改写后规则2/4→3/4，4B两条均4/4，指定调试信息保留；不称通用PII召回率或安全部署验收。当前[3-4稠密向量检索](第三章/3.4稠密向量检索/README.md)的二维向量基础已由用户实测并核对，Top-3为A/B/C，模型和网络请求均0。合成向量ANNOY/HNSW入口、依赖锁及离线检查已准备；C++/SDK与三个索引依赖已安装，导入及6向量原生健康检查通过。3000向量、100查询正式对照已实测核对：ANNOY召回16.9%，HNSW ef=20/200为55.7%/99.2%，高召回HNSW本次耗时与精确排序接近。见[索引对照总结](第三章/3.4稠密向量检索/03_合成向量索引对照总结.md)；MiniLM真实文本也已实测核对：官方12篇文档、5条查询，Recall@5=1、Precision@5=0.32、MRR=1，两索引Top-5均与精确结果一致。本地CLI学习范围已收尾，见[实验3-4小结](第三章/3.4稠密向量检索/04_真实文本结果与实验3-4小结.md)，未扩展BGE-M3 HTTP服务。当前[3-5 BM25稀疏检索](第三章/3.5BM25稀疏检索/README.md)本地CLI学习范围已实测核对并总结：同一12篇文档/5查询下，BM25共同口径Recall/Precision/MRR@5为0.6/0.16/0.6，已保存MiniLM为1/0.32/1；逐词贡献和编码展示已核对，模型和网络请求均0。见[3-5小结](第三章/3.5BM25稀疏检索/02_结果分析与学习小结.md)；[3-6混合检索](第三章/3.6混合检索/README.md)第一步融合已由用户实测并独立核对：RRF与加权融合Recall/Precision/MRR@5均1/0.32/0.9，原稠密为1/0.32/1；一题首个相关结果排名下降。2026-10-18已完成轻量神经重排27对、5批CPU评分，无截断；保存输入、分数、排名及指标已独立核对，重排仍为1/0.32/0.9。3-6本地同语料学习范围已收尾，见[最终小结](第三章/3.6混合检索/05_重排结果与实验3-6小结.md)；未部署默认BGE或HTTP服务。[3-7结构化索引](第三章/3.7结构化索引/README.md)第一步人工示意对照已由用户运行3条查询，60项独立核对通过并形成小结；扁平已召回前两题所需事实，图补充路径与关系对齐，第三题为预写摘要。第一步无模型请求；第二步两段Intel原文已完成3次本机4B请求及53项机械核对，原图13节点/2条边，摘要3条。语义检查发现关系类型和摘要范围问题，原始草稿保留；第三步助手修订视图的固定查询已由用户运行并通过52项核对，14节点/14边、无孤立节点；返回MOVAPS两跳和CPUID探测一跳路径，4条摘要来源一致。属于助手编辑干预，非模型自动提升，也不代表用户已逐条语义验收。后续社区/聚类及递归层次摘要未进行，3-7仍部分完成。
 
 2026-10-17实验3-1本地固定配置评估已收尾：使用qwen3:4b、notes、schema及推荐采样处理官方60题，6份完整回答均完成DeepSeek独立评分，4题通过、2题未通过，54题截断单列。全用例流程通过率6.67%，仅已评分通过率66.67%、平均reward=0.5833；没有60份完整裁判评分，不将截断补为裁判0分。见[结果总结](第三章/3.1用户记忆评估/08_实验3-1结果总结.md)及[第三章导航](第三章/README.md)。后续进度见上方章节状态；沿用助手生成代码与讲解、用户亲自运行并反馈的分工。
 
@@ -102,54 +102,35 @@ AI_Agents_Book/
 
 学习代码参考[原仓库的实验1.2实现](https://github.com/bojieli/ai-agent-book/tree/main/chapter1/web-search-agent)，按当前理解拆成较小步骤，补充中文注释，并调整为本项目的配置和输出路径。来源与许可见[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
-## 🐍 本地环境
+## 🐍 本地环境与 macOS 运行
 
-所有章节共用项目根目录的Python3.11环境：
+当前项目已从 Windows 迁移至 Mac，使用根目录 Python 3.12 环境。详细操作见 [macOS使用说明](docs/macOS使用说明.md)。
 
-```text
-E:\AI_Agents_Book\.venv\Scripts\python.exe
+```bash
+cd '/Users/zhuo/Agent相关/AI_Agents_Book'
+# 首次建立或重建Mac环境：按锁文件安装，并处理ANNOY编译参数
+bash scripts/setup_macos.sh
+
+# 日常直接使用项目解释器；不需要每次重新安装
+.venv/bin/python '第一章/1.2网络搜索Agent/我的代码/01_离线观察Agent循环.py'
+
+# 只读核对迁移前的历史结果
+.venv/bin/python scripts/verify_saved_results.py
 ```
 
-`第一章`保存分类后的学习材料、自己的代码和运行结果；`ai-agent-book`保存已有的总览、排期和实验清单。官方仓库按学习进度在线查阅。
+在 PyCharm / VS Code 中选择 `/Users/zhuo/Agent相关/AI_Agents_Book/.venv/bin/python`。Windows 使用 `.venv/Scripts/python.exe`；同一个虚拟环境目录不能跨系统复用。
 
-## 🛠️ PyCharm配置
+依赖继续由 `pyproject.toml` 与 `uv.lock` 管理。Mac安装包含 chapter1、chapter2 和 chapter3-index；模型缓存保留在 `.uv-cache/huggingface`。旧 Windows 虚拟环境和 Node 包已改名保留，原 `.env` 继续使用。
 
-在项目设置的Python解释器页面添加本地解释器，选择现有环境，浏览并选择上述`python.exe`，应用到当前`AI_Agents_Book`项目。
+3.4、3.5及3.6中的历史 Windows 路径在读取时转换，历史 JSON 和哈希保持原样。旧3.1/3.2批次用于只读复核，后续运行另建批次。Ollama生成实验仍需原模型与digest；不自动替换为当前其他模型。
 
-## 🚀 环境管理与运行
+真实搜索使用项目 `.env` 中已有的 Moonshot 配置：
 
-依赖由根目录的`pyproject.toml`和`uv.lock`管理。已安装的基础包和第一章依赖在同一个环境中，后续章节按需添加。
-
-第二章注意力实验的CPU版PyTorch和Transformers由默认chapter2依赖组管理，与各章代码共用根目录.venv。安装依赖由用户执行；模型权重缓存仍在E盘。仅检查离线脚本的CI显式跳过chapter2大体积依赖。
-
-需要重新同步环境时，在终端运行：
-
-```powershell
-Set-Location 'E:\AI_Agents_Book'
-& 'E:\Hermes\bin\uv.exe' sync --locked --python 3.11 --cache-dir 'E:\AI_Agents_Book\.uv-cache'
+```bash
+.venv/bin/python '第一章/1.2网络搜索Agent/我的代码/10_引导式快速体验.py'
 ```
 
-后续添加依赖，在项目根目录使用`uv add 包名`。日常在PyCharm中运行自己的学习代码，使用配置好的项目解释器。
-
-安装uv后，也可以在项目根目录使用通用命令：
-
-```powershell
-uv sync --locked --python 3.11
-
-# 离线演示：不需要API Key，不调用真实搜索
-uv run --locked python "第一章/1.2网络搜索Agent/我的代码/01_离线观察Agent循环.py"
-```
-
-真实搜索先将`.env.example`复制为`.env`，填写`MOONSHOT_API_KEY`，再运行引导式入口：
-
-```powershell
-# 仅在.env不存在时复制模板，保留已有配置
-if (-not (Test-Path .env)) { Copy-Item .env.example .env }
-# 编辑.env并填写自己的API Key后运行
-uv run --locked python "第一章/1.2网络搜索Agent/我的代码/10_引导式快速体验.py"
-```
-
-配置见[实验1.2README](第一章/1.2网络搜索Agent/README.md)，菜单用法见[10阅读指南](第一章/1.2网络搜索Agent/10_阅读指南.md)。每题输出保存在该实验的`运行结果`目录。
+该入口会发起真实服务请求；菜单、参数与结果说明见[实验1.2README](第一章/1.2网络搜索Agent/README.md)。PPT工具链、注意力启动入口和离线模型健康检查见[Mac说明](docs/macOS使用说明.md)。
 
 ## 🧭 学习入口
 
@@ -182,12 +163,12 @@ git push
 
 ## 🤖 自动检查与版本发布
 
-CI在推送main、提交Pull Request或手动触发时运行，使用Python3.11在Windows和Linux上同步锁定依赖、检查Python语法与已跟踪文件，并实际运行离线演示，核对JSON输出和轨迹。CI不调用真实Kimi或搜索API。
+CI在推送main、提交Pull Request或手动触发时运行，使用Python3.12在Windows、Linux和macOS上同步锁定依赖、检查Python语法与已跟踪文件，并实际运行离线演示，核对JSON输出和轨迹。CI不调用真实Kimi或搜索API。
 
 本地执行同一项检查：
 
 ```powershell
-uv run --locked python .github/scripts/check_repo.py
+.venv/bin/python .github/scripts/check_repo.py
 ```
 
 CD在推送`v*`版本标签时触发，先运行相同检查，通过后发布GitHub Release，附上源码ZIP与SHA256校验文件。准备发布某个学习版本时，在已提交且同步的main上创建并推送标签，例如：

@@ -18,6 +18,9 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT.parents[1]
+sys.path.insert(0, str(PROJECT))
+from project_paths import path_key_value, project_path
+
 MODEL_MANIFEST = ROOT / "官方资料/MiniLM模型清单.json"
 MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"
 REVISION = "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
@@ -51,8 +54,8 @@ def load_sources():
     helper_path = ROOT / "我的代码/02_合成向量ANNOY与HNSW对照.py"
     baseline_path = ROOT / "安装记录/python_environment_before_install_20261017.json"
     baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
-    key = str(helper_path.relative_to(PROJECT))
-    if sha(helper_path) != baseline["source_hashes"][key]:
+    key = helper_path.relative_to(PROJECT).as_posix()
+    if sha(helper_path) != path_key_value(baseline["source_hashes"], key):
         raise ValueError("02辅助入口发生变化，停止使用未核对代码")
     spec = importlib.util.spec_from_file_location("pinned_ann_helper", helper_path)
     helper = importlib.util.module_from_spec(spec)
@@ -87,9 +90,9 @@ def load_model_files():
     manifest = json.loads(MODEL_MANIFEST.read_text(encoding="utf-8"))
     if (manifest["model_id"], manifest["revision"], manifest["status"]) != (MODEL_ID, REVISION, "downloaded_verified"):
         raise ValueError("模型版本或下载状态不符")
-    directory = Path(manifest["local_path"]).resolve()
+    directory = project_path(manifest["local_path"])
     if not directory.is_relative_to((PROJECT / ".uv-cache/huggingface").resolve()):
-        raise ValueError("模型必须位于项目E盘模型缓存")
+        raise ValueError("模型必须位于当前项目模型缓存")
     if {f["name"] for f in manifest["files"]} != MODEL_FILES:
         raise ValueError("模型文件集合发生变化")
     for item in manifest["files"]:

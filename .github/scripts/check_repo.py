@@ -15,7 +15,9 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def main():
-    tracked = subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT)
+    tracked = subprocess.check_output(
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"], cwd=ROOT,
+    )
     paths = [Path(name) for name in tracked.decode("utf-8").split("\0") if name]
     if not paths:
         raise RuntimeError("No tracked project files to check")
@@ -69,7 +71,11 @@ def main():
         if not any(step.get("type") == "answer" and step.get("content") == result["answer"] for step in trace):
             raise RuntimeError("Offline answer and saved trajectory disagree")
 
-    print(f"PASS: {python_count} Python files, tracked-file checks, offline script and JSON output")
+    subprocess.run(
+        [sys.executable, '-m', 'unittest', 'discover', '-s', str(ROOT / 'tests')],
+        cwd=ROOT, check=True, timeout=30,
+    )
+    print(f"PASS: {python_count} Python files, tracked-file checks, offline script, JSON output and path tests")
     print("Live Kimi/search APIs were not called.")
 
 

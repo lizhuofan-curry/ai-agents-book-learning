@@ -1,0 +1,34 @@
+{
+  "upstream_commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "source_path": "chapter3/structured-index/data/intel-sdm-volume-1.txt",
+  "source_sha256": "95e5185e8f5c68690963158e6e4616b8da903bf5740c3238c5cf282ef2eb84c8",
+  "normalization": "Collapse whitespace only; keep wording, case and line-end hyphens unchanged.",
+  "selection": "Two fixed small excerpts from sections 5.5 and 5.5.1; no gold entities or edges supplied.",
+  "chunks": [
+    {
+      "chunk_id": "sse_overview",
+      "source_char_start": 621832,
+      "source_char_end": 622924,
+      "source_line_start": 7410,
+      "source_line_end": 7424,
+      "raw_text": "5.5           INTEL® SSE INSTRUCTIONS\nIntel SSE instructions represent an extension of the SIMD execution model introduced with the MMX technology.\nFor more detail on these instructions, see Chapter 10, “Programming with Intel® Streaming SIMD Extensions\n(Intel® SSE).”\nIntel SSE instructions can only be executed on Intel 64 and IA-32 processors that support Intel SSE extensions.\nSupport for these instructions can be detected with the CPUID instruction. See the description of the CPUID instruc-\ntion in Chapter 3, “Instruction Set Reference, A-L,” of the Intel® 64 and IA-32 Architectures Software Developer’s\nManual, Volume 2A.\nIntel SSE instructions are divided into four subgroups (note that the first subgroup has subordinate subgroups of\nits own):\n•   SIMD single precision floating-point instructions that operate on the XMM registers.\n•   MXCSR state management instructions.\n•   64-bit SIMD integer instructions that operate on the MMX registers.\n•   Cacheability control, prefetch, and instruction ordering instructions.\nThe following sections provide an overview of these groups.",
+      "model_text": "5.5 INTEL® SSE INSTRUCTIONS Intel SSE instructions represent an extension of the SIMD execution model introduced with the MMX technology. For more detail on these instructions, see Chapter 10, “Programming with Intel® Streaming SIMD Extensions (Intel® SSE).” Intel SSE instructions can only be executed on Intel 64 and IA-32 processors that support Intel SSE extensions. Support for these instructions can be detected with the CPUID instruction. See the description of the CPUID instruc- tion in Chapter 3, “Instruction Set Reference, A-L,” of the Intel® 64 and IA-32 Architectures Software Developer’s Manual, Volume 2A. Intel SSE instructions are divided into four subgroups (note that the first subgroup has subordinate subgroups of its own): • SIMD single precision floating-point instructions that operate on the XMM registers. • MXCSR state management instructions. • 64-bit SIMD integer instructions that operate on the MMX registers. • Cacheability control, prefetch, and instruction ordering instructions. The following sections provide an overview of these groups.",
+      "raw_text_sha256": "f8f53bdb41b16359e77b27cf894d50a88ae4f86b4c33c4f3a7ea27d463615e73"
+    },
+    {
+      "chunk_id": "sse_transfer",
+      "source_char_start": 622928,
+      "source_char_end": 623696,
+      "source_line_start": 7428,
+      "source_line_end": 7438,
+      "raw_text": "5.5.1         Intel® SSE SIMD Single Precision Floating-Point Instructions\nThese instructions operate on packed and scalar single precision floating-point values located in XMM registers\nand/or memory. This subgroup is further divided into the following subordinate subgroups: data transfer, packed\narithmetic, comparison, logical, shuffle and unpack, and conversion instructions.\n\n\n5.5.1.1       Intel® SSE Data Transfer Instructions\nIntel SSE data transfer instructions move packed and scalar single precision floating-point operands between XMM\nregisters and between XMM registers and memory.\nMOVAPS                  Move four aligned packed single precision floating-point values between XMM registers or\n                        between an XMM register and memory.",
+      "model_text": "5.5.1 Intel® SSE SIMD Single Precision Floating-Point Instructions These instructions operate on packed and scalar single precision floating-point values located in XMM registers and/or memory. This subgroup is further divided into the following subordinate subgroups: data transfer, packed arithmetic, comparison, logical, shuffle and unpack, and conversion instructions. 5.5.1.1 Intel® SSE Data Transfer Instructions Intel SSE data transfer instructions move packed and scalar single precision floating-point operands between XMM registers and between XMM registers and memory. MOVAPS Move four aligned packed single precision floating-point values between XMM registers or between an XMM register and memory.",
+      "raw_text_sha256": "2372736bfceccb4355b5c82276b0499ad6dcfcf762d2a46bad2bc3708e39aa4c"
+    }
+  ],
+  "parent_children": [
+    "sse_overview",
+    "sse_transfer"
+  ],
+  "scope": "Real source excerpt, hand-selected chunks and one fixed parent group; not complete manual or RAPTOR clustering."
+}

@@ -13,6 +13,9 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT.parents[1]
+sys.path.insert(0, str(PROJECT))
+from project_paths import project_path
+
 FIXTURE = ROOT / '测试材料/重排输入来源.json'
 MODEL_MANIFEST = ROOT / '官方资料/轻量重排模型清单.json'
 HELPER = ROOT / '我的代码/01_同语料两路融合对照.py'
@@ -96,7 +99,7 @@ def load_materials():
     if sha(MODEL_MANIFEST) != fixture['model_manifest_sha256']:
         raise ValueError('模型清单发生变化')
     if (manifest['status'] != 'downloaded_verified' or manifest['model_id'] != MODEL_ID
-            or manifest['revision'] != REVISION or Path(manifest['local_path']).resolve() != MODEL_DIRECTORY.resolve()):
+            or manifest['revision'] != REVISION or project_path(manifest['local_path']) != MODEL_DIRECTORY.resolve()):
         raise ValueError('需要完整、固定版本的本地重排模型')
     for item in manifest['files']:
         f = (MODEL_DIRECTORY / item['name']).resolve()
