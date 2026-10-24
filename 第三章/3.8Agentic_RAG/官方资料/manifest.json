@@ -1,0 +1,55 @@
+{
+  "repository": "bojieli/ai-agent-book",
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "scope": "selected official code, seven-case dataset and complete criminal-law document; not 288-document corpus",
+  "files": [
+    {
+      "path": "LICENSE",
+      "size": 11338,
+      "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074",
+      "git_blob_sha1": "bd3e071f150cf46f86c91d3341d36644f16e11cb"
+    },
+    {
+      "path": "chapter3/agentic-rag/README.md",
+      "size": 12945,
+      "sha256": "3c6aaca80dbbdf685e96c8248fe6a9cfcd1c754567616ca33c3a333f967e9213",
+      "git_blob_sha1": "426b14fdf673753b853037c9dd682704f686d2c5"
+    },
+    {
+      "path": "chapter3/agentic-rag/agent.py",
+      "size": 19784,
+      "sha256": "3013336e958a76722c6d45de8729a595f3b5bd810970595008a8407ae1143978",
+      "git_blob_sha1": "4b00fc4da24320e38394bbeb97ab01481636ce73"
+    },
+    {
+      "path": "chapter3/agentic-rag/compare_offline.py",
+      "size": 7988,
+      "sha256": "d2138dc789dc8e6146ed9f220c02675e594e19d5dc7cbe7d663e9c1438c7a6fc",
+      "git_blob_sha1": "5f96ee0c0389b3cb1d4ecb5a4799ab668599462b"
+    },
+    {
+      "path": "chapter3/agentic-rag/evaluation/offline_qa.json",
+      "size": 3052,
+      "sha256": "76b5d75b6d65cc22151ae70568caac22c9588efe98513534b4e722cab2fb7823",
+      "git_blob_sha1": "d5b9cdec0a4201e03c208b29361245b3796231ff"
+    },
+    {
+      "path": "chapter3/agentic-rag/laws/7-刑法/刑法.md",
+      "size": 217091,
+      "sha256": "0f94a21c2e86ede0a589250b4a2b92cc0f94bc20e91e634c1dbbe7a79dac48d2",
+      "git_blob_sha1": "a24107b125aeb5d3ce79a046a8146c981f27f746"
+    },
+    {
+      "path": "chapter3/agentic-rag/offline_retriever.py",
+      "size": 7841,
+      "sha256": "4cee9b769f0424d297cf5c3b562159826a5bf157e408c6e4067596a094ea1109",
+      "git_blob_sha1": "c4b353863f186f14c1505fde3d520bb57a80ef70"
+    },
+    {
+      "path": "chapter3/agentic-rag/tools.py",
+      "size": 20148,
+      "sha256": "2266af284e0d28fb9655cf68f5e03d6af6292e175dc4538253d5b85565baed7f",
+      "git_blob_sha1": "a8da806989fbc3e481b8fd0f24984b9f989087d4"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "status": "mechanical_checks_passed_semantic_error_found",
+  "record_sha256": "22d9df6123a5c6b9143df4c98f5ac3eaab4d0cd37a878afdffa758e46966663e",
+  "model_calls": 5,
+  "prompt_tokens": 4757,
+  "output_tokens": 970,
+  "checks": [
+    "script and source fingerprints",
+    "frozen leaves and input coverage",
+    "Louvain partition consistency",
+    "all five HTTP responses complete",
+    "JSON shape and source ID validity",
+    "three queries rankings and recursive provenance"
+  ],
+  "semantic_findings": [
+    {
+      "node": "root",
+      "claim_index": 2,
+      "finding": "MMX integer operations incorrectly nested within MXCSR state management; source lists parallel subgroups."
+    },
+    {
+      "node": "community_0",
+      "finding": "Cache/prefetch/ordering relation review_e05 omitted from generated claims."
+    }
+  ],
+  "new_model_requests": 0,
+  "limitations": "Mechanical checks reuse current grouping/ranking implementation; semantic findings checked against frozen original quotes. No fair retrieval accuracy claim."
+}

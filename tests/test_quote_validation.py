@@ -2,12 +2,15 @@
 import ast
 from copy import deepcopy
 import importlib.util
+import io
 import json
 from pathlib import Path
 import re
 import sys
+import tempfile
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -66,6 +69,83 @@ class MemoryQuoteTests(unittest.TestCase):
         for quote in ('代码示例优先用python', '代码示例优先用Python！'):
             with self.subTest(quote=quote), self.assertRaises(ValueError):
                 self.module.validate_notes(self.notes(quote))
+
+
+class MemorySourceSelectionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.module = load_module('第三章/3.1用户记忆评估/我的代码/01_提取并保存长期记忆.py', 'source_id_memory')
+
+    def model_content(self):
+        return json.dumps({'notes': [
+            {'text': '用户名为林夏', 'source_id': 'u1_s1'},
+            {'text': '用户偏好用中文回答', 'source_id': 'u1_s2'},
+            {'text': '用户偏好代码示例优先用 Python', 'source_id': 'u1_s3'},
+        ]}, ensure_ascii=False)
+
+    def test_catalog_keeps_all_user_clauses_including_cancelled_tasks(self):
+        spans = self.module.build_source_spans()
+        self.assertEqual(len(spans), 6)
+        self.assertIn('今天下午帮我查一下快递', [s['quote'] for s in spans])
+        self.assertIn('不用查了', [s['quote'] for s in spans])
+        for span in spans:
+            message = self.module.CONVERSATION[span['message_index']]
+            self.assertEqual(message['role'], 'user')
+            self.assertEqual(message['content'][span['char_start']:span['char_end']], span['quote'])
+
+    def test_schema_asks_for_ids_instead_of_free_form_quotes(self):
+        request = self.module.build_request()
+        fields = request['format']['properties']['notes']['items']['properties']
+        self.assertEqual(set(fields), {'text', 'source_id'})
+        self.assertIn('u1_s4', fields['source_id']['enum'])
+        self.assertIn('u3_s2', fields['source_id']['enum'])
+
+    def test_program_copies_exact_quote_while_note_may_be_paraphrased(self):
+        raw = self.model_content()
+        result = self.module.resolve_notes(raw, self.module.build_source_spans())
+        self.assertEqual(result[2]['text'], '用户偏好代码示例优先用 Python')
+        self.assertEqual(result[2]['source_quote'], '代码示例优先用Python')
+        self.assertEqual(result[2]['quote_origin'], 'program_copied_from_user_message')
+        self.assertNotIn('source_quote', json.loads(raw)['notes'][2])
+
+    def test_unknown_id_and_legacy_quote_output_are_rejected(self):
+        for raw in (self.model_content().replace('u1_s3', 'unknown'),
+                    '{"notes":[{"text":"偏好","source_quote":"代码示例优先用 Python"}]}'):
+            with self.subTest(raw=raw), self.assertRaises(ValueError):
+                self.module.resolve_notes(raw, self.module.build_source_spans())
+
+    def test_tampered_catalog_is_rejected(self):
+        spans = self.module.build_source_spans()
+        spans[2]['quote'] = '代码示例优先用 Python'
+        with self.assertRaises(ValueError):
+            self.module.resolve_notes(self.model_content(), spans)
+
+    def test_empty_selection_remains_valid(self):
+        self.assertEqual(self.module.resolve_notes('{"notes":[]}', self.module.build_source_spans()), [])
+
+    def test_save_flow_preserves_raw_response_and_records_quote_origin(self):
+        raw_content = self.model_content()
+        response = {'model': self.module.MODEL, 'done': True, 'done_reason': 'stop',
+                    'message': {'content': raw_content}}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with patch.object(self.module, 'ROOT', root), patch.object(self.module.requests, 'Session') as factory, patch('sys.stdout', new_callable=io.StringIO):
+                http_response = factory.return_value.__enter__.return_value.post.return_value
+                http_response.status_code = 200
+                http_response.text = json.dumps(response, ensure_ascii=False)
+                http_response.json.return_value = response
+                self.module.main()
+                factory.return_value.__enter__.return_value.post.assert_called_once()
+            saved = next((root / '运行结果').glob('*/record.json'))
+            record = json.loads(saved.read_text(encoding='utf-8'))
+            memory = json.loads((saved.parent / 'memory.json').read_text(encoding='utf-8'))
+            self.assertEqual(record['raw_content'], raw_content)
+            self.assertEqual(record['raw_response'], response)
+            self.assertEqual(record['extraction_protocol'], 'source_span_ids_v2')
+            self.assertTrue(record['memory_saved'])
+            self.assertEqual(record['parsed_notes'][2]['source_quote'], '代码示例优先用Python')
+            self.assertEqual(record['checks']['source_quotes_copied_by'], 'program')
+            self.assertEqual(len(memory['notes']), 3)
 
 
 class LogSpanTests(unittest.TestCase):
