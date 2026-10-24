@@ -1,0 +1,20 @@
+{
+  "status": "mechanical_checks_passed_semantic_errors_found",
+  "record_sha256": "6ff11dc12284c5dfb1c745308dc634b5eb2e2eef38ed558f5dccd7179e479b89",
+  "checks": [
+    "source and script hashes",
+    "nested Top5/Top10 full contexts",
+    "same prompts and generation settings",
+    "complete raw responses and token totals",
+    "citation IDs and target-presence metrics"
+  ],
+  "semantic_findings": [
+    "Top10 cites target but incompletely summarizes its conditions and does not clearly apply its negligence exception to stated question.",
+    "Top10 claims probation exclusion with citations to article 72 instead of retrieved article 74 (chunk_76).",
+    "Top10 claim that non-recidivist history is merely discretionary aggravation and does not affect probation lacks support in cited article 65.",
+    "Top10 statement about drunkenness and recidivism not supported by cited article 65."
+  ],
+  "new_model_requests": 0,
+  "new_network_requests": 0,
+  "scope": "support and fidelity to frozen passages only; not current legal advice; one post-hoc context-size comparison"
+}

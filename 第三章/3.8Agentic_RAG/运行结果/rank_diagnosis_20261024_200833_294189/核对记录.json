@@ -1,0 +1,20 @@
+{
+  "status": "independent_rank_and_contribution_checks_passed",
+  "record_sha256": "4904bc661e355203dec7a039a65f2bb1a0da73554d424876b2bba6f90c86ce9c",
+  "checks": [
+    "source hashes",
+    "independent 506-chunk reconstruction",
+    "four complete positive-score rankings independently recomputed",
+    "target ranks and Top-K thresholds",
+    "24 detailed candidate/target term-contribution tables"
+  ],
+  "target_ranks": [
+    88,
+    93,
+    8,
+    1
+  ],
+  "new_model_requests": 0,
+  "new_network_requests": 0,
+  "scope": "saved-result verification; manually chosen short query not an agent outcome"
+}
