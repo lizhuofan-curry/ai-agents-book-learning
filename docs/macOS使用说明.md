@@ -21,6 +21,8 @@ PyCharm / VS Code 请选择：
 /Users/zhuo/Agent相关/AI_Agents_Book/.venv/bin/python
 ```
 
+项目环境名称为 `AI_Agents_Book-Mac-Python3.12`；`.vscode/settings.json` 将默认解释器定位到项目自己的 `.venv`。若VS Code此前已选过其他解释器，仍需在“Python: Select Interpreter”中手动切换一次；环境名称缓存未更新时，执行“Developer: Reload Window”后按上述完整路径选择。重建环境后可运行 `.venv/bin/python scripts/name_environment.py` 恢复明确名称，Mac安装入口也会自动设置。
+
 日常直接用项目解释器运行，避免调用系统自带的 Python 3.9：
 
 ```bash
@@ -83,7 +85,7 @@ bash '第二章/2.2注意力机制可视化/我的代码/run.sh'
 
 ## Ollama 生成式实验
 
-原实验使用 `qwen3:0.6b` 或 `qwen3:4b`，部分实验还固定了模型 digest。先检查：
+可选概念示例 `第三章/3.1用户记忆评估/我的代码/01_提取并保存长期记忆.py` 已按用户选择改用本机已有的 `qwen3.5:9b`，可直接运行并产生新的记录。其他旧实验使用 `qwen3:0.6b` 或 `qwen3:4b`，部分实验还固定了模型 digest。先检查：
 
 ```bash
 ollama list
@@ -141,7 +143,7 @@ Kimi Code 是论文生成流程的另一个独立运行时；Node/浏览器检�
 .venv/bin/python .github/scripts/check_repo.py
 ```
 
-检查包括已跟踪及未忽略新文件的 Python 语法、文件规则、临时目录中的离线 Agent 演示和6项路径测试。CI 已增加 macOS，并统一使用 Python 3.12；GitHub 端是否通过以推送后的实际运行结果为准。
+检查包括已跟踪及未忽略新文件的 Python 语法、文件规则、临时目录中的离线 Agent 演示、6项路径测试及11项引用校验测试。引用规则、提示词一致性和历史响应的检查见[引用校验核查](引用校验核查.md)。CI 已增加 macOS，并统一使用 Python 3.12；GitHub 端是否通过以推送后的实际运行结果为准。
 
 迁移前源码、文档和 JSON 的本地备份及哈希清单位于 `.macos-migration/backups/2026-10-24-before/`。旧 Windows Python 环境和 Node 包分别保留；这些本机备份不提交到 Git。正式3.7成果仍是原项目中的待提交文件，不应与环境缓存一并清理。
 

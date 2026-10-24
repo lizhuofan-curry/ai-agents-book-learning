@@ -1,0 +1,5 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+    "python.interpreter.infoVisibility": "always",
+    "python-envs.workspaceSearchPaths": ["./.venv"]
+}

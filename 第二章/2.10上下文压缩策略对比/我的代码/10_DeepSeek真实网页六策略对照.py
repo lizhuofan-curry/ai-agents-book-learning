@@ -35,7 +35,9 @@ ANSWER_INSTRUCTION = (
     '只依据提供的证据判断六项陈述；证据不足时value为null，不靠记忆补充。'
     '只输出JSON对象，唯一顶层键answers，对应六个对象的数组。每项仅含id、value、source_id、quote。'
     'id用Q1到Q6；value为true/false/null；source_id选一份支持该判断的S1/S2/S3。'
-    'quote必须从该来源逐字摘录一段英文原文，最多300字符，不能用概括冒充引用。'
+    'quote必须从该来源逐字摘录一段20至300字符的英文原文，不能用概括冒充引用。'
+    '原文的换行或连续空白可折叠为一个空格，字符数按折叠后的长度计算；'
+    '除此之外不得增删字符、调整大小写、标点或单词拼写。'
     '无证据时source_id和quote用空字符串。不要加Markdown围栏。\n' + TASK
 )
 

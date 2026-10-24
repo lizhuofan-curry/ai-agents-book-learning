@@ -24,6 +24,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export ANNOY_COMPILER_ARGS='-O3,-fno-fast-math,-fno-associative-math,-DANNOYLIB_MULTITHREADED_BUILD,-std=c++14,-mmacosx-version-min=11.0'
 uv cache clean annoy
 uv sync --locked --python 3.12 --group chapter3-index --reinstall-package annoy
+.venv/bin/python scripts/name_environment.py
 .venv/bin/python scripts/check_native_indexes.py
 .venv/bin/python .github/scripts/check_repo.py
 echo 'MACOS_ENVIRONMENT_READY：日常运行请使用 .venv/bin/python。'

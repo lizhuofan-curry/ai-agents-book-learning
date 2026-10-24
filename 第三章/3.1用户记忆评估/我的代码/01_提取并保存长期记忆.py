@@ -10,7 +10,7 @@ import requests
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MODEL = "qwen3:0.6b"
+MODEL = "qwen3.5:9b"
 URL = "http://127.0.0.1:11434/api/chat"
 TIMEZONE = timezone(timedelta(hours=8), name="Asia/Shanghai")
 
@@ -45,7 +45,10 @@ def build_request():
                     "type": "object",
                     "properties": {
                         "text": {"type": "string"},
-                        "source_quote": {"type": "string"},
+                        "source_quote": {
+                            "type": "string",
+                            "description": "从用户消息直接复制的连续原文，空格、标点和大小写完全不变。",
+                        },
                     },
                     "required": ["text", "source_quote"],
                     "additionalProperties": False,
@@ -63,7 +66,9 @@ def build_request():
                 "只保留用户明确说过、未来仍有用的身份事实和长期偏好；每条只写一个事实。"
                 "丢弃临时请求、已经取消的事项和助手的猜测，不推断用户没有说过的信息。"
                 '只输出JSON：{"notes":[{"text":"一条短事实","source_quote":"用户的逐字原话"}]}。'
-                "source_quote必须是用户消息中的连续原文，不得改写；没有长期信息时notes为空数组。"
+                "text可以概括，但source_quote必须直接复制用户消息中的一段连续原文。"
+                "引用的每个字符都必须一致：不得增删空格、标点，不得调整大小写，"
+                "也不要自动在中文和英文之间添加空格。没有长期信息时notes为空数组。"
             )},
             {"role": "user", "content": (
                 "请整理以下已结束的虚构对话：\n" +
@@ -93,17 +98,20 @@ def validate_notes(content):
     if not isinstance(parsed, dict) or set(parsed) != {"notes"}:
         raise ValueError("模型输出必须只包含notes字段")
     notes = parsed["notes"]
-    if not isinstance(notes, list) or not notes:
-        raise ValueError("未提取到长期记忆；保留原始输出，不补写标准答案")
+    if not isinstance(notes, list):
+        raise ValueError("notes必须是数组；没有长期信息时允许空数组")
     seen = set()
-    for note in notes:
+    for number, note in enumerate(notes, 1):
         if not isinstance(note, dict) or set(note) != {"text", "source_quote"}:
             raise ValueError("笔记字段不符合要求")
         if not all(isinstance(value, str) and value.strip() for value in note.values()):
             raise ValueError("笔记和来源原话必须是非空字符串")
         if not any(note["source_quote"] in message["content"]
                    for message in CONVERSATION if message["role"] == "user"):
-            raise ValueError("来源原话没有逐字出现在用户消息中")
+            raise ValueError(
+                f"第{number}条source_quote没有逐字出现在用户消息中：{note['source_quote']!r}；"
+                "请检查空格、标点和大小写。text可以概括，source_quote必须直接复制原文。"
+            )
         if note["text"] in seen:
             raise ValueError("存在重复笔记")
         seen.add(note["text"])
