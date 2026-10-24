@@ -1,0 +1,43 @@
+{
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "repository": "bojieli/ai-agent-book",
+  "scope": "four official 3-9 reference files plus existing frozen vehicle case and root license",
+  "files": [
+    {
+      "path": "LICENSE",
+      "size": 11338,
+      "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074",
+      "git_blob_sha1": "bd3e071f150cf46f86c91d3341d36644f16e11cb"
+    },
+    {
+      "path": "chapter3/agentic-rag-for-user-memory/README.md",
+      "size": 11057,
+      "sha256": "3a81b13adf5424e28d83fc46695dd5277f13af0e5055fe8a4e2cbbc07aa0837a",
+      "git_blob_sha1": "15d6942f7fe66a723182bcd13987495ab58a2a29"
+    },
+    {
+      "path": "chapter3/agentic-rag-for-user-memory/chunker.py",
+      "size": 13034,
+      "sha256": "d0186482c3889ab20cb9357bbcd903f4848f7820d6cbd6279ed918a0a94543ee",
+      "git_blob_sha1": "8d8c19f19cafcc8a425f9d2dde5633d8fce1b132"
+    },
+    {
+      "path": "chapter3/agentic-rag-for-user-memory/config.py",
+      "size": 12005,
+      "sha256": "4312300e8c04ad1abaa5e7fecaab25046787d89fa15265f88c433786f8530bf6",
+      "git_blob_sha1": "0ea7913a218ac80fb6e0d07881c6c7886a59a9c1"
+    },
+    {
+      "path": "chapter3/agentic-rag-for-user-memory/offline_demo.py",
+      "size": 13614,
+      "sha256": "2d2b68948dc36786c60a77d42ec93a3d70331d4fa4d0d44cd1ba5f7b3a090bcb",
+      "git_blob_sha1": "3858a0c2f26b16b86301b485ad52ea5af0dfa917"
+    },
+    {
+      "path": "chapter3/user-memory-evaluation/test_cases/layer2/01_multiple_vehicles.yaml",
+      "size": 19514,
+      "sha256": "d00b83e6db7660a2686606218e6b592af883aea201b066a3f6e769d7710e4b48",
+      "git_blob_sha1": "8fe3537ddeb1a0b4b340f642d13959b5f8d62a08"
+    }
+  ]
+}
