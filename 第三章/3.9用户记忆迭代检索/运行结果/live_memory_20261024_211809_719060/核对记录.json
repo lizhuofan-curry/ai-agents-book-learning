@@ -1,0 +1,22 @@
+{
+  "status": "mechanical_checks_passed_semantic_findings",
+  "record_sha256": "baf8903c371bad6b7f3d95e17ff9b337f29a3c93bc02458e53fc11ccf8faf9de",
+  "checks": [
+    "source/script fingerprints",
+    "six exact indexed texts",
+    "saved searches reproduced with frozen backend",
+    "complete raw responses and parsed actions",
+    "token counters and citation existence",
+    "post-run marker coverage"
+  ],
+  "findings": [
+    "Both arms searched once; agent improvement comes from query reformulation rather than observed multi-step retrieval.",
+    "Agent retrieved confirmation number; original-query arm did not.",
+    "Both answers assert 2024-11-24 Friday; calendar calculation yields Sunday. Source dialogue itself mixes November 24 Friday with 2024 session metadata; no warning in answers.",
+    "Ordinary limitations incorrectly say only one session was retrieved; two session IDs were returned.",
+    "Neither answer explicitly disambiguates Tesla discussed but not booked, despite both seeing this evidence."
+  ],
+  "new_model_requests": 0,
+  "new_network_requests": 0,
+  "limits": "one fixed case; hit verification reuses frozen backend; marker presence not semantic accuracy"
+}
