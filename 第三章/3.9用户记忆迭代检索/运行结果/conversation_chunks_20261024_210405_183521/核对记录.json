@@ -1,0 +1,18 @@
+{
+  "status": "conversation_chunks_verified",
+  "record_sha256": "b9de307389611e5b9b8d9ed0988afb6d1f44a6675dfa60b2d88350dbe038fc38",
+  "checks": [
+    "source/script hashes",
+    "complete original histories",
+    "six expected round windows independently checked against message slices",
+    "194 unique messages preserved with exact contents",
+    "16 duplicated message appearances from overlap",
+    "session IDs timestamps metadata and rendered text",
+    "no answer or evaluation fields in chunks"
+  ],
+  "chunks": 6,
+  "unique_messages": 194,
+  "overlap_extra_appearances": 16,
+  "model_requests": 0,
+  "network_requests": 0
+}
