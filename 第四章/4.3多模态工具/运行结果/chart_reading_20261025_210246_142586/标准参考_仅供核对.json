@@ -1,0 +1,19 @@
+{
+  "data_kind": "synthetic teaching chart",
+  "quarters": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4"
+  ],
+  "revenue": [
+    120,
+    150,
+    95,
+    180
+  ],
+  "unit": "million USD",
+  "expected_quarter": "Q4",
+  "expected_value": 180,
+  "scope": "human reference only; future model input must exclude this file and generator arrays"
+}

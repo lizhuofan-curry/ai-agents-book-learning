@@ -1,0 +1,51 @@
+{
+  "record_sha256": "96a615e5c4594cc4ed68b2f369548f1d25e5da0e40148f3bbb594e1f1846b7cd",
+  "raw_record_modified": false,
+  "model_requests_during_review": 0,
+  "first_request_only_prompt_append": true,
+  "same_action_names_and_arguments": true,
+  "same_first_candidate_ranking": true,
+  "all_model_calls_stopped_normally": true,
+  "baseline_metrics": {
+    "model_requests": 4,
+    "tool_actions": 3,
+    "discovery_actions": 1,
+    "selected_business_tools": [
+      "arxiv_search",
+      "arxiv_get_paper"
+    ],
+    "search_then_simulated_download_with_returned_url": false,
+    "real_papers_searched": false,
+    "real_files_downloaded": 0,
+    "initial_schema_characters": 683,
+    "summed_request_tool_schema_characters": 6164,
+    "prompt_tokens_reported": 5328,
+    "output_tokens_reported": 260,
+    "semantics": "final answer and relevance require review; no real-task completion score"
+  },
+  "new_metrics": {
+    "model_requests": 4,
+    "tool_actions": 3,
+    "discovery_actions": 1,
+    "selected_business_tools": [
+      "arxiv_search",
+      "arxiv_get_paper"
+    ],
+    "search_then_simulated_download_with_returned_url": false,
+    "real_papers_searched": false,
+    "real_files_downloaded": 0,
+    "initial_schema_characters": 683,
+    "summed_request_tool_schema_characters": 6164,
+    "prompt_tokens_reported": 5517,
+    "output_tokens_reported": 267,
+    "semantics": "final answer and relevance require review; no real-task completion score"
+  },
+  "findings": [
+    "No observed improvement of the simulated search-download action chain in this known case.",
+    "Both trajectories discover once, search papers, then call arxiv_get_paper with 2005.14165 not supplied by the simulated search result.",
+    "The new final answer separates simulated search and inability to perform real download more clearly, but this does not replace the missing simulated download call.",
+    "Mock responses, explicit no-real-operations framing and action budget can influence conservative stopping; do not attribute this single run exclusively to a general planning deficiency.",
+    "Prompt token count rose by 189; schema exposure and action counts were unchanged.",
+    "Do not continue prompt tuning on this same case just to obtain a successful-looking result."
+  ]
+}
