@@ -1,0 +1,22 @@
+{
+  "repository": "bojieli/ai-agent-book",
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "normalization": "trailing whitespace/newlines normalized in downloaded references; SHA256 describes local bytes",
+  "files": [
+    {
+      "local_path": "cli.py",
+      "upstream_path": "chapter4/execution-tools/cli.py",
+      "sha256": "f5c79b1a5d09dab9bc8d737bbb49fc8f7120afd1922d8450b56292c7d81027e0"
+    },
+    {
+      "local_path": "file_tools.py",
+      "upstream_path": "chapter4/execution-tools/file_tools.py",
+      "sha256": "3cec0e4bb6d6c1adfbb422a34f6cb96089f2e92fa0fea6f07e93149c4670a819"
+    },
+    {
+      "local_path": "LICENSE",
+      "upstream_path": "LICENSE",
+      "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074"
+    }
+  ]
+}
