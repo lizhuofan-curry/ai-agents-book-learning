@@ -1,0 +1,79 @@
+{
+  "version": "assistant_review_v2",
+  "provenance": "assistant extension after reviewing three new synthetic cases; post-hoc development examples; no gold or labels used",
+  "fields": [
+    {
+      "name": "prior_record",
+      "value_type": "string",
+      "definition": "只记录正文明确描述的既往记录；没有记录可写明确否定原意，未提及为null。"
+    },
+    {
+      "name": "recidivism_reported",
+      "value_type": "boolean",
+      "definition": "正文明确称累犯才为true，明确否认才为false，否则null；不自行核验或推断成立。"
+    },
+    {
+      "name": "admission_statement",
+      "value_type": "string",
+      "definition": "记录当庭认罪认罚、否认故意等原意；不把否认故意等同完整否认所有事实。"
+    },
+    {
+      "name": "amount_cny",
+      "value_type": "number",
+      "definition": "正文明确陈述的涉案人民币金额，不要求所有案件都经鉴定；未提及为null。"
+    },
+    {
+      "name": "injury_level",
+      "value_type": "string",
+      "definition": "只记录明确伤情描述；未提及为null，不根据行为类型推定没有伤害。"
+    },
+    {
+      "name": "compensation_statement",
+      "value_type": "string",
+      "definition": "记录退赔或赔偿的明确状态及范围；不从未追回推断是否主动退赔。"
+    },
+    {
+      "name": "forgiveness_reported",
+      "value_type": "boolean",
+      "definition": "明确取得谅解为true，明确未取得为false，其余null；未赔偿不等于未获谅解。"
+    },
+    {
+      "name": "arrival_statement",
+      "value_type": "string",
+      "definition": "按原文记录抓获、主动投案自首及逃离等经过；不将抓获自动推断为从未投案。"
+    },
+    {
+      "name": "money_recovery_reported",
+      "value_type": "boolean",
+      "definition": "正文明确赃款追回为true，明确未追回为false，否则null；退赔不自动等于追回。"
+    },
+    {
+      "name": "group_participation_reported",
+      "value_type": "boolean",
+      "definition": "正文明确称伙同他人、结伙、团伙或纠集多人共同实施为true；明确单独实施为false；未提及为null。只记录正文，不判断组织性质。"
+    },
+    {
+      "name": "premeditation_reported",
+      "value_type": "boolean",
+      "definition": "正文明确称事先预谋等预先计划才为true，明确否认预谋为false；口角、积怨或多人实施本身不足以推断，未明确则null。"
+    },
+    {
+      "name": "method_statement",
+      "value_type": "string",
+      "definition": "记录正文明确描述的实施行为或手段，保持原意；不要求分类为法律术语；未提及则null。"
+    },
+    {
+      "name": "victim_count_reported",
+      "value_type": "number",
+      "definition": "仅记录正文明确数字表达的被害人数，必须为正整数；“被害人”“他人”等泛指不推为1，未明确则null。"
+    }
+  ],
+  "rules": [
+    "每例必须含全部字段；未提及或不能判定用null。",
+    "非null值必须选择该例原文片段ID；程序复制原文，不让模型重写引句。",
+    "null通常不附依据；不能以未检索到或不同概念推导否定。",
+    "有依据只代表能定位，不能自动证明值与定义相符。",
+    "不确定性说明同样只能陈述原文支持的事实；未提及写未提及，不写成没有，不添加钱款是否实际到位等推断。"
+  ],
+  "parent_sha256": "9e7e1e5337b94e5c15110690c196ad68a89f099657717a79895115071c36e91b"
+}

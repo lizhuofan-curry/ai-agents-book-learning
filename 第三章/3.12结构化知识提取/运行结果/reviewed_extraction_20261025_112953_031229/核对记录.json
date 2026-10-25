@@ -1,0 +1,208 @@
+{
+  "record_sha256": "41ae80e81bbc8d2e0bddb83012b2efc9c433937996ffdd0c221edbf2a16726e3",
+  "raw_record_modified": false,
+  "model_requests_during_review": 0,
+  "review_scope": "assistant source-based review under assistant_review_v1; no gold comparison or legal correctness certification",
+  "fields_reviewed": 27,
+  "nonnull_values": 18,
+  "null_values": 9,
+  "checks": [
+    {
+      "sample_id": "sample_1",
+      "field": "prior_record",
+      "value": "无违法犯罪记录",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_1",
+      "field": "recidivism_reported",
+      "value": null,
+      "evidence_copied_exactly": true,
+      "review": "按当前明确陈述口径保留null，不以不同概念或常识补全"
+    },
+    {
+      "sample_id": "sample_1",
+      "field": "admission_statement",
+      "value": "当庭认罪认罚",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_1",
+      "field": "amount_cny",
+      "value": 34170,
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_1",
+      "field": "injury_level",
+      "value": null,
+      "evidence_copied_exactly": true,
+      "review": "按当前明确陈述口径保留null，不以不同概念或常识补全"
+    },
+    {
+      "sample_id": "sample_1",
+      "field": "compensation_statement",
+      "value": "已退赔全部赃款",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_1",
+      "field": "forgiveness_reported",
+      "value": true,
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_1",
+      "field": "arrival_statement",
+      "value": "被公安机关抓获归案",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_1",
+      "field": "money_recovery_reported",
+      "value": null,
+      "evidence_copied_exactly": true,
+      "review": "按当前明确陈述口径保留null，不以不同概念或常识补全"
+    },
+    {
+      "sample_id": "sample_2",
+      "field": "prior_record",
+      "value": "曾因寻衅滋事被判刑",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_2",
+      "field": "recidivism_reported",
+      "value": true,
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_2",
+      "field": "admission_statement",
+      "value": "当庭认罪认罚",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_2",
+      "field": "amount_cny",
+      "value": null,
+      "evidence_copied_exactly": true,
+      "review": "按当前明确陈述口径保留null，不以不同概念或常识补全"
+    },
+    {
+      "sample_id": "sample_2",
+      "field": "injury_level",
+      "value": "轻微伤",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_2",
+      "field": "compensation_statement",
+      "value": "未赔偿被害人损失",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_2",
+      "field": "forgiveness_reported",
+      "value": null,
+      "evidence_copied_exactly": true,
+      "review": "按当前明确陈述口径保留null，不以不同概念或常识补全"
+    },
+    {
+      "sample_id": "sample_2",
+      "field": "arrival_statement",
+      "value": "作案后逃离现场，后被抓获",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_2",
+      "field": "money_recovery_reported",
+      "value": null,
+      "evidence_copied_exactly": true,
+      "review": "按当前明确陈述口径保留null，不以不同概念或常识补全"
+    },
+    {
+      "sample_id": "sample_3",
+      "field": "prior_record",
+      "value": "曾因诈骗被判刑",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_3",
+      "field": "recidivism_reported",
+      "value": true,
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_3",
+      "field": "admission_statement",
+      "value": "当庭否认诈骗故意",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_3",
+      "field": "amount_cny",
+      "value": 686530,
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_3",
+      "field": "injury_level",
+      "value": null,
+      "evidence_copied_exactly": true,
+      "review": "按当前明确陈述口径保留null，不以不同概念或常识补全"
+    },
+    {
+      "sample_id": "sample_3",
+      "field": "compensation_statement",
+      "value": null,
+      "evidence_copied_exactly": true,
+      "review": "按当前明确陈述口径保留null，不以不同概念或常识补全"
+    },
+    {
+      "sample_id": "sample_3",
+      "field": "forgiveness_reported",
+      "value": null,
+      "evidence_copied_exactly": true,
+      "review": "按当前明确陈述口径保留null，不以不同概念或常识补全"
+    },
+    {
+      "sample_id": "sample_3",
+      "field": "arrival_statement",
+      "value": "案发后主动投案自首",
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    },
+    {
+      "sample_id": "sample_3",
+      "field": "money_recovery_reported",
+      "value": false,
+      "evidence_copied_exactly": true,
+      "review": "非空值与当前字段定义及可见原文相符"
+    }
+  ],
+  "findings": [
+    "18个非空值可由所选原文支持；9个null符合当前严格按明确陈述抽取的口径。",
+    "sample_1无违法犯罪记录，但recidivism_reported字段只记录正文明确称累犯与否；未出现明确否认累犯表述，保留null。",
+    "退赔与追回、赔偿与谅解分别保留，没有跨概念补全。",
+    "不确定性列出部分缺失，但未指出样例2的官方类别标签与正文伤情可能存在材料疑点；该标签未发送给模型，不能要求模型核对隐藏标签。",
+    "仅审阅3条合成正文；未评价字段覆盖率、真实法律含义、全量抽取质量或聚类效果。"
+  ],
+  "conclusion": "本次在当前审阅字段口径下未发现明显取值或引用错配；模型原始状态保留review_pending，不生成自动准确率。"
+}

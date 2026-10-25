@@ -1,0 +1,189 @@
+{
+  "record_sha256": "4cbc45c42667c7a0c6740a797058c04b3b045c74df6bf087d0d4652fa40dde73",
+  "raw_record_modified": false,
+  "model_requests_during_review": 0,
+  "review_scope": "source-based assistant review under frozen schema; no gold accuracy score",
+  "fields_reviewed": 27,
+  "nonnull_values": 18,
+  "null_values": 9,
+  "checks": [
+    {
+      "sample_id": "new_1",
+      "field": "prior_record",
+      "value": "无违法犯罪记录",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_1",
+      "field": "recidivism_reported",
+      "value": null,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_1",
+      "field": "admission_statement",
+      "value": "当庭认罪认罚",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_1",
+      "field": "amount_cny",
+      "value": 107830,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_1",
+      "field": "injury_level",
+      "value": null,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_1",
+      "field": "compensation_statement",
+      "value": "已退赔全部赃款",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_1",
+      "field": "forgiveness_reported",
+      "value": true,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_1",
+      "field": "arrival_statement",
+      "value": "案发后主动到公安机关投案自首",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_1",
+      "field": "money_recovery_reported",
+      "value": null,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_2",
+      "field": "prior_record",
+      "value": "曾因寻衅滋事被判刑",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_2",
+      "field": "recidivism_reported",
+      "value": true,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_2",
+      "field": "admission_statement",
+      "value": "当庭辩称系正当防卫",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_2",
+      "field": "amount_cny",
+      "value": null,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_2",
+      "field": "injury_level",
+      "value": "轻微伤",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_2",
+      "field": "compensation_statement",
+      "value": "未赔偿被害人损失",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_2",
+      "field": "forgiveness_reported",
+      "value": null,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_2",
+      "field": "arrival_statement",
+      "value": "作案后逃离现场，后被抓获",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_2",
+      "field": "money_recovery_reported",
+      "value": null,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_3",
+      "field": "prior_record",
+      "value": "曾因诈骗被判刑",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_3",
+      "field": "recidivism_reported",
+      "value": true,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_3",
+      "field": "admission_statement",
+      "value": "当庭否认诈骗故意",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_3",
+      "field": "amount_cny",
+      "value": 362950,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_3",
+      "field": "injury_level",
+      "value": null,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_3",
+      "field": "compensation_statement",
+      "value": "已退赔全部赃款",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_3",
+      "field": "forgiveness_reported",
+      "value": null,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_3",
+      "field": "arrival_statement",
+      "value": "后被公安机关抓获",
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    },
+    {
+      "sample_id": "new_3",
+      "field": "money_recovery_reported",
+      "value": null,
+      "review": "按冻结定义与原文核对，未见明显取值或引用错配；不代表原文真实性或法律判断成立"
+    }
+  ],
+  "problems": [
+    {
+      "location": "candidate.uncertainties",
+      "issue": "new_3未提及谅解，模型写成且未取得谅解；无原文支持，且与对应null取值不一致。",
+      "reviewed_interpretation": "未提及是否取得谅解，应保持未知。"
+    },
+    {
+      "location": "candidate.uncertainties",
+      "issue": "将追回解释成钱款实际到位并无字段定义依据；退赔与追回在本实验仅按各自明确表述抽取，不能由null推断钱款实际未到位。"
+    },
+    {
+      "location": "frozen field coverage",
+      "issue": "当前9字段未专门表达结伙/团伙、事先预谋、电信网络手段、被害人数等正文信息；字段取值合理不等于信息完整。"
+    }
+  ],
+  "conclusion": "27项在冻结口径下未见明显取值或引用错配，但自由文本解释含无依据否定，且字段覆盖有限；不宣布整份回答正确或全量可用。"
+}
