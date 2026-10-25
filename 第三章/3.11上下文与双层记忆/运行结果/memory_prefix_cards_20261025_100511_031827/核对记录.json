@@ -1,0 +1,21 @@
+{
+  "status": "mechanical_checks_passed_semantic_findings",
+  "record_sha256": "9a02aacf3212d6e310095b41af885ff60cfdb47ad588d90d6d7e23927ae3534a",
+  "checks": [
+    "source/script fingerprints",
+    "exact full-session and target input",
+    "raw response and JSON consistency",
+    "all quotes located in specified source messages",
+    "token totals"
+  ],
+  "findings": [
+    "English prefix despite Chinese requested; exactly 200 characters and ends in comma; normal stop, not token-limit truncation.",
+    "Cards largely grounded for policy/drop-off/location, but no explicit vehicle linkage inside cards.",
+    "Date card cites no message explicitly giving November 24; complete session contains it in message 84.",
+    "Source weekday/date conflict with 2024 metadata not flagged; uncertainties says none.",
+    "No explicit card for discussed-but-not-booked Tesla or primary service scope; all card quotations from final target region."
+  ],
+  "new_model_requests": 0,
+  "new_network_requests": 0,
+  "scope": "single generated candidate, not validated complete memory or retrieval/answer improvement"
+}

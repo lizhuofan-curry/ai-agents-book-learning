@@ -1,0 +1,20 @@
+{
+  "status": "mechanical_checks_passed_partial_semantic_improvement",
+  "record_sha256": "a87eff3f639a77b58159014460e24a0c822cb701cd3bdc633658b1c46b3d8dfe",
+  "checks": [
+    "code/card/source fingerprints",
+    "identical cards and metadata with original messages added only in second arm",
+    "same question/system/settings and independent histories",
+    "complete responses and valid visible citations",
+    "token totals"
+  ],
+  "findings": [
+    "Original-backed arm supplies Honda vehicle and service package and explicitly excludes Tesla from this booking.",
+    "Cards-only arm correctly admits vehicle info absent but repeats date/year-weekday contradiction.",
+    "Both arms repeat 2024-11-24 Friday despite source/metadata conflict; no uncertainty warning.",
+    "Original-backed first claim combines several facts; cited list does not include name message M7, although name exists in full context.",
+    "Only fixed-context QA tested, no retrieval or general accuracy claim."
+  ],
+  "new_model_requests": 0,
+  "new_network_requests": 0
+}
