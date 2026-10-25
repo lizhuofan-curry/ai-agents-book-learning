@@ -1,0 +1,21 @@
+{
+  "record_sha256": "90ef83adc15b68052c6a05aca4e3352f651d864407aa0fcf6d0e38cae249e711",
+  "raw_record_modified": false,
+  "model_requests_during_review": 0,
+  "actual_model_calls": 2,
+  "actual_tool_calls": 1,
+  "source_not_sent_before_tool_call": true,
+  "file_check": {
+    "read_success": true,
+    "content_matches_fixture": true,
+    "complete_content": true
+  },
+  "both_model_requests_stopped_normally": true,
+  "findings": [
+    "Native tool call selected file_reader and the requested path without parameter repair.",
+    "Real MCP result was passed back as a role=tool message.",
+    "The final answer paraphrases the fixture; its no-model/no-network statement describes the old fixture, not this run.",
+    "This run made two local model HTTP requests and no external internet service calls.",
+    "One tool and an explicitly requested file do not demonstrate complex tool selection or full chapter acceptance."
+  ]
+}
