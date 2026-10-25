@@ -1,0 +1,50 @@
+{
+  "record_sha256": "ebc3b6313fc09c60d45654736640482f7e04d67b2483048edf98363b7778bcec",
+  "raw_record_modified": false,
+  "model_requests_during_review": 0,
+  "calls_stopped_normally": true,
+  "full": {
+    "model_requests": 3,
+    "tool_actions": 2,
+    "discovery_actions": 0,
+    "selected_business_tools": [
+      "arxiv_search",
+      "download_file"
+    ],
+    "search_then_simulated_download_with_returned_url": true,
+    "real_papers_searched": false,
+    "real_files_downloaded": 0,
+    "initial_schema_characters": 28948,
+    "summed_request_tool_schema_characters": 86844,
+    "prompt_tokens_reported": 29849,
+    "output_tokens_reported": 257,
+    "semantics": "final answer and relevance require review; no real-task completion score"
+  },
+  "discovery": {
+    "model_requests": 4,
+    "tool_actions": 3,
+    "discovery_actions": 1,
+    "selected_business_tools": [
+      "arxiv_search",
+      "arxiv_get_paper"
+    ],
+    "search_then_simulated_download_with_returned_url": false,
+    "real_papers_searched": false,
+    "real_files_downloaded": 0,
+    "initial_schema_characters": 683,
+    "summed_request_tool_schema_characters": 6164,
+    "prompt_tokens_reported": 5328,
+    "output_tokens_reported": 260,
+    "semantics": "final answer and relevance require review; no real-task completion score"
+  },
+  "findings": [
+    "Full arm selected simulated search then simulated download using a returned URL; no file was created.",
+    "Discovery retrieved search-related candidates but not download_file, did not discover the missing download capability, and chose arxiv_get_paper instead.",
+    "The arxiv_id 2005.14165 was not provided by the simulated search result; argument provenance is unsupported.",
+    "After the unnecessary get-paper action, only one of four action slots remained, insufficient for both another discovery and a download. Earlier discovery instead of get-paper could have fit the intended chain.",
+    "Only arxiv_search and download_file have task-specific simulated results. The unsupported get-paper response can influence stopping; this is not an unbiased real-tools benchmark.",
+    "Full final answer includes a simulation disclaimer, but task-complete and saved-to-path wording is ambiguous because file_created is false.",
+    "Reported prompt tokens are lower for discovery, but this also reflects different tool histories, extra discovery, an unfinished simulated chain and early stopping. No general accuracy, latency or financial savings claim."
+  ],
+  "conclusion": "Fewer exposed schemas/report input tokens in this run; full completed the simulated two-tool chain, discovery did not. Real search/download completed in neither arm."
+}
