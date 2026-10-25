@@ -1,0 +1,6 @@
+{
+  "success": true,
+  "analysis": "根据图片信息：\n\n- **Q1** 营收：**$120M**\n- **Q2** 营收：**$150M**\n- **Q3** 营收：**$95M**\n- **Q4** 营收：**$180M**\n\n结论：  \n**Q4 季度营收最高，具体数值为 $180M（即 1.8 亿美元）**。\n\n单位说明：图中 Y 轴标注“Revenue (in $M)”，表示单位为百万美元（Million USD），因此 $180M = 180,000,000 美元。",
+  "image_sha256": "15d1e76faed919679c242941ff6e042e15637e30fd61500a063897c3e458a982",
+  "source": "local vision model output, semantic support pending review"
+}

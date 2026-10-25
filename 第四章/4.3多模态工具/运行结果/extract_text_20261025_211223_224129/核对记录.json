@@ -1,0 +1,24 @@
+{
+  "source_run": "extract_text_20261025_211223_224129",
+  "source_record_sha256": "db3050ceb96d30e19092f7d237f29ac848296bfee20a16bc5e6280e3510770fb",
+  "request_checks": {
+    "original_image_and_generic_extraction_only": true,
+    "answer_fresh_text_only_request": true,
+    "transcript_passed_verbatim": true,
+    "raw_response_matches_saved_text": true,
+    "two_calls_counted": true,
+    "both_steps_tokens_summed": true
+  },
+  "assistant_visual_review": {
+    "all_four_quarter_values_preserved": true,
+    "unit_and_axis_ticks_preserved": true,
+    "final_quarter_value_unit_correct": true
+  },
+  "usage": {
+    "model_requests": 2,
+    "prompt_tokens_reported": 898,
+    "output_tokens_reported": 153
+  },
+  "scope": "single synthetic chart; visual comparison with frozen PNG; not automatic accuracy score or general advantage claim",
+  "raw_record_preserved": true
+}
