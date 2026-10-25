@@ -1,0 +1,13 @@
+{
+  "source_record_sha256": "717ff050dae7b4d64b2fc84d7e0af64e75fa534ed14cc7821c23535aa8fa6208",
+  "decision": "approved",
+  "actual_terminal_reply": "同意",
+  "checks": {
+    "reply_precedes_decision": true,
+    "target_presence_matches_decision": true,
+    "script_matches_record": true,
+    "file_hash_matches_if_approved": true
+  },
+  "raw_record_preserved": true,
+  "scope": "this local terminal run; not MCP or model decision validation"
+}

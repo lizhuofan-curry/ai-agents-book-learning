@@ -1,0 +1,33 @@
+{
+  "source_run": "image_tool_20261025_211738_134202",
+  "source_record_sha256": "ebe4024caded1bddf753a18a33f74e7972a3f4011e07830b4616a353019cf7b1",
+  "mechanical_checks": {
+    "fixed_image_and_baselines_match": true,
+    "request_files_match_hashes": true,
+    "raw_responses_match_parsed_records": true,
+    "controller_has_no_images_or_baseline_answers": true,
+    "selected_question_is_original_question": true,
+    "analyst_receives_same_image_and_selected_question": true,
+    "one_actual_local_tool_dispatch": true,
+    "tool_evidence_returned_verbatim_to_controller": true,
+    "final_answer_matches_raw_response": true,
+    "all_three_requests_in_usage": true
+  },
+  "assistant_visual_review": {
+    "four_bar_values_and_unit_correct": true,
+    "tool_conclusion_and_final_answer_correct": true,
+    "subquestion_decomposition_observed": false,
+    "local_crop_or_followup_observed": false
+  },
+  "usage": {
+    "model_requests": 3,
+    "controller_requests": 2,
+    "analyst_requests": 1,
+    "tool_calls": 1,
+    "evidence_received": true,
+    "prompt_tokens_reported": 1439,
+    "output_tokens_reported": 193
+  },
+  "scope": "assistant review against frozen chart; not automatic accuracy score; one known synthetic chart, one exposed tool, unequal flow budgets",
+  "raw_record_preserved": true
+}

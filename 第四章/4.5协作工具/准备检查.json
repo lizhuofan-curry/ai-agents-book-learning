@@ -1,0 +1,31 @@
+{
+  "kind": "preparation checks only; no formal human run",
+  "unit_tests_passed": 7,
+  "pty_smoke_checks": [
+    {
+      "case": "approve",
+      "decision": "approved",
+      "target_created": true,
+      "passed": true,
+      "reply_origin": "automated PTY test input, not human approval"
+    },
+    {
+      "case": "reject",
+      "decision": "rejected",
+      "target_created": false,
+      "passed": true,
+      "reply_origin": "automated PTY test input, not human approval"
+    },
+    {
+      "case": "timeout",
+      "decision": "timeout",
+      "target_created": false,
+      "passed": true,
+      "reply_origin": "automated PTY test input, not human approval"
+    }
+  ],
+  "model_requests": 0,
+  "mcp_requests": 0,
+  "network_requests": 0,
+  "temporary_test_artifacts_removed": true
+}

@@ -1,0 +1,13 @@
+{
+  "source_record_sha256": "83e5a09c8a786fb8a60501ac07ec9f3170d06d94e02283877d519880a1279c4f",
+  "decision": "rejected",
+  "actual_terminal_reply": "拒绝",
+  "checks": {
+    "reply_precedes_decision": true,
+    "target_presence_matches_decision": true,
+    "script_matches_record": true,
+    "file_hash_matches_if_approved": true
+  },
+  "raw_record_preserved": true,
+  "scope": "this local terminal run; not MCP or model decision validation"
+}

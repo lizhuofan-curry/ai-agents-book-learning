@@ -1,0 +1,13 @@
+{
+  "source_record_sha256": "fbff5a94f7cf3d0adaeb5aa705df968c00311426e7505f58662f7ff5445df63c",
+  "checks": {
+    "three_calls_in_order": true,
+    "same_request_id": true,
+    "real_terminal_approve": true,
+    "server_pending_to_approved": true,
+    "server_state_finished": true,
+    "actual_file_hash_matches": true
+  },
+  "raw_record_preserved": true,
+  "scope": "this approved local MCP run; no model decision or administrator identity authentication"
+}
