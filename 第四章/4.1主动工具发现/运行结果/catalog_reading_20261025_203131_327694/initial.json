@@ -1,0 +1,58 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "calculator",
+      "description": "做数学表达式计算。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string",
+            "description": "数学表达式"
+          }
+        },
+        "required": [
+          "expression"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_current_time",
+      "description": "获取指定时区的当前时间。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "timezone": {
+            "type": "string",
+            "description": "时区，如 Asia/Shanghai"
+          }
+        },
+        "required": [
+          "timezone"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "discover_tools",
+      "description": "根据当前能力需求查找相关工具说明；此步骤只展示接口定义，不执行检索。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "need": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "need"
+        ]
+      }
+    }
+  }
+]

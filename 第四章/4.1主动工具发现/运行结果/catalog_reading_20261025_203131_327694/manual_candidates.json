@@ -1,0 +1,50 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "arxiv_search",
+      "description": "在 arXiv 论文库中检索论文，按相关度/时间返回论文标题、作者、摘要与 PDF 链接。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "检索关键词"
+          },
+          "max_results": {
+            "type": "integer",
+            "description": "返回论文数量"
+          }
+        },
+        "required": [
+          "query",
+          "max_results"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "download_file",
+      "description": "从给定 URL 下载文件（PDF/图片/压缩包等）并保存到本地。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "文件 URL"
+          },
+          "path": {
+            "type": "string",
+            "description": "本地保存路径"
+          }
+        },
+        "required": [
+          "url",
+          "path"
+        ]
+      }
+    }
+  }
+]

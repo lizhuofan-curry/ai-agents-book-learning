@@ -1,0 +1,56 @@
+{
+  "status": "catalog_views_saved_not_model_experiment",
+  "created_at": "2026-10-25T20:31:31.329353+08:00",
+  "script_sha256": "e64aec78a16c22633fda66c2cd2d8b62cf392cf3594be1a4a0111e6d71a8afc0",
+  "manifest_sha256": "a837acd4ef3666298942402400d98425567cb4a6aa7b5f58bd8f450d5bcc9276",
+  "manifest": {
+    "repository": "bojieli/ai-agent-book",
+    "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+    "normalization": "downloaded references have normalized trailing blank lines; SHA256 describes local bytes",
+    "files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074"
+      },
+      {
+        "path": "README.md",
+        "sha256": "1a7479e430a02cc4bd4592a61b2088362222723358d2bb717831aad4ca298f63"
+      },
+      {
+        "path": "tools_library.py",
+        "sha256": "597b12321a45eaed99b316c4ffadb537b86130ee647c61c8027830c097625e30"
+      }
+    ]
+  },
+  "task": "查找Transformer相关论文，并下载选中的论文。",
+  "manual_candidate_names": [
+    "arxiv_search",
+    "download_file"
+  ],
+  "metrics": {
+    "full": {
+      "tool_count": 126,
+      "json_characters": 28948,
+      "utf8_bytes": 33234
+    },
+    "initial": {
+      "tool_count": 3,
+      "json_characters": 626,
+      "utf8_bytes": 754
+    },
+    "manual_candidates": {
+      "tool_count": 2,
+      "json_characters": 575,
+      "utf8_bytes": 721
+    },
+    "after_manual_demo": {
+      "tool_count": 5,
+      "json_characters": 1200,
+      "utf8_bytes": 1474
+    }
+  },
+  "model_requests": 0,
+  "tool_executions": 0,
+  "network_requests": 0,
+  "scope": "static definition reading and manual schema visibility illustration; no autonomous discovery or accuracy result"
+}
