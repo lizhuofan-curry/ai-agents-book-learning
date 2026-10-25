@@ -1,0 +1,17 @@
+{
+  "source_run": "native_vision_20261025_210742_702758",
+  "source_record_sha256": "c1043f20599d44cb75f87113bb7d8e501012547a55ce5897e1eea9f6d6acabb4",
+  "checks": {
+    "request_hash_matches": true,
+    "actual_request_matches_image_question_and_generic_prompt": true,
+    "one_local_request": true,
+    "completed_stop_response": true,
+    "quarter_matches_chart": true,
+    "value_matches_chart": true,
+    "unit_matches_chart": true
+  },
+  "reviewed_answer": "Q4季度营收最高，具体数值是180M，单位是百万美元（$M）。",
+  "review_basis": "Assistant visual review of same fixed chart plus saved request and raw response; not automatic model scoring",
+  "scope": "single synthetic chart native-image baseline; no general capability or cross-route advantage claim",
+  "raw_record_preserved": true
+}

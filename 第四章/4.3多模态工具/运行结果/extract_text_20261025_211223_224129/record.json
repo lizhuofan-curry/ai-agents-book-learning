@@ -1,0 +1,104 @@
+{
+  "status": "extract_text_answer_saved_review_pending",
+  "created_at": "2026-10-25T21:12:23.224464+08:00",
+  "script_sha256": "adc2babccc18f8e4d90fa473e590ec5572fb79b446d4e2fede7f4f03c9a4ed3a",
+  "helper_sha256": "5175cad26f2918d4abdc178e986f456c19d6dd5caa370afebf06b16a1a312df5",
+  "source_run": "chart_reading_20261025_210246_142586",
+  "source_record_sha256": "f54495290d48a217b623acfe9595fd507245ed713a9665c3a830cc1b77ee043c",
+  "image_sha256": "15d1e76faed919679c242941ff6e042e15637e30fd61500a063897c3e458a982",
+  "baseline_run": "native_vision_20261025_210742_702758",
+  "baseline_sha256": "c1043f20599d44cb75f87113bb7d8e501012547a55ce5897e1eea9f6d6acabb4",
+  "python": "3.12.15 (main, Oct 14 2026, 00:55:37) [Clang 23.1.3 ]",
+  "executable": "/Users/zhuo/Agent相关/AI_Agents_Book/.venv/bin/python",
+  "question": "哪个季度营收最高，具体数值是多少？请说明单位。",
+  "model": "qwen3.5:9b",
+  "maximum_model_requests": 2,
+  "model_requests": 2,
+  "automatic_retries": 0,
+  "cloud_requests": 0,
+  "mcp_requests": 0,
+  "scope": "model-generated image transcription then fresh text-only answer; not dedicated OCR or full three-route comparison",
+  "stages": [
+    {
+      "name": "extraction",
+      "model_requests": 1,
+      "request_filename": "extraction_request.json",
+      "request_sha256": "86eb3ac29655010d9719f7e8d5b383b294786f5e936f909b2b407b049149ab66",
+      "status": "extraction_saved_review_pending",
+      "request_status": "completed",
+      "http_status": 200,
+      "raw_http_body": "{\"model\":\"qwen3.5:9b\",\"created_at\":\"2026-10-25T13:12:27.690883Z\",\"message\":{\"role\":\"assistant\",\"content\":\"**标题**: Acme Corp Quarterly Revenue 2024\\n\\n**横轴**: Q1, Q2, Q3, Q4\\n\\n**纵轴**: Revenue (in $M)\\n\\n**刻度**: 0, 25, 50, 75, 100, 125, 150, 175, 200\\n\\n**类别及对应标注数值**:\\n- Q1: $120M\\n- Q2: $150M\\n- Q3: $95M\\n- Q4: $180M\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":4423892208,\"load_duration\":3237167,\"prompt_eval_count\":655,\"prompt_eval_cached_count\":0,\"prompt_eval_duration\":1282574458,\"eval_count\":130,\"eval_duration\":3105040458}",
+      "response": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-25T13:12:27.690883Z",
+        "message": {
+          "role": "assistant",
+          "content": "**标题**: Acme Corp Quarterly Revenue 2024\n\n**横轴**: Q1, Q2, Q3, Q4\n\n**纵轴**: Revenue (in $M)\n\n**刻度**: 0, 25, 50, 75, 100, 125, 150, 175, 200\n\n**类别及对应标注数值**:\n- Q1: $120M\n- Q2: $150M\n- Q3: $95M\n- Q4: $180M"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 4423892208,
+        "load_duration": 3237167,
+        "prompt_eval_count": 655,
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_duration": 1282574458,
+        "eval_count": 130,
+        "eval_duration": 3105040458
+      },
+      "final_answer": "**标题**: Acme Corp Quarterly Revenue 2024\n\n**横轴**: Q1, Q2, Q3, Q4\n\n**纵轴**: Revenue (in $M)\n\n**刻度**: 0, 25, 50, 75, 100, 125, 150, 175, 200\n\n**类别及对应标注数值**:\n- Q1: $120M\n- Q2: $150M\n- Q3: $95M\n- Q4: $180M",
+      "prompt_tokens_reported": 655,
+      "output_tokens_reported": 130,
+      "semantic_review": "pending human review: quarter, value and unit; no automatic accuracy score"
+    },
+    {
+      "name": "text_answer",
+      "model_requests": 1,
+      "request_filename": "text_answer_request.json",
+      "request_sha256": "dcd2754bdba1e8e7af65bf6dc7d2807eecc65148646349a57cc52994d87bb44d",
+      "status": "text_answer_saved_review_pending",
+      "request_status": "completed",
+      "http_status": 200,
+      "raw_http_body": "{\"model\":\"qwen3.5:9b\",\"created_at\":\"2026-10-25T13:12:28.865878Z\",\"message\":{\"role\":\"assistant\",\"content\":\"Q4 季度营收最高，具体数值为 180，单位是百万美元（$M）。\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":1168704125,\"load_duration\":7248833,\"prompt_eval_count\":243,\"prompt_eval_cached_count\":3,\"prompt_eval_duration\":344504208,\"eval_count\":23,\"eval_duration\":815852875}",
+      "response": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-25T13:12:28.865878Z",
+        "message": {
+          "role": "assistant",
+          "content": "Q4 季度营收最高，具体数值为 180，单位是百万美元（$M）。"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 1168704125,
+        "load_duration": 7248833,
+        "prompt_eval_count": 243,
+        "prompt_eval_cached_count": 3,
+        "prompt_eval_duration": 344504208,
+        "eval_count": 23,
+        "eval_duration": 815852875
+      },
+      "final_answer": "Q4 季度营收最高，具体数值为 180，单位是百万美元（$M）。",
+      "prompt_tokens_reported": 243,
+      "output_tokens_reported": 23,
+      "semantic_review": "pending human review: quarter, value and unit; no automatic accuracy score"
+    }
+  ],
+  "extracted_text": "**标题**: Acme Corp Quarterly Revenue 2024\n\n**横轴**: Q1, Q2, Q3, Q4\n\n**纵轴**: Revenue (in $M)\n\n**刻度**: 0, 25, 50, 75, 100, 125, 150, 175, 200\n\n**类别及对应标注数值**:\n- Q1: $120M\n- Q2: $150M\n- Q3: $95M\n- Q4: $180M",
+  "final_answer": "Q4 季度营收最高，具体数值为 180，单位是百万美元（$M）。",
+  "semantic_review": "pending: transcription fidelity, quarter, value and unit; no automatic accuracy score",
+  "comparison": {
+    "saved_native": {
+      "status": "native_vision_answer_saved_review_pending",
+      "final_answer": "Q4季度营收最高，具体数值是180M，单位是百万美元（$M）。",
+      "model_requests": 1,
+      "prompt_tokens_reported": 626,
+      "output_tokens_reported": 22
+    },
+    "extract_then_answer": {
+      "model_requests": 2,
+      "prompt_tokens_reported": 898,
+      "output_tokens_reported": 153
+    },
+    "limitations": "one known synthetic chart; saved baseline not rerun; two requests vs one; prompts and input representation differ; no general accuracy or speed claim"
+  },
+  "elapsed_seconds": 5.644783625000855
+}
