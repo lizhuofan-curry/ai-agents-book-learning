@@ -1,0 +1,53 @@
+[
+  {
+    "sample_id": "sample_1",
+    "id": "theft_24",
+    "charge": "盗窃罪",
+    "fact": "被告人冯某，男。此前无违法犯罪记录。经审理查明：被告人冯某伙同他人结伙在某电动车棚内窃取他人财物，经鉴定价值人民币34170元。后被公安机关抓获归案，已退赔全部赃款并取得谅解。当庭认罪认罚。",
+    "gold": {
+      "amount": 34170,
+      "prior_record": false,
+      "surrender": false,
+      "restitution": true,
+      "confession": true,
+      "burglary": false,
+      "carry_weapon": false,
+      "gang": true
+    },
+    "label_months": 30
+  },
+  {
+    "sample_id": "sample_2",
+    "id": "assault_06",
+    "charge": "故意伤害罪",
+    "fact": "被告人冯某，男。曾因寻衅滋事被判刑，系累犯。经审理查明：被告人冯某因琐事发生口角后，纠集多人殴打被害人，致其经鉴定为轻微伤。作案后逃离现场，后被抓获，未赔偿被害人损失。当庭认罪认罚。",
+    "gold": {
+      "prior_record": true,
+      "surrender": false,
+      "restitution": false,
+      "confession": true,
+      "injury_level": "轻微伤",
+      "armed": false,
+      "premeditated": false,
+      "gang": true
+    },
+    "label_months": 12
+  },
+  {
+    "sample_id": "sample_3",
+    "id": "fraud_03",
+    "charge": "诈骗罪",
+    "fact": "被告人邹某，男。曾因诈骗被判刑，系累犯。经审理查明：被告人邹某以帮忙办事为由，虚构事实骗取被害人钱财，骗取财物共计人民币686530元。案发后主动投案自首，赃款未追回。当庭否认诈骗故意。",
+    "gold": {
+      "amount": 686530,
+      "prior_record": true,
+      "surrender": true,
+      "restitution": false,
+      "confession": false,
+      "scam_type": "普通",
+      "victim_count": 4,
+      "gang": false
+    },
+    "label_months": 64
+  }
+]

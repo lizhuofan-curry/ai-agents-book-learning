@@ -1,0 +1,109 @@
+{
+  "record_sha256": "fb4486692e61c6eea9a4e6038f93d7e4fdf2fe02f81335b1d5e5bbd11be62efc",
+  "raw_record_modified": false,
+  "model_requests_during_review": 0,
+  "field_count": 7,
+  "citation_count": 14,
+  "exact_matches": 12,
+  "checks": [
+    {
+      "field": "prior_criminal_record",
+      "sample_id": "sample_1",
+      "quote": "此前无违法犯罪记录",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "prior_criminal_record",
+      "sample_id": "sample_2",
+      "quote": "曾因寻衅滋事被判刑，系累犯",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "has_confession_penalty_acceptance",
+      "sample_id": "sample_1",
+      "quote": "当庭认罪认罚",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "has_confession_penalty_acceptance",
+      "sample_id": "sample_3",
+      "quote": "当庭否认诈骗故意",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "stolen_amount_cny",
+      "sample_id": "sample_1",
+      "quote": "价值人民币 34170 元",
+      "exact_match": false,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "stolen_amount_cny",
+      "sample_id": "sample_3",
+      "quote": "骗取财物共计人民币 686530 元",
+      "exact_match": false,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "victim_injury_level",
+      "sample_id": "sample_2",
+      "quote": "致其经鉴定为轻微伤",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "victim_injury_level",
+      "sample_id": "sample_1",
+      "quote": "窃取他人财物",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "has_compensation_or_apology",
+      "sample_id": "sample_1",
+      "quote": "已退赔全部赃款并取得谅解",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "has_compensation_or_apology",
+      "sample_id": "sample_2",
+      "quote": "未赔偿被害人损失",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "has_surrender",
+      "sample_id": "sample_3",
+      "quote": "案发后主动投案自首",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "has_surrender",
+      "sample_id": "sample_1",
+      "quote": "后被公安机关抓获归案",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "recovered_stolen_money",
+      "sample_id": "sample_3",
+      "quote": "赃款未追回",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    },
+    {
+      "field": "recovered_stolen_money",
+      "sample_id": "sample_1",
+      "quote": "已退赔全部赃款",
+      "exact_match": true,
+      "whitespace_removed_match": true
+    }
+  ],
+  "semantic_review": "pending; exact matching does not certify field semantics"
+}

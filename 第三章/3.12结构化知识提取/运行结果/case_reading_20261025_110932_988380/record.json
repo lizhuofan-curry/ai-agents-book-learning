@@ -1,0 +1,49 @@
+{
+  "status": "synthetic_case_reading_saved_review_pending",
+  "created_at": "2026-10-25T11:09:32.988658+08:00",
+  "script_sha256": "facd184a3168108b3fe9e4bd372c230912e68ef1570612f3124d86e1a81ce21f",
+  "manifest_sha256": "071fc1986e6280b7de534eb0b293b7600ba66921f1a4f2f37e6e94f149331878",
+  "manifest": {
+    "repository": "bojieli/ai-agent-book",
+    "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+    "data_kind": "synthetic teaching cases, not real judgments",
+    "files": [
+      {
+        "path": "LICENSE",
+        "size": 11338,
+        "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074"
+      },
+      {
+        "path": "chapter3/structured-knowledge-extraction/README.md",
+        "size": 20547,
+        "sha256": "a4c80903618c68e8dc8b3c2998f7966056974bcdc439244d34f1e592d11afbbd"
+      },
+      {
+        "path": "chapter3/structured-knowledge-extraction/data/cases.jsonl",
+        "size": 36249,
+        "sha256": "a5a0aaab789b1dd66d1526e2539bf16680d4808c4979ed7d52a95b694353c9a2"
+      },
+      {
+        "path": "chapter3/structured-knowledge-extraction/generate_data.py",
+        "size": 8923,
+        "sha256": "f0ba17df8c9dba4a6a1a1fe6a9d5cf268dc7961007347b24b3f2c0fc5afb274e"
+      }
+    ]
+  },
+  "dataset_sha256": "a5a0aaab789b1dd66d1526e2539bf16680d4808c4979ed7d52a95b694353c9a2",
+  "total_cases": 66,
+  "charge_counts": {
+    "盗窃罪": 24,
+    "故意伤害罪": 22,
+    "诈骗罪": 20
+  },
+  "selection_rule": "first occurrence per charge in source file order",
+  "selected_source_ids": [
+    "theft_24",
+    "assault_06",
+    "fraud_03"
+  ],
+  "model_requests": 0,
+  "network_requests": 0,
+  "scope": "synthetic three-case reading and input separation only; no discovery, extraction, causal or prediction results"
+}
