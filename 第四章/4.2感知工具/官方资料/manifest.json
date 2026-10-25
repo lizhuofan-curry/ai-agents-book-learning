@@ -1,0 +1,32 @@
+{
+  "repository": "bojieli/ai-agent-book",
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "normalization": "trailing whitespace/newlines normalized for downloaded references; local SHA256 only",
+  "files": [
+    {
+      "local_path": "smoke_test_mcp_v2.py",
+      "upstream_path": "chapter4/perception-tools/smoke_test_mcp_v2.py",
+      "sha256": "29755f724e14726e0df2754f9b6711560edf17eb4363e5a31bbdc151757a5195"
+    },
+    {
+      "local_path": "filesystem_tools.py",
+      "upstream_path": "chapter4/perception-tools/src/filesystem_tools.py",
+      "sha256": "da07a3c823e093907ff00e036dec78118ef6f6ab6e64c90d426866e181c0361e"
+    },
+    {
+      "local_path": "base.py",
+      "upstream_path": "chapter4/perception-tools/src/base.py",
+      "sha256": "cfabaabf4d1fc0dd7f6685e2914723f32fde5e50274d58880eff1b11851caf44"
+    },
+    {
+      "local_path": "requirements.txt",
+      "upstream_path": "chapter4/perception-tools/requirements.txt",
+      "sha256": "734c7c2a219e3b49add7cb4ab42ca23cdf5be55d60c43fee6f1eeeeec76b1a02"
+    },
+    {
+      "local_path": "LICENSE",
+      "upstream_path": "LICENSE",
+      "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074"
+    }
+  ]
+}
