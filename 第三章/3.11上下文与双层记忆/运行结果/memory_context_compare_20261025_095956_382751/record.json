@@ -1,0 +1,1205 @@
+{
+  "status": "memory_context_comparison_saved_review_pending",
+  "created_at": "2026-10-25T09:59:56.382991+08:00",
+  "script_sha256": "60fef32f7c344996a0d9385cd4e1cb23d644504d626711100ce0b991d8c06c74",
+  "manifest_sha256": "3517157bc05f74053cc196f4512ee425118da96a9217f0314b9f50ca7f8a41d2",
+  "manifest": {
+    "repository": "bojieli/ai-agent-book",
+    "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+    "files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074"
+      },
+      {
+        "path": "chapter3/contextual-retrieval-for-user-memory/README.md",
+        "sha256": "55acd681bec992dc9836fb2c025542f07039ef33ba2a286e04888f21bed348b9"
+      },
+      {
+        "path": "chapter3/contextual-retrieval-for-user-memory/contextual_compare.py",
+        "sha256": "94eacd1741cd750070dc06ad53ba7c8a707e02f65f6d28f276fd1dc6e30a42b2"
+      },
+      {
+        "path": "chapter3/contextual-retrieval-for-user-memory/memory_qa_eval.json",
+        "sha256": "3209125966aebc8a66c16b08c1285759a4dddc24bec91c34e17c48d92f3e24df"
+      }
+    ]
+  },
+  "dataset": {
+    "description": "受控的用户记忆问答对比集（实验 3-11）。用于离线量化『在嵌入/索引前对记忆块做上下文化』相较『直接索引原始对话块』在召回用户事实上的提升。每个 chunk 同时给出 text（原始对话块）与 context（上下文前缀，代表由 LLM 生成的『情境锚定』摘要）。gold 为该 query 对应的正确记忆块 id。数据集刻意包含若干『孤立片段』（如『好的，就订这个吧』），它们脱离上下文后几乎不含可检索信号——这正是本章要说明的痛点。",
+    "note": "本文件为教学用受控数据集；生产环境的 context 由 LLM 逐块生成、并用神经嵌入检索（需 API）。此处以确定性的 BM25 词法检索作为无需 API 的离线代理，度量的是同一份 context 分别拼接前后对召回的影响。",
+    "chunks": [
+      {
+        "id": "flight_detail",
+        "scenario": "flight",
+        "text": "用户：帮我看看从上海到西雅图的单程航班。\n助手：为您找到达美航空 DL588，10 月 12 日出发，单程含税 500 美元。",
+        "context": "本段来自用户与旅行助手 2024 年 10 月的机票预订对话，讨论上海飞西雅图的单程航班：达美 DL588，含税 500 美元。"
+      },
+      {
+        "id": "flight_confirm",
+        "scenario": "flight",
+        "text": "用户：好的，就订这个吧。\n助手：已为您预订，稍后发送电子行程单。",
+        "context": "本段承接上文，用户确认预订那张 500 美元、上海飞西雅图的达美 DL588 单程机票。"
+      },
+      {
+        "id": "hotel_detail",
+        "scenario": "hotel",
+        "text": "用户：西雅图市中心有什么酒店推荐？\n助手：推荐凯悦酒店，10 月 12 日至 15 日三晚共 840 美元。",
+        "context": "本段来自同一次西雅图行程的酒店预订讨论：凯悦酒店，10 月 12-15 日三晚 840 美元。"
+      },
+      {
+        "id": "hotel_confirm",
+        "scenario": "hotel",
+        "text": "用户：可以，帮我订下来。\n助手：好的，已锁定房间。",
+        "context": "本段承接上文，用户确认预订西雅图凯悦酒店三晚（840 美元）的房间。"
+      },
+      {
+        "id": "bank_account",
+        "scenario": "bank",
+        "text": "助手：您的新支票账户已开通。\n用户：号码是多少？\n助手：账号是 4429853327，路由号 123006800。",
+        "context": "本段来自用户在第一国民银行开设支票账户的通话，客服告知支票账号 4429853327 与路由号 123006800。"
+      },
+      {
+        "id": "bank_confirm",
+        "scenario": "bank",
+        "text": "用户：记下了，就用这个。\n助手：好的，已为您设置为默认收款账户。",
+        "context": "本段承接上文，用户确认使用第一国民银行支票账户 4429853327 作为默认收款账户。"
+      },
+      {
+        "id": "passport",
+        "scenario": "travel_doc",
+        "text": "用户：顺便问下，我护照还有效吧？\n助手：您的护照 2025 年 2 月 18 日到期，出行前请留意。",
+        "context": "本段提到用户 Jessica 的护照将于 2025 年 2 月 18 日过期，与其一月的东京出行相关。"
+      },
+      {
+        "id": "medication",
+        "scenario": "medical",
+        "text": "医生：这次给你把剂量调整一下。\n用户：好的，听你的。",
+        "context": "本段来自复诊对话，医生将用户的二甲双胍剂量由每日 500 毫克上调至每日 1000 毫克。"
+      },
+      {
+        "id": "restaurant_pref",
+        "scenario": "preference",
+        "text": "用户：我不吃香菜，也对花生过敏。\n助手：已记录您的饮食禁忌。",
+        "context": "本段记录用户的饮食偏好与过敏信息：不吃香菜，对花生过敏。"
+      },
+      {
+        "id": "gym_distractor",
+        "scenario": "gym",
+        "text": "用户：我想办张健身卡。\n助手：我们有月卡和年卡两种，年卡 1200 元。",
+        "context": "本段来自健身房会籍咨询，年卡 1200 元。"
+      },
+      {
+        "id": "car_distractor",
+        "scenario": "car",
+        "text": "用户：租车大概多少钱一天？\n助手：经济型每天 45 美元，含基础保险。",
+        "context": "本段来自租车询价，经济型每天 45 美元。"
+      },
+      {
+        "id": "insurance_distractor",
+        "scenario": "insurance",
+        "text": "用户：我的车险什么时候续？\n助手：您的保单 12 月 1 日到期，可提前一个月续保。",
+        "context": "本段来自车险咨询，保单 12 月 1 日到期。"
+      }
+    ],
+    "queries": [
+      {
+        "q": "我最后确认预订的那张上海到西雅图的机票是哪个航班？",
+        "gold": "flight_confirm"
+      },
+      {
+        "q": "我订的西雅图酒店确认了吗，是哪家？",
+        "gold": "hotel_confirm"
+      },
+      {
+        "q": "我设为默认收款的银行支票账户是哪个？",
+        "gold": "bank_confirm"
+      },
+      {
+        "q": "从上海到西雅图那趟航班的票价是多少？",
+        "gold": "flight_detail"
+      },
+      {
+        "q": "我的护照什么时候过期？",
+        "gold": "passport"
+      },
+      {
+        "q": "医生把我的二甲双胍剂量调成多少了？",
+        "gold": "medication"
+      },
+      {
+        "q": "我有哪些饮食过敏和忌口？",
+        "gold": "restaurant_pref"
+      },
+      {
+        "q": "西雅图凯悦酒店三晚一共多少钱？",
+        "gold": "hotel_detail"
+      }
+    ]
+  },
+  "results": [
+    {
+      "query_number": 1,
+      "query": "我最后确认预订的那张上海到西雅图的机票是哪个航班？",
+      "gold": "flight_confirm",
+      "plain": {
+        "q": "我最后确认预订的那张上海到西雅图的机票是哪个航班？",
+        "gold": "flight_confirm",
+        "rank": 2,
+        "hit@1": 0,
+        "hit@3": 1,
+        "top": [
+          "flight_detail",
+          "flight_confirm",
+          "hotel_detail"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "flight_detail",
+            "score": 26.086250138945264
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 11.134729830243332
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 7.383594846821032
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 5.809644434064614
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 4.245961340907181
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 4.023544672916067
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 3.5634434923341134
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 3.2813900867989116
+          },
+          {
+            "chunk_id": "passport",
+            "score": 2.4841224828424693
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 1.381317546836972
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.9798586764887155
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 0.0
+          }
+        ]
+      },
+      "contextual": {
+        "q": "我最后确认预订的那张上海到西雅图的机票是哪个航班？",
+        "gold": "flight_confirm",
+        "rank": 2,
+        "hit@1": 0,
+        "hit@3": 1,
+        "top": [
+          "flight_detail",
+          "flight_confirm",
+          "hotel_confirm"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "flight_detail",
+            "score": 36.419324847249655
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 36.08927196386419
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 18.2119769014173
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 10.446058294679665
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 8.330533351765208
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 5.176741090409018
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 4.844177854578406
+          },
+          {
+            "chunk_id": "passport",
+            "score": 3.190982602571461
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 2.994571602387105
+          },
+          {
+            "chunk_id": "medication",
+            "score": 1.576944049079998
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 1.3453863081577995
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "query_number": 2,
+      "query": "我订的西雅图酒店确认了吗，是哪家？",
+      "gold": "hotel_confirm",
+      "plain": {
+        "q": "我订的西雅图酒店确认了吗，是哪家？",
+        "gold": "hotel_confirm",
+        "rank": 3,
+        "hit@1": 0,
+        "hit@3": 1,
+        "top": [
+          "hotel_detail",
+          "flight_detail",
+          "hotel_confirm"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "hotel_detail",
+            "score": 15.927922658419803
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 7.5221154110396435
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 5.778745353360225
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 4.798736155243285
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 3.3672461013726025
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 2.739840822557493
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 1.092447235178899
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 1.0532046652256264
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 1.022383154410234
+          },
+          {
+            "chunk_id": "passport",
+            "score": 0.9500038121830626
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.48992933824435775
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 0.0
+          }
+        ]
+      },
+      "contextual": {
+        "q": "我订的西雅图酒店确认了吗，是哪家？",
+        "gold": "hotel_confirm",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "hotel_confirm",
+          "hotel_detail",
+          "flight_confirm"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 20.59632576603317
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 16.946147992177345
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 11.258399614319986
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 8.270562349999613
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 7.067392296293603
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 3.199139349475548
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 1.0938299482187994
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 1.0841171453967018
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 1.0322207629758582
+          },
+          {
+            "chunk_id": "passport",
+            "score": 1.016732818735647
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.3567164514865861
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "query_number": 3,
+      "query": "我设为默认收款的银行支票账户是哪个？",
+      "gold": "bank_confirm",
+      "plain": {
+        "q": "我设为默认收款的银行支票账户是哪个？",
+        "gold": "bank_confirm",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "bank_confirm",
+          "bank_account",
+          "flight_confirm"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "bank_confirm",
+            "score": 27.211458387001915
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 15.915739436167009
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 4.791778946762116
+          },
+          {
+            "chunk_id": "passport",
+            "score": 2.5426580216183305
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 2.3790731712846336
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 1.9176815088963575
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 1.2554061243580557
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 1.094232916731985
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 1.0634114059165927
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.534477090277076
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 0.04023358666369605
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 0.03513036004333999
+          }
+        ]
+      },
+      "contextual": {
+        "q": "我设为默认收款的银行支票账户是哪个？",
+        "gold": "bank_confirm",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "bank_confirm",
+          "bank_account",
+          "flight_confirm"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "bank_confirm",
+            "score": 46.18650649552104
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 23.149813789821632
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 6.019960612669271
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 3.430445315327301
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 2.580480212507908
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 2.5636955636455445
+          },
+          {
+            "chunk_id": "passport",
+            "score": 2.0356341723166484
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 1.1390475827488518
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 1.0897304329214677
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 0.8693040320698625
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.4128998658505081
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 0.04427840873348617
+          }
+        ]
+      }
+    },
+    {
+      "query_number": 4,
+      "query": "从上海到西雅图那趟航班的票价是多少？",
+      "gold": "flight_detail",
+      "plain": {
+        "q": "从上海到西雅图那趟航班的票价是多少？",
+        "gold": "flight_detail",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "flight_detail",
+          "bank_account",
+          "hotel_detail"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "flight_detail",
+            "score": 27.023601119446766
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 12.517018516372957
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 7.383594846821032
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 5.073705526377236
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 1.6818121273366213
+          },
+          {
+            "chunk_id": "passport",
+            "score": 1.5341186706594065
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.48992933824435775
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 0.37644171981763275
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 0.3281128816113456
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 0.324904244232314
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 0.324904244232314
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 0.0
+          }
+        ]
+      },
+      "contextual": {
+        "q": "从上海到西雅图那趟航班的票价是多少？",
+        "gold": "flight_detail",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "flight_detail",
+          "flight_confirm",
+          "bank_account"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "flight_detail",
+            "score": 29.986521693446186
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 13.287039168550587
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 11.446331450642191
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 8.021742656081948
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 7.325019516375621
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 7.0744555811115655
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 2.323422808737536
+          },
+          {
+            "chunk_id": "passport",
+            "score": 2.174249783835814
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 2.0945056088310507
+          },
+          {
+            "chunk_id": "medication",
+            "score": 1.2202275975934118
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 0.31316554518194134
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "query_number": 5,
+      "query": "我的护照什么时候过期？",
+      "gold": "passport",
+      "plain": {
+        "q": "我的护照什么时候过期？",
+        "gold": "passport",
+        "rank": 2,
+        "hit@1": 0,
+        "hit@3": 1,
+        "top": [
+          "insurance_distractor",
+          "passport",
+          "hotel_detail"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 17.65079591775975
+          },
+          {
+            "chunk_id": "passport",
+            "score": 13.41917079497586
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 4.430156908092619
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 3.3122115976143043
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 1.208334685156048
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 1.022383154410234
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 0.818726629151795
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.48992933824435775
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 0.324904244232314
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 0.324904244232314
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 0.3097585008029761
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 0.0
+          }
+        ]
+      },
+      "contextual": {
+        "q": "我的护照什么时候过期？",
+        "gold": "passport",
+        "rank": 2,
+        "hit@1": 0,
+        "hit@3": 1,
+        "top": [
+          "insurance_distractor",
+          "passport",
+          "hotel_detail"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 20.831234762874647
+          },
+          {
+            "chunk_id": "passport",
+            "score": 20.561754257732996
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 4.741535556218144
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 3.8361107042181963
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 1.0938299482187994
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 1.0841171453967018
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 0.8815302814704129
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.3567164514865861
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 0.3039408373233788
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 0.28792098955034895
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 0.2095578719180287
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "query_number": 6,
+      "query": "医生把我的二甲双胍剂量调成多少了？",
+      "gold": "medication",
+      "plain": {
+        "q": "医生把我的二甲双胍剂量调成多少了？",
+        "gold": "medication",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "medication",
+          "bank_account",
+          "car_distractor"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "medication",
+            "score": 21.984831361431443
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 5.19425125202526
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 5.073705526377236
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 3.148414263524653
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 2.777843900477971
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 2.5618201997377996
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 1.208334685156048
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 1.022383154410234
+          },
+          {
+            "chunk_id": "passport",
+            "score": 0.9500038121830626
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 0.818726629151795
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 0.324904244232314
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 0.0
+          }
+        ]
+      },
+      "contextual": {
+        "q": "医生把我的二甲双胍剂量调成多少了？",
+        "gold": "medication",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "medication",
+          "car_distractor",
+          "bank_account"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "medication",
+            "score": 45.124819864247435
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 5.583782747686083
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 4.852480127447337
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 3.4496631241069218
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 3.4484130595446634
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 2.328433349344572
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 1.0938299482187994
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 1.0841171453967018
+          },
+          {
+            "chunk_id": "passport",
+            "score": 1.016732818735647
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 0.8815302814704129
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 0.3039408373233788
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 0.19627083659485037
+          }
+        ]
+      }
+    },
+    {
+      "query_number": 7,
+      "query": "我有哪些饮食过敏和忌口？",
+      "gold": "restaurant_pref",
+      "plain": {
+        "q": "我有哪些饮食过敏和忌口？",
+        "gold": "restaurant_pref",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "restaurant_pref",
+          "gym_distractor",
+          "passport"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 16.538140310335024
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 4.654050318124165
+          },
+          {
+            "chunk_id": "passport",
+            "score": 1.892198617236782
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 1.1753376362177395
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 0.8318929653384152
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 0.6599204182428241
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 0.563662478362651
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 0.0
+          }
+        ]
+      },
+      "contextual": {
+        "q": "我有哪些饮食过敏和忌口？",
+        "gold": "restaurant_pref",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "restaurant_pref",
+          "gym_distractor",
+          "passport"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 22.607868652803774
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 5.096325607049342
+          },
+          {
+            "chunk_id": "passport",
+            "score": 3.521703338858258
+          },
+          {
+            "chunk_id": "hotel_detail",
+            "score": 1.2058761805450346
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 0.758887242355102
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 0.758887242355102
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 0.5653037790742451
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "query_number": 8,
+      "query": "西雅图凯悦酒店三晚一共多少钱？",
+      "gold": "hotel_detail",
+      "plain": {
+        "q": "西雅图凯悦酒店三晚一共多少钱？",
+        "gold": "hotel_detail",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "hotel_detail",
+          "car_distractor",
+          "flight_detail"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "hotel_detail",
+            "score": 31.402084770917508
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 10.850284787046007
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 6.703388781887848
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 4.884492751222283
+          },
+          {
+            "chunk_id": "medication",
+            "score": 1.4904102749973163
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 1.2492853104005466
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "passport",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 0.0
+          }
+        ]
+      },
+      "contextual": {
+        "q": "西雅图凯悦酒店三晚一共多少钱？",
+        "gold": "hotel_detail",
+        "rank": 1,
+        "hit@1": 1,
+        "hit@3": 1,
+        "top": [
+          "hotel_detail",
+          "hotel_confirm",
+          "car_distractor"
+        ],
+        "ranking": [
+          {
+            "chunk_id": "hotel_detail",
+            "score": 33.77486933349951
+          },
+          {
+            "chunk_id": "hotel_confirm",
+            "score": 28.58625355879891
+          },
+          {
+            "chunk_id": "car_distractor",
+            "score": 11.0806799657118
+          },
+          {
+            "chunk_id": "flight_detail",
+            "score": 6.523826315250632
+          },
+          {
+            "chunk_id": "flight_confirm",
+            "score": 5.2760471144814804
+          },
+          {
+            "chunk_id": "bank_account",
+            "score": 5.072187783084651
+          },
+          {
+            "chunk_id": "insurance_distractor",
+            "score": 0.6022143052720557
+          },
+          {
+            "chunk_id": "medication",
+            "score": 0.5521628042267852
+          },
+          {
+            "chunk_id": "bank_confirm",
+            "score": 0.5397027994510867
+          },
+          {
+            "chunk_id": "passport",
+            "score": 0.5301325010616742
+          },
+          {
+            "chunk_id": "restaurant_pref",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "gym_distractor",
+            "score": 0.0
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "plain": {
+      "recall@1": 0.625,
+      "recall@3": 1.0,
+      "mrr": 0.7916666666666666,
+      "n_queries": 8
+    },
+    "contextual": {
+      "recall@1": 0.75,
+      "recall@3": 1.0,
+      "mrr": 0.875,
+      "n_queries": 8
+    }
+  },
+  "rank_changes": {
+    "improved": 1,
+    "unchanged": 7,
+    "worsened": 0
+  },
+  "model_requests": 0,
+  "embedding_requests": 0,
+  "network_requests": 0,
+  "configuration": {
+    "bm25": "official pure Python",
+    "k1": 1.5,
+    "b": 0.75,
+    "tokenizer": "official ASCII words and contiguous CJK unigrams/bigrams",
+    "ties": "original index ascending"
+  },
+  "scope": "controlled supplied-context lexical test; not live prefix generation, structured card extraction or dual-layer end-to-end evaluation",
+  "context_provenance_limit": "Full preceding dialogues are not included; contextual facts cannot all be verified from short chunks."
+}

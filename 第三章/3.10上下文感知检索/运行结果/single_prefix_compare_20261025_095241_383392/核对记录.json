@@ -1,0 +1,18 @@
+{
+  "status": "saved_comparison_verified",
+  "record_sha256": "1e47f9d60a218d415fafb819ae162410a864c327906bb4de88e64750727b1fd3",
+  "checks": [
+    "source and script fingerprints",
+    "exact original and single-replacement inputs",
+    "one prefix changed and all raw text retained",
+    "three complete rankings and aggregate metrics reproduced"
+  ],
+  "limitations": "Rank verification reuses current BM25 implementation; no term-contribution causality test; single selected case, not model ranking.",
+  "findings": [
+    "q09 gold rank 2/1/2 for plain/historical/single_new",
+    "14 other gold ranks unchanged against historical",
+    "Recall@1 historical 13/15 vs single_new 12/15; Recall@3 and @5 unchanged"
+  ],
+  "new_model_requests": 0,
+  "new_network_requests": 0
+}
