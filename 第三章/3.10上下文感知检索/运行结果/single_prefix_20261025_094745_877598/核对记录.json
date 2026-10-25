@@ -1,0 +1,24 @@
+{
+  "status": "mechanical_checks_passed_semantic_scope_findings",
+  "record_sha256": "201248a1b0caa8a5aa6e2da658dda5410d4afc4e1023417da39711e8dec2bdd3",
+  "checks": [
+    "script and source hashes",
+    "request exactly full source plus target, no evaluation input",
+    "normal response and parsed candidate",
+    "exact quotes and offsets",
+    "usage 9449 input and 118 output tokens"
+  ],
+  "findings": [
+    "General chapter and topics match original source.",
+    "Target covers articles 80-88 and items 1-8 of article 89; source continues with item 9 beyond target. Prefix does not signal partial article 89.",
+    "Generated quotes locate State Council only; President topics supported by target articles 80-84 but not covered by selected quote list."
+  ],
+  "source_range": {
+    "start": 11759,
+    "end": 12849
+  },
+  "retrieval_queries": 0,
+  "new_model_requests": 0,
+  "new_network_requests": 0,
+  "scope": "semantic scope review against frozen source, no current legal advice or retrieval improvement claim"
+}
