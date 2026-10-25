@@ -17,6 +17,11 @@
       "local_path": "LICENSE",
       "upstream_path": "LICENSE",
       "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074"
+    },
+    {
+      "local_path": "execution_tools.py",
+      "upstream_path": "chapter4/execution-tools/execution_tools.py",
+      "sha256": "095ccd3bc9f835513a14e28e583a67721572fe12ad137cfbad6f27cb3f35716b"
     }
   ]
 }
