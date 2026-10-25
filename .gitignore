@@ -10,3 +10,4 @@ __pycache__/
 dist/
 .DS_Store
 .macos-migration/
+.venv-ch4-mcp/
