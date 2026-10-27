@@ -1,0 +1,12 @@
+{
+  "source_record_sha256": "c27d082fe0f4ddba31e456d9ba981727daf884ba4e5a45ab2afadd913b27f1b8",
+  "checks": {
+    "three_mcp_calls_in_order": true,
+    "same_request_id": true,
+    "real_reject_received": true,
+    "server_state_rejected_and_finished": true,
+    "target_file_absent": true
+  },
+  "raw_record_preserved": true,
+  "scope": "this rejected local MCP run, no model decision"
+}

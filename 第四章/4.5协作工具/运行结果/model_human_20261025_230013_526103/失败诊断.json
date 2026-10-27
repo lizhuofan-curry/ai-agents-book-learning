@@ -1,0 +1,15 @@
+{
+  "source_record_sha256": "695b9be63c4fa0189ab66e0fe87b4edc7c1ac8fbdfc7ad42b3d1a57816147d7c",
+  "diagnosis": "HTTP200 model completed; selected create_request(timeout_seconds=30), accepted by exposed generic number schema but rejected by hidden fixed60 validator",
+  "replayed_validation_error_without_model_request": {
+    "type": "ValueError",
+    "message": "本练习固定等待60秒；不修改模型参数后执行"
+  },
+  "model_requests_observed": 1,
+  "mcp_tool_calls_observed": 0,
+  "target_file_absent": true,
+  "repair": "make fixed60 constraint explicit in model-visible schema and prompt; preserve recursive exception details; no silent parameter correction",
+  "offline_checks_after_repair": 9,
+  "original_record_preserved": true,
+  "real_model_after_repair": "not run"
+}

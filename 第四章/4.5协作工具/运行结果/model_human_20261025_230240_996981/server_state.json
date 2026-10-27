@@ -1,0 +1,28 @@
+{
+  "request": {
+    "request_id": "ac5008de-0b6f-4626-9bc5-19648a6b0df0",
+    "status": "approved",
+    "message": "是否在本次运行目录生成一份固定的MCP教学结果文件？",
+    "target_filename": "MCP教学结果.txt",
+    "timeout_seconds": 60.0,
+    "finished": true,
+    "action": {
+      "executed": true,
+      "sha256": "6f67466d83dd468fc908ab393e347f6be91bf1646d03616d83cc87d456047a5e"
+    }
+  },
+  "events": [
+    {
+      "kind": "request_created_on_server",
+      "at": "2026-10-25T23:02:43.248577+08:00"
+    },
+    {
+      "kind": "client_decision_received_over_mcp",
+      "at": "2026-10-25T23:02:57.653615+08:00"
+    },
+    {
+      "kind": "task_finished_on_server",
+      "at": "2026-10-25T23:02:57.658283+08:00"
+    }
+  ]
+}

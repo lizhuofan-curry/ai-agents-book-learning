@@ -1,0 +1,22 @@
+{
+  "source_record_sha256": "d59e18d017969bd4f51f22ca5c278cdc20ab5e103ff2591be9695f12c40ab2aa",
+  "checks": {
+    "source_hashes_match": true,
+    "two_local_model_responses_completed": true,
+    "model_visible_tool_and_timeout_constraint_correct": true,
+    "three_real_mcp_calls_same_id": true,
+    "live_terminal_reply_matches_server_decision": true,
+    "verbatim_composite_observation_passed_to_second_request": true,
+    "target_presence_and_hash_match_decision": true,
+    "server_disk_state_matches": true,
+    "saved_answer_matches_raw_response": true
+  },
+  "assistant_semantic_review": "final answer correctly describes real decision and file outcome in this run",
+  "decision": "rejected",
+  "usage": {
+    "prompt_tokens": 1034,
+    "output_tokens": 50
+  },
+  "raw_record_preserved": true,
+  "scope": "this controlled human-gated task; not general model compliance or production authorization test"
+}
