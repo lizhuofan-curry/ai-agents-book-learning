@@ -20,6 +20,20 @@ CHINA=timezone(timedelta(hours=8))
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
+def matches_frozen_sha(path, expected):
+    """验证原始字节，或Git仅将完整CRLF规范化成LF的副本；不改写文件。
+
+    备用路径只尝试一种可逆表示：LF→CRLF，并且必须精确匹配原始
+    SHA256。原始预期哈希不变，文字、空白或其他字节变化仍然失败。
+    不用于上游源码或引文归一化，只用于原始JSON及其材料清单。
+    """
+    data=path.read_bytes()
+    if hashlib.sha256(data).hexdigest()==expected:
+        return True
+    if b'\r' not in data and b'\n' in data:
+        return hashlib.sha256(data.replace(b'\n',b'\r\n')).hexdigest()==expected
+    return False
+
 def unique(pairs):
     result={}
     for key,value in pairs:
@@ -83,9 +97,10 @@ def load_materials():
     directory=ROOT/'运行结果'/BASELINE
     for filename,key in [('record.json','baseline_record_sha256'),
                          ('结构草稿.json','baseline_artifact_sha256'),('核对记录.json','baseline_audit_sha256')]:
-        if sha(directory/filename)!=plan[key]:
+        if not matches_frozen_sha(directory/filename,plan[key]):
             raise ValueError('原始基线或核对记录变化：'+filename)
-    if sha(FIXTURE)!=plan['fixture_sha256'] or sha(MANIFEST)!=plan['official_manifest_sha256']:
+    if (not matches_frozen_sha(FIXTURE,plan['fixture_sha256'])
+        or not matches_frozen_sha(MANIFEST,plan['official_manifest_sha256'])):
         raise ValueError('冻结材料发生变化')
     for item in manifest['files']:
         path=(UPSTREAM/item['path']).resolve()
