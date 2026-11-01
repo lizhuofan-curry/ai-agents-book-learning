@@ -1,0 +1,35 @@
+{
+  "reviewed_at": "2026-11-01T16:41:32.782272+08:00",
+  "source_call_record_sha256": "a27fd6c5f119f14cc9a1645583c3b5584991cc9c2f54dc8a2bdea43f4a1aa05f",
+  "reviewer": "Codex; source bytes, saved tool request/result, script/module hashes and offline arithmetic; no new registered tool invocation or model request",
+  "checks": {
+    "entrypoint_hash_matches": true,
+    "tool_module_hash_matches": true,
+    "tool_definition_matches": true,
+    "request_maps_to_registered_function": true,
+    "exactly_one_recorded_dispatch": true,
+    "no_recorded_model_mcp_network_requests": true,
+    "source_hash_matches_before_read_and_summary": true,
+    "source_status_retained": true,
+    "request_count_matches": true,
+    "tool_count_matches": true,
+    "tool_distribution_matches": true,
+    "tool_sequence_matches": true,
+    "token_sums_match": true,
+    "saved_checks_match_source": true,
+    "budget_equal_not_budget_stop": true,
+    "all_call_checks_true": true,
+    "entire_summary_matches_pure_recalculation": true
+  },
+  "user_run_evidence": "terminal output pasted in this chat and matching local record_summary_20261101_163950_158074",
+  "registered_tool_invocations_in_user_run": 1,
+  "new_registered_tool_invocations_for_review": 0,
+  "new_model_requests_for_review": 0,
+  "result": "user_direct_registered_tool_call_verified",
+  "limits": [
+    "Tool implementation prepared by Codex; user ran it. User independent authorship not claimed.",
+    "Source checks are mechanically summarized; separate semantic review and user understanding remain distinct.",
+    "No model selected this tool; no MCP transport used."
+  ],
+  "raw_records_preserved": true
+}

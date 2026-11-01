@@ -1,0 +1,29 @@
+{
+  "schema": "personal_wiki_retrieval_plan_v1",
+  "query_origin": "用户于2026-11-01在本次学习对话中直接提供；保留原句",
+  "queries": [
+    {"id": "Q1", "text": "帮我解释什么是Agent"},
+    {"id": "Q2", "text": "transformer是什么"},
+    {"id": "Q3", "text": "什么是脑机接口"}
+  ],
+  "corpus_selection": "Codex按三题主题选择的12页最小语料，未按排名调选；不是整个Wiki，也不是相关性金标",
+  "documents": [
+    {"id": "D01", "path": "wiki/concepts/智能体闭环.md"},
+    {"id": "D02", "path": "wiki/concepts/规划与执行.md"},
+    {"id": "D03", "path": "wiki/concepts/ReAct.md"},
+    {"id": "D04", "path": "wiki/sources/Agent入门教程解读.md"},
+    {"id": "D05", "path": "wiki/entities/Transformer模型.md"},
+    {"id": "D06", "path": "wiki/sources/Transformer论文解读.md"},
+    {"id": "D07", "path": "wiki/concepts/自注意力与交叉注意力.md"},
+    {"id": "D08", "path": "wiki/concepts/多头注意力.md"},
+    {"id": "D09", "path": "wiki/sources/EEGNet论文解读.md"},
+    {"id": "D10", "path": "wiki/concepts/EEG预处理.md"},
+    {"id": "D11", "path": "wiki/entities/BCICIV2a数据集.md"},
+    {"id": "D12", "path": "wiki/synthesis/EEGNet学习路线.md"}
+  ],
+  "chunking": {"characters": 320, "overlap_characters": 64},
+  "query_normalization": "原句保留；检索文本统一移除帮我、请问、请、解释、什么、一下并去除句首/句尾的是；相同文本供后续稀疏和稠密检索，无同义词扩展",
+  "sparse": {"method": "BM25", "k1": 1.2, "b": 0.75, "top_k": 5, "tokenizer": "casefold后的英文数字词；中文单字及相邻二字片段；无同义词扩展"},
+  "relevance_labels": null,
+  "status": "plan_only_not_retrieval_evidence"
+}
