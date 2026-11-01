@@ -1,0 +1,26 @@
+{
+  "upstream_commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "case_id": "layer1_01_bank_account",
+  "case_source": "chapter3/user-memory-evaluation/test_cases/layer1/01_bank_account_setup.yaml",
+  "case_sha256": "e9f788fa393a0f07c83f32e90f05d0b2212355ba62e0a5c3288a469b5feb75b6",
+  "model": "qwen3.5:9b",
+  "endpoint": "http://127.0.0.1:11434/api/chat",
+  "maximum_model_requests": 2,
+  "stage_maximum_requests": {
+    "card_build": 1,
+    "cards_answer": 1
+  },
+  "num_ctx": 16384,
+  "num_predict": {
+    "card_build": 4096,
+    "cards_answer": 1024
+  },
+  "temperature": 0,
+  "seed": 42,
+  "think": false,
+  "automatic_retries": false,
+  "new_embedding_forward_batches": 0,
+  "retrieval_requests": 0,
+  "judge_requests": 0,
+  "scope": "One official synthetic case, advanced JSON Cards build then independent cards-only answer. RAG/hybrid/judging/full-suite not run."
+}

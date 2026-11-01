@@ -1,0 +1,23 @@
+{
+  "actor": "Codex preparation; not user execution",
+  "scope": "Single-case official JSONCards construction and independent cards-only answer entrypoint, not three-system results",
+  "prepared_files_sha256": {
+    "我的代码/02_单案例JSONCards本机链路.py": "88eb14e753c0108f5abda482b064b6c39cfdf67f2aeb85c4478e9a451227e1e7",
+    "我的代码/本机记忆适配.py": "f576dcb38d4396d872fc55a19971d379a2a2953e261bdd9bdfd76ddb459f32dd",
+    "测试材料/JSONCards单案例方案.json": "fb249758646fdf489880d0765f9947bccd227ea535bdf3c7fcd0c8119efa1530",
+    "离线检查.py": "95629ee279306918e5a1f0299f53f81d9de45062d2906fce2b819dbaf51b25c8"
+  },
+  "reference_files": 73,
+  "all_reference_hashes_match": true,
+  "preview": "passed without model requests",
+  "offline_adapter_tests": {
+    "passed": 6,
+    "http_transport": "fake responses only; all socket access blocked"
+  },
+  "repo_checks": "155 unit tests and 370 Python syntax/files passed",
+  "actual_model_requests_during_preparation": 0,
+  "judge_requests": 0,
+  "real_user_run": "pending",
+  "maximum_future_model_requests": 2,
+  "semantics_and_scoring": "not evaluated"
+}

@@ -8,4 +8,6 @@
 
 本地01入口直接调用原framework的案例读取、原evaluator的提示构造与_parse_evaluation_response。使用object.__new__跳过LLMEvaluator初始化和SDK客户端创建，与原附带离线测试方式一致；没有调用evaluate、_call_llm或第七章在线runner。预设数字例子和独立算式由本地代码增加，不能替代真实语义评判。
 
+本地02入口直接复用原CardBuilder.build与MemoryAgent.cards_only。本机记忆适配.py用固定Ollama原生HTTP接口代替原ChatBackend，不构造供应商SDK客户端；固定单题、每阶段1次实际请求、参数、来源隔离、原响应/产物及失败保存，并阻断原提取器的额外请求。原方法保留，未执行完整ExperimentRunner或模型裁判；当前只完成准备与假响应检查，真实调用待本人进行。
+
 原config导入时调用load_dotenv，入口通过支持PYTHON_DOTENV_DISABLED的版本禁用读取。独立环境的实际30项依赖版本见[锁定清单](../测试材料/离线环境依赖.lock.txt)；运行不联网安装依赖。
