@@ -5,7 +5,7 @@ from datetime import datetime
 import hashlib
 import importlib.util
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
 GENERATION = ROOT/'运行结果/generated_handoff_20261101_151431_417834/record.json'
@@ -36,8 +36,15 @@ def prepare():
     raw = json.loads(call['raw_http_body'])
     verifier.require(raw == call['response'] and json.loads(raw['message']['content']) == generated['handoff'], '原始响应与交接稿不一致')
     verifier.require(raw.get('done') is True and raw.get('done_reason') == 'stop', '整理模型未正常完成')
-    base_path = Path(generated['base_record'])
-    verifier.require(base_path.resolve() == (ROOT/'运行结果/handoff_within_window_20261101_150027_129403/record.json').resolve(), '本入口仅用于已经核对的默认案例')
+    # base_record 是冻结的来源记录，可能包含另一台机器的绝对路径。
+    # 只核对已审阅案例的项目内路径；实际读取当前 checkout，并继续核对原始哈希。
+    base_relative = Path('运行结果/handoff_within_window_20261101_150027_129403/record.json')
+    expected_parts = ('第四章', '4.5协作工具', *base_relative.parts)
+    recorded_parts = PurePosixPath(generated['base_record'].replace('\\', '/')).parts
+    verifier.require(recorded_parts[-len(expected_parts):] == expected_parts and '..' not in recorded_parts,
+                     '本入口仅用于已经核对的默认案例')
+    base_path = (ROOT/base_relative).resolve()
+    verifier.require(base_path.is_relative_to(ROOT.resolve()), '原始任务记录路径超出当前案例目录')
     verifier.require(sha(base_path) == generated['base_sha256'], '原始任务记录已变化')
     base = json.loads(base_path.read_text())
     # 核算只在客户端使用；不把原始材料、旧回答、期望决定或核对意见发给接收方。
