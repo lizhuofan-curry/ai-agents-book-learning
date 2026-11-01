@@ -1,0 +1,23 @@
+{
+  "schema": "wiki_fusion_inputs_v1",
+  "sparse_run": "wiki_sparse_20261101_165722_474581",
+  "sparse_record_sha256": "fd5cbdea3705e995b059a0a2b5f28302b23a7ccf41439642e71959557d3b2210",
+  "dense_run": "wiki_dense_casefold_20261101_171552_151842",
+  "dense_record_sha256": "87226cd1e04b62df3c69f27590b09b6d109615b2bd8b9a5885ef69c95ccead6e",
+  "source_corpus_sha256": "743eb9b60657e8a0ee1588fbc962efba57372b6d4e1061d07c42ec41ec9056a2",
+  "method": "rrf",
+  "rrf_k": 60,
+  "source_weights": {
+    "dense": 1.0,
+    "sparse": 1.0
+  },
+  "candidate_top_k_each": 5,
+  "output_top_k": 5,
+  "source_order": [
+    "dense",
+    "sparse"
+  ],
+  "tie_rule": "official stable sort; dense candidates inserted first",
+  "relevance_labels": null,
+  "scope": "Reuse two fixed ranked lists, not new encoding, query rewriting, model requests or relevance evaluation."
+}

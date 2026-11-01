@@ -1,5 +1,7 @@
 # 来源与改动说明
 
+2026-11-01，个人Wiki混合检索04入口复用3.6已保存的官方`retrieval-pipeline/fusion.py::reciprocal_rank_fusion`，核对固定提交dbc046eb896ac4e39aa19c7774c8bf49583b89a6、SHA256和Git blob SHA后调用，不修改函数。外层增加本人两路实测SHA固定、同语料检查、Top5并集、逐路名次贡献复算和新结果保存；沿用官方稳定排序及等权RRF60。原始Apache 2.0许可证及参考文件仍位于3.6官方资料，未复制或重新授权个人Wiki正文。
+
 2026-11-01，个人Wiki应用使用BAAI的[bge-small-zh-v1.5模型](https://huggingface.co/BAAI/bge-small-zh-v1.5/blob/7999e1d3359715c523056ef9478215996d62a620/README.md)，固定revision为7999e1d3359715c523056ef9478215996d62a620。模型卡标注MIT，模型权重、配置、分词器与原始模型卡保存在忽略的本机模型缓存；7份文件按官方Git blob/LFS SHA逐项核对，来源与实际SHA见个人Wiki实验官方资料。按照模型提供方的CLS池化、归一化及查询指令用法编写本地CPU入口，增加冻结输入、无截断检查、批次数预算及向量/排名留档。模型准备与合成smoke不作为本人检索结果，也不将模型许可证或本项目许可证覆盖个人Wiki正文。
 
 2026-10-18，实验3-7保存Bojie Li固定提交`dbc046eb896ac4e39aa19c7774c8bf49583b89a6`的structured-index目录与根LICENSE共27份资料，来源与逐文件校验见[清单](第三章/3.7结构化索引/官方资料/manifest.json)。本地第一步直接调用未修改`structured_vs_flat_demo.py`中的人工知识、词频余弦、图构建与BFS函数，增加冻结输入、逐题完整证据、原子保存、中文解释边界和哈希检查；没有调用带预设成败打印的run_demo入口。原始validation和checkpoints只为作者历史证据；示意摘要/关系不是模型构建结果。Intel PDF和文本保留原始来源身份，不将仓库Apache许可证视为重新授予Intel材料版权。
