@@ -1,0 +1,47 @@
+{
+  "actor": "Codex preparation, not user execution",
+  "prepared_files_sha256": {
+    "我的代码/05_三路结果独立裁判评分.py": "5f266fd7828be37f75262ca43ee55642e71b5a22603d763667dae4260568f0dd",
+    "测试材料/三路裁判评分方案.json": "dbfd9e0658533a47a1458d53fb20e228bbb10ae7feb06e0364f5863502b342e9",
+    "裁判离线检查.py": "1d2bfb8598bbc8b718645f593664958b45ee426938d77177bd720d1bb4657ff9"
+  },
+  "source_runs": [
+    {
+      "arm": "advanced_json_cards",
+      "source_run": "cards_local_20261101_183111_269925",
+      "record_sha256": "db6e7c2531f55d8e971d4cd8241cf47c6a268a7a8557b185d00c60f5936a8391",
+      "review_sha256": "6e07b62ca3a3ae7c13ce29f086c260b34b5da845f45ac30a67e1e94766c64f9c"
+    },
+    {
+      "arm": "rag",
+      "source_run": "rag_local_20261101_193852_139837",
+      "record_sha256": "91d1dbd5ecbcae2785b645ae648b7e9330d28870a117fd5a55eff706209bd5ef",
+      "review_sha256": "5d7b56e862f10638518734fe5af0ca3f3e0b2c07c5a6ba76423b9322429c6154"
+    },
+    {
+      "arm": "hybrid",
+      "source_run": "hybrid_local_20261101_195215_093389",
+      "record_sha256": "70a2d3be5eb3cbad801318607c1d147ec4d68ebcd7a41e9e8ebd614aa593115f",
+      "review_sha256": "db84318ccc321a9f1de1296d134ef8d66f229c4715b00413830989a5183037c2"
+    }
+  ],
+  "reference_count": 73,
+  "request_input_characters": [
+    20670,
+    18411,
+    18918
+  ],
+  "original_prompt_captured_without_model_call": true,
+  "codex_review_verdict_not_sent": true,
+  "configured_judge_model": "deepseek-flash",
+  "credential_present_only_not_validated": true,
+  "official_https_destination_checked": true,
+  "preview_passed": true,
+  "fake_http_tests_passed": 6,
+  "repo_checks": "155 unit tests and 378 Python syntax/file checks passed; final strict-JSON regression also passed",
+  "real_cloud_judge_requests": 0,
+  "new_local_generation_requests": 0,
+  "new_embedding_forward_batches": 0,
+  "user_execution": "pending",
+  "model_semantics_and_human_calibration": "pending"
+}

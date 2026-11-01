@@ -1,5 +1,9 @@
 # 来源与改动说明
 
+第七章记忆评估06复用固定05的官方裁判提示构造、评分解析及DeepSeek传输，仅以Codex受控短语替换生成支持性答案样例，并限制为最多1次请求。原权威材料/记忆轨迹/参数和原三条评分保留；该样例不是Qwen修复、人工金标或官方新增成绩，假HTTP检查不计真实评分。
+
+第七章记忆评估05入口复用固定官方LLMEvaluator的系统提示、_build_evaluation_prompt及_parse_evaluation_response，新增三条原答案来源冻结、已有DeepSeek配置传输、最多3次单次调用预算、严格类型/奖励门槛检查、失败与凭据脱敏保存。原上游重试不执行，评分不由本地审阅结论预填；准备和假HTTP测试不算真实模型评分或人工校准。官方源码及原许可证保持不变。
+
 第七章记忆评估04入口直接复用原select_core_cards与MemoryAgent.rag的Hybrid分支，新增独立本机会话、可选真实检索预算、冻结卡片/文档向量复用和增量/继承用量分列。已有卡片错误保留，查询向量必须按本次实际查询生成，原官方及旧Cards/RAG实现不改；来源哈希及复用差异单列。离线分支测试使用假响应，不能代替真实Hybrid成绩。
 
 第七章记忆评估03入口直接复用原conversation_chunks、VectorMemoryIndex、NoReranker与MemoryAgent.rag，新增固定本机Ollama工具协议映射、实际工具调用检查、请求/检索预算和来源/失败保存；BGE模型及encode实现复用本项目第三章既有固定版本，原官方源码及旧JSONCards实现保持不变。中文BGE替代官方嵌入配置、无重排及原生tool_choice适配差异单列；假HTTP/假向量检查不是模型检索效果或本人正式结果。

@@ -1,0 +1,23 @@
+{
+  "actor": "Codex preparation; not user execution",
+  "prepared_files_sha256": {
+    "我的代码/06_支持性答案正向对照.py": "4cff04398fc21864271cb8ad2c435b77b1371396a3d5bbe1f6d0efbb55c68862",
+    "测试材料/裁判正向对照方案.json": "e20209fc14979c023f2789d58a4f050fde6bc3b025ef2d647d92f414cdc083ed",
+    "正向对照离线检查.py": "333ebdc1bb01377a9ef488ecc0f1a60a0c859a9f012740fd0ed38b42617971b0"
+  },
+  "original_three_judgments_and_source_review_preserved": true,
+  "source_judge_record_sha256": "e9cde21949626bb485bde6bed01ee676e6397f97400808f3fe7f4960aa3e703a",
+  "source_review_sha256": "0bad393c8185d9d8cfa9e8e1ce4e4e6b5c918c397825660676039d8beab44d4b",
+  "baseline_original_reward": 0.0,
+  "baseline_original_veto": true,
+  "only_designated_answer_phrase_changed": true,
+  "context_source_trace_model_and_parameters_unchanged": true,
+  "fixture_author": "Codex, not a writer-model correction or human gold label",
+  "preview_passed": true,
+  "fake_http_tests_passed": 4,
+  "repo_checks": "155 unit tests and 380 Python syntax/file checks passed",
+  "real_model_or_network_requests_during_preparation": 0,
+  "future_maximum_deepseek_requests": 1,
+  "user_run": "pending",
+  "human_calibration_completed": false
+}

@@ -1,0 +1,14 @@
+{
+  "source_judge_run": "judge_three_20261101_201512_036127",
+  "source_record_sha256": "e9cde21949626bb485bde6bed01ee676e6397f97400808f3fe7f4960aa3e703a",
+  "source_review_sha256": "0bad393c8185d9d8cfa9e8e1ce4e4e6b5c918c397825660676039d8beab44d4b",
+  "source_arm": "advanced_json_cards",
+  "replace_from": " and is already configured for direct deposit",
+  "replace_to": ". You can set up direct deposit",
+  "judge_model": "deepseek-flash",
+  "maximum_judge_requests": 1,
+  "max_output_tokens": 4096,
+  "automatic_retries": false,
+  "fixture_author": "Codex controlled wording edit, not a new writer answer or human gold label",
+  "scope": "One positive-control wording edit with original source, memory trace, judge prompt and parameters held fixed. No source retry, model repair, benchmark gain or human calibration claim."
+}
