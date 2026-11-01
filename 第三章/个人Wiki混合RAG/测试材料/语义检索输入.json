@@ -1,0 +1,18 @@
+{
+  "source_run": "wiki_sparse_20261101_165722_474581",
+  "source_record_sha256": "fd5cbdea3705e995b059a0a2b5f28302b23a7ccf41439642e71959557d3b2210",
+  "source_corpus_sha256": "743eb9b60657e8a0ee1588fbc962efba57372b6d4e1061d07c42ec41ec9056a2",
+  "retrieval_texts": [
+    "Agent",
+    "transformer",
+    "脑机接口"
+  ],
+  "batch_size": 8,
+  "maximum_forward_batches": 10,
+  "top_k": 5,
+  "device": "cpu",
+  "seed": 42,
+  "model_id": "BAAI/bge-small-zh-v1.5",
+  "model_revision": "7999e1d3359715c523056ef9478215996d62a620",
+  "scope": "Reuse user frozen 65 chunks and three normalized queries, no live Wiki reread; no relevance labels or answer generation."
+}

@@ -1,0 +1,56 @@
+{
+  "model_id": "BAAI/bge-small-zh-v1.5",
+  "revision": "7999e1d3359715c523056ef9478215996d62a620",
+  "metadata_url": "https://huggingface.co/api/models/BAAI/bge-small-zh-v1.5?blobs=true",
+  "model_card_url": "https://huggingface.co/BAAI/bge-small-zh-v1.5/blob/7999e1d3359715c523056ef9478215996d62a620/README.md",
+  "cache_path": ".uv-cache/huggingface/local_models/bge-small-zh-v1.5_7999e1d33597",
+  "language": "zh",
+  "embedding_dimension": 512,
+  "maximum_tokens": 512,
+  "pooling": "CLS_then_L2_normalization",
+  "query_instruction": "为这个句子生成表示以用于检索相关文章：",
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 27670,
+      "git_blob_sha1": "20e39cd51a31d3afb1d003a9a4239f527530b1c0",
+      "lfs_sha256": null
+    },
+    {
+      "name": "config.json",
+      "bytes": 776,
+      "git_blob_sha1": "f79ec8dfc5812a1d5d7d2e69253eb9054be2246d",
+      "lfs_sha256": null
+    },
+    {
+      "name": "model.safetensors",
+      "bytes": 95827648,
+      "git_blob_sha1": "f0a3ffbd80eb817ece290d57976319a542d3ce00",
+      "lfs_sha256": "354763b9b1357bc9c44f62c6be2276321081ed2567773608c0d0785b61d5a026"
+    },
+    {
+      "name": "special_tokens_map.json",
+      "bytes": 125,
+      "git_blob_sha1": "a8b3208c2884c4efb86e49300fdd3dc877220cdf",
+      "lfs_sha256": null
+    },
+    {
+      "name": "tokenizer.json",
+      "bytes": 439125,
+      "git_blob_sha1": "cdb3043fc938fc918c06e66cf704c2ba58f88747",
+      "lfs_sha256": null
+    },
+    {
+      "name": "tokenizer_config.json",
+      "bytes": 367,
+      "git_blob_sha1": "3a59388f0fd1bd22dec2ce7902c1be8e1fb84107",
+      "lfs_sha256": null
+    },
+    {
+      "name": "vocab.txt",
+      "bytes": 109540,
+      "git_blob_sha1": "ca4f9781030019ab9b253c6dcb8c7878b6dc87a5",
+      "lfs_sha256": null
+    }
+  ]
+}
