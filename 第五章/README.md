@@ -14,4 +14,4 @@
 
 官方来源：[第5章正文](https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter5.md)与[Coding Agent入口](https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/README.md)，固定于与此前材料一致的提交`dbc046eb896ac4e39aa19c7774c8bf49583b89a6`。
 
-当前状态：本人已运行官方离线入口并核对29份参考及16个工具名称；[真实编码任务入口](CodingAgent入门/第二课_模型创建文件与执行反馈.md)已准备，真实模型任务、本人独立实践及本章交付未完成。阅读范围与准备检查见子目录，不把下载或助手准备算成本人已学会。
+当前状态：本人已完成官方离线入口及[最小真实编码任务](CodingAgent入门/第三课_首次编码结果与反馈链路.md)，Write/Bash反馈链路与独立产物验收通过。本人修改、Read/Edit及错误反馈观察、自造工具和本章笔记尚待完成，不把最小任务通过算作本章全部完成。

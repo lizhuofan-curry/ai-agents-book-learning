@@ -1,0 +1,34 @@
+{
+  "source_record_sha256": "a3190d30c346e2e29d0505ed1ecae83014755f89190080d602ce5b43b95d15cb",
+  "reviewer": "Codex; saved request/response, file, tool feedback and assistant code review; not user comprehension certification",
+  "checks": {
+    "script_and_manifest_hashes_match": true,
+    "raw_native_responses_match_saved_responses": true,
+    "write_arguments_match_actual_file": true,
+    "actual_file_hash_matches_record": true,
+    "write_result_present_verbatim_in_second_request": true,
+    "bash_result_present_verbatim_in_third_request": true,
+    "final_answer_matches_actual_stdout": true,
+    "greet_concatenation_returns_required_string": true,
+    "main_and_guard_match_task": true,
+    "all_six_completion_checks_true": true,
+    "all_five_artifact_checks_true": true
+  },
+  "model_requests": 3,
+  "tool_sequence": [
+    "Write",
+    "Bash"
+  ],
+  "prompt_tokens_reported": 20883,
+  "output_tokens_reported": 224,
+  "code_review": "greet concatenates prefix, argument and suffix; main prints World then Alice; __main__ guard invokes main. Passed saved script and extra return-value checks.",
+  "limits": [
+    "only known greeting task",
+    "no Read or Edit executed",
+    "no runtime failure or repair observed",
+    "model prompt explicitly asks Write then Bash",
+    "local native non-streaming adapter and task guards differ from default full official CLI"
+  ],
+  "new_model_requests_for_review": 0,
+  "raw_record_and_code_preserved": true
+}
