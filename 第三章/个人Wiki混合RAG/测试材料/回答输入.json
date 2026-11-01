@@ -1,0 +1,16 @@
+{
+  "fusion_run": "wiki_fusion_20261101_172307_366406",
+  "fusion_record_sha256": "79b64fac7ee7dabe5500f7d5bd5c2136984b5515aff1957eda0ade9f8ca9eae3",
+  "source_corpus_sha256": "743eb9b60657e8a0ee1588fbc962efba57372b6d4e1061d07c42ec41ec9056a2",
+  "model": "qwen3.5:9b",
+  "endpoint": "http://127.0.0.1:11434/api/chat",
+  "maximum_model_requests": 3,
+  "per_question_requests": 1,
+  "num_predict": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0,
+  "materials_per_question": 5,
+  "allow_automatic_retries": false,
+  "scope": "Three independent fresh requests; only frozen fused snippets provided; no gold labels or reviewer expected decisions sent."
+}
