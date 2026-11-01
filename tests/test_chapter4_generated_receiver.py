@@ -5,6 +5,7 @@ import importlib.util
 import io
 import json
 from pathlib import Path
+import shutil
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -91,6 +92,73 @@ class GeneratedReceiverChecks(unittest.TestCase):
                     self.assertEqual(step.main(),0)
                     receive.assert_not_called()
             self.assertEqual(list(Path(directory).iterdir()),[])
+
+
+class GeneratedReceiverRelocationChecks(unittest.TestCase):
+    """在不同目录读取冻结记录；不得回退到作者机器或跳过证据校验。"""
+
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.root = Path(self.directory.name)/'另一份副本'
+        self.base = self.root/'运行结果/handoff_within_window_20261101_150027_129403/record.json'
+        self.generation = self.root/step.GENERATION.relative_to(step.ROOT)
+        self.review = self.generation.parent/step.REVIEW.name
+        sources = [step.ROOT/self.base.relative_to(self.root), step.GENERATION, step.REVIEW]
+        self.original_bytes = [(source, source.read_bytes()) for source in sources]
+        for source, target in zip(sources, [self.base, self.generation, self.review]):
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, target)
+        for name, value in [('ROOT', self.root), ('GENERATION', self.generation), ('REVIEW', self.review)]:
+            patcher = patch.object(step, name, value)
+            patcher.start()
+            self.addCleanup(patcher.stop)
+
+    def change_reference(self, reference):
+        # 仅修改临时夹具，重新绑定核对意见；仓库冻结记录不变。
+        generated = json.loads(self.generation.read_text(encoding='utf-8'))
+        generated['base_record'] = reference
+        self.generation.write_text(json.dumps(generated, ensure_ascii=False), encoding='utf-8')
+        review = json.loads(self.review.read_text(encoding='utf-8'))
+        review['source_record_sha256'] = step.sha(self.generation)
+        self.review.write_text(json.dumps(review, ensure_ascii=False), encoding='utf-8')
+
+    def test_relocated_checkout_reads_local_evidence_without_rewriting_sources(self):
+        before = {path: path.read_bytes() for path in [self.base, self.generation, self.review]}
+        actual_sha = step.sha
+        with patch.object(step, 'sha', wraps=actual_sha) as checked:
+            generated, facts = step.prepare()
+        self.assertEqual(facts['expected_decision'], 'eligible')
+        self.assertEqual(generated['base_sha256'], actual_sha(self.base))
+        self.assertEqual([call.args[0] for call in checked.call_args_list],
+                         [self.generation, self.base.resolve()])
+        for path, content in [*before.items(), *self.original_bytes]:
+            self.assertEqual(path.read_bytes(), content)
+
+    def test_windows_and_project_relative_source_references(self):
+        tail = '第四章/4.5协作工具/运行结果/handoff_within_window_20261101_150027_129403/record.json'
+        for reference in ['D:\\study\\another-checkout\\'+tail.replace('/', '\\'), tail]:
+            with self.subTest(reference=reference):
+                self.change_reference(reference)
+                self.assertEqual(step.prepare()[1]['expected_decision'], 'eligible')
+
+    def test_other_case_and_parent_traversal_rejected(self):
+        tail = '第四章/4.5协作工具/运行结果/handoff_within_window_20261101_150027_129403/record.json'
+        for reference in [tail.replace('150027_129403', '150028_129403'), '../'+tail, 'record.json']:
+            with self.subTest(reference=reference):
+                self.change_reference(reference)
+                with self.assertRaisesRegex(ValueError, '默认案例'):
+                    step.prepare()
+
+    def test_modified_local_evidence_rejected(self):
+        self.base.write_bytes(self.base.read_bytes()+b'\n')
+        with self.assertRaisesRegex(ValueError, '原始任务记录已变化'):
+            step.prepare()
+
+    def test_missing_local_evidence_does_not_fall_back_to_historical_path(self):
+        self.base.unlink()
+        with self.assertRaises(FileNotFoundError):
+            step.prepare()
 
 
 if __name__ == '__main__':
