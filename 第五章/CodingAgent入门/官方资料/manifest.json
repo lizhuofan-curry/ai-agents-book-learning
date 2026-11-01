@@ -1,0 +1,186 @@
+{
+  "repository": "bojieli/ai-agent-book",
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "role": "pinned official CLI runtime and reading materials; extra examples and official test suite not fetched",
+  "files": [
+    {
+      "path": "coding-agent/README.md",
+      "upstream_path": "chapter5/coding-agent/README.md",
+      "git_blob_sha": "ca5818e36e551538d81f26f2000389a8e6cf5177",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/README.md"
+    },
+    {
+      "path": "coding-agent/agent.py",
+      "upstream_path": "chapter5/coding-agent/agent.py",
+      "git_blob_sha": "2335a756c6ded852a50cb3e07e71f9774ef0ac25",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/agent.py"
+    },
+    {
+      "path": "coding-agent/tool_registry.py",
+      "upstream_path": "chapter5/coding-agent/tool_registry.py",
+      "git_blob_sha": "9b4ce6b47fca6fb980c41d581261d57e2dc0d3f8",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tool_registry.py"
+    },
+    {
+      "path": "coding-agent/tools/__init__.py",
+      "upstream_path": "chapter5/coding-agent/tools/__init__.py",
+      "git_blob_sha": "b92e037c46986f71c120a5cc7a547f1db853f64e",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/__init__.py"
+    },
+    {
+      "path": "coding-agent/tools/read_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/read_tool.py",
+      "git_blob_sha": "147a692a32bdcc21130f81af957977a1295309e9",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/read_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/edit_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/edit_tool.py",
+      "git_blob_sha": "03ad67447fcdc9a7ca622e1a578316dabdeb8655",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/edit_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/base.py",
+      "upstream_path": "chapter5/coding-agent/tools/base.py",
+      "git_blob_sha": "668f87bc53466a5c21def51ee73930a798d60507",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/base.py"
+    },
+    {
+      "path": "LICENSE",
+      "upstream_path": "LICENSE",
+      "git_blob_sha": "bd3e071f150cf46f86c91d3341d36644f16e11cb",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/LICENSE"
+    },
+    {
+      "path": "coding-agent/main.py",
+      "upstream_path": "chapter5/coding-agent/main.py",
+      "git_blob_sha": "b6dea298e7a7d2a2e8cbfb78eaf08e38705d9d87",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/main.py"
+    },
+    {
+      "path": "coding-agent/config.py",
+      "upstream_path": "chapter5/coding-agent/config.py",
+      "git_blob_sha": "64ca7ffce4f648033a19478abb5d9075bc7ee363",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/config.py"
+    },
+    {
+      "path": "coding-agent/requirements.txt",
+      "upstream_path": "chapter5/coding-agent/requirements.txt",
+      "git_blob_sha": "90ab19ca5de31c41b0f3ec994ed8745dcac8f516",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/requirements.txt"
+    },
+    {
+      "path": "coding-agent/system_state.py",
+      "upstream_path": "chapter5/coding-agent/system_state.py",
+      "git_blob_sha": "3d2382d92d484c1e716c850af737003c45d03213",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/system_state.py"
+    },
+    {
+      "path": "coding-agent/tools.json",
+      "upstream_path": "chapter5/coding-agent/tools.json",
+      "git_blob_sha": "e1064cdd035f06869db3eec9050e4fdcf18e959b",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools.json"
+    },
+    {
+      "path": "coding-agent/system-prompt.md",
+      "upstream_path": "chapter5/coding-agent/system-prompt.md",
+      "git_blob_sha": "0e421c16fa20c860acf767ad502abbeb75412016",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/system-prompt.md"
+    },
+    {
+      "path": "coding-agent/tools/bash_output_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/bash_output_tool.py",
+      "git_blob_sha": "9ae3188ee3245d1442598d5d7c4540a65ccb350f",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/bash_output_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/bash_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/bash_tool.py",
+      "git_blob_sha": "df6f707cdd918f81d2d73463883324ef0c3de036",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/bash_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/exit_plan_mode_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/exit_plan_mode_tool.py",
+      "git_blob_sha": "76e47706828092656273e6cb0efbeba01c86aa76",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/exit_plan_mode_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/glob_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/glob_tool.py",
+      "git_blob_sha": "2dc2465557bfab8069b9359f89e4edc8fff52be2",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/glob_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/grep_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/grep_tool.py",
+      "git_blob_sha": "65548604a858c53c5a35b70be69c9ae8e32f4cee",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/grep_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/kill_bash_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/kill_bash_tool.py",
+      "git_blob_sha": "5f9acc79f3c3aa0a153650f26ec331c0b4b770fc",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/kill_bash_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/ls_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/ls_tool.py",
+      "git_blob_sha": "7009be54de10c3c21c095b229f18454ce8357c98",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/ls_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/multi_edit_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/multi_edit_tool.py",
+      "git_blob_sha": "c72892f7d08523379d58e61c476c6a68e22bceaf",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/multi_edit_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/notebook_edit_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/notebook_edit_tool.py",
+      "git_blob_sha": "c90d823ebddeeee7c6a06438a5cbc780939fafc1",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/notebook_edit_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/shell_session.py",
+      "upstream_path": "chapter5/coding-agent/tools/shell_session.py",
+      "git_blob_sha": "9e38dfa7467e8c1f1e7d98f4c712f7702b7752e7",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/shell_session.py"
+    },
+    {
+      "path": "coding-agent/tools/task_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/task_tool.py",
+      "git_blob_sha": "23775abf4cbd758efef1602f4dc545c15d27c12a",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/task_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/todo_write_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/todo_write_tool.py",
+      "git_blob_sha": "2708fa04311bdb307bafd039cfca98829ac60771",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/todo_write_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/web_fetch_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/web_fetch_tool.py",
+      "git_blob_sha": "fb6fe51c32a9c70304b308cbf86ee3c210e7fbd6",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/web_fetch_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/web_search_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/web_search_tool.py",
+      "git_blob_sha": "94ffd0ea8e3ccf2d94b80838b3450e7c754e44da",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/web_search_tool.py"
+    },
+    {
+      "path": "coding-agent/tools/write_tool.py",
+      "upstream_path": "chapter5/coding-agent/tools/write_tool.py",
+      "git_blob_sha": "287620155c1dada14fe9b4f3f4ad86fe79ad449b",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/tools/write_tool.py"
+    }
+  ],
+  "book_reference": {
+    "path": "book/chapter5.md",
+    "git_blob_sha": "2a9e1eab2b34448ce1717908dc589f9b85b9be73",
+    "reading_scope": "chapter introduction, seven tools, overall workflow and initial Harness discussion; remaining headings inspected, not claiming full chapter reading"
+  }
+}

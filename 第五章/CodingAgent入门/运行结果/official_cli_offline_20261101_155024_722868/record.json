@@ -1,0 +1,43 @@
+{
+  "status": "official_cli_offline_checked",
+  "created_at": "2026-11-01T15:50:24.723052+08:00",
+  "script_sha256": "c2797c0aa4032aa8be641ae65f7f00f82886e5509d0e3e1dc8227aebbf0dd211",
+  "upstream_commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "manifest_sha256": "eaf7e8187cad454bfc828d5e91785d8c6825d00be5fb037f9adbe8a4b191f47e",
+  "reference_files_verified": 29,
+  "defined_and_registered_tools": [
+    "Bash",
+    "BashOutput",
+    "Edit",
+    "ExitPlanMode",
+    "Glob",
+    "Grep",
+    "KillBash",
+    "LS",
+    "MultiEdit",
+    "NotebookEdit",
+    "Read",
+    "Task",
+    "TodoWrite",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+  ],
+  "command": [
+    "/Users/zhuo/Agent相关/AI_Agents_Book/.venv-ch5/bin/python",
+    "/Users/zhuo/Agent相关/AI_Agents_Book/第五章/CodingAgent入门/官方资料/coding-agent/main.py",
+    "--list-tools"
+  ],
+  "working_directory": "/Users/zhuo/Agent相关/AI_Agents_Book/第五章/CodingAgent入门/官方资料/coding-agent",
+  "model_requests": 0,
+  "tools_executed": 0,
+  "dotenv_loading_disabled": true,
+  "scope": "official CLI list-tools and source integrity checks only; not real model coding task or full official test suite",
+  "returncode": 0,
+  "stdout": "共 16 个工具：\n\n  Task           Launch a new agent to handle complex, multi-step tasks autonomously. \n  Bash           Executes a given bash command in a persistent shell session with optional timeout, ensurin...\n  Glob           - Fast file pattern matching tool that works with any codebase size\n  Grep           A powerful search tool built on ripgrep\n  LS             Lists files and directories in a given path. The path parameter must be an absolute path, ...\n  ExitPlanMode   Use this tool when you are in plan mode and have finished presenting your plan and are rea...\n  Read           Reads a file from the local filesystem. You can access any file directly by using this too...\n  Edit           Performs exact string replacements in files. \n  MultiEdit      This is a tool for making multiple edits to a single file in one operation. It is built on...\n  Write          Writes a file to the local filesystem.\n  NotebookEdit   Completely replaces the contents of a specific cell in a Jupyter notebook (.ipynb file) wi...\n  WebFetch       - Fetches content from a specified URL and processes it using an AI model\n  TodoWrite      Use this tool to create and manage a structured task list for your current coding session....\n  WebSearch      - Allows Claude to search the web and use the results to inform responses\n  BashOutput     - Retrieves output from a running or completed background bash shell\n  KillBash       - Kills a running background bash shell by its ID\n\n",
+  "stderr": "",
+  "checks": {
+    "official_cli_exit_zero": true,
+    "listed_tools_match_definitions": true
+  }
+}
