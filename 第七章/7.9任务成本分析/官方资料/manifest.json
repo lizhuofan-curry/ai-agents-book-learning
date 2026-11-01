@@ -1,0 +1,98 @@
+{
+  "repository": "https://github.com/bojieli/ai-agent-book",
+  "commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "files": [
+    {
+      "path": "chapter7/agent-cost-analysis/README.md",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/README.md",
+      "bytes": 20878,
+      "git_blob_sha1": "fa703a821335443728f7d1ffe282756e4891ed2f",
+      "sha256": "576b1546aa8dd62589bdbcc022a5823733599aa77cc2c06b9859646b25502e3e"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/agent.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/agent.py",
+      "bytes": 17109,
+      "git_blob_sha1": "67964a6538d8665754028411d43bb1dc51b28abb",
+      "sha256": "30866b34ead7ff2897964aaf1e07867691102982971903f8a2a4172c48bfd718"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/config.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/config.py",
+      "bytes": 5701,
+      "git_blob_sha1": "a68818e2f6dc54323d4733592eb82196e21f6c4a",
+      "sha256": "0a92de4849994e74b28e3b5ad6c308cc154a2b984d8827f859b7f15d9fbbb463"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/cost_efficiency_analyzer.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/cost_efficiency_analyzer.py",
+      "bytes": 17713,
+      "git_blob_sha1": "7a0b456051ec8cafdc49bbb2cc501e5697e4e139",
+      "sha256": "f4685fbb874d83412b0dbaf0d5a52a12de02f79ae9d89368e1254a91921cc333"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/demo.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/demo.py",
+      "bytes": 13477,
+      "git_blob_sha1": "94b11646f59eaf0e66d49c1293edfc1439304c9a",
+      "sha256": "977306ffa3e3a045cb4df76f5bf5613a9a65384f9bde0a2322957208f1bae4a7"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/env.example",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/env.example",
+      "bytes": 586,
+      "git_blob_sha1": "3e49bb3fdffaf6bfbd878f4115609ef3ac537d1a",
+      "sha256": "f9cf8e5e3bf3bd9d595c83823ee9544946ddf8f3f5ad392a6de759c263d13ab2"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/requirements.txt",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/requirements.txt",
+      "bytes": 52,
+      "git_blob_sha1": "e9d109b1c68bae63dcad77c14fbe14ae2b9226b1",
+      "sha256": "a91f316456f0cf3911c023d9e58afbae004ed86667f75e79845201010bd2f9e6"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/sample_trace.json",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/sample_trace.json",
+      "bytes": 11889,
+      "git_blob_sha1": "c503f97e549ebb65c784529988edcaa8cd7a1f66",
+      "sha256": "3bb66868a5a0b3557f1087ef603161295320a5c1f9ad31bbc3bd960497407e92"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/tracer.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/tracer.py",
+      "bytes": 12309,
+      "git_blob_sha1": "bf99ae862d3644618b8f05d89591705da56bf0bb",
+      "sha256": "fb673ac8f10ca037b6df3822e00e6cbb21b8381b731736fb1b2a30748e7226fe"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/tests/conftest.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/tests/conftest.py",
+      "bytes": 247,
+      "git_blob_sha1": "6ba2c2f0b78da41866a5efe88bc3c5a851336cfb",
+      "sha256": "efbb7c630bb3618569d3fefb0f870b95e25e765de48b29ab6616945e6fab78aa"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/tests/test_chat_null_usage.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/tests/test_chat_null_usage.py",
+      "bytes": 1313,
+      "git_blob_sha1": "abb21e129c1f940c4fee53955e16e31f40452220",
+      "sha256": "0876f8ec45c8e2c6c2f155b0e758d5761bb56f61af91fee9c229fac8e59f2c5f"
+    },
+    {
+      "path": "chapter7/agent-cost-analysis/tests/test_trace_offline.py",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/agent-cost-analysis/tests/test_trace_offline.py",
+      "bytes": 3480,
+      "git_blob_sha1": "5d0488d8cca6f288dcfb2ce773982296a387b5d2",
+      "sha256": "f49c3407d5b643ab7b1521df8e0107d59402491176696437e45f5ab15c27e1dd"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/LICENSE",
+      "bytes": 11338,
+      "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074",
+      "git_blob_sha1": "bd3e071f150cf46f86c91d3341d36644f16e11cb"
+    }
+  ],
+  "scope": "Pinned agent-cost-analysis source, sample trace, supplied tests and root license; runs historical artifacts not downloaded. Offline replay is not new model execution."
+}

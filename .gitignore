@@ -13,3 +13,5 @@ dist/
 .venv-ch4-mcp/
 .venv-ch5/
 /第三章/个人Wiki混合RAG/本地运行结果/
+.venv-ch7-check/
+/第七章/7.9任务成本分析/本地运行结果/

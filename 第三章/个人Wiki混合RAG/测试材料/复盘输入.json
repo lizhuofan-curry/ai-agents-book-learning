@@ -1,0 +1,6 @@
+{
+  "answer_run": "wiki_answers_20261101_173356_218840",
+  "answer_record_sha256": "7442cab830a6adb0022487c322a1a8188e8ed5d84e65bf6038e632cae740fd31",
+  "review_sha256": "e76fca135bd9e57a83e2bb164acef6163e04da9650ea3f024d3fcc2652734d72",
+  "scope": "Read-only replay of a Codex manual review; no automatic semantic judgment or new model request."
+}

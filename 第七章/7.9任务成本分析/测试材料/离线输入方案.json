@@ -1,0 +1,14 @@
+{
+  "source_record": "第三章/个人Wiki混合RAG/本地运行结果/wiki_answers_20261101_173356_218840/record.json",
+  "source_record_sha256": "7442cab830a6adb0022487c322a1a8188e8ed5d84e65bf6038e632cae740fd31",
+  "source_review": "第三章/个人Wiki混合RAG/本地运行结果/wiki_answers_20261101_173356_218840/核对记录.json",
+  "source_review_sha256": "e76fca135bd9e57a83e2bb164acef6163e04da9650ea3f024d3fcc2652734d72",
+  "source_kind": "user actual Ollama generation; reported tokens and server durations only; cache split and billed money unknown",
+  "author_sample_kind": "fixed upstream sample_trace data, independently recomputed; not new user LLM requests",
+  "historical_sample_price_per_million_usd": {
+    "input": 0.15,
+    "cached": 0.075,
+    "output": 0.6
+  },
+  "price_scope": "fixed textbook assumption, not current vendor price and not local Ollama billing"
+}

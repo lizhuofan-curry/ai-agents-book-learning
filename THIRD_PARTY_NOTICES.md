@@ -1,5 +1,7 @@
 # 来源与改动说明
 
+2026-11-01，第七章成本分析保存bojieli/ai-agent-book@dbc046eb896ac4e39aa19c7774c8bf49583b89a6的`chapter7/agent-cost-analysis`顶层源码/样例与3份测试、根LICENSE共13份文件，逐文件Git blob SHA及SHA256核对一致。原Apache 2.0源码不改，外层以固定offline参数执行原CLI，增加.env禁用/网络阻断、Decimal复算和本地本人轨迹旁证。作者预录样例与价格假设不算本人新模型请求或实时账单，目录实验编号与正文差异如实记录；历史runs未下载。
+
 2026-11-01，个人Wiki混合检索04入口复用3.6已保存的官方`retrieval-pipeline/fusion.py::reciprocal_rank_fusion`，核对固定提交dbc046eb896ac4e39aa19c7774c8bf49583b89a6、SHA256和Git blob SHA后调用，不修改函数。外层增加本人两路实测SHA固定、同语料检查、Top5并集、逐路名次贡献复算和新结果保存；沿用官方稳定排序及等权RRF60。原始Apache 2.0许可证及参考文件仍位于3.6官方资料，未复制或重新授权个人Wiki正文。
 
 2026-11-01，个人Wiki应用使用BAAI的[bge-small-zh-v1.5模型](https://huggingface.co/BAAI/bge-small-zh-v1.5/blob/7999e1d3359715c523056ef9478215996d62a620/README.md)，固定revision为7999e1d3359715c523056ef9478215996d62a620。模型卡标注MIT，模型权重、配置、分词器与原始模型卡保存在忽略的本机模型缓存；7份文件按官方Git blob/LFS SHA逐项核对，来源与实际SHA见个人Wiki实验官方资料。按照模型提供方的CLS池化、归一化及查询指令用法编写本地CPU入口，增加冻结输入、无截断检查、批次数预算及向量/排名留档。模型准备与合成smoke不作为本人检索结果，也不将模型许可证或本项目许可证覆盖个人Wiki正文。
