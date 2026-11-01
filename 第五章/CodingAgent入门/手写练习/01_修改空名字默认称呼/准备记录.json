@@ -1,0 +1,9 @@
+{
+  "status": "prepared_not_user_completed",
+  "source_artifact": "第五章/CodingAgent入门/运行结果/local_coding_revision_20261101_162450_914560/练习项目/hello_world.py",
+  "initial_sha256": "c5c3bfb6448235f53d3d4cbb818ae658422742cbe9da97641da222d4d2eb6ecf",
+  "task": "仅将greet对空字符串的默认称呼改为匿名用户；保留World和Alice输入的行为及main三次调用。",
+  "model_requests": 0,
+  "user_edit_verified": false,
+  "user_run_verified": false
+}

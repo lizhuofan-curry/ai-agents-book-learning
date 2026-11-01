@@ -1,0 +1,121 @@
+{
+  "status": "summary_call_checked_review_pending",
+  "created_at": "2026-11-01T16:39:50.158265+08:00",
+  "script_sha256": "90018c28e400421d54a5a75aafccae6e934d97680edbd69e4b9e6d3f6de03f00",
+  "tool_module_sha256": "b2d972d4509fc979d95ef4d98e5cbf3e9ea4afb462079cf32ac8f6c2647fa062",
+  "tool_definition": {
+    "name": "summarize_coding_record",
+    "description": "只读汇总第五章本机编码记录的请求、工具事件和保存的检查状态；不调用模型、不运行原实验、不修改原记录。",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "record_path": {
+          "type": "string",
+          "description": "CodingAgent入门/运行结果中一个local_coding_task或local_coding_revision批次的record.json绝对路径。"
+        }
+      },
+      "required": [
+        "record_path"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "request": {
+    "name": "summarize_coding_record",
+    "arguments": {
+      "record_path": "/Users/zhuo/Agent相关/AI_Agents_Book/第五章/CodingAgent入门/运行结果/local_coding_revision_20261101_162450_914560/record.json"
+    }
+  },
+  "model_requests": 0,
+  "mcp_requests": 0,
+  "network_requests": 0,
+  "dispatch_attempts": 1,
+  "automatic_retries": 0,
+  "scope": "One direct registered function call; no model tool selection, no rerun of source experiment; not evidence of user independent authorship.",
+  "source_sha256_before": "009ead48f9fa6d867addeab8d65fe62627fa641886eb1c1c5b1d13245a6a59a9",
+  "result": {
+    "source_record": "/Users/zhuo/Agent相关/AI_Agents_Book/第五章/CodingAgent入门/运行结果/local_coding_revision_20261101_162450_914560/record.json",
+    "source_sha256": "009ead48f9fa6d867addeab8d65fe62627fa641886eb1c1c5b1d13245a6a59a9",
+    "summary_schema": "coding_record_summary_v1",
+    "source_status": "revision_checked_review_pending",
+    "model_requests": {
+      "total_started": 6,
+      "completed": 6,
+      "not_completed_or_unknown": 0,
+      "declared_maximum": 6,
+      "at_declared_limit": true,
+      "exceeds_declared_limit": false,
+      "budget_stop_event": false
+    },
+    "tool_events": {
+      "model_selections": 5,
+      "execution_starts": 5,
+      "returned_results": 5,
+      "returned_results_by_tool": {
+        "Read": 1,
+        "Edit": 2,
+        "Bash": 2
+      },
+      "returned_result_sequence": [
+        "Read",
+        "Edit",
+        "Bash",
+        "Edit",
+        "Bash"
+      ],
+      "error_results": 0,
+      "nonzero_exit_results": 0
+    },
+    "usage_reported": {
+      "prompt_tokens": {
+        "reported_sum": 45101,
+        "calls_without_valid_count": 0,
+        "coverage": "complete"
+      },
+      "output_tokens": {
+        "reported_sum": 545,
+        "calls_without_valid_count": 0,
+        "coverage": "complete"
+      },
+      "interpretation": "模型报告值的累计；输入包含历史重复发送，不是不重复文本量或云端费用。"
+    },
+    "saved_completion_checks": {
+      "availability": "present",
+      "passed": [
+        "agent_reported_done",
+        "no_engine_error_or_budget_stop",
+        "within_tool_dispatch_budget",
+        "model_read_before_edit",
+        "model_actually_edited",
+        "model_ran_final_revision",
+        "baseline_unchanged",
+        "independent_artifact_checks"
+      ],
+      "failed": [],
+      "unknown": [],
+      "all_recorded_true": true
+    },
+    "saved_artifact_checks": {
+      "availability": "present",
+      "passed": [
+        "script_exit_zero",
+        "script_output_matches",
+        "has_main_guard",
+        "greet_return_values",
+        "main_function_behavior",
+        "import_has_no_output"
+      ],
+      "failed": [],
+      "unknown": [],
+      "all_recorded_true": true
+    },
+    "agent_reported_done": true,
+    "warnings": [],
+    "scope": "只读机械汇总原记录；returned_results不等于成功工具数，检查true不等于语义审阅通过、理解已掌握或章节完成。"
+  },
+  "checks": {
+    "source_unchanged": true,
+    "summary_identifies_read_source": true,
+    "registered_function_returned": true
+  }
+}
