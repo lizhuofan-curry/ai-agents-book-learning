@@ -1,0 +1,15 @@
+{
+  "actor": "Codex preparation, not user execution",
+  "reference_files": 73,
+  "reference_bytes": 1411094,
+  "all_reference_hashes_match": true,
+  "prepared_record_sha256": "5864baeab382a1850b4ab15720f7762cb5605812cf0b67eacaba1d11fdccc4b8",
+  "prepared_script_sha256": "e2106770468ee75db002d0780e4e4536b55239e9e8b00654300c3afa0ad0f02c",
+  "saved_output_hashes_match": true,
+  "upstream_offline_tests_passed": 19,
+  "repo_checks": "155 unit tests and 367 Python syntax/file checks passed",
+  "new_model_requests": 0,
+  "real_three_system_experiment_run": false,
+  "user_run": "pending",
+  "user_explanation": "pending"
+}

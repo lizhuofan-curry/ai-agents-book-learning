@@ -1,5 +1,7 @@
 # 来源与改动说明
 
+2026-11-01，第七章`用户记忆系统评估/官方资料`保存bojieli/ai-agent-book固定提交`dbc046eb896ac4e39aa19c7774c8bf49583b89a6`下第七章6份源码/配置/测试、第三章共用框架6份、60份合成案例及根LICENSE，共73份；逐文件大小、Git blob SHA与SHA256见该目录清单。官方源码和Apache 2.0许可证原样保留，未复制作者历史results/validation。新增本地01入口只调用原案例读取、裁判提示构造与评分解析器，增加预设数字演示、独立算式、独立环境、来源/只读核对、dotenv禁用、网络审计阻断及运行保存；不构成真实三系统或模型裁判成绩。
+
 2026-11-01，第七章成本分析保存bojieli/ai-agent-book@dbc046eb896ac4e39aa19c7774c8bf49583b89a6的`chapter7/agent-cost-analysis`顶层源码/样例与3份测试、根LICENSE共13份文件，逐文件Git blob SHA及SHA256核对一致。原Apache 2.0源码不改，外层以固定offline参数执行原CLI，增加.env禁用/网络阻断、Decimal复算和本地本人轨迹旁证。作者预录样例与价格假设不算本人新模型请求或实时账单，目录实验编号与正文差异如实记录；历史runs未下载。
 
 2026-11-01，个人Wiki混合检索04入口复用3.6已保存的官方`retrieval-pipeline/fusion.py::reciprocal_rank_fusion`，核对固定提交dbc046eb896ac4e39aa19c7774c8bf49583b89a6、SHA256和Git blob SHA后调用，不修改函数。外层增加本人两路实测SHA固定、同语料检查、Top5并集、逐路名次贡献复算和新结果保存；沿用官方稳定排序及等权RRF60。原始Apache 2.0许可证及参考文件仍位于3.6官方资料，未复制或重新授权个人Wiki正文。
