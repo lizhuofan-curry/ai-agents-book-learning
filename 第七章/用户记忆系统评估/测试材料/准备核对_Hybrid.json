@@ -1,0 +1,22 @@
+{
+  "actor": "Codex preparation; not user execution",
+  "prepared_files_sha256": {
+    "我的代码/04_单案例Hybrid本机链路.py": "fb493b0a7c0a6697dae19f110aaa3f11846b2e7b1e3f7d18ba748755def05d0c",
+    "我的代码/Hybrid本机适配.py": "271aebc8dd650b04f10d032059ca3a83e90a9142809b805bbd90b1418795bfee",
+    "测试材料/Hybrid单案例方案.json": "c14e4f3cd39dc5c716dc2c7f1c411a9b1fc058f4b191921b905ee5415aec9bf4",
+    "Hybrid离线检查.py": "f481ac6ece311ef75da0c826d8edad10332b46c579478eac33941cc253658ec6"
+  },
+  "old_cards_and_rag_implementations_records_artifacts_unchanged": true,
+  "source_cards_record_sha256": "db6e7c2531f55d8e971d4cd8241cf47c6a268a7a8557b185d00c60f5936a8391",
+  "source_rag_record_sha256": "91d1dbd5ecbcae2785b645ae648b7e9330d28870a117fd5a55eff706209bd5ef",
+  "preview_passed": true,
+  "offline_fake_tests_passed": 6,
+  "repo_checks": "155 unit tests; 376 Python syntax/file checks passed",
+  "actual_new_generation_requests": 0,
+  "actual_new_embedding_forward_batches": 0,
+  "new_independent_judge_requests": 0,
+  "future_maximum_generation_requests": 2,
+  "future_maximum_new_embedding_forward_batches": 1,
+  "reuse_scope": "Original core cards and document vectors; no old query/answer reuse; inherited construction usage reported separately.",
+  "user_hybrid_run": "pending"
+}

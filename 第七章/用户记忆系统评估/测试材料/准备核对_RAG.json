@@ -1,0 +1,66 @@
+{
+  "actor": "Codex preparation; not user execution",
+  "source_files_sha256": {
+    "我的代码/03_单案例RAG本机链路.py": "94e51e11a4f65efa25842ccca8cd68b854555b20c341b40bb12c0aaf35950e54",
+    "我的代码/RAG本机适配.py": "b79adc5b2ebac23cf5c6b7583f6c0dece804b5afada9762145f9b309a1d04706",
+    "测试材料/RAG单案例方案.json": "900034cfe6d414a71c91b38af2d020b02e389ce2d3e933a2d319da64d48ce210",
+    "RAG离线检查.py": "01e935c1c7c4a9ffb7392e518a1cbcdd0f77202297c177db9ef75fd6d13e9b0c"
+  },
+  "old_cards_record_and_implementation_unchanged": true,
+  "official_reference_files": 73,
+  "verified_embedding_files": [
+    {
+      "name": "README.md",
+      "sha256": "c48a4eeea77f6b1d38b48ec1c5b8d4f86d5550cc43fa345a0db1b2ca1d082369"
+    },
+    {
+      "name": "config.json",
+      "sha256": "3853a7979202c348751b753e36f579c41d8da7d36af617d3d907e1fc9b441f2a"
+    },
+    {
+      "name": "model.safetensors",
+      "sha256": "354763b9b1357bc9c44f62c6be2276321081ed2567773608c0d0785b61d5a026"
+    },
+    {
+      "name": "special_tokens_map.json",
+      "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+    },
+    {
+      "name": "tokenizer.json",
+      "sha256": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26"
+    },
+    {
+      "name": "tokenizer_config.json",
+      "sha256": "e6f3b96db926a37d4039995fbf5ad17de158dfb8f6343d607e4dbaad18d75f5a"
+    },
+    {
+      "name": "vocab.txt",
+      "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
+    }
+  ],
+  "bge_sources_sha256": {
+    "第三章/个人Wiki混合RAG/官方资料/BGE模型清单.json": "32e2feb879a454c83a46fce19a9517ba9558bb97e5eee82b42a6c356fdf83b3b",
+    "第三章/个人Wiki混合RAG/我的代码/02_下载固定中文嵌入模型.py": "e8c06040c8e8c0e879ec0019347cc1a771677f79f96e1c5909e0586c065584d8",
+    "第三章/个人Wiki混合RAG/我的代码/03_同一快照的中文语义检索.py": "1f33a47717f119c441f0ae35e45b79283ec9b16c7222dd96ef9358e2c451d427"
+  },
+  "model_id": "BAAI/bge-small-zh-v1.5",
+  "model_revision": "7999e1d3359715c523056ef9478215996d62a620",
+  "preflight_tokenization": {
+    "rounds_per_chunk": 6,
+    "overlap": 2,
+    "chunks": 11,
+    "minimum_tokens": 276,
+    "maximum_tokens": 446,
+    "forward_batches": 0
+  },
+  "preview_passed": true,
+  "fake_adapter_tests_passed": 6,
+  "repo_checks": "155 unit tests; 373 Python syntax/files passed",
+  "new_generation_requests": 0,
+  "new_embedding_forward_batches": 0,
+  "judge_requests": 0,
+  "future_maximum_generation_requests": 2,
+  "future_maximum_embedding_forward_batches": 3,
+  "real_rag_run": "pending",
+  "source_review": "pending"
+}
