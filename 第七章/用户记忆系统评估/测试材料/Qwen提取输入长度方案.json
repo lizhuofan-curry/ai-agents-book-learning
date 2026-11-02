@@ -1,0 +1,42 @@
+{
+  "model": "qwen3.5:9b",
+  "manifest_relative_to_home": ".ollama/models/manifests/registry.ollama.ai/library/qwen3.5/9b",
+  "manifest_sha256": "80bf5246d9d1ad418cce10169bb1c61a030e4c62da402274ca1ed569efd76e36",
+  "local_cache_path": ".uv-cache/huggingface/local_tokenizers/qwen3.5_80bf5246d9d1",
+  "tokenizer_assets": [
+    {
+      "name": "tokenizer.json",
+      "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "bytes": 12807982
+    },
+    {
+      "name": "tokenizer_config.json",
+      "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+      "bytes": 16710
+    }
+  ],
+  "preflight_run": "sixty_preflight_20261101_204307_342178",
+  "preflight_record_sha256": "bcf9cbc82770ed047b7b68a45bc531a22dfcbfc72b28251ba2b00c243ee3ebc8",
+  "preflight_review_sha256": "69e2431fccb858ec146d9e7986b10efd79bef71f2b1ce0cdd234c09cdf8c88cf",
+  "source_07_sha256": "2558f9241610bb3db6feec9902ad63bb8e3c91c0ca12b8b5e18da1042a66d84f",
+  "num_ctx": 16384,
+  "reserved_output_tokens": 4096,
+  "transport_headroom_tokens": 256,
+  "enable_thinking": false,
+  "maximum_real_requests": 0,
+  "calibration_runs": [
+    {
+      "run": "cards_local_20261101_183111_269925",
+      "record_sha256": "db6e7c2531f55d8e971d4cd8241cf47c6a268a7a8557b185d00c60f5936a8391"
+    },
+    {
+      "run": "rag_local_20261101_193852_139837",
+      "record_sha256": "91d1dbd5ecbcae2785b645ae648b7e9330d28870a117fd5a55eff706209bd5ef"
+    },
+    {
+      "run": "hybrid_local_20261101_195215_093389",
+      "record_sha256": "70a2d3be5eb3cbad801318607c1d147ec4d68ebcd7a41e9e8ebd614aa593115f"
+    }
+  ],
+  "scope": "Local installed tokenizer + local HF template for 60 source-only CardBuilder inputs. Tools/history rendering is diagnostic, not exact Ollama equivalence. No inference or bulk execution."
+}

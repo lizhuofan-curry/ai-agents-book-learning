@@ -1,0 +1,52 @@
+{
+  "protocol_version": "cards-cross-layer-smoke-v1",
+  "upstream_commit": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "cases": [
+    {
+      "case_id": "layer1_02_insurance_claim",
+      "layer": "layer1",
+      "source_path": "chapter3/user-memory-evaluation/test_cases/layer1/02_insurance_claim.yaml",
+      "source_sha256": "ba4d78069e6aaedc1876cbbd3069250ebeafd1def4b619463218ad3a33f80119",
+      "card_prompt_sha256": "1294491791ab888c7741292af8cbe2cb5f983d88f7c20b5bdc6396221addba44"
+    },
+    {
+      "case_id": "layer2_01_multiple_vehicles",
+      "layer": "layer2",
+      "source_path": "chapter3/user-memory-evaluation/test_cases/layer2/01_multiple_vehicles.yaml",
+      "source_sha256": "d00b83e6db7660a2686606218e6b592af883aea201b066a3f6e769d7710e4b48",
+      "card_prompt_sha256": "0c9749c3dd349ce8be01d09d8b4cdfed6069373ecdec3e81442e8bc385d6ce12"
+    },
+    {
+      "case_id": "layer3_01_travel_coordination",
+      "layer": "layer3",
+      "source_path": "chapter3/user-memory-evaluation/test_cases/layer3/01_travel_coordination.yaml",
+      "source_sha256": "6d4ec28d1a5e9ec16d1f8c6367de90827d762b0449fc457c8731b79e29222831",
+      "card_prompt_sha256": "87028222ab7b1b8bc875c988b5b08265700221bddf64b976bdf5496f0fb4dae8"
+    }
+  ],
+  "selection_rule": "First sorted unused case in layer1, first sorted case in layer2 and layer3; fixed before observing outputs. Old bank pilot not rerun.",
+  "model": "qwen3.5:9b",
+  "endpoint": "http://127.0.0.1:11434/api/chat",
+  "num_ctx": 16384,
+  "num_predict": {
+    "card_build": 4096,
+    "cards_answer": 1024
+  },
+  "temperature": 0,
+  "seed": 42,
+  "think": false,
+  "engineering_headroom_tokens": 256,
+  "maximum_model_requests": 6,
+  "maximum_per_case": 2,
+  "maximum_per_stage": 1,
+  "judge_requests": 0,
+  "retrieval_requests": 0,
+  "embedding_forward_batches": 0,
+  "automatic_retries": false,
+  "resume_policy": "Skip every case with any persisted start. Mark interrupted case incomplete; continue only untouched cases. No resend of uncertain HTTP requests.",
+  "length_run": "qwen_length_20261101_205655_078955",
+  "length_record_sha256": "9899fbe0773c35a8be1c007e7141fa2c642ee044c678255f8b4f86098d9892ff",
+  "length_review_sha256": "605eb1916ada442ff038551ce403517d174398147f7a6c82af9481a137de5ff4",
+  "scope": "Three new official synthetic cases, one per layer; only Advanced JSON Cards build and independent cards-only answer. No RAG/Hybrid/cloud judge/full sixty benchmark.",
+  "semantic_review": "pending source-level review, no pass rate or judge score inferred from execution"
+}

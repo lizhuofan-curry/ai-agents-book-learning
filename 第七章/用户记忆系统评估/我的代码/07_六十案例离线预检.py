@@ -3,6 +3,7 @@ import argparse
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 import hashlib
+import importlib.metadata
 import json
 import math
 import os
@@ -125,6 +126,7 @@ def main():
     print('记录路径：' + str(directory / 'record.json'), flush=True)
     try:
         rag.augment_dependencies()
+        record['runtime_versions'] = {name: importlib.metadata.version(name) for name in ['transformers', 'tokenizers', 'pyyaml']}
         official = base.load_official()
         cases = official.UserMemoryEvaluationFramework().test_suite.test_cases
         from transformers import AutoTokenizer
@@ -161,7 +163,7 @@ def main():
                 + '，最大片段tokens=' + str(max(r['maximum_chunk_tokens'] for r in selected)))
         print('从零运行的本机协议草案上限：本机生成360次、云端裁判180次；这里只估算次数，不启动请求。')
         print('Qwen实际输入token长度尚未核实；现有单题脚本不能直接当通用60题入口。')
-        print('SIXTY_PREFLIGHT_SAVED：离线预检已保存；长度问题、批量协议和预算仍须处理，不代表60题评估完成。')
+        print('SIXTY_PREFLIGHT_SAVED：离线预检已保存；Qwen长度核验、批量协议和预算仍待处理，不代表60题评估完成。')
         return 0
     except (Exception, KeyboardInterrupt) as exc:
         record.update(status='incomplete_preflight', error={'type': type(exc).__name__, 'message': str(exc)})

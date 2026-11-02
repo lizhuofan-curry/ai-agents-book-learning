@@ -1,0 +1,29 @@
+{
+  "actor": "Codex preparation; user offline budget run pending; paid execution not authorized",
+  "user_hybrid_run": "hybrid_cross_layer_20261101_212913_742564",
+  "user_hybrid_record_sha256": "99bfd62936211847ecffd5a191e5dd0113d84cb36dfd2d7c8a49ff204da3c2bb",
+  "hybrid_execution_review_sha256": "426266345a2f23731adffcc03f0642656175d174d55bca5f9f53da2931153a4e",
+  "hybrid_semantic_review_sha256": "d427e89753b3c850a62c1809665fb76720bc1afff51bb333a507bc4c5c5b1108",
+  "budget_draft_run": "full_matrix_budget_20261101_221909_181932",
+  "budget_draft_record_sha256": "d5c3f89603633aff4f0be4597366a8b6fb735dd7854b7b291b6fe7e5ed2b77b7",
+  "script_sha256": "f0b48477268c9235b744fb4a88ffcb61878701b06a893a31710f1a7df4f1b62d",
+  "plan_sha256": "d37c1bf910b5c6d76e91ce734715b0b592ad56955a686d5857ab7fab04a96346",
+  "public_price_snapshot_sha256": "0aeb01b09f8f61e2364d51d025e1ba8180ca22f2e4963e6c52385bae04c30dab",
+  "budget_cny": "3.00",
+  "budget_gate": {
+    "budget_assurance_met": false,
+    "blockers": [
+      "complete_conservative_cost_unknown",
+      "exact_model_route_prices_unverified",
+      "usd_cny_conversion_and_fees_unverified",
+      "bounded_money_and_retry_guard_not_implemented",
+      "official_matrix_backends_not_live_verified",
+      "rubric_and_retrieval_gold_calibration_pending"
+    ]
+  },
+  "offline_budget_tests_passed": 4,
+  "repo_checks": "155 unit tests; 392 Python files checked",
+  "new_paid_api_or_embedding_requests": 0,
+  "public_pricing_web_lookup_performed": true,
+  "bounded_online_runner_prepared": false
+}

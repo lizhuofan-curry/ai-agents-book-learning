@@ -1,0 +1,79 @@
+{
+  "checked_date_local": "2026-11-01",
+  "method": "Public official provider pages via browsing; no paid API probes, no credentials read.",
+  "is_complete_current_pricing": false,
+  "fx_cny_per_usd": null,
+  "fx_source": null,
+  "items": [
+    {
+      "role": "embedding",
+      "name": "bge-m3",
+      "model": "baai/bge-m3",
+      "input_per_million": "0.01",
+      "currency": "USD",
+      "url": "https://openrouter.ai/baai/bge-m3",
+      "status": "public_page_verified_not_account_quote",
+      "source_note": "Provider rows currently display0.01 USD/M; actual route must be pinned."
+    },
+    {
+      "role": "embedding",
+      "name": "openai-small",
+      "model": "openai/text-embedding-3-small",
+      "input_per_million": "0.02",
+      "currency": "USD",
+      "url": "https://openrouter.ai/openai/text-embedding-3-small",
+      "status": "public_page_verified_not_account_quote"
+    },
+    {
+      "role": "embedding",
+      "name": "qwen3",
+      "model": "qwen/qwen3-embedding-8b",
+      "input_per_million": "0.01",
+      "currency": "USD",
+      "url": "https://openrouter.ai/qwen/qwen3-embedding-8b",
+      "status": "public_page_verified_not_account_quote",
+      "source_note": "Several routes show0.01 USD/M, another shows0.04; global route-agnostic maximum not established."
+    },
+    {
+      "role": "embedding",
+      "name": "mistral",
+      "model": "mistral-embed",
+      "input_per_million": "0.10",
+      "currency": "USD",
+      "url": "https://docs.mistral.ai/models/mistral-embed-23-12",
+      "status": "public_page_verified_not_account_quote"
+    },
+    {
+      "role": "chat",
+      "name": "kimi",
+      "model": "kimi-k2.5",
+      "url": "https://platform.kimi.com/docs/pricing/chat-k25",
+      "status": "fetch_timeout_unverified",
+      "historical_source_config_pricing": {
+        "currency": "CNY",
+        "as_of_date": "2026-07-29",
+        "source_url": "https://platform.kimi.com/docs/pricing/chat-k25",
+        "input_per_million": 4.0,
+        "cached_input_per_million": 0.7,
+        "output_per_million": 21.0,
+        "source_note": "Published Kimi K2.5 list price; input rate is cache-miss/uncached."
+      }
+    },
+    {
+      "role": "chat",
+      "name": "doubao",
+      "model": "doubao-seed-1-6-250615",
+      "url": "https://docs.volcengine.com/docs/ark/model-pricing?lang=zh",
+      "status": "current_page_read_but_exact_legacy_model_rate_not_verified",
+      "historical_source_config_pricing": {
+        "currency": "CNY",
+        "as_of_date": "2026-07-31",
+        "source_url": "https://www.volcengine.com/docs/82379/1544106",
+        "input_per_million": 0.8,
+        "output_per_million": 8.0,
+        "source_note": "Published Doubao-Seed-1.6 list price for the 0-32K input-length range (input 0.8 CNY/M, output 8 CNY/M). All matrix prompts are below 32K."
+      }
+    }
+  ],
+  "budget_conclusion": "CNY3 cannot be treated as sufficient for this full workload; complete conservative quote, routing, FX and budget enforcement absent. No paid execution."
+}

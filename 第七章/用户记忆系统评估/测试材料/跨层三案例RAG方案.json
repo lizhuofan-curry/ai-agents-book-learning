@@ -1,0 +1,63 @@
+{
+  "protocol_version": "rag-cross-layer-smoke-v1",
+  "cases": [
+    {
+      "case_id": "layer1_02_insurance_claim",
+      "layer": "layer1",
+      "source_path": "chapter3/user-memory-evaluation/test_cases/layer1/02_insurance_claim.yaml",
+      "source_sha256": "ba4d78069e6aaedc1876cbbd3069250ebeafd1def4b619463218ad3a33f80119",
+      "card_prompt_sha256": "1294491791ab888c7741292af8cbe2cb5f983d88f7c20b5bdc6396221addba44",
+      "expected_chunks": 12,
+      "document_forward_batch_cap": 2
+    },
+    {
+      "case_id": "layer2_01_multiple_vehicles",
+      "layer": "layer2",
+      "source_path": "chapter3/user-memory-evaluation/test_cases/layer2/01_multiple_vehicles.yaml",
+      "source_sha256": "d00b83e6db7660a2686606218e6b592af883aea201b066a3f6e769d7710e4b48",
+      "card_prompt_sha256": "0c9749c3dd349ce8be01d09d8b4cdfed6069373ecdec3e81442e8bc385d6ce12",
+      "expected_chunks": 24,
+      "document_forward_batch_cap": 3
+    },
+    {
+      "case_id": "layer3_01_travel_coordination",
+      "layer": "layer3",
+      "source_path": "chapter3/user-memory-evaluation/test_cases/layer3/01_travel_coordination.yaml",
+      "source_sha256": "6d4ec28d1a5e9ec16d1f8c6367de90827d762b0449fc457c8731b79e29222831",
+      "card_prompt_sha256": "87028222ab7b1b8bc875c988b5b08265700221bddf64b976bdf5496f0fb4dae8",
+      "expected_chunks": 31,
+      "document_forward_batch_cap": 4
+    }
+  ],
+  "cards_run": "cards_cross_layer_20261101_210436_023856",
+  "cards_record_sha256": "5943dc1d5950b13c9cf3f890fd448e6010af55741e5c2120bbb3fd96bcf7d284",
+  "cards_execution_review_sha256": "a55d8b1c8e05f63bcc1254fe3b47b337bc349644056636401264b2f34011436e",
+  "cards_semantic_review_sha256": "945d9b7a0ddecec4c5433922a89f07287a2ca3ad6829c04991cf16514af44313",
+  "model": "qwen3.5:9b",
+  "num_ctx": 16384,
+  "num_predict": {
+    "search_request": 1024,
+    "rag_answer": 1024
+  },
+  "maximum_model_requests": 6,
+  "maximum_retrieval_requests": 3,
+  "maximum_embedding_forward_batches": 12,
+  "query_forward_batch_cap": 3,
+  "document_forward_batch_cap": 9,
+  "rounds_per_chunk": 6,
+  "overlap": 2,
+  "top_k": 5,
+  "embedding_batch_size": 8,
+  "reranker": "none",
+  "normalization": "casefold",
+  "temperature": 0,
+  "seed": 42,
+  "think": false,
+  "automatic_retries": false,
+  "judge_requests": 0,
+  "engineering_headroom_tokens": 256,
+  "local_tool_template_exact_equivalence_claimed": false,
+  "observed_prompt_token_drift_cap": 256,
+  "scope": "Same three official synthetic cases, independent pure RAG only; cards and answers withheld from generator. No Hybrid, judge, gold selection, retries, tuning, or sixty-case expansion.",
+  "resume_policy": "Skip every touched case; interrupted requests/batches consume their original budget and are never retried; continue untouched cases only."
+}

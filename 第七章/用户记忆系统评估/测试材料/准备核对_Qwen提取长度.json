@@ -1,0 +1,25 @@
+{
+  "actor": "Codex preparation; user 08 run pending",
+  "prepared_run": "qwen_length_20261101_204925_568369",
+  "prepared_record_sha256": "11e088c7f4efa87d87fb51b763cb7ee06c00476eb6df013ecbdfaf66148c2a3f",
+  "script_sha256": "02d5fcfaa52c22fa689286389324407ed86f6f01e820a5fb7e23e47cf6d35ed6",
+  "plan_sha256": "3f8b1c9e60a93c391f77d366c098c51fd67ca8e7b3df7d7bd1b031e246d85aa8",
+  "summary": {
+    "cases": 60,
+    "maximum_card_prompt_tokens": 5837,
+    "maximum_required_with_reserves": 10189,
+    "over_limit_cases": []
+  },
+  "calibration_differences": [
+    0,
+    0,
+    6,
+    4,
+    6
+  ],
+  "all_record_checks_passed": true,
+  "real_model_network_or_forward_requests": 0,
+  "repo_checks": "155 unit tests and 382 Python checks passed",
+  "generic_batch_runner_prepared": false,
+  "readiness_is_not_execution": true
+}

@@ -1,0 +1,29 @@
+{
+  "actor": "Codex preparation; user three-case live run pending",
+  "user_08_run": "qwen_length_20261101_205655_078955",
+  "user_08_record_sha256": "9899fbe0773c35a8be1c007e7141fa2c642ee044c678255f8b4f86098d9892ff",
+  "user_08_review_sha256": "605eb1916ada442ff038551ce403517d174398147f7a6c82af9481a137de5ff4",
+  "plan_sha256": "fdbd7126ef5f8d385099ecdba7fa6ac8cfadf0395d16236d37a0a2c6031206dc",
+  "implementation_sha256": {
+    "09_跨层三案例JSONCards.py": "70ebb643ab56f3d680d8701fe26e2fadb13de6e0c2979af1311e8aa7f1878036",
+    "批量JSONCards适配.py": "fbe5c35312bbf3b4d8a493d0b39f7f92a9a7a6d279ea1c36f45c58aae212ca6d",
+    "本机记忆适配.py": "f576dcb38d4396d872fc55a19971d379a2a2953e261bdd9bdfd76ddb459f32dd",
+    "RAG本机适配.py": "b79adc5b2ebac23cf5c6b7583f6c0dece804b5afada9762145f9b309a1d04706",
+    "08_Qwen提取输入长度核验.py": "02d5fcfaa52c22fa689286389324407ed86f6f01e820a5fb7e23e47cf6d35ed6",
+    "07_六十案例离线预检.py": "2558f9241610bb3db6feec9902ad63bb8e3c91c0ca12b8b5e18da1042a66d84f",
+    "01_官方案例与评分规则离线检查.py": "e2106770468ee75db002d0780e4e4536b55239e9e8b00654300c3afa0ad0f02c"
+  },
+  "offline_test_run": "cards_batch_offline_20261101_210153_872945",
+  "offline_record_sha256": "a7b0f281f422b09bf851fa4a482bb71e09a7ac1ff4469b0da14526116f477eaa",
+  "offline_test_script_sha256": "b8eed146297e1e4b443f370b7ce87a2e1f395db78925930511f789c7f732c666",
+  "offline_tests_passed": 8,
+  "repo_checks": "155 unit tests; 385 Python files checked",
+  "actual_model_network_and_forward_requests_during_preparation": 0,
+  "next_live_run_cap": 6,
+  "next_live_case_count": 3,
+  "cloud_judge_requests": 0,
+  "old_pilot_rerun": false,
+  "all_sixty_or_full_three_arm_runner_prepared": false,
+  "dynamic_card_answer_lengths_checked_at_dispatch": true,
+  "resume_policy": "Skip all previously started cases, including interrupted/incomplete ones; never retry. Continue untouched cases only."
+}

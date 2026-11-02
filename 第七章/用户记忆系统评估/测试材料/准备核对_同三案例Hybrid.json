@@ -1,0 +1,31 @@
+{
+  "actor": "Codex preparation; user three-case Hybrid run pending",
+  "user_rag_run": "rag_cross_layer_20261101_211906_898313",
+  "user_rag_record_sha256": "f23cb44830a4783aa188013e595ec9bec276460e4bb31c851775e56075eb6499",
+  "execution_review_sha256": "a12ff3e1918cc11c848346cf13abf00a9094e25269e639dee688207396730a34",
+  "semantic_review_sha256": "8be79b1703d9f411e6cc5048ab88f0cf5c6c218ad954e6a5bb6bad29fcc65f30",
+  "plan_sha256": "3324e1f3fdcc0281f84ac6cb0c092feb83d7a76b9ed1fadd2899d2f7ab40f9ea",
+  "implementation_sha256": {
+    "11_同三案例Hybrid对照.py": "df031e5ee14722adc0f6c797121cc1f7ede2a4ac7381099ee32f53cf822e2930",
+    "跨层Hybrid适配.py": "c152e68b0d4c6e73bce7ae29cb53ab6162631f6a6c238477dd365c799881e6ed",
+    "跨层Hybrid离线检查.py": "fdda0a19f0055f241d883e12f44836106c5d5f65399c4534a37846498029e357",
+    "Hybrid本机适配.py": "271aebc8dd650b04f10d032059ca3a83e90a9142809b805bbd90b1418795bfee"
+  },
+  "offline_test_run": "cross_hybrid_offline_20261101_212614_030347",
+  "offline_record_sha256": "f2d646824cb74f3d3ab55d6a690f6dac00df7ebec579647d005e86b98d3d93a8",
+  "offline_tests_passed": 7,
+  "repo_checks": "155 unit tests; 391 Python files checked",
+  "new_real_model_network_or_forward_requests": 0,
+  "next_live_max_model_requests": 6,
+  "next_live_max_searches": 3,
+  "next_live_max_new_query_batches": 3,
+  "new_document_embedding_batches": 0,
+  "judge_requests": 0,
+  "source_core_card_counts": [
+    6,
+    7,
+    4
+  ],
+  "tool_template_exact_equivalence_claimed": false,
+  "full_sixty_or_matrix_prepared": false
+}

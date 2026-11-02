@@ -1,0 +1,73 @@
+{
+  "protocol_version": "hybrid-cross-layer-smoke-v1",
+  "cases": [
+    {
+      "case_id": "layer1_02_insurance_claim",
+      "layer": "layer1",
+      "source_path": "chapter3/user-memory-evaluation/test_cases/layer1/02_insurance_claim.yaml",
+      "source_sha256": "ba4d78069e6aaedc1876cbbd3069250ebeafd1def4b619463218ad3a33f80119",
+      "expected_chunks": 12,
+      "core_card_count": 6,
+      "document_vector_sha256": "a500ad34531efe6f037be74066ed2ad30107409fb53e859520347f5fec35c9dd",
+      "chunk_file_sha256": "c90b297da943c1d3bbab254aac5859c415db7336679b0421a6eee6e569a9eab0"
+    },
+    {
+      "case_id": "layer2_01_multiple_vehicles",
+      "layer": "layer2",
+      "source_path": "chapter3/user-memory-evaluation/test_cases/layer2/01_multiple_vehicles.yaml",
+      "source_sha256": "d00b83e6db7660a2686606218e6b592af883aea201b066a3f6e769d7710e4b48",
+      "expected_chunks": 24,
+      "core_card_count": 7,
+      "document_vector_sha256": "5c0d605a5c4996cade3f7853804355a5e6f40afcf71e5c58c01c43aa6b654c4e",
+      "chunk_file_sha256": "79dfaad9caeae809cc7b97cfcc9f2e4a903e10a7508d39a5edec3b3c89211423"
+    },
+    {
+      "case_id": "layer3_01_travel_coordination",
+      "layer": "layer3",
+      "source_path": "chapter3/user-memory-evaluation/test_cases/layer3/01_travel_coordination.yaml",
+      "source_sha256": "6d4ec28d1a5e9ec16d1f8c6367de90827d762b0449fc457c8731b79e29222831",
+      "expected_chunks": 31,
+      "core_card_count": 4,
+      "document_vector_sha256": "5602e243ba41b0e5f6e10e7efb4af049f180fef49cce584d1e919312d298d4e4",
+      "chunk_file_sha256": "3df27305843f9e7c62e48f59c11b0a035e12c09b0b15b425afacd738cee09014"
+    }
+  ],
+  "sources": {
+    "cards": {
+      "run": "cards_cross_layer_20261101_210436_023856",
+      "record_sha256": "5943dc1d5950b13c9cf3f890fd448e6010af55741e5c2120bbb3fd96bcf7d284",
+      "execution_review_sha256": "a55d8b1c8e05f63bcc1254fe3b47b337bc349644056636401264b2f34011436e",
+      "semantic_review_sha256": "945d9b7a0ddecec4c5433922a89f07287a2ca3ad6829c04991cf16514af44313"
+    },
+    "rag": {
+      "run": "rag_cross_layer_20261101_211906_898313",
+      "record_sha256": "f23cb44830a4783aa188013e595ec9bec276460e4bb31c851775e56075eb6499",
+      "execution_review_sha256": "a12ff3e1918cc11c848346cf13abf00a9094e25269e639dee688207396730a34",
+      "semantic_review_sha256": "8be79b1703d9f411e6cc5048ab88f0cf5c6c218ad954e6a5bb6bad29fcc65f30"
+    }
+  },
+  "model": "qwen3.5:9b",
+  "num_ctx": 16384,
+  "num_predict": 1024,
+  "temperature": 0,
+  "seed": 42,
+  "think": false,
+  "maximum_model_requests": 6,
+  "maximum_retrieval_requests": 3,
+  "maximum_new_embedding_forward_batches": 3,
+  "document_forward_batch_cap": 0,
+  "query_forward_batch_cap": 3,
+  "rounds_per_chunk": 6,
+  "overlap": 2,
+  "top_k": 5,
+  "reranker": "none",
+  "reuse_original_core_cards": true,
+  "reuse_frozen_document_vectors": true,
+  "automatic_retries": false,
+  "judge_requests": 0,
+  "engineering_headroom_tokens": 256,
+  "local_tool_template_exact_equivalence_claimed": false,
+  "legacy_hybrid_chat_sha256": "271aebc8dd650b04f10d032059ca3a83e90a9142809b805bbd90b1418795bfee",
+  "scope": "Same three cases, original core cards plus autonomous optional one retrieval; preserve source errors and reuse original document vectors only. No regenerated cards/documents, old queries, old answers or judges.",
+  "resume_policy": "Skip every touched case, including interrupted ones; continue untouched cases only, never resend uncertain requests."
+}

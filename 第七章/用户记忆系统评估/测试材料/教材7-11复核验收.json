@@ -1,0 +1,13 @@
+{
+  "actor": "Codex actual offline author-data verification, not user1440-trajectory rerun",
+  "run": "official_matrix_review_20261101_225639_646129",
+  "record_sha256": "890d4b524bafb93508b2bcd2a671823ff856e3e989d29b418cb245ac1db69065",
+  "script_sha256": "e99328a3af904d697ff12e67de92f3969bfd57ba89bb72d935521d06b043c8ba",
+  "manifest_sha256": "075e7658529066703120e0162eed967fc10c0bdb2e086f22fdd68dacdb0b2616",
+  "independent_checks": 17,
+  "all_passed": true,
+  "exported_csv_count": 3,
+  "new_paid_requests": 0,
+  "personal_matrix_trajectories": 0,
+  "repo_checks": "155 unit tests; 393 Python files checked"
+}
